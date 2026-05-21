@@ -46,10 +46,10 @@ h3 {
   justify-content: center;
   min-height: 3.5rem;
   padding: 0.75rem 1.5rem;
-  background: var(--hub-dark-gray);
+  background: var(--hub-black);
   color: var(--hub-white);
   border: 0;
-  border-radius: 1rem;
+  border-radius: 0;
   font-family: var(--hub-font-heading);
   font-size: 0.875rem;
   font-weight: 700;
@@ -62,6 +62,40 @@ h3 {
   background: var(--hub-lad-cyan);
   color: var(--hub-black);
   transform: translateY(-1px);
+}
+.ecosystem-section {
+  background: var(--hub-dark-gray);
+  color: var(--hub-white);
+}
+
+.ecosystem-card {
+  background: var(--hub-lad-cyan-dark);
+  color: var(--hub-white);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.ecosystem-card:hover {
+  transform: scale(1.03);
+  background: var(--hub-dark-teal);
+}
+
+.ecosystem-card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--hub-white);
+  color: var(--hub-black);
+  padding: 0.6rem 1rem;
+  font-family: var(--hub-font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.ecosystem-card-link:hover {
+  background: var(--hub-lad-cyan);
+  color: var(--hub-black);
 }
 
 .site-nav {
