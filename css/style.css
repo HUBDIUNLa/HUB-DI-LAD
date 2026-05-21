@@ -262,12 +262,12 @@ h3 {
 }
 
 .legal-link {
-  color: var(--hub-lad-cyan);
+  color: var(--hub-white);
   text-decoration: underline;
 }
 
 .legal-link:hover {
-  color: var(--hub-white);
+  color: var(--hub-lad-cyan-dark);
 }
 
 @media (max-width: 768px) {
