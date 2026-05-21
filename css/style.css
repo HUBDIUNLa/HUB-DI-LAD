@@ -66,8 +66,8 @@ h3 {
 
 .hero-section {
   min-height: calc(100vh - 8.75rem);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
 }
 
 .full-bleed {
