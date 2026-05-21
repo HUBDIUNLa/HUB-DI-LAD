@@ -51,3 +51,17 @@ function initNavbar() {
 
 loadComponent("navbar", "components/navbar.html").then(initNavbar);
 loadComponent("footer", "components/footer.html");
+
+document.addEventListener("submit", (event) => {
+  if (event.target.id !== "formComunidad") return;
+
+  event.preventDefault();
+
+  const message = document.getElementById("mensajeSuscripcion");
+
+  if (message) {
+    message.classList.remove("hidden");
+  }
+
+  event.target.reset();
+});
