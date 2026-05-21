@@ -144,6 +144,47 @@
   </div>
 </section>
 
+<section id="comunidad" class="community-section full-bleed py-20 px-6">
+  <h2 class="text-5xl font-semibold mb-6">SUMATE AL HUB</h2>
+
+  <p class="max-w-xl mx-auto mb-6 text-lg">
+    Recibí recursos, novedades y muchas cosas más sobre nuestro HUB y el ecosistema emprendedor.
+  </p>
+
+  <form id="formComunidad" class="community-form max-w-xl mx-auto space-y-4">
+    <div class="text-left">
+      <label for="nombreUsuario" class="block mb-1">Tu nombre:</label>
+      <input
+        type="text"
+        id="nombreUsuario"
+        name="nombreUsuario"
+        placeholder="Ej: Juan Pérez"
+        class="community-input"
+        required
+      />
+    </div>
+
+    <div class="flex flex-col sm:flex-row">
+      <input
+        id="correoUsuario"
+        name="correoUsuario"
+        type="email"
+        placeholder="Tu correo electrónico"
+        class="community-input flex-grow"
+        required
+      />
+
+      <button type="submit" class="community-submit">
+        Suscribirme
+      </button>
+    </div>
+  </form>
+
+  <p id="mensajeSuscripcion" class="mt-6 hidden">
+    ¡Gracias por suscribirte!
+  </p>
+</section>
+
   </main>
 
   <div id="footer"></div>

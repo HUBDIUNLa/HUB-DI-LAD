@@ -177,3 +177,47 @@ h3 {
 .ecosystem-section {
   margin-bottom: 0;
 }
+
+.community-section {
+  background: var(--hub-dark-teal);
+  color: var(--hub-white);
+  text-align: center;
+}
+
+.community-form label {
+  font-family: var(--hub-font-heading);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.community-input {
+  width: 100%;
+  border: 1px solid var(--hub-border);
+  border-radius: 0;
+  padding: 0.75rem 1rem;
+  color: var(--hub-onyx);
+  background: var(--hub-white);
+}
+
+.community-input:focus {
+  outline: 2px solid var(--hub-lad-cyan);
+  outline-offset: 2px;
+}
+
+.community-submit {
+  background: var(--hub-onyx);
+  color: var(--hub-white);
+  border: 0;
+  border-radius: 0;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--hub-font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.community-submit:hover {
+  background: var(--hub-lad-cyan);
+  color: var(--hub-onyx);
+}
