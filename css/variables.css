@@ -8,6 +8,7 @@
   --hub-black: #000000;
   --hub-white: #FFFFFF;
   --hub-light-bg: #F5F7F7;
+  --hub-page-bg: #f9f7f4;
   --hub-border: #D9E1E2;
 
   --hub-lad-cyan: #11D6C5;
@@ -36,4 +37,5 @@
   --hub-radius-sm: 0.5rem;
   --hub-radius-md: 1rem;
   --hub-shadow-soft: 0 8px 24px rgba(9, 15, 13, 0.08);
+  --hub-shadow-nav: 0 2px 8px rgba(0, 0, 0, 0.12);
 }

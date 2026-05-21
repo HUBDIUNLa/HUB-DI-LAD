@@ -1,4 +1,6 @@
-tailwind.config = {
+window.tailwind = window.tailwind || {};
+
+window.tailwind.config = {
   theme: {
     extend: {
       colors: {
@@ -19,11 +21,8 @@ tailwind.config = {
         }
       },
       fontFamily: {
-  sans: ['Karla', 'sans-serif'],
-  mono: ['Roboto Mono', 'monospace']
-}
-      fontFamily: {
-        sans: ['Inter', 'sans-serif']
+        sans: ['Karla', 'sans-serif'],
+        mono: ['Roboto Mono', 'monospace']
       }
     }
   }

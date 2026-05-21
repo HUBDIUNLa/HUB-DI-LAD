@@ -1,8 +1,23 @@
-
 async function loadComponent(id, file) {
-  const response = await fetch(file);
-  const html = await response.text();
-  document.getElementById(id).innerHTML = html;
+  const container = document.getElementById(id);
+
+  if (!container) {
+    console.error(`No existe el contenedor #${id}`);
+    return;
+  }
+
+  try {
+    const response = await fetch(file);
+
+    if (!response.ok) {
+      throw new Error(`No se pudo cargar ${file}: ${response.status}`);
+    }
+
+    const html = await response.text();
+    container.innerHTML = html;
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 function initNavbar() {
@@ -11,6 +26,13 @@ function initNavbar() {
   const icon = document.getElementById("menu-icon");
 
   if (!toggle || !mobileMenu || !icon) return;
+
+  function closeMenu() {
+    mobileMenu.classList.add("hidden");
+    mobileMenu.classList.remove("flex");
+    toggle.setAttribute("aria-expanded", "false");
+    icon.innerHTML = "&#9776;";
+  }
 
   toggle.addEventListener("click", () => {
     const isOpen = !mobileMenu.classList.contains("hidden");
@@ -21,9 +43,11 @@ function initNavbar() {
     toggle.setAttribute("aria-expanded", String(!isOpen));
     icon.innerHTML = isOpen ? "&#9776;" : "&times;";
   });
+
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
 }
 
 loadComponent("navbar", "components/navbar.html").then(initNavbar);
 loadComponent("footer", "components/footer.html");
-
-
