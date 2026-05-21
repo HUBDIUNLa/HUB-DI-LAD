@@ -98,7 +98,7 @@ h3 {
   align-items: center;
   justify-content: center;
   background: var(--hub-white);
-  color: var(--hub-black);
+  color: var(--hub-onyx);
   padding: 0.6rem 1rem;
   font-family: var(--hub-font-heading);
   font-weight: 700;
@@ -168,4 +168,12 @@ h3 {
   .page-main {
     padding: 4rem 2rem;
   }
+}
+
+.page-main {
+  padding-bottom: 0;
+}
+
+.ecosystem-section {
+  margin-bottom: 0;
 }
