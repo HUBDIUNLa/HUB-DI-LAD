@@ -240,7 +240,7 @@ h3 {
   opacity: 0.85;
 }
 
-.legal-title {
+.legal-title h2{
   color: var(--hub-white);
   margin-bottom: 2rem;
 }
@@ -254,7 +254,7 @@ h3 {
   margin-top: 1rem;
 }
 
-.legal-content h2 {
+.legal-content h4 {
   margin-top: 2.25rem;
   margin-bottom: 0.75rem;
   color: var(--hub-white);
