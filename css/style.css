@@ -7,6 +7,10 @@ html {
 }
 
 body {
+  padding-top: 8.75rem;
+}
+
+body {
   font-family: var(--hub-font-main);
   background: #f9f7f4;
   color: var(--hub-onyx);
