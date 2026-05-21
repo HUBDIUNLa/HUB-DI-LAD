@@ -221,3 +221,57 @@ h3 {
   background: var(--hub-lad-cyan);
   color: var(--hub-onyx);
 }
+
+.legal-section {
+  padding: 4rem 0;
+}
+
+.legal-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--hub-dark-gray);
+  color: var(--hub-white);
+  padding: 3rem;
+}
+
+.legal-date {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.legal-title {
+  color: var(--hub-white);
+  margin-bottom: 2rem;
+}
+
+.legal-content {
+  max-width: 850px;
+  line-height: 1.7;
+}
+
+.legal-content p + p {
+  margin-top: 1rem;
+}
+
+.legal-content h2 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--hub-white);
+  font-size: 1.25rem;
+}
+
+.legal-link {
+  color: var(--hub-lad-cyan);
+  text-decoration: underline;
+}
+
+.legal-link:hover {
+  color: var(--hub-white);
+}
+
+@media (max-width: 768px) {
+  .legal-card {
+    padding: 2rem 1.25rem;
+  }
+}
