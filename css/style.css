@@ -64,6 +64,12 @@ h3 {
   transform: translateY(-1px);
 }
 
+.hero-section {
+  min-height: calc(100vh - 8.75rem);
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
 .full-bleed {
   width: 100vw;
   margin-left: calc(50% - 50vw);
