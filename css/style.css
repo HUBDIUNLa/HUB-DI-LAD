@@ -8,13 +8,22 @@ html {
 
 body {
   padding-top: 8.75rem;
-}
-
-body {
   font-family: var(--hub-font-main);
   background: #f9f7f4;
   color: var(--hub-onyx);
 }
+
+h1,
+h2,
+h3,
+.nav-link,
+.button-primary {
+  font-family: var(--hub-font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
 
 .page-main {
   padding: 2.5rem 1rem;
