@@ -229,7 +229,7 @@ h3 {
 .legal-card {
   max-width: 1000px;
   margin: 0 auto;
-  background: var(--hub-dark-gray);
+  background: var(--hub-lad-cyan-dark);
   color: var(--hub-white);
   padding: 3rem;
 }
