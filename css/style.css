@@ -284,3 +284,79 @@ h6 {
     padding: 2rem 1.25rem;
   }
 }
+.incubator-hero {
+  min-height: 52vh;
+  background-image: linear-gradient(rgba(249, 247, 244, 0.72), rgba(249, 247, 244, 0.72)),
+    url("../assets/images/WhatsApp Image 2023-09-28 at 7.02.46 PM.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.incubator-band {
+  background: var(--hub-dark-gray);
+  color: var(--hub-white);
+}
+
+.incubator-card {
+  background: var(--hub-lad-cyan-dark);
+  color: var(--hub-white);
+  padding: 2rem;
+}
+
+.incubator-model {
+  background: var(--hub-white);
+  color: var(--hub-onyx);
+  padding: 1.5rem;
+  box-shadow: var(--hub-shadow-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.incubator-model-title {
+  background: var(--hub-dark-gray);
+  color: var(--hub-white);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-family: var(--hub-font-heading);
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.incubator-model img {
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.incubator-strip {
+  background: var(--hub-onyx);
+  color: var(--hub-white);
+  text-align: center;
+}
+
+.incubator-contact {
+  background: var(--hub-dark-teal);
+  color: var(--hub-white);
+}
+
+.incubator-link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--hub-onyx);
+  color: var(--hub-white);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--hub-font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.incubator-link-button:hover {
+  background: var(--hub-lad-cyan);
+  color: var(--hub-onyx);
+}
