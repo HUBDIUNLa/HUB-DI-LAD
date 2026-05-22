@@ -423,7 +423,7 @@ h6 {
 .coming-soon-card {
   max-width: 760px;
   text-align: center;
-  background: var(--hub-dark-gray);
+  background: var(--hub-onyx);
   color: var(--hub-white);
   padding: 4rem 2rem;
 }
