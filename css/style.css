@@ -13,7 +13,10 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--hub-font-heading);
   text-transform: uppercase;
   letter-spacing: 0;
@@ -240,7 +243,7 @@ h3 {
   opacity: 0.85;
 }
 
-.legal-title h2{
+.legal-title h3{
   color: var(--hub-white);
   margin-bottom: 2rem;
 }
@@ -254,7 +257,7 @@ h3 {
   margin-top: 1rem;
 }
 
-.legal-content h4 {
+.legal-content h6 {
   margin-top: 2.25rem;
   margin-bottom: 0.75rem;
   color: var(--hub-white);
