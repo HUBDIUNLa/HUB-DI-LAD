@@ -360,3 +360,54 @@ h6 {
   background: var(--hub-lad-cyan);
   color: var(--hub-onyx);
 }
+
+.courses-hero {
+  background: var(--hub-light-bg);
+  color: var(--hub-onyx);
+}
+
+.courses-panel {
+  background: var(--hub-dark-gray);
+  color: var(--hub-white);
+  padding: 2.5rem;
+}
+
+.courses-card {
+  background: var(--hub-lad-cyan-dark);
+  color: var(--hub-white);
+  padding: 2rem;
+  box-shadow: var(--hub-shadow-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.courses-card:hover {
+  transform: translateY(-4px);
+  background: var(--hub-dark-teal);
+}
+
+.courses-card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  background: var(--hub-white);
+  color: var(--hub-onyx);
+  padding: 0.75rem 1rem;
+  font-family: var(--hub-font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.courses-card-link:hover {
+  background: var(--hub-lad-cyan);
+  color: var(--hub-onyx);
+}
+
+.courses-content p + p {
+  margin-top: 1rem;
+}
