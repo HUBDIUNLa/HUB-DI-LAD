@@ -434,22 +434,23 @@ h6 {
   margin: 0 auto 2rem;
   line-height: 1.7;
 }
+
 .coming-soon-logo {
-  width: 360px;
-  max-width: 80%;
-  height: auto;
-  margin: 0 auto 2.5rem;
+  width: 420px !important;
+  max-width: 85% !important;
+  height: auto !important;
+  margin: 0 auto 2.5rem !important;
 }
 
-.coming-soon-card .coming-soon-ribbon {
-  display: inline-block;
-  background: var(--hub-lad-cyan-light);
-  color: var(--hub-onyx);
-  padding: 0.55rem 1rem;
-  font-family: var(--hub-font-heading);
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
-  line-height: 1.15;
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
+.coming-soon-ribbon {
+  display: inline-block !important;
+  background: var(--hub-lad-cyan-light) !important;
+  color: var(--hub-onyx) !important;
+  padding: 0.5rem 1rem !important;
+  font-family: var(--hub-font-heading) !important;
+  font-size: 1.6rem !important;
+  line-height: 1.15 !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  margin-bottom: 1.5rem !important;
 }
