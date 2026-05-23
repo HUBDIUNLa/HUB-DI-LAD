@@ -507,3 +507,15 @@ h6 {
   background: var(--hub-lad-cyan);
   color: var(--hub-onyx);
 }
+
+.page-hero {
+  padding: 2rem 1.5rem 2.5rem;
+}
+
+.page-hero img {
+  margin-bottom: 1.25rem;
+}
+
+.page-hero .title {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
