@@ -509,15 +509,17 @@ h6 {
 }
 
 .page-hero {
-  padding: 1rem 1rem 1rem;
+  padding: 1.25rem 1.5rem 1.75rem;
 }
 
 .page-hero img {
-  margin-bottom: 0.85rem;
+  height: 5rem;
+  margin-bottom: 0.75rem;
 }
 
 .page-hero .title {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.15;
 }
 
 .experts-hero {
@@ -539,7 +541,7 @@ h6 {
 }
 
 .expert-card {
-  background: var(--hub-lad-cyan-dark);
+  background: var(--hub-onyx);
   color: var(--hub-white);
   padding: 2rem;
   box-shadow: var(--hub-shadow-soft);
