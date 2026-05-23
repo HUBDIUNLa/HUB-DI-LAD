@@ -454,3 +454,56 @@ h6 {
   text-transform: uppercase !important;
   margin-bottom: 1.5rem !important;
 }
+.projects-hero {
+  background: var(--hub-light-bg);
+  color: var(--hub-onyx);
+}
+
+.projects-panel {
+  background: var(--hub-dark-gray);
+  color: var(--hub-white);
+  padding: 2.5rem;
+}
+
+.projects-section-title {
+  background: var(--hub-onyx);
+  color: var(--hub-white);
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.project-frame-card {
+  background: var(--hub-white);
+  padding: 0.75rem;
+  box-shadow: var(--hub-shadow-soft);
+  border: 1px solid var(--hub-border);
+}
+
+.project-frame-card iframe {
+  width: 100%;
+  height: 800px;
+  border: 1px solid var(--hub-border);
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 50;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--hub-lad-cyan-dark);
+  color: var(--hub-white);
+  border-radius: 999px;
+  box-shadow: var(--hub-shadow-soft);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  background: var(--hub-lad-cyan);
+  color: var(--hub-onyx);
+}
