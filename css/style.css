@@ -101,9 +101,10 @@ h6 {
   align-items: center;
   justify-content: center;
   background: var(--hub-white);
-  color: var(--hub-onyx);
+  color: var(--hub-dark-gray);
   padding: 0.6rem 1rem;
   font-family: var(--hub-font-heading);
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
