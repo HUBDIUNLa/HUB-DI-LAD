@@ -509,13 +509,13 @@ h6 {
 }
 
 .page-hero {
-  padding: 2rem 1.5rem 2.5rem;
+  padding: 1rem 1rem 1rem;
 }
 
 .page-hero img {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.85rem;
 }
 
 .page-hero .title {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
