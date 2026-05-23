@@ -519,3 +519,70 @@ h6 {
 .page-hero .title {
   font-size: clamp(1rem, 2vw, 1.5rem);
 }
+
+.experts-hero {
+  background: var(--hub-light-bg);
+  color: var(--hub-onyx);
+}
+
+.experts-panel {
+  background: var(--hub-dark-gray);
+  color: var(--hub-white);
+  padding: 2.5rem;
+}
+
+.experts-section-title {
+  background: var(--hub-onyx);
+  color: var(--hub-white);
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.expert-card {
+  background: var(--hub-lad-cyan-dark);
+  color: var(--hub-white);
+  padding: 2rem;
+  box-shadow: var(--hub-shadow-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  min-height: 520px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.expert-card:hover {
+  transform: translateY(-4px);
+  background: var(--hub-dark-teal);
+}
+
+.expert-card img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+}
+
+.expert-divider {
+  border-top: 4px solid var(--hub-white);
+  opacity: 0.35;
+  margin: 1.5rem 0;
+}
+
+.expert-card-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--hub-white);
+  color: var(--hub-onyx);
+  padding: 0.75rem 1rem;
+  font-family: var(--hub-font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.expert-card-link:hover {
+  background: var(--hub-lad-cyan);
+  color: var(--hub-onyx);
+}
