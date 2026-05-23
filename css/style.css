@@ -396,9 +396,10 @@ h6 {
   justify-content: center;
   margin-top: auto;
   background: var(--hub-white);
-  color: var(--hub-onyx);
+  color: var(--hub-dark-gray);
   padding: 0.75rem 1rem;
   font-family: var(--hub-font-heading);
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   transition: background-color 0.2s ease, color 0.2s ease;
