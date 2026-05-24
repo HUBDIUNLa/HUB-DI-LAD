@@ -594,3 +594,60 @@ h6 {
   background: var(--hub-lad-cyan);
   color: var(--hub-onyx);
 }
+
+.course-list-panel {
+  background: var(--hub-dark-gray);
+  color: var(--hub-white);
+  padding: 2.5rem;
+}
+
+.course-item {
+  background: var(--hub-white);
+  color: var(--hub-onyx);
+  padding: 1.5rem;
+  box-shadow: var(--hub-shadow-soft);
+  border: 1px solid var(--hub-border);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.course-item img {
+  width: min(100%, 320px);
+  margin: 0 auto;
+}
+
+.course-item-title {
+  color: var(--hub-onyx);
+  font-family: var(--hub-font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.course-access-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 320px);
+  margin-top: 1rem;
+  background: var(--hub-onyx);
+  color: var(--hub-white);
+  padding: 0.75rem 1rem;
+  font-family: var(--hub-font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.course-access-link:hover {
+  background: var(--hub-lad-cyan);
+  color: var(--hub-onyx);
+}
+
+@media (min-width: 768px) {
+  .course-item {
+    grid-template-columns: 320px 1fr;
+    align-items: center;
+  }
+}
