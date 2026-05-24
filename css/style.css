@@ -662,13 +662,13 @@ h6 {
   grid-template-columns: 240px 1fr;
   gap: 2rem;
   align-items: center;
-  background: var(--hub-dark-gray);
-  color: var(--hub-white);
+  background: var(--hub-lad-cyan-light;
+  color: var(--hub-onyx);
   padding: 2rem;
 }
 
 .resources-intro-logo img {
-  width: 220px;
+  width: 320px;
   height: auto;
   margin: 0 auto;
 }
