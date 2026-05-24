@@ -183,8 +183,8 @@ h6 {
 }
 
 .community-section {
-  background: var(--hub-lad-cyan);
-  color: var(--hub-white);
+  background: var(--hub-lad-cyan-bright);
+  color: var(--hub-black);
   text-align: center;
 }
 
