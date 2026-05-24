@@ -641,7 +641,7 @@ h6 {
 }
 
 .course-access-link:hover {
-  background: var(--hub-lad-cyanbright);
+  background: var(--hub-cyan-bright);
   color: var(--hub-onyx);
 }
 
