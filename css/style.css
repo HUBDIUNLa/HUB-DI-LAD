@@ -653,7 +653,7 @@ h6 {
 }
 
 .resources-intro {
-  padding: 2.5rem 1.5rem 2rem;
+  padding: 2rem 1.5rem 1rem;
   background: var(--hub-page-bg, #f9f7f4);
 }
 
@@ -669,8 +669,9 @@ h6 {
 
 .resources-intro-content h1 {
   font-family: var(--hub-font-heading);
-  font-size: 1.875rem;
+  font-size: 1.75rem;
   line-height: 1.2;
+  font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 1.25rem;
 }
