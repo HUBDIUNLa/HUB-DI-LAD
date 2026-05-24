@@ -662,7 +662,7 @@ h6 {
   grid-template-columns: 240px 1fr;
   gap: 2rem;
   align-items: center;
-  background: var(--hub-lad-cyan-light;
+  background: var(--hub-lad-cyan-light);
   color: var(--hub-onyx);
   padding: 2rem;
 }
