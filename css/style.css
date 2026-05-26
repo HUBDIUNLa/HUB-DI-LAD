@@ -698,3 +698,40 @@ h6 {
     font-size: 1.5rem;
   }
 }
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.resource-card {
+  background: #ffffff;
+  border: 1px solid #d8e0e0;
+  padding: 30px;
+}
+
+.resource-card img {
+  width: 100%;
+  display: block;
+  background: #f1f1f1;
+  margin-bottom: 20px;
+}
+
+.resource-card .course-access-link {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .resources-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+}
