@@ -49,7 +49,7 @@ h6 {
   min-height: 2.75rem;
   min-width: 8.5rem;
   padding: 0.65rem 1rem;
-  background: var(--hub-dark-gray);
+  background: var(--hub-black);
   color: var(--hub-white);
   border: 0;
   border-radius: 0;
@@ -94,6 +94,7 @@ h6 {
 .ecosystem-card:hover {
   transform: scale(1.03);
   background: var(--hub-lad-cyan-light);
+  text: var(--hub-onyx);  
 }
 
 .ecosystem-card-link {
