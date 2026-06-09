@@ -93,7 +93,7 @@ h6 {
 
 .ecosystem-card:hover {
   transform: scale(1.03);
-  background: var(--hub-dark-teal);
+  background: var(--hub-lad-cyan);
 }
 
 .ecosystem-card-link {
