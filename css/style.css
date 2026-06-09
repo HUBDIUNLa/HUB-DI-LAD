@@ -63,7 +63,7 @@ h6 {
 }
 
 .button-primary:hover {
-  background: var(--hub-lad-cyan);
+  background: var(--web-lad);
   color: var(--hub-black);
   transform: translateY(-1px);
 }
@@ -81,12 +81,12 @@ h6 {
 }
 
 .ecosystem-section {
-  background: var(--hub-dark-gray);
+  background: var(--hub-black);
   color: var(--hub-white);
 }
 
 .ecosystem-card {
-  background: var(--hub-lad-cyan-dark);
+  background: var(--web-lad);
   color: var(--hub-white);
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
