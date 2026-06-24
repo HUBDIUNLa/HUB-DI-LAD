@@ -245,6 +245,62 @@
   box-sizing: border-box;
 }
 
+.experts-search-controls{
+    display:flex;
+    align-items:stretch;
+    gap:12px;
+    flex-wrap:nowrap;
+}
+
+#expertCategory{
+    flex:0 0 260px;
+    min-width:260px;
+}
+
+.experts-search-input-wrapper{
+    flex:1 1 auto;
+    min-width:300px;
+}
+
+.experts-search-button,
+.experts-clear-button{
+    flex:0 0 auto;
+    min-width:120px;
+}
+
+
+
+.experts-search-button{
+    min-height:50px;
+    box-sizing:border-box;
+    padding:0 24px;
+    border:2px solid #99f6e4;
+    border-radius:0;
+    background:#99f6e4;
+    color:#000;
+    font-family:"Roboto Mono", monospace;
+    font-size:0.85rem;
+    font-weight:700;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:background-color .2s,color .2s,border-color .2s;
+}
+
+.experts-search-button:hover,
+.experts-search-button:focus-visible{
+    background:#fff;
+    border-color:#fff;
+    color:#000;
+}
+
+
+.experts-clear-button{
+    background:transparent;
+    color:#fff;
+    border:1px solid #fff;
+}
+
 @media (max-width: 700px) {
   .experts-search-shell {
     width: calc(100% - 2rem);
@@ -290,6 +346,12 @@
 
       <div class="experts-search-controls">
 
+        <select id="expertCategory" aria-label="Filtrar por carrera">
+          <option value="">Todas las carreras</option>
+          <option value="DI">Diseño Industrial (DI)</option>
+          <option value="DyCV">Diseño y Comunicación Visual (DyCV)</option>
+        </select>
+
         <div class="experts-search-input-wrapper">
           <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
 
@@ -302,13 +364,13 @@
           />
         </div>
 
-        <select id="expertCategory" aria-label="Filtrar por carrera">
-          <option value="">Todas las carreras</option>
-          <option value="DI">Diseño Industrial (DI)</option>
-          <option value="DyCV">
-            Diseño y Comunicación Visual (DyCV)
-          </option>
-        </select>
+        <button
+          type="button"
+          id="searchExperts"
+          class="experts-search-button"
+        >
+          Buscar
+        </button>
 
         <button
           type="button"
@@ -932,7 +994,7 @@ Colabora con equipos que buscan:  Implementar economía circular desde la génes
   equipos de producto, diseño y compras. Ha liderado múltiples proyectos de diseño de producto, packaging y 
   marca, logrando mejoras concretas en costos, tiempos y posicionamiento. Además, desarrolló un producto y su 
   business plan para una startup de la industria médica, reconocido en Incubando Salud Argentina y otros premios de 
-  innovación. Mi perfil combina visión estratégica con conocimiento técnico en materiales, producción y experiencia de marca.
+  innovación. Su perfil combina visión estratégica con conocimiento técnico en materiales, producción y experiencia de marca.
   
 </p>
 
@@ -1236,7 +1298,7 @@ Colabora con equipos que buscan:  Implementar economía circular desde la génes
   <p>
     <strong>Experiencia:</strong> +5 años ·
     <strong>Especialidad:</strong> Diseño UX/UI y Digital·
-    <strong>Rubro:</strong> Diseño Editorial·
+    <strong>Rubro:</strong> Diseño Editorial y Diseño Digital·
     <strong>Empresa/Institución:</strong> Gobierno de la Ciudad de Buenos Aires - Secretaría de Innovación y Transformación Digital.
   </p>
 </div>
@@ -1589,11 +1651,11 @@ Colabora con equipos que buscan:  Implementar economía circular desde la génes
     <i class="fa-brands fa-instagram"></i>
   </a>
 
-  <a href="https://maps.google.com/?q=Almirante+Brown"
+  <a href="https://maps.google.com/?q=Rafael+Calzada"
    target="_blank"
    class="course-social-link location-link">
   <i class="fas fa-location-dot"></i>
-  <span>Burzaco  </span>
+  <span>Rafael Calzada  </span>
 </a>
 
 </div>
@@ -1808,93 +1870,119 @@ Colabora con equipos que buscan:  Implementar economía circular desde la génes
 
   <script src="js/components.js?v=2"></script>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const searchInput = document.getElementById("expertSearch");
-    const categorySelect = document.getElementById("expertCategory");
-    const clearButton = document.getElementById("clearExpertFilters");
-    const resultsText = document.getElementById("expertResults");
-    const noResults = document.getElementById("expertsNoResults");
-    const expertCards = Array.from(
-      document.querySelectorAll("article.course-item")
-    );
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-    function normalizeText(text) {
-      return text
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/\s+/g, " ")
-        .trim();
-    }
+  const searchInput = document.getElementById("expertSearch");
+  const categorySelect = document.getElementById("expertCategory");
+  const searchButton = document.getElementById("searchExperts");
+  const clearButton = document.getElementById("clearExpertFilters");
+  const resultsText = document.getElementById("expertResults");
+  const noResults = document.getElementById("expertsNoResults");
 
-    function filterExperts() {
-      const searchTerms = normalizeText(searchInput.value)
-        .split(" ")
-        .filter(Boolean);
+  const expertCards = Array.from(
+    document.querySelectorAll("article.course-item")
+  );
 
-      const selectedCategory = normalizeText(categorySelect.value);
-      let visibleExperts = 0;
+  function normalizeText(text) {
+    return text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
 
-      expertCards.forEach(function (card) {
-        const profileTag = card.querySelector(".profile-tag");
-        const expertData = card.querySelector(".expert-data");
-        const expertName = card.querySelector(".course-item-title");
+  function filterExperts() {
 
-        /*
-          El buscador consulta la carrera, el nombre y las etiquetas:
-          especialidad, rubro y empresa/institución.
-        */
-        const searchableText = normalizeText(
-          [
-            profileTag ? profileTag.textContent : "",
-            expertName ? expertName.textContent : "",
-            expertData ? expertData.textContent : ""
-          ].join(" ")
-        );
+    const searchTerms = normalizeText(searchInput.value)
+      .split(" ")
+      .filter(Boolean);
 
-        const cardCategory = normalizeText(
-          profileTag ? profileTag.textContent : ""
-        );
+    const selectedCategory = normalizeText(categorySelect.value);
 
-        const matchesSearch = searchTerms.every(function (term) {
-          return searchableText.includes(term);
-        });
+    let visibleExperts = 0;
 
-        const matchesCategory =
-          !selectedCategory || cardCategory === selectedCategory;
+    expertCards.forEach(function (card) {
 
-        const shouldShow = matchesSearch && matchesCategory;
+      const profileTag = card.querySelector(".profile-tag");
+      const expertData = card.querySelector(".expert-data");
+      const expertName = card.querySelector(".course-item-title");
 
-        card.classList.toggle("expert-hidden", !shouldShow);
+      const searchableText = normalizeText(
+        [
+          profileTag ? profileTag.textContent : "",
+          expertName ? expertName.textContent : "",
+          expertData ? expertData.textContent : ""
+        ].join(" ")
+      );
 
-        if (shouldShow) {
-          visibleExperts++;
-        }
+      const cardCategory = normalizeText(
+        profileTag ? profileTag.textContent : ""
+      );
+
+      const matchesSearch = searchTerms.every(function (term) {
+        return searchableText.includes(term);
       });
 
-      resultsText.textContent =
-        visibleExperts === 1
-          ? "1 experto encontrado"
-          : visibleExperts + " expertos encontrados";
+      const matchesCategory =
+        !selectedCategory || cardCategory === selectedCategory;
 
-      if (noResults) {
-        noResults.style.display = visibleExperts === 0 ? "block" : "none";
+      const shouldShow = matchesSearch && matchesCategory;
+
+      card.classList.toggle("expert-hidden", !shouldShow);
+
+      if (shouldShow) {
+        visibleExperts++;
       }
-    }
 
-    searchInput.addEventListener("input", filterExperts);
-    categorySelect.addEventListener("change", filterExperts);
-
-    clearButton.addEventListener("click", function () {
-      searchInput.value = "";
-      categorySelect.value = "";
-      filterExperts();
-      searchInput.focus();
     });
 
-    filterExperts();
+    resultsText.textContent =
+      visibleExperts === 1
+        ? "1 experto encontrado"
+        : visibleExperts + " expertos encontrados";
+
+    if (noResults) {
+      noResults.style.display =
+        visibleExperts === 0 ? "block" : "none";
+    }
+  }
+
+  searchButton.addEventListener("click", filterExperts);
+
+  searchInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      filterExperts();
+    }
   });
+
+  clearButton.addEventListener("click", function () {
+    searchInput.value = "";
+    categorySelect.value = "";
+
+    expertCards.forEach(function(card){
+      card.classList.remove("expert-hidden");
+    });
+
+    resultsText.textContent =
+      expertCards.length === 1
+        ? "1 experto encontrado"
+        : expertCards.length + " expertos encontrados";
+
+    if (noResults) {
+      noResults.style.display = "none";
+    }
+
+    searchInput.focus();
+  });
+
+  resultsText.textContent =
+    expertCards.length === 1
+      ? "1 experto encontrado"
+      : expertCards.length + " expertos encontrados";
+
+});
 </script>
 
 </body>
