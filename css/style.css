@@ -184,8 +184,8 @@ h6 {
 }
 
 .community-section {
-  background: var(--hub-lad-cyan-light);
-  color: var(--hub-black);
+  background: var(--hub-gray, #b2b9bb );
+  color: var(--hub-onyx);
   text-align: center;
 }
 
@@ -223,7 +223,7 @@ h6 {
 }
 
 .community-submit:hover {
-  background: var(--hub-lad-cyan);
+  background: var(--web-lad);
   color: var(--hub-onyx);
 }
 
