@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Números Sostenibles | HUB DI LAD UNLa</title>
+  <meta name="description" content="Números Sostenibles | Workbook completo en formato one page." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Números Sostenibles | HUB DI LAD UNLa" />
+  <meta property="og:description" content="Workbook completo en formato one page." />
+  <meta property="og:image" content="https://hubdiunla.github.io/HUB-DI-LAD/assets/images/logohubteal.png" />
+  <meta property="og:url" content="https://hubdiunla.github.io/HUB-DI-LAD/ofertarecursos.html" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Números Sostenibles | HUB DI LAD UNLa" />
+  <meta name="twitter:description" content="Workbook completo en formato one page." />
+  <meta name="twitter:image" content="https://hubdiunla.github.io/HUB-DI-LAD/assets/images/logohubteal.png" />
+
+  <link rel="icon" href="assets/images/logohubfavicom.ico" type="image/x-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script src="js/tailwind.config.js?v=1"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="css/style.css?v=5" />
+
+  <style>
+   
+
+    :root {
+      --ns-teal: #0f766e;
+      --ns-teal-dark: #134e4a;
+      --ns-mint: #A6FFF0 ;
+      --ns-ink: #17201f;
+      --ns-muted: #5c6f6b;
+      --ns-line: #d7e7e2;
+      --ns-soft: #f3fbf8;
+      --ns-card: #ffffff;
+      --ns-gold: #c8942e;
+      --ns-rose: #b85b6a;
+    
+    }
+
+     .ns-workbook .resources-intro-card {
+      overflow: hidden;
+    }
+
+    .ns-page {
+      font-family: "Karla", system-ui, sans-serif;
+      color: var(--ns-ink);
+      background: var(--ns-mint);
+    }
+
+    .ns-container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .ns-hero {
+      padding: 72px 0 44px;
+      border-bottom: 1px solid var(--ns-line);
+    }
+
+    .ns-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--ns-teal-dark);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .82rem;
+    }
+
+    .ns-kicker i {
+      color: var(--ns-black);
+    }
+
+    .ns-title {
+      max-width: 880px;
+      font-size: clamp(1.5rem, 3vw, 3.5rem);
+      line-height: .92;
+      font-weight: 800;
+      letter-spacing: 0;
+      color: var(--ns-black);
+    }
+
+    .ns-lead {
+      max-width: 760px;
+      margin-top: 22px;
+      color: var(--ns-black);
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      line-height: 1.55;
+    }
+
+    .ns-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, .6fr);
+      gap: 28px;
+      align-items: end;
+    }
+
+    .ns-summary {
+      padding: 22px;
+      border: 1px solid var(--ns-line);
+      border-radius: 0px;
+      background: #ffffff;
+      box-shadow: 0 18px 40px rgba(19, 78, 74, .08);
+    }
+
+    .ns-summary h2 {
+      margin-bottom: 12px;
+      color: var(--ns-teal-dark);
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .ns-summary ul,
+    .ns-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .ns-summary li,
+    .ns-list li {
+      position: relative;
+      padding-left: 22px;
+      line-height: 1.45;
+      color: var(--ns-muted);
+    }
+
+    .ns-summary li::before,
+    .ns-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .62em;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--ns-teal);
+    }
+
+    .ns-section {
+      padding: 54px 0;
+      border-bottom: 1px solid var(--ns-line);
+    }
+
+    .ns-section-header {
+      max-width: 780px;
+      margin-bottom: 28px;
+    }
+
+    .ns-eyebrow {
+      margin-bottom: 8px;
+      color: var(--ns-rose);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .78rem;
+    }
+
+    .ns-section h2 {
+      color: var(--ns-teal-dark);
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .ns-section p {
+      color: var(--ns-muted);
+      line-height: 1.65;
+    }
+
+    .ns-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .ns-card {
+      border: 1px solid var(--ns-line);
+      border-radius: 8px;
+      background: var(--ns-card);
+      padding: 22px;
+    }
+
+    .ns-card h3 {
+      margin-bottom: 10px;
+      color: var(--ns-teal-dark);
+      font-size: 1.28rem;
+      line-height: 1.15;
+      font-weight: 800;
+    }
+
+    .ns-card p + p {
+      margin-top: 12px;
+    }
+
+    .ns-formula-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .ns-formula-card {
+      border: 1px solid rgba(15, 118, 110, .28);
+      border-radius: 8px;
+      background: linear-gradient(180deg, #ffffff 0%, #effbf8 100%);
+      padding: 22px;
+      box-shadow: 0 14px 30px rgba(15, 118, 110, .08);
+    }
+
+    .ns-formula-card h3 {
+      margin-bottom: 12px;
+      color: var(--ns-teal-dark);
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .ns-formula {
+      display: block;
+      margin: 12px 0;
+      padding: 16px;
+      border-left: 5px solid var(--ns-teal);
+      background: #ffffff;
+      color: var(--ns-teal-dark);
+      font-family: "Roboto Mono", ui-monospace, monospace;
+      font-size: .96rem;
+      font-weight: 700;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .ns-example {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--ns-line);
+      color: var(--ns-muted);
+      font-size: .95rem;
+    }
+
+    .ns-steps {
+      counter-reset: ns-step;
+      display: grid;
+      gap: 14px;
+    }
+
+    .ns-step {
+      counter-increment: ns-step;
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid var(--ns-line);
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    .ns-step::before {
+      content: counter(ns-step);
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background: var(--ns-teal-dark);
+      color: #ffffff;
+      font-family: "Roboto Mono", ui-monospace, monospace;
+      font-weight: 800;
+    }
+
+    .ns-step h3 {
+      margin-bottom: 6px;
+      color: var(--ns-teal-dark);
+      font-size: 1.12rem;
+      font-weight: 800;
+    }
+
+    .ns-quote {
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: 8px;
+      background: var(--ns-teal-dark);
+      color: #ffffff;
+    }
+
+    .ns-quote strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ns-mint);
+      font-size: 1.15rem;
+    }
+
+    .ns-quote p {
+      color: #A6FFF0 ;
+    }
+
+    .ns-exercise {
+      border: 1px dashed rgba(15, 118, 110, .45);
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 22px;
+    }
+
+    .ns-prompts {
+      display: grid;
+      gap: 9px;
+      margin-top: 16px;
+      color: var(--ns-muted);
+    }
+
+    .ns-prompt-line {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--ns-line);
+    }
+
+    .ns-footer-note {
+      padding: 44px 0 72px;
+      text-align: center;
+    }
+
+    .ns-footer-note p {
+      max-width: 740px;
+      margin: 0 auto;
+      color: var(--ns-muted);
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    @media (max-width: 860px) {
+      .ns-hero-grid,
+      .ns-grid,
+      .ns-formula-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ns-hero {
+        padding-top: 46px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .ns-container {
+        width: min(100% - 24px, 1120px);
+      }
+    }
+
+      .ns-card,
+      .ns-formula-card,
+      .ns-exercise,
+      .ns-summary {
+        padding: 18px;
+      }
+
+      .ns-step {
+        grid-template-columns: 36px minmax(0, 1fr);
+        padding: 16px;
+      }
+
+      .ns-step::before {
+        width: 36px;
+        height: 36px;
+      }
+    
+
+
+    .ns-workbook .course-item {
+      grid-template-columns: 1fr;
+      align-items: stretch;
+    }
+
+    .ns-page-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .ns-page-number {
+      font-family: "Roboto Mono", monospace;
+      font-size: .85rem;
+      font-weight: 700;
+      opacity: .72;
+    }
+
+    .ns-pdf-text {
+      margin: 0;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font-family: "Karla", system-ui, sans-serif;
+      font-size: 1.02rem;
+      line-height: 1.68;
+      color: inherit;
+      background: transparent;
+    }
+
+    .ns-formula-page {
+      border-width: 2px;
+    }
+
+    .ns-formula-page .ns-pdf-text {
+      padding: 1rem;
+      border: 1px solid currentColor;
+      border-radius: 8px;
+      font-family: "Roboto Mono", monospace;
+      font-size: .94rem;
+      line-height: 1.65;
+      background: color-mix(in srgb, currentColor 5%, transparent);
+    }
+
+    .ns-note {
+      margin-top: 1rem;
+      font-family: "Roboto Mono", monospace;
+      font-size: .9rem;
+      opacity: .76;
+    }
+
+    /* Página 02 · recuperación de la jerarquía editorial del PDF */
+    .ns-welcome-page {
+      --web-lad: #A6FFF0;
+      --hub-light-bg: #F5F7F7;
+      padding: clamp(1.25rem, 3vw, 3rem);
+      border: 1px solid #000;
+      border-left: .5rem solid #000;
+      background: #fff;
+    }
+
+    .ns-welcome-page .ns-page-heading {
+      align-items: flex-end;
+      margin-bottom: clamp(1.5rem, 3vw, 2.75rem);
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #000;
+    }
+
+    .ns-welcome-page .ns-page-number {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2rem;
+      padding: .35rem .7rem;
+      color: #000;
+      background: var(--web-lad);
+      opacity: 1;
+    }
+
+    .ns-welcome-title-wrap {
+      flex: 1;
+      min-width: min(100%, 18rem);
+    }
+
+    .ns-welcome-kicker {
+      display: block;
+      margin-bottom: .35rem;
+      font-family: "Roboto Mono", monospace;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .ns-welcome-page .course-item-title {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: .95;
+      letter-spacing: -.045em;
+    }
+
+    .ns-welcome-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(17rem, .65fr);
+      gap: clamp(1.5rem, 4vw, 4.5rem);
+      align-items: start;
+    }
+
+    .ns-welcome-copy {
+      max-width: 48rem;
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      line-height: 1.62;
+    }
+
+    .ns-welcome-copy p {
+      margin: 0 0 1.4rem;
+    }
+
+    .ns-welcome-copy strong {
+      font-weight: 800;
+    }
+
+    .ns-welcome-lead {
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      line-height: 1.35;
+      letter-spacing: -.02em;
+    }
+
+    .ns-welcome-impact {
+      margin: 2rem 0;
+      padding: clamp(1.25rem, 2.5vw, 2rem);
+      border: 1px solid #000;
+      background: var(--web-lad);
+      box-shadow: .65rem .65rem 0 #000;
+    }
+
+    .ns-welcome-impact-label {
+      display: block;
+      margin-bottom: .75rem;
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .ns-welcome-impact p {
+      margin: 0;
+      font-size: clamp(1.12rem, 1.8vw, 1.45rem);
+      line-height: 1.38;
+    }
+
+    .ns-welcome-clarity {
+      margin: 1.75rem 0;
+      padding: 1.25rem;
+      color: #fff;
+      background: #000;
+    }
+
+    .ns-welcome-clarity p {
+      margin: 0;
+    }
+
+    .ns-welcome-closing {
+      margin: 2rem 0 0;
+      padding: 0 0 0 1.25rem;
+      border-left: .4rem solid var(--web-lad);
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .ns-pdf-reference {
+      position: sticky;
+      top: 1.5rem;
+      margin: 0;
+      padding: .75rem;
+      border: 1px solid #000;
+      background: var(--hub-light-bg);
+      box-shadow: .75rem .75rem 0 var(--web-lad);
+    }
+
+    .ns-pdf-reference img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid #000;
+      background: #fff;
+    }
+
+    .ns-pdf-reference figcaption {
+      margin-top: .75rem;
+      font-family: "Roboto Mono", monospace;
+      font-size: .72rem;
+      font-weight: 600;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 700px) {
+      .ns-pdf-text {
+        font-size: .96rem;
+      }
+
+      .ns-formula-page .ns-pdf-text {
+        font-size: .86rem;
+      }
+
+      .ns-welcome-page {
+        padding: 1rem;
+        border-left-width: .35rem;
+      }
+
+      .ns-welcome-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .ns-pdf-reference {
+        position: static;
+        order: 2;
+        max-width: 30rem;
+      }
+
+      .ns-welcome-impact {
+        box-shadow: .4rem .4rem 0 #000;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <main class="ns-workbook">
+    <section class="resources-intro">
+      <div class="container">
+        <article class="resources-intro-card">
+           <main class="ns-page">
+    <section class="ns-hero">
+      <div class="ns-container ns-hero-grid">
+        <div>
+          <div class="ns-kicker"><i class="fa-solid fa-chart-line"></i> Gestión financiera</div>
+          <h1 class="ns-title">Conocé tus números</h1>
+          <p class="ns-lead">
+            Un mini-curso para emprendedores que quieren gestionar sus números con claridad y tranquilidad para 
+            construir un negocio sostenible económica y productivamente.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ns-section">
+      <div class="ns-container">
+        <div class="ns-section-header">
+          <p class="ns-eyebrow">Módulo 1</p>
+          <h2>Claridad antes que perfección</h2>
+        </div>
+
+        <div class="ns-grid">
+          <article class="ns-card">
+            <h3>La clave para una transformación real</h3>
+            <p>
+              Este proceso empieza por revisar la relación interna con el dinero, las planillas y 
+              la gestión financiera. Gestionar desde la certeza de tus números: saber cuánto cuesta cada decisión 
+              y cómo afecta tu rentabilidad. Esa claridad no solo empodera, sino que amplifica el impacto positivo 
+              en todo tu equipo de trabajo, tus proveedores y clientes.
+              No se trata solo de aprender cálculos: se trata de liderar el 
+              negocio desde la tranquilidad, la claridad y la capacidad de tomar decisiones estratégicas.
+              La clave está en tomar el control de los números de tu emprendimiento y por ende, de tu vida personal, 
+              aunque eso implique atravesar la incomodidad. Saber enfrentar las cifras es lo que te permitirá 
+              alcanzar la visión de negocio que querés.
+            </p>
+            <p>
+              La energía con la que se encara el aprendizaje importa tanto como el contenido. Ningún proceso de aprendizaje es lineal.
+              Mejorar la relación con los números requiere tiempo, atención y disposición para atravesar 
+              la incomodidad de lo nuevo. Vamos a sumergirnos en los números de tu negocio. Vas a aprender a conocerlos, 
+              entenderlos y, sobretodo, utilizarlos como herramientas para tomar decisiones estratégicas que te permitan 
+              elevar tu emprendimiento al siguiente nivel.
+            </p>
+          </article>
+        </div>
+         <aside class="ns-summary" aria-label="Resumen del recurso">
+          <h2>En esta guía vas a trabajar</h2>
+          <ul>
+            <li>Mentalidad financiera, energía productiva y creencias sobre los números.</li>
+            <li>Costos variables, costos invisibles, mano de obra y costo horario.</li>
+            <li>Costos fijos, Sueldo emprendedor y margen de contribución.</li>
+            <li>Flujo de caja, hábitos financieros saludables y cierre mensual.</li>
+          </ul>
+        </aside>
+        </article>
+      </div>
+    </section>
+
+    <section class="pt-1 pb-8 px-6">
+      <div class="container">
+        <div class="space-y-6 mt-10">
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 01</span>
+              <h3 class="course-item-title">Portada</h3>
+            </div>
+            <pre class="ns-pdf-text">Números
+Sostenibles
+Un programa para
+emprendedoras de
+manufactura que quieren
+gestionar sus números con
+claridad y tranquilidad para
+tener un negocio sostenible
+tanto económica como
+energéticamente.</pre>
+          </article>
+          <article class="course-item ns-pdf-page ns-welcome-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 02</span>
+              <div class="ns-welcome-title-wrap">
+                <span class="ns-welcome-kicker">Números Sostenibles · Módulo 1</span>
+                <h3 class="course-item-title">Bienvenida</h3>
+              </div>
+            </div>
+            <div class="ns-welcome-layout">
+              <div class="ns-welcome-copy">
+                <p class="ns-welcome-lead">
+                  <strong>Estás acá porque estás decidida a tomar el control de los números de tu negocio</strong>, aunque eso implique atravesar la incomodidad. Sabés que enfrentar esas cifras es lo que te permitirá <strong>alcanzar la visión de negocio que querés.</strong>
+                </p>
+
+                <p>
+                  <strong>Amo trabajar con mujeres que lideran emprendimientos de manufactura, porque el impacto que generan va mucho más allá de sus propios proyectos.</strong> El acto de crear con tus manos es una forma de conexión profunda: con vos misma, con el presente y con el proceso productivo. <strong>En un mundo que constantemente nos empuja a estar en todas partes y en ninguna al mismo tiempo, poder enfocarte en lo que hacés tiene un poder transformador.</strong>
+                </p>
+
+                <p>
+                  <strong>Y ese poder se multiplica cuando pensás en todas las personas que impactás con tu negocio:</strong> desde los proveedores que te abastecen de insumos, los talleres o equipos con los que trabajás, hasta el cliente que recibe tu producto con todo el valor que le transmitís. <strong>Cada decisión que tomás resuena en toda esta cadena de valor.</strong> Tu negocio impulsa crecimiento para vos y muchos más.
+                </p>
+
+                <aside class="ns-welcome-impact" aria-label="Impacto colectivo">
+                  <span class="ns-welcome-impact-label">El impacto se multiplica</span>
+                  <p>
+                    Ahora, multiplicá ese impacto por todas las mujeres que lideran negocios como el tuyo. Más mujeres conscientes gestionando negocios rentables significa <strong>más dinero en manos de mujeres, más poder de decisión, menos brecha de género, más empoderamiento y libertad financiera, y más impacto social.</strong>
+                  </p>
+                </aside>
+
+                <div class="ns-welcome-clarity">
+                  <p>
+                    <strong>Pero todo eso solo es posible con claridad.</strong> Imaginate gestionar desde la certeza de tus números: saber cuánto cuesta cada decisión y cómo afecta tu rentabilidad. Esa claridad no solo te empodera, sino que amplifica el impacto positivo que ya generás en tantas personas.
+                  </p>
+                </div>
+
+                <blockquote class="ns-welcome-closing">
+                  Este es el camino que comenzamos hoy. Juntas, con propósito y visión. Porque cuando las mujeres avanzamos, transformamos el mundo.
+                </blockquote>
+              </div>
+
+              <figure class="ns-pdf-reference">
+                <img src="assets/images/numeros-sostenibles-bienvenida-original.png" alt="Página original del PDF Números Sostenibles, Módulo 1, Bienvenida" loading="lazy" />
+                <figcaption>Página original · referencia visual y editorial</figcaption>
+              </figure>
+            </div>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 03</span>
+              <h3 class="course-item-title">Página 03</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 1
+02
+La clave para una transformación real
+Estas 4 semanas juntas quiero acompañarte en un viaje
+profundo, desde lo más interno hasta lo más concreto.
+Vamos a trabajar esas heridas, creencias limitantes y
+patrones heredados que han moldeado tu relación con el
+dinero y la gestión financiera. Vamos a transformarlos en
+nuevas formas de pensar y actuar, para que puedas
+liderar tu negocio desde la tranquilidad y la claridad.
+Al mismo tiempo, vamos a sumergirnos en los números de tu
+negocio. Vas a aprender a conocerlos, entenderlos y, sobre
+todo, utilizarlos como herramientas para tomar decisiones
+estratégicas que te permitan elevar tu emprendimiento al
+siguiente nivel.
+Ahora bien, como en todo proceso de transformación, este
+camino puede ser mágico y revelador o puede sentirse
+abrumador y desafiante. La diferencia está en cómo lo
+enfrentes, y esa decisión es completamente tuya.
+Recordá que ningún proceso de aprendizaje es lineal. Habrá
+momentos en los que todo fluirá con facilidad y otros en los
+que te encontrarás frente a desafíos que van a implicar que te
+involucres más. Mejorar la relación con tus números requiere
+el mismo compromiso que cualquier relación importante en tu
+vida: tiempo, atención, y la disposición a atravesar la
+incomodidad de lo nuevo.
+Por eso, antes de comenzar, quiero invitarte a reflexionar
+sobre algo fundamental: con qué energía vas a trabajar
+durante estas semanas.
+¿Con qué energía vas a llegar a cada encuentro?
+¿Con qué energía vas a encarar los ejercicios?
+¿Con qué energía vas a crear lo que querés para tu
+negocio?
+La energía que traigas es tan importante como el contenido
+en sí. Porque la transformación verdadera no sucede solo
+en lo que aprendemos, sino en cómo nos entregamos al
+proceso.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 04</span>
+              <h3 class="course-item-title">Página 04</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 1
+03
+Soy Yael Barcasia
+Como consultora estratega especializada en negocios de
+manufactura y coach financiera, desde 2018, acompaño a
+emprendedoras comprometidas y ambiciosas a expandir su
+impacto, facturación y rentabilidad, trabajando menos y
+disfrutando más.
+En una sociedad que celebra el agotamiento como símbolo
+de éxito, mi misión es que seamos cada vez más mujeres
+impactando y ganando dinero en grande, desde la
+abundancia y no desde el sacrificio.
+Porque creo profundamente, que los negocios tienen que
+ser sostenibles económicamente, pero además y muy
+importante, energéticamente. Y que, tu disfrute, debería
+convertirse en una de las métricas clave a seguir.
+Por supuesto no siempre lo ví así tan claro y fue un viaje
+personal de años, hasta llegar a construir un negocio
+alineado a la vida que quiero. También hubo una época
+donde mi negocio me absorbía por completo, trabajaba más
+de lo que quería y me costaba mucho frenar y descansar, sin
+culpa.
+Todo cambió cuando después de atravesar un burnout tomé
+el compromiso de asumir la conexión real conmigo misma y
+desde ese lugar diseñar el modelo de negocio que quería
+tener, para servir a las personas con las que quería trabajar
+conectando verdaderamente desde lo emocional.
+Por supuesto, sigo en camino.
+Como todas, no hay versión
+final. Conocernos, conectarnos
+y alinearnos, será un trabajo de
+por vida. En capas.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 05</span>
+              <h3 class="course-item-title">Página 05</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 1
+04
+Día 1: Mentalidad
+Tu energía es la clave de este proceso
+Antes de empezar, soltá cualquier expectativa que puedas
+tener sobre el programa. No estamos acá para seguir
+reglas estrictas, sino para experimentar y descubrir, cada
+una a su manera. Permitite vivir este recorrido con
+curiosidad, sin presiones ni juicios. Este camino no se trata
+de perfección, sino de exploración. Tu energía y cómo te
+relacionás con ella será lo que realmente te impulse.
+Lo que te comparto es una guía, pero cada lección tiene que
+resonar con vos para que realmente funcione. Así que
+sentite libre de ajustar lo que necesites, transformar las
+ideas para que encajen con tu realidad y tu manera de ver
+el mundo. Este es tu espacio de crecimiento y, al final del
+día, las respuestas que buscas las tenés vos. Mi intención
+es que este programa te ayude a descubrir cómo vincularte
+con tus números para que te den paz mental, y que logres
+ver el impacto real que tiene tu trabajo.
+Creencias que nos impiden avanzar
+Es probable que alguna vez te hayas dicho: &quot;No soy buena
+para esto&quot;, &quot;los números me cortan la creatividad&quot;, &quot;son
+fríos y aburridos&quot; o incluso &quot;no me llevo bien con la
+tecnología&quot;. Estas creencias no solo nos frenan, sino que
+muchas veces se integran tanto en nuestra identidad que
+empezamos a verlas como parte de nosotras mismas. Sin
+darnos cuenta, las repetimos hasta el punto en que nuestro
+inconsciente las toma como verdades absolutas, y cuando
+intentamos desafiarlas, algo dentro nuestro nos dice que
+estamos yendo en contra de lo que &quot;somos&quot;.
+Estas historias desempoderan, frustran y nos hacen
+sentir chuquitas.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 06</span>
+              <h3 class="course-item-title">Página 06</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 1
+05
+Un inconsciente poderoso e ingenuo
+Nuestro inconsciente es muy poderoso, pero también es
+ingenuo. Si durante mucho tiempo nos hemos contado
+historias que nos desempoderan, como que &quot;no somos
+buenas en esto&quot;, nuestro inconsciente las toma como hechos.
+Y entonces, cada vez que intentamos salir de esa zona,
+sentimos incomodidad, como si estuviéramos haciendo algo
+mal.
+Pero te aseguro que lo único &quot;mal&quot; es seguir
+creyendo esas ideas que te mantienen chiquita.
+Abrirnos a cuestionar estas creencias y cambiarlas es un
+acto de amor y empoderamiento.
+No se trata solo de aprender a manejar números; se trata de
+liberar esa parte de vos que tiene el potencial de expandirse,
+de tomar decisiones estratégicas y de llevar tu negocio a la
+visión que querés alcanzar. Porque la posibilidad de hacerlo
+no es solo para quienes &quot;nacieron&quot; con habilidades para los
+números o la tecnología, es para quienes deciden abrirse a
+transitar el proceso de aprender y crecer.
+Para eso, vamos a trabajar
+en descubrir cuáles son las
+historias que nos están
+limitando.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 07</span>
+              <h3 class="course-item-title">Página 07</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 1
+06
+¿Qué historias me estoy contando en
+relación a los números?
+Nuestra parte racional, muchas veces da definiciones de
+manual que nos impide saber verdaderamente qué
+pensamos a nivel inconsciente.
+Así que para conectarnos con lo que realmente creemos,
+vamos a hacer un ejercicio de escritura automática.
+Para eso, vas a necesitar lápiz y papel.
+El ejercicio consiste en dejar fluir la información que se te
+viene a la mente cuando escribís. Para eso, vamos a poner
+ciertas condiciones:
+Nunca levantes la lapicera del papel, siempre escribí,
+aunque no tenga ninguna coherencia y te parezca
+irracional.
+Siempre pensá en completar las las frases con temas
+relacionados a los números del negocio.
+No te juzgues, escuchate. Acá no hay respuestas
+incorrectas, nadie va a leer lo que escribas, simplemente
+va a ser tu mano y tu inconsciente.
+Primero dedicá unos segundos a conectar con vos, hacé
+una respiración profunda antes de empezar.
+¿Estás lista? Empecemos...</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 08</span>
+              <h3 class="course-item-title">Página 08</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 1
+07
+Escritura automática
+Los números me generan...........................................................
+Sentarme frente una planilla me hace sentir........................
+Nunca fui buena para..................................................................
+Lo que más me gusta de mis productos es....................pero
+cuando tengo que pensar en venderlo yo..............................
+Lo que más me abruma de mi negocio es..............................
+Para materializar mi visión de negocio necesito
+convertirme en.........................y para eso tengo que
+trabajar en......................................................................................
+Evito los números porque............................................................
+Conecto más con...................................aunque es necesario
+que me concentre en.........y para eso debería soltar............
+Esto lo hago por mí y no por......................................................
+Si no entiendo algo............por eso voy a empezar a.............
+El dinero es.............................por eso yo.....................................
+Recordá, este ejercicio no es para juzgarte, sino
+para identificar las historias arraigadas en tu
+inconsciente que te están impidiendo avanzar.
+Tanto las heridas internas como las externas se
+sanan con amor y cuidado, no con castigo, enojo o
+culpa.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 09</span>
+              <h3 class="course-item-title">Página 09</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 1
+08
+Carta de compromiso
+Yo, ____________, me comprometo a elevar mi rol para
+alcanzar la visión de negocio que deseo construir. Me
+comprometo a transitar este camino, respetando mis tiempos
+de aprendizaje y abriéndome a integrar las herramientas
+necesarias para convertirme en la persona que mi negocio
+necesita para crecer. Decido soltar las creencias que me
+limitan y desempoderan, trabajando desde el amor, no desde
+la culpa ni el enojo, para disfrutar de un negocio sostenible,
+tanto económica como energéticamente.
+Los números te marcan el camino
+Entender los números del negocio va más allá de completar
+datos en una planilla. Estás ganando claridad para tomar
+decisiones estratégicas para trabajar mejor y no de más, con
+un desgaste que podríamos evitar. Porque cuando tenemos
+los números claros, podemos ver qué funciona y qué no, y eso
+cambia todo.
+Muchas veces dejamos de lado los números porque no somos
+conscientes del impacto que tienen. Cuando desconocemos o
+subestimamos nuestros costos, dedicamos tiempo y esfuerzo
+a tareas que no mueven la aguja en los resultados y
+trabajamos con mucha incertidumbre.
+Conocer tus números te da el poder de decidir:
+Qué productos dejar de ofrecer porque no son rentables.
+Qué productos mejorar o ampliar variedad porque
+realmente funcionan.
+Cuándo aumentar tus precios para mantener la
+rentabilidad sin perder clientes.
+Cómo optimizar tus procesos productivos, invirtiendo en lo
+que realmente te genera más ingresos.
+Cuándo es el momento de delegar o contratar, basándote
+en la capacidad financiera de tu negocio y no solo en tus
+ganas de crecer.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 10</span>
+              <h3 class="course-item-title">Página 10</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 1
+09
+Historia mata teoría
+Carla
+tiene un
+emprendimiento de accesorios
+de cuero que vendía bien, pero
+nunca lograba cubrir sus gastos
+ni pagarse un sueldo. Al revisar
+sus números, vio que había
+subestimado sus costos,
+especialmente los insumos y su
+propia mano de obra. Tras
+ajustar precios y optimizar sus
+procesos, su negocio se volvió
+rentable, lo que le permitió
+pagarse un sueldo y aumentar
+su capacidad productiva.
+Lucia
+tiene una marca de
+cerámica artesanal y solía crear
+muchos modelos para mantener
+un amplio stock. Sin embargo,
+gran parte de esa producción
+quedaba sin venderse por
+meses. Al analizar el valor del
+stock inmovilizado, notó que
+estaba dejando mucho capital
+&quot;parado&quot;. Luego, ajustó su
+producción a la demanda real y
+comenzó a reinvertir mejor.
+Estas historias muestran que, sin claridad en los números, es
+fácil perder el foco y trabajar de más en cosas que no
+impactan directamente en el resultado que queremos lograr.
+Y, en un contexto de inflación y costos cambiantes, no tener
+los números al día puede ser un obstáculo enorme para un
+negocio sostenible.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 11</span>
+              <h3 class="course-item-title">Página 11</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 1
+10
+Agrupamos para ganar claridad
+Primero, es importante que distingamos los costos fijos y
+los costos variables. Entender la diferencia entre estos dos
+es clave para tener una visión clara de cómo funcionan tus
+números y cómo influyen en la rentabilidad de tu negocio.
+Costos variables: Son aquellos que dependen
+directamente de tu producción y la venta. Es decir,
+cuánto más produzcas y más vendas, más van a subir
+(como los insumos, materias primas o comisiones de
+ventas).
+Costos fijos: Son aquellos que se mantienen estables,
+produzcas mucho o poco, porque forman parte del
+costo estructural de tu negocio, es lo que necesita para
+funcionar independientemente si vendés o producís. Por
+ejemplo, tu sueldo emprendedor, el alquiler del local, o
+servicios básicos como internet.
+Saber distinguir entre ambos es fundamental, porque
+muchas veces mezclamos todo en la misma bolsa, lo que
+nos impide tener claridad a la hora de tomar decisiones.
+Los insumos aumenta, ¿qué hago?
+Si hay algo que no podemos ignorar en un contexto
+inflacionario, es el costo de reposición. Este costo refleja el
+precio que vas a pagar cuando necesites reponer los
+insumos que compraste antes, y es muy probable que esos
+precios ya hayan aumentado. Trabajar solo con el costo
+inicial, sin tener en cuenta la inflación o el aumento en los
+precios de reposición, puede hacer que te quedes atrás y
+pierdas dinero sin darte cuenta.
+Ahora bien, los números no están solo para que hagamos
+cálculos. Sirven para tomar decisiones estratégicas en tu
+negocio. Tener tus costos actualizados te permite fijar
+precios con consciencia, evitar pérdidas y hacer crecer tu
+negocio de manera sostenible.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 12</span>
+              <h3 class="course-item-title">Página 12</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 1
+11
+Tres de las fugas de dinero más
+grandes que suelo ver en los
+negocios son:
+• El stock inmovilizado: Tener demasiado inventario sin
+vender es dinero que no está circulando, y esto es clave.
+Cuanto más rápido se mueve la mercadería en tu negocio,
+más dinero ganás. Mantener un stock inmovilizado no solo
+implica ocupar espacio y asumir riesgos de obsolescencia o
+daño, sino también perder la oportunidad de reinvertir ese
+capital en áreas que podrían hacer crecer tu negocio, como
+marketing o mejoras en producción. Cuanto más ágil es la
+circulación de mercadería, más dinero gano.
+• Desconocer el valor de la mano de obra: Muchas veces
+creemos que, al hacer nosotras mismas todo el trabajo, nos
+estamos “ahorrando” ese costo. Pero esta es una creencia
+peligrosa. No reconocer tu propio tiempo como un costo
+hace que te sobrecargues, ahogues y no puedas aumentar
+tu capacidad productiva. Esto te impide crecer, delegar, e
+incluso alcanzar el punto de equilibrio, lo que significa que
+siempre vas a estar trabajando de más sin que el dinero
+alcance. Es una trampa que frena el crecimiento y la
+rentabilidad.
+• La desactualización de los costos:Si no revisás y ajustás
+los costos de tus productos con regularidad, especialmente
+en contextos inflacionarios como Argentina, vas a estar
+vendiendo por debajo de lo que te cuesta producir. Esto
+impacta directamente en tu rentabilidad y te lleva a
+trabajar sin ver los resultados económicos que realmente
+esperás. Actualizar tus costos no es solo una tarea
+financiera, es una estrategia clave para asegurar que cada
+venta sea realmente rentable.</pre>
+          </article>
+          <article class="course-item ns-pdf-page ns-formula-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 13</span>
+              <h3 class="course-item-title">Módulo 2 · Página 13</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 2
+12
+Costos Variables
+Son todos los costos que están relacionados directamente
+con el producto que fabricás. Están compuestos por:
+insumos que utilizamos para producir, servicios de terceros
+que intervienen en el proceso productivo, merma o
+desperdicio de cada insumo, y el costo de la mano de obra.
+Voy a poner de ejemplo un emprendimiento que fabrica
+“tapabocas” (demás está decir que los ejemplos y los
+números que veamos son inventados y no tienen relación
+con precios reales, y que también podes hacer el cálculo
+con los importes y monedas de tu país):
+COSTOS VARIABLES
+Tela: $600
+COSTO VARIABLE TOTAL
+Elástico: $50
+POR “TAPABOCA”
+Etiqueta: $20
+Bolsita transparente: $20 $1268.85
+Mano de obra por corte: $217.05
+Mano de obra por costura $361.8
+¿Qué es el costo de la mano de obra?
+Son los procesos donde interviene activamente una
+persona para fabricar el producto que se va a producir.
+¿Qué no es parte del costo de mano de obra, pero
+sí es parte del proceso productivo?
+Toda ejecución pasiva que no necesite una persona activa
+en el proceso, por ejemplo, dejar reposar un granel, la
+cocción o el enfriamiento de una mezcla o una pieza. Si dejo
+reposar una masa el tiempo no va a pasar más rápido si
+me quedo al lado, puedo usar ese tiempo para hacer otra
+tarea; es por eso que no se tiene en cuenta.</pre>
+          </article>
+          <article class="course-item ns-pdf-page ns-formula-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 14</span>
+              <h3 class="course-item-title">Página 14</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 2
+13
+¿Cómo se calcula el costo de mano de obra?
+Para calcular la mano de obra es necesario definir los
+procesos productivos que forman parte de la misma. Si te
+pregunto cuánto tiempo tardás en hacer una torta,
+seguramente estás pensando desde que empezás con la
+mezcla hasta que colocás la torta en el packaging lista para
+vender; en ese proceso hay distintas fases y no
+todas son activas. Siguiendo con el ejemplo de la torta, el
+tiempo de cocción no es parte del costo de mano de obra.
+Acá podemos ver la importancia de dividir en etapas: por
+ejemplo los procesos productivos a tener en cuenta para la
+mano de obra al hacer una torta serían los siguientes:
+- Preparar la mezcla
+- Enmantecar los moldes
+- Decorar la torta
+La cocción y el tiempo de espera para que enfríe el
+bizcochuelo no son procesos activos, por lo tanto, no se
+tienen en cuenta para el cálculo de la mano de obra.
+Costo horario
+Para calcular la mano de obra es necesario determinar el
+costo horario: Horas trabajadas por mes = Horas
+trabajadas al día x días trabajados a la semana x
+cantidad de semanas al mes.
+COSTO HORARIO = SUELDO MENSUAL / HORAS TRABAJADAS
+Horas trabajadas por día = 8
+Días trabajados por semana = 5 Costo Horario =
+Semanas trabajadas al mes = 4,3* Sueldo mensual / Horas trabajadas
+8 x 5 x 4,3 = 172 horas mensuales 700.000 / 172 = $4.069,77
+Sueldo mensual = $ 700.000
+*Trabajo con 4,3 semanas y no con 4 porque si multiplicamos 7 días por 4 semanas estaría
+considerando meses de 28 días, en vez de 30 o 31 días.</pre>
+          </article>
+          <article class="course-item ns-pdf-page ns-formula-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 15</span>
+              <h3 class="course-item-title">Página 15</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 2
+14
+Factor de rendimiento o productividad
+Tenemos que entender que no somos máquinas, por ende, es
+imposible que estemos produciendo sin parar. En el medio de la
+producción pasan muchas cosas, paramos para responderle un
+mensaje a un cliente, aparecen imprevistos y además tampoco
+es sano trabajar 24x7 sin descanso. Es por esto que se aplica
+un factor de rendimiento o productividad. Yo recomiendo
+utilizar un factor del 75% que equivale a 45 minutos de
+producción por 15 minutos de recreación. No lo tomes como un
+parámetro fijo, lo podés ajustar a tu medida y a tus tiempos.
+Cálculo de costo de mano de obra por unidad
+(TIEMPO X COSTOS HORARIO X CANTIDAD DE PERSONAS)
+(UNIDADES PRODUCIDAS X FACTOR DE RENDIMIENTO)
+Proceso productivo: tizado y (2 Horas x $4069,77 x 1 personas)
+corte de tela para tapabocas
+(50 unidades x 75% factor de rend.)
+Cantidad de personas que
+intervienen en el proceso: 1 Costo de mano de obra por
+Tiempo de producción: 2 horas tizado y corte de tapabocas
+Unidades producidas: 50
+Factor de rendimiento: 75% $217.05 por unidad
+Costo Horario: $4.069,77
+Proceso productivo: (2 Horas x $4069,77 x 1 personas)
+Costura de tapabocas
+(30 unidades x 75% factor de rend.)
+Cantidad de personas que
+intervienen en el proceso: 1 Costo de mano de obra por
+Tiempo de producción: 2 horas tizado y corte de tapabocas
+Unidades producidas: 30
+Factor de rendimiento: 75% $361,8 por unidad
+Costo Horario: $4.069,77</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 16</span>
+              <h3 class="course-item-title">Página 16</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 2
+15
+Ventajas de conocer el costo de la mano de obra
+Si existe una reina de los costos, que sea la mano de obra. Es la
+clave de un emprendimiento de fabricación propia. Conocer los
+costos de tus procesos productivos te va a permitir contestarte
+las siguientes preguntas:
+¿El costo de mis procesos productivos son competitivos
+comparados con un taller externo?
+¿Dónde están los cuellos de botella de la producción?
+¿Me conviene agrandar el equipo?
+¿Puedo tercerizar parte de mi proceso productivo?
+¿Estoy en condiciones de invertir en una maquinaria?
+¿Me conviene producir lotes más grandes para bajar el
+costo de producción?
+También podés tomar indicadores para aumentar tu capacidad
+productiva. Al aumentar la productividad, bajan los costos y
+aumenta la rentabilidad. A eso se le llama economía de escala.
+Si existe
+una reina de
+los costos,
+que sea la
+MANO
+DE OBRA</pre>
+          </article>
+          <article class="course-item ns-pdf-page ns-formula-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 17</span>
+              <h3 class="course-item-title">Módulo 3 · Página 17</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 3
+16
+¿Qué son los costos fijos?
+Son los costos que no están relacionados directamente con el
+producto que se fabrica, pero son necesarios para que el
+negocio funcione. Por ejemplo:
+Mi sueldo emprendedor: $800.000
+Web (abono mensual): $8.000
+Total Costos Fijos
+Monotributo: $35.000
+Servicios: $100.000
+$1.468.800
+Publicidad: $200.000
+Amortización de una máquina: $5.800
+Contador: $20.000
+Capacitaciones: $300.000
+Santo Presupuesto
+No es lo mismo hacer una compra intentando gastar lo menos
+posible, que hacer una compra con un presupuesto
+determinado.
+Lo ideal es fijar un objetivo mensual y uno anual, establecer
+cuánto puedo gastar en el mes y luego distribuir ese monto en
+las cuentas que tengo designadas para el gasto. Los datos se
+deben tomar de acuerdo a parámetros reales y para esto es
+necesario llevar un control de los movimientos diarios.
+El control del presupuesto mensual se realiza de forma
+semanal para saber que el consumo que se registra sea acorde
+al presupuesto. Por ejemplo, presupuesté $40.000 para
+alimentos y bebidas, pero en la primera semana tuve un gasto
+de $30.000 entonces sé que solo puedo completar las tres
+semanas que quedan con $10.000. En cambio, si en la primera
+semana gasté $10.000, sé que voy a ir ajustando los egresos
+de acuerdo a lo presupuestado.
+Así se pueden tomar decisiones para corregir sin tener que
+esperar a que termine el mes para analizar lo sucedido.</pre>
+          </article>
+          <article class="course-item ns-pdf-page ns-formula-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 18</span>
+              <h3 class="course-item-title">Página 18</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 3
+17
+Margen de contribución
+Es el beneficio o la ganancia que se adquiere en una venta sin
+tener en cuenta los costos fijos:
+MARGEN DE CONTRIBUCIÓN = PRECIO DE VENTA - COSTO VARIABLE
+EJEMPLO TAPABOCAS
+Costo variable: $1.268,85
+Precio de venta: $8.900
+Margen de contribución= $8.900 - $1.268,85
+Margen de contribución= $7.631,15
+Punto de equilibrio
+OBJETIVO N°1
+El punto de equilibrio es el nivel de ventas donde los
+costos fijos y variables se encuentran cubiertos.
+Representa el mínimo de ventas que se necesita tener
+para cubrir todos los costos, incluyendo tu sueldo. Por
+eso es el primer objetivo a cumplir.
+FÓRMULA PARA EL PUNTO DE EQUILIBRIO EN UNIDADES
+El punto de equilibro en unidades es el costo fijo dividido el
+margen de contribución unitario.
+Costo Fijo Punto de equilibrio
+=
+en unidades
+Margen de Contribución Unitario</pre>
+          </article>
+          <article class="course-item ns-pdf-page ns-formula-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 19</span>
+              <h3 class="course-item-title">Página 19</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 3
+18
+Ejemplo
+El margen de contribución unitario del tapabocas es $7.631,15
+y los costos fijos del negocio son $1.468.800
+CF: $1.468.800
+= 193 unidades
+MC: $7.631,15
+Para cubrir todos los costos, tanto los fijos, donde ya incluimos
+el sueldo emprendedor como los variables, el negocio necesita
+vender 193 unidades de tapabocas.
+FÓRMULA PARA EL PUNTO DE EQUILIBRIO EN FACTURACIÓN
+Punto de
+Punto de equilibrio Precio de venta
+x = equilibrio en
+en unidades unitario
+facturación
+Ejemplo
+193 unidades x $8.900 = $1.717.700
+Una vez que conoces tu punto de equilibrio es necesario
+respondernos 2 preguntas claves.
+1. ¿Tengo capacidad productiva para alcanzar el punto de
+equilibrio?
+2. ¿Tengo un sistema de ventas que me permita alcanzar la
+facturación que necesito?
+Y en el caso de que alguna de las respuestas sea negativa,
+¿qué cambios debería hacer?</pre>
+          </article>
+          <article class="course-item ns-pdf-page ns-formula-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 20</span>
+              <h3 class="course-item-title">Página 20</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 3
+19
+Rentabilidad
+La rentabilidad es la resta entre el costo fijo y el margen de
+contribución total.
+FÓRMULA PARA EL MARGEN DE CONTRIBUCIÓN TOTAL
+Margen de Margen de
+Unidades
+Contribución x = Contribución
+Vendidas
+Unitario Total
+Ejemplo
+En el caso de que la marca haya vendido 200 unidades de
+tapabocas en el mes, así se calcularía el margen de
+contribución total:
+MCU $7.631,15 x 200 unidades = $1.526.230
+MCT
+FÓRMULA PARA LA RENTABILIDAD
+Margen de Costo Fijo
+- = Rentabilidad
+Contribución Total Total
+Ejemplo
+MCT $1.526.230 - CF: $1.468.800 = $57.430</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 21</span>
+              <h3 class="course-item-title">Página 21</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 3
+20
+Flujo de caja
+¿Qué es?
+Es el resultado del registro de ingresos y egresos del
+negocio en un período determinado. Es importante crear el
+hábito de registrar todos los movimientos de fondos porque es
+la única forma de medir la salud financiera de nuestro negocio.
+¿Para qué sirve?
+Medir la liquidez financiera: ¿tengo dinero disponible?
+Proyectar pagos
+Controlar que los ingresos sean mayores que los egresos
+Tomar decisiones respecto a la planificación financiera
+Analizar cuánto, cuándo y por qué egresa o ingresa dinero.
+REGISTRAR,
+MEDIR Y
+CORREGIR</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 22</span>
+              <h3 class="course-item-title">Página 22</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 3
+21
+Crear el hábito
+Para crear hábitos nuevos, podemos apoyarnos en los que
+ya tenemos incorporados. Por ejemplo, antes de cepillarme
+los dientes para ir a dormir, registro desde el celular todos
+los egresos del día, mientras que los ingresos por ventas las
+cargo al día siguiente, mientras desayuno.
+Esto no significa que tengas que hacerlo igual, es
+simplemente lo que me funciona a mí: asociar nuevos
+hábitos con rutinas ya establecidas.
+Es recomendable avanzar de a poco, integrando un hábito a
+la vez. Si intentamos cambiar todo de golpe, es probable
+que lo sostengamos solo un par de días y al tercero ya no
+podamos continuar. En cambio, si vamos incorporando de a
+un hábito por vez, es más posible que al cabo de un año
+hayamos sumado 2 o 3 nuevos hábitos que contribuyan a
+nuestros objetivos.
+La clave está en la constancia, pero también en la
+flexibilidad: si en algún momento dejamos de hacerlo, es
+importante retomar sin culpa, con la consciencia de que
+estamos transitando un proceso. Incorporar un hábito lleva
+tiempo, y no sucede de la noche a la mañana.
+No tengas todo en el mismo chanchito
+¿Por qué hay que separar las finanzas personales del
+negocio? Para poder tener control sobre ambas, de lo
+contrario, perdemos información y capacidad de decisión y
+gestión. Si alguna vez pensaste “no sé en qué gasté el dinero”,
+entonces tener las finanzas en orden te va a permitir
+optimizar mejor los recursos y saber dónde están las fugas
+de dinero.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 23</span>
+              <h3 class="course-item-title">Página 23</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 3
+22
+¿Cómo calculo mi sueldo emprendedor?
+Cuando comenzamos un emprendimiento, parece que solemos
+olvidarnos de algo fundamental: tenemos (y merecemos)
+pagarnos un sueldo.
+A menudo se mezclan conceptos como &quot;lo que corresponde&quot;,
+&quot;lo que necesito&quot; o &quot;lo que sobra&quot;, y ahí es donde empezamos
+con el pie izquierdo. Si no definimos un sueldo emprendedor
+desde el principio y creamos el hábito de cobrarlo, con el
+tiempo será muy difícil sostener el negocio. Sin claridad, no
+sabremos si estamos sacando de más, de menos, si seguimos
+poniendo dinero de nuestro bolsillo para que el
+emprendimiento funcione o si el negocio ya puede sostenerse
+por sí mismo.
+No existe una fórmula mágica para definir un sueldo
+emprendedor acorde a tus tareas; eso es algo que vas a tener
+que determinar vos según la etapa en la que está tu negocio y
+tus necesidades financieras. Lo que te propongo es definir
+cuatro sueldos que te ayudarán a gestionar esta transición y
+planificar tu crecimiento de manera más ordenada y realista.
+1. Sueldo Básico
+Este es el mínimo indispensable que necesitás para vivir. Es un
+número con el que pienses: &quot;Por menos que esto, no vale la
+pena seguir&quot;.
+Este sueldo debe ser tu objetivo para los primeros 12 a 18
+meses de tu negocio. Si tu emprendimiento ya tiene más
+tiempo pero aún no alcanzaste este punto, no es motivo de
+culpa ni frustración. Lo importante es identificar dónde estás
+hoy y avanzar paso a paso. No importa si llevás 2 meses o 5
+años: lo relevante es reconocer el momento actual del negocio
+para definir qué sueldo te corresponde en esta etapa.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 24</span>
+              <h3 class="course-item-title">Página 24</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 3
+23
+2. Sueldo Normal
+Este sueldo cubre tus necesidades y responsabilidades
+financieras para vivir con tranquilidad. ¿Cuánto necesitás
+ganar para llegar cómoda a fin de mes? Además de cubrir tus
+gastos esenciales, es importante que contemple también tus
+objetivos financieros, como ahorrar o planificar vacaciones.
+Si estás en una transición de relación de dependencia a
+emprendimiento, podés tomar tu sueldo actual como referencia
+para esta categoría. Este sería tu objetivo para alcanzar entre
+12 y 24 meses después de llegar al sueldo básico,
+planificándolo de manera gradual y realista.
+3. Sueldo Ideal
+Este es el monto que te encantaría cobrar por liderar tu
+negocio, el que te motive y refleje el valor de tu trabajo. Al igual
+que los sueldos anteriores, es fundamental asignarle un plazo
+concreto para alcanzarlo.
+4. Sueldo de Autonomía Financiera
+Este sueldo es el que necesitarías para cubrir al 100% las
+responsabilidades financieras del hogar por tu cuenta, en caso
+de que compartas gastos con otras personas. Aunque hoy no
+sea tu realidad, definir este monto y ponerle un plazo te
+permitirá estar preparada para cualquier circunstancia.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 25</span>
+              <h3 class="course-item-title">Módulo 4 · Página 25</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 4
+24
+Analizá tus números con consciencia
+Este módulo está diseñado para que, cada vez que te sientes
+frente a tu Leader List, sepas exactamente qué buscar y cómo
+interpretar tus números. La idea es que tomes decisiones
+estratégicas basadas en datos reales, manteniendo siempre el
+equilibrio entre ventas, costos y capacidad productiva.
+1. ¿Cubro el punto de equilibrio?
+El punto de equilibrio es el número más importante que vas a
+verificar. Te preguntás:
+¿El mix actual de ventas me permite cubrir el punto de
+equilibrio?
+Si no lo cubro, ¿cuánto más tengo que vender?
+Además, necesitás asegurarte de que tenés la capacidad
+productiva suficiente para cubrir ese volumen. Si no es así,
+quizás tengas que:
+Detectar cuellos de botella y optimizar procesos.
+Ver si necesitás tercerizar parte de la producción o
+simplificar etapas.
+2. Productos estrella y caballitos de batalla
+El siguiente paso es identificar dos productos clave para tu
+negocio:
+Caballito de batalla: Producto con alta rotación, aunque con
+menor margen de contribución. Idealmente, este producto
+debería demandar poco tiempo de mano de obra para que
+puedas despacharlo rápido.
+Producto estrella: Producto con buena demanda y buen
+margen de contribución.
+¿Puede ser un mismo producto ambas cosas? Sí, y en ese caso,
+tenés una joya. Si encontrás un producto que sea tanto tu
+estrella como tu caballito de batalla, ¡explotalo al máximo!
+Saber cuáles son estos productos te permite diseñar tu
+ecosistema de productos alrededor de lo que ya funciona,
+priorizando lo que te genera ingresos sin esfuerzos
+desmedidos.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 26</span>
+              <h3 class="course-item-title">Página 26</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 4
+25
+3. Ley de Pareto: ¿Qué productos mueven la aguja?
+La Ley de Pareto se refleja en muchos negocios:
+20% del esfuerzo genera 80% de los ingresos.
+80% del esfuerzo aporta el 20% restante.
+Preguntate:
+¿Cuáles son los productos que más aportan a tu
+facturación?
+Saber qué productos tienen mayor participación te ayudará a
+enfocar tus recursos y energía en aquello que realmente
+impulsa tu negocio.
+4. ¿Dónde está el dinero inmovilizado en tu negocio?
+Un negocio fluye cuando:
+1. Comprás insumos.
+2. Producís.
+3. Vendés.
+Si ese flujo se detiene, el dinero queda inmovilizado. Por eso,
+analizá:
+¿Tengo exceso de insumos en stock?
+Asegurate de mantener el mínimo indispensable según el
+tiempo que tarda tu proveedor en reponer. Si tenés insumos de
+más, preguntate:
+¿Son insumos clave para varios productos?
+¿Podés venderlos a colegas?
+¿Podés lanzar una edición limitada que los utilice?
+¿Podrías diseñar un producto que demande más de ese
+insumo?</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 27</span>
+              <h3 class="course-item-title">Página 27</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 4
+26
+5. Costos que impactan en los resultados
+Decir &quot;quiero bajar los costos&quot; es ambiguo y puede llevarte a
+decisiones desacertadas. En cambio, preguntate:
+¿Qué costos tienen mayor impacto en cada producto?
+¿Tiene sentido ese impacto?
+¿Puedo delegar o tercerizar alguna etapa para reducir
+costos?
+¿Hay procesos que puedo optimizar sin perder calidad?
+6. Capacidad productiva: Conociendo tus límites y
+cuellos de botella
+En un negocio de manufactura, tu capacidad productiva define
+tu techo de crecimiento. Por eso, es clave preguntarte:
+¿Dónde están los cuellos de botella en mis procesos?
+¿Hay alguna etapa que pueda simplificar o hacer más
+rápida?
+¿Es momento de delegar parte del proceso?
+¿Mis costos son competitivos comparados con un taller
+externo?
+Revisá la hoja de mano de obra para identificar los procesos
+más caros. Encontrar estos cuellos de botella te permitirá
+definir qué y cómo mejorar para crecer sin agotarte.
+7. Si estás empezando: Validación antes de producir en
+escala
+Si todavía no tenés datos de ventas porque estás
+arrancando, es fundamental respetar el proceso de validación.
+Evitá lanzarte con una gran producción desde el inicio, ya que
+esto puede perjudicar tus finanzas.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 28</span>
+              <h3 class="course-item-title">Página 28</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 4
+27
+De los productos que querés validar, producí lo mínimo
+indispensable y luego salí a venderlos. Una estrategia efectiva
+para validar es la preventa, ya que:
+Genera ingresos para comprar más insumos.
+Te asegura invertir solo en productos que tienen demanda
+real.
+Reduce el riesgo de inmovilizar capital en stock innecesario.
+8. Hoja de resultados: Decisiones estratégicas con
+calma
+Los grandes números macro de tu negocio son tus aliados.
+Entenderlos te ayudará a mantener la calma, sin importar si
+estás en un pico alto o bajo de ventas.
+¿Cómo es la ciclicidad de tu negocio?
+Conocer los ciclos naturales de ventas te permite:
+Planificar la producción según los picos.
+Diseñar acciones específicas para momentos de alta
+demanda.
+Crear nuevas categorías o productos que funcionen
+mejor en temporadas bajas.
+Cuando entendés que las fluctuaciones son normales, evitás
+tomar decisiones desde la desesperación, como hacer
+descuentos excesivos que disparan el punto de equilibrio y
+perjudican la rentabilidad.
+Conclusión: Manteniendo el foco en lo que importa
+Todo lo que hicimos en este programa tiene un objetivo:
+ayudarte a sacar conclusiones claras sobre tu negocio para
+que enfoques tus esfuerzos en lo que realmente mueve la
+aguja de los resultados.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 29</span>
+              <h3 class="course-item-title">Página 29</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 4
+28
+Cuando conocés tus números y comprendés tus ciclos, podés
+gestionar tu negocio con confianza, sin ahogarte en los
+altibajos, y tomar decisiones estratégicas que te acerquen a un
+crecimiento sostenible y equilibrado.
+Este módulo final busca darte claridad y herramientas para
+que puedas sentarte frente a tu Leader List y saber
+exactamente qué revisar, qué ajustar, y dónde enfocar tus
+energías. A esto le llamo elevar tu rol como líder del negocio.
+Rutina Mensual para gestionar tus números
+El seguimiento de tus números no es algo que deba dejarse al
+azar. La clave está en integrarlo como un hábito, porque
+cuanto más lo postergás, más difícil se vuelve encontrar el
+momento ideal para hacerlo.
+¿Con qué frecuencia me siento a ver los números?
+Te recomiendo hacerlo una vez por semana o cada quince días.
+Si algo no está saliendo bien, es importante detectarlo a tiempo
+para reaccionar rápido. Medir regularmente te da claridad y te
+ayuda a tomar decisiones informadas.
+Consejo:
+Agendá el tiempo para revisar tus números. Si no lo
+agendás, es fácil procrastinar y dejarlo para cuando
+“tengas ganas”. En mi caso, bloqueo dos horas por semana
+para revisar los números del negocio.
+Además, llevo un registro diario de ingresos y egresos:
+Antes de dormir: Registro los egresos del día.
+A la mañana: Luego de revisar los mails, anoto los ingresos.
+Este hábito me sirve para mantenerme al día. Encontrá tu
+propia rutina y ajustala a tu ritmo, lo importante es que sea
+constante y sostenible.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 30</span>
+              <h3 class="course-item-title">Página 30</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 4
+29
+El momento del cierre: La reflexión
+de fin de mes
+Imaginate esto: Es fin de mes, ya pasó toda la locura de la
+producción, las entregas, las ventas… y es momento de pausar
+y sentarte frente a tus números. Te servís un mate o un café,
+abrís la planilla y te preparás para cerrar el mes.
+El objetivo no es solo completar datos. El cierre es un espacio
+de reflexión consciente. Es tu oportunidad para detenerte, ver
+el camino recorrido, y preguntarte:
+¿Cómo fue este mes?
+¿Dónde estuvieron los desafíos?
+¿Qué salió mejor de lo que esperabas?
+¿Qué podrías ajustar para el próximo mes?
+La planilla es tu espejo, un reflejo de las decisiones que
+tomaste. Revisar tus números no es solo una tarea
+administrativa, es la brújula que guía tu negocio hacia donde
+querés llevarlo.
+Paso a Paso para Cerrar el Mes
+1. Verificá que todo esté registrado
+Primero, controlá que no haya nada suelto:
+Ingresos y egresos: ¿Todo lo que pasó en el mes está
+registrado?
+Costos fijos: Cargá los gastos reales en la hoja
+correspondiente.
+👉 Tip: Si no registrás todo, vas a tener puntos ciegos en tus
+decisiones. Un dato fuera de lugar es como una pieza faltante
+en un rompecabezas: la imagen nunca cierra del todo.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 31</span>
+              <h3 class="course-item-title">Página 31</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 4
+30
+2. Actualizá las unidades vendidas
+En la hoja de costos finales, anotá cuántas unidades vendiste
+de cada producto. Este dato te va a dar claridad sobre qué
+productos están moviendo la aguja y cuáles necesitan una
+revisión.
+3. Revisá el stock
+Asegurate de que el inventario esté actualizado. Si detectás
+algún excedente, preguntate:
+¿Puedo armar una línea de edición limitada para mover
+este stock?
+¿Puedo ofrecer una venta a colegas o proveedores?
+¿Hay algún nuevo producto que pueda aprovechar estos
+insumos?
+4. Cargá los datos reales en la hoja de resultado
+Cargá los datos reales del cierre en la hoja de resultados para
+ver cómo te fue en el mes. Esto te permitirá evaluar:
+¿Cuál fue tu rentabilidad?
+¿Qué cambió respecto del mes anterior?
+¿Cómo cerró el flujo de caja?
+Esta hoja es fundamental porque te da una visión clara del
+estado de salud de tu negocio. Si las cifras no son las
+esperadas, es momento de identificar dónde están los desvíos
+y qué ajustes necesitás hacer el próximo mes.
+5. Reflexioná sobre el mes:
+Volvé a las preguntas del cuarto módulo y analizá qué pasó
+ese mes:
+¿Qué funcionó bien?
+¿Dónde hubo desvíos o imprevistos?
+¿Qué podrías mejorar para el próximo mes?</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 32</span>
+              <h3 class="course-item-title">Página 32</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 4
+31
+¿Cómo abro el nuevo mes?
+1. Duplicá la planilla:
+Hacé una copia del archivo para trabajar sobre el mes
+siguiente.
+2. Prepará cada hoja para el nuevo mes:
+Costos finales: Borrá las unidades vendidas para empezar
+de nuevo y actualizá los precios si es necesario.
+Costos fijos: Dejála en blanco la columna de costos reales y
+ajustá el presupuesto para el nuevo mes.
+Mano de obra: Revisá y actualizá el costo laboral si hubo
+cambios.
+Insumos: Verificá que todos los precios estén actualizados
+según el costo de reposición. Si es necesario, pedí listas
+nuevas a tus proveedores.
+Ahora es tu momento: Abrí un nuevo ciclo
+Ya tenés todo listo para cerrar este mes y empezar el siguiente
+con claridad. Abrí la planilla, revisá los datos y usalos como tu
+hoja de ruta. Cada decisión cuenta y cada número que cargás
+es una pieza más en el rompecabezas de tu negocio.
+¿Lista para empezar el próximo mes con foco y tranquilidad?
+Cierre final: Reflexión, logros y preparación
+para lo que viene
+Llegaste al final de este proceso, y es momento de pausar,
+reflexionar y también celebrar tus avances. Más allá de los
+números, este recorrido es sobre conectar con vos misma,
+tomar control de tu negocio y hacerlo crecer con conciencia y
+claridad.</pre>
+          </article>
+          <article class="course-item ns-pdf-page">
+            <div class="ns-page-heading">
+              <span class="ns-page-number">Página 33</span>
+              <h3 class="course-item-title">Página 33</h3>
+            </div>
+            <pre class="ns-pdf-text">Números Sostenibles
+Módulo 4
+32
+1. Celebrá tus logros del mes
+A veces estamos tan enfocadas en las metas futuras que nos
+olvidamos de celebrar lo que ya conseguimos. Dedicar unos
+minutos a reconocer tus logros, por más pequeños que
+parezcan, es un acto poderoso. Refuerza tu motivación y
+compromiso hacia lo que querés construir.
+Ejercicio:
+Anotá al menos un logro del mes que te haya hecho sentir
+orgullosa.
+No importa si fue un cambio pequeño o un gran avance.
+Todo progreso cuenta.
+👉 Ejemplo: “Logré mantener al día la planilla de ingresos y
+egresos” o “Probé una preventa y funcionó mejor de lo que
+esperaba.”
+Consejo: Guardá estos logros como una referencia positiva
+para los meses en los que las cosas no salgan exactamente
+como planeaste. Son pruebas de que el progreso es posible,
+incluso en los momentos difíciles.
+2. Reflexioná con respeto y amor a tu proceso
+Finalmente, recordá que liderar un negocio es un proceso
+continuo y que no siempre será perfecto. Si en algún momento
+te desviás del camino o dejás de cumplir con tu rutina, no te
+castigues. Retomar sin culpa es parte del aprendizaje. Cada
+paso adelante, por pequeño que sea, sigue siendo progreso.
+Este es tu espacio para crecer y construir el negocio que
+querés, desde el disfrute no desde el agotamiento.
+Con cariño, Yae.</pre>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="js/components.js?v=2"></script>
+</body>
+</html>

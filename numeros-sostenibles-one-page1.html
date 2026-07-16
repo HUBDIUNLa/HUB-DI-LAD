@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Números Sostenibles | HUB DI LAD UNLa</title>
+  <meta name="description" content="Números Sostenibles: guía de costos, rentabilidad, flujo de caja y gestión financiera para emprendimientos de manufactura." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Números Sostenibles | HUB DI LAD UNLa" />
+  <meta property="og:description" content="Gestioná los números de tu negocio con claridad, tranquilidad y sostenibilidad económica y energética." />
+  <meta property="og:image" content="https://hubdiunla.github.io/HUB-DI-LAD/assets/images/logohubteal.png" />
+
+  <link rel="icon" href="assets/images/logohubfavicom.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script src="js/tailwind.config.js?v=1"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css?v=5" />
+
+  <style>
+    :root {
+      --ns-teal: #0f766e;
+      --ns-teal-dark: #134e4a;
+      --ns-mint: #A6FFF0 ;
+      --ns-ink: #17201f;
+      --ns-muted: #5c6f6b;
+      --ns-line: #d7e7e2;
+      --ns-soft: #f3fbf8;
+      --ns-card: #ffffff;
+      --ns-gold: #c8942e;
+      --ns-rose: #b85b6a;
+    }
+
+    .ns-page {
+      font-family: "Karla", system-ui, sans-serif;
+      color: var(--ns-ink);
+      background: linear-gradient(180deg, #ffffff 0%, var(--ns-soft) 42%, #ffffff 100%);
+    }
+
+    .ns-container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .ns-hero {
+      padding: 72px 0 44px;
+      border-bottom: 1px solid var(--ns-line);
+    }
+
+    .ns-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--ns-teal-dark);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .82rem;
+    }
+
+    .ns-kicker i {
+      color: var(--ns-gold);
+    }
+
+    .ns-title {
+      max-width: 880px;
+      font-size: clamp(2.35rem, 6vw, 5.4rem);
+      line-height: .92;
+      font-weight: 800;
+      letter-spacing: 0;
+      color: var(--ns-teal-dark);
+    }
+
+    .ns-lead {
+      max-width: 760px;
+      margin-top: 22px;
+      color: var(--ns-muted);
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      line-height: 1.55;
+    }
+
+    .ns-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, .6fr);
+      gap: 28px;
+      align-items: end;
+    }
+
+    .ns-summary {
+      padding: 22px;
+      border: 1px solid var(--ns-line);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 18px 40px rgba(19, 78, 74, .08);
+    }
+
+    .ns-summary h2 {
+      margin-bottom: 12px;
+      color: var(--ns-teal-dark);
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .ns-summary ul,
+    .ns-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .ns-summary li,
+    .ns-list li {
+      position: relative;
+      padding-left: 22px;
+      line-height: 1.45;
+      color: var(--ns-muted);
+    }
+
+    .ns-summary li::before,
+    .ns-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .62em;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--ns-teal);
+    }
+
+    .ns-section {
+      padding: 54px 0;
+      border-bottom: 1px solid var(--ns-line);
+    }
+
+    .ns-section-header {
+      max-width: 780px;
+      margin-bottom: 28px;
+    }
+
+    .ns-eyebrow {
+      margin-bottom: 8px;
+      color: var(--ns-rose);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .78rem;
+    }
+
+    .ns-section h2 {
+      color: var(--ns-teal-dark);
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .ns-section p {
+      color: var(--ns-muted);
+      line-height: 1.65;
+    }
+
+    .ns-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .ns-card {
+      border: 1px solid var(--ns-line);
+      border-radius: 8px;
+      background: var(--ns-card);
+      padding: 22px;
+    }
+
+    .ns-card h3 {
+      margin-bottom: 10px;
+      color: var(--ns-teal-dark);
+      font-size: 1.28rem;
+      line-height: 1.15;
+      font-weight: 800;
+    }
+
+    .ns-card p + p {
+      margin-top: 12px;
+    }
+
+    .ns-formula-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .ns-formula-card {
+      border: 1px solid rgba(15, 118, 110, .28);
+      border-radius: 8px;
+      background: linear-gradient(180deg, #ffffff 0%, #effbf8 100%);
+      padding: 22px;
+      box-shadow: 0 14px 30px rgba(15, 118, 110, .08);
+    }
+
+    .ns-formula-card h3 {
+      margin-bottom: 12px;
+      color: var(--ns-teal-dark);
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .ns-formula {
+      display: block;
+      margin: 12px 0;
+      padding: 16px;
+      border-left: 5px solid var(--ns-teal);
+      background: #ffffff;
+      color: var(--ns-teal-dark);
+      font-family: "Roboto Mono", ui-monospace, monospace;
+      font-size: .96rem;
+      font-weight: 700;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .ns-example {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--ns-line);
+      color: var(--ns-muted);
+      font-size: .95rem;
+    }
+
+    .ns-steps {
+      counter-reset: ns-step;
+      display: grid;
+      gap: 14px;
+    }
+
+    .ns-step {
+      counter-increment: ns-step;
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid var(--ns-line);
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    .ns-step::before {
+      content: counter(ns-step);
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background: var(--ns-teal-dark);
+      color: #ffffff;
+      font-family: "Roboto Mono", ui-monospace, monospace;
+      font-weight: 800;
+    }
+
+    .ns-step h3 {
+      margin-bottom: 6px;
+      color: var(--ns-teal-dark);
+      font-size: 1.12rem;
+      font-weight: 800;
+    }
+
+    .ns-quote {
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: 8px;
+      background: var(--ns-teal-dark);
+      color: #ffffff;
+    }
+
+    .ns-quote strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ns-mint);
+      font-size: 1.15rem;
+    }
+
+    .ns-quote p {
+      color: #A6FFF0 ;
+    }
+
+    .ns-exercise {
+      border: 1px dashed rgba(15, 118, 110, .45);
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 22px;
+    }
+
+    .ns-prompts {
+      display: grid;
+      gap: 9px;
+      margin-top: 16px;
+      color: var(--ns-muted);
+    }
+
+    .ns-prompt-line {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--ns-line);
+    }
+
+    .ns-footer-note {
+      padding: 44px 0 72px;
+      text-align: center;
+    }
+
+    .ns-footer-note p {
+      max-width: 740px;
+      margin: 0 auto;
+      color: var(--ns-muted);
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    @media (max-width: 860px) {
+      .ns-hero-grid,
+      .ns-grid,
+      .ns-formula-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ns-hero {
+        padding-top: 46px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .ns-container {
+        width: min(100% - 24px, 1120px);
+      }
+
+      .ns-card,
+      .ns-formula-card,
+      .ns-exercise,
+      .ns-summary {
+        padding: 18px;
+      }
+
+      .ns-step {
+        grid-template-columns: 36px minmax(0, 1fr);
+        padding: 16px;
+      }
+
+      .ns-step::before {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main class="ns-page">
+    <section class="ns-hero">
+      <div class="ns-container ns-hero-grid">
+        <div>
+          <div class="ns-kicker"><i class="fa-solid fa-chart-line"></i> Gestión financiera</div>
+          <h1 class="ns-title">Conocé tus números</h1>
+          <p class="ns-lead">
+            Un mini-curso para emprendedores que quieren gestionar sus números con claridad y tranquilidad para 
+            construir un negocio sostenible económica y productivamente.
+          </p>
+        </div>
+
+        <aside class="ns-summary" aria-label="Resumen del recurso">
+          <h2>En esta guía vas a trabajar</h2>
+          <ul>
+            <li>Mentalidad financiera, energía productiva y creencias sobre los números.</li>
+            <li>Costos variables, costos invisibles, mano de obra y costo horario.</li>
+            <li>Costos fijos, Sueldo emprendedor y margen de contribución.</li>
+            <li>Flujo de caja, hábitos financieros saludables y cierre mensual.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="ns-section">
+      <div class="ns-container">
+        <div class="ns-section-header">
+          <p class="ns-eyebrow">Módulo 1</p>
+          <h2>Claridad antes que perfección</h2>
+        </div>
+
+        <div class="ns-grid">
+          <article class="ns-card">
+            <h3>La clave para una transformación real</h3>
+            <p>
+              Este proceso empieza por revisar la relación interna con el dinero, las planillas y 
+              la gestión financiera. Gestionar desde la certeza de tus números: saber cuánto cuesta cada decisión 
+              y cómo afecta tu rentabilidad. Esa claridad no solo empodera, sino que amplifica el impacto positivo 
+              en todo tu equipo de trabajo, tus proveedores y clientes.
+              No se trata solo de aprender cálculos: se trata de liderar el 
+              negocio desde la tranquilidad, la claridad y la capacidad de tomar decisiones estratégicas.
+              La clave está en tomar el control de los números de tu emprendimiento y por ende, de tu vida personal, 
+              aunque eso implique atravesar la incomodidad. Saber enfrentar las cifras es lo que te permitirá 
+              alcanzar la visión de negocio que querés.
+            </p>
+            <p>
+              La energía con la que se encara el aprendizaje importa tanto como el contenido. Ningún proceso de aprendizaje es lineal.
+              Mejorar la relación con los números requiere tiempo, atención y disposición para atravesar 
+              la incomodidad de lo nuevo. Vamos a sumergirnos en los números de tu negocio. Vas a aprender a conocerlos, 
+              entenderlos y, sobretodo, utilizarlos como herramientas para tomar decisiones estratégicas que te permitan 
+              elevar tu emprendimiento al siguiente nivel.
+            </p>
+          </article>
+
+          <article class="ns-card">
+            <h3>Los números marcan el camino</h3>
+            <p>
+              Entender los números del negocio va más allá de completar datos en una planilla. Permite ver qué funciona, qué no funciona, qué productos conviene impulsar, cuándo ajustar precios y cuándo delegar o invertir.
+            </p>
+            <p>
+              La claridad financiera evita trabajar de más en tareas que no mueven la aguja y ayuda a cuidar la rentabilidad en contextos de costos cambiantes.
+            </p>
+          </article>
+        </div>
+
+        <div class="ns-exercise mt-6">
+          <h3 class="text-xl font-extrabold text-[var(--ns-teal-dark)]">Ejercicio de escritura automática</h3>
+          <p class="mt-2">
+            Escribí sin levantar la lapicera, sin juzgarte y completando las frases desde lo primero que aparezca. El objetivo es identificar historias arraigadas que pueden estar limitando tu relación con los números del negocio.
+          </p>
+          <div class="ns-prompts">
+            <div class="ns-prompt-line">Los números me generan...</div>
+            <div class="ns-prompt-line">Sentarme frente a una planilla me hace sentir...</div>
+            <div class="ns-prompt-line">Evito los números porque...</div>
+            <div class="ns-prompt-line">Para materializar mi visión de negocio necesito convertirme en...</div>
+            <div class="ns-prompt-line">Si no entiendo algo, voy a empezar a...</div>
+            <div class="ns-prompt-line">El dinero es... por eso yo...</div>
+          </div>
+        </div>
+
+        <div class="ns-quote">
+          <strong>Carta de compromiso</strong>
+          <p>
+            Me comprometo a elevar mi rol para alcanzar la visión de negocio que deseo construir, respetando mis tiempos de aprendizaje y abriéndome a integrar las herramientas necesarias para crecer desde el amor, no desde la culpa ni el enojo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ns-section">
+      <div class="ns-container">
+        <div class="ns-section-header">
+          <p class="ns-eyebrow">Módulo 2</p>
+          <h2>Costos variables y mano de obra</h2>
+        </div>
+
+        <div class="ns-grid">
+          <article class="ns-card">
+            <h3>Costos variables</h3>
+            <p>
+              Son todos los costos relacionados directamente con el producto que fabricás: insumos, servicios de terceros que intervienen en el proceso productivo, merma o desperdicio y costo de mano de obra.
+            </p>
+            <ul class="ns-list mt-4">
+              <li>Suben cuando producís o vendés más.</li>
+              <li>Incluyen materias primas, packaging, comisiones y procesos productivos activos.</li>
+              <li>Deben actualizarse según costo de reposición.</li>
+            </ul>
+          </article>
+
+          <article class="ns-card">
+            <h3>Mano de obra</h3>
+            <p>
+              La mano de obra corresponde a los procesos donde interviene activamente una persona para fabricar el producto. No incluye tiempos pasivos como cocción, reposo o enfriamiento si no requieren presencia activa.
+            </p>
+            <p>
+              Conocer este costo permite detectar cuellos de botella, comparar con talleres externos, evaluar tercerizaciones, invertir en maquinaria y mejorar la capacidad productiva.
+            </p>
+          </article>
+        </div>
+
+        <div class="ns-formula-grid mt-6">
+          <article class="ns-formula-card">
+            <h3>Costo horario</h3>
+            <code class="ns-formula">Horas trabajadas por mes = horas por día x días por semana x semanas por mes</code>
+            <code class="ns-formula">Costo horario = sueldo mensual / horas trabajadas por mes</code>
+            <p class="ns-example">Ejemplo: 8 x 5 x 4,3 = 172 horas mensuales. $700.000 / 172 = $4.069,77.</p>
+          </article>
+
+          <article class="ns-formula-card">
+            <h3>Costo de mano de obra por unidad</h3>
+            <code class="ns-formula">Costo MO unidad = (tiempo x costo horario x cantidad de personas) / (unidades producidas x factor de rendimiento)</code>
+            <p class="ns-example">Ejemplo tizado y corte: (2 h x $4.069,77 x 1) / (50 unidades x 75%) = $217,05 por unidad.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ns-section">
+      <div class="ns-container">
+        <div class="ns-section-header">
+          <p class="ns-eyebrow">Módulo 3</p>
+          <h2>Costos fijos, margen y punto de equilibrio</h2>
+        </div>
+
+        <div class="ns-grid">
+          <article class="ns-card">
+            <h3>Costos fijos</h3>
+            <p>
+              Son los costos necesarios para que el negocio funcione aunque produzcas poco o mucho: sueldo emprendedor, alquiler, web, servicios, monotributo, publicidad, contador, capacitaciones o amortizaciones.
+            </p>
+          </article>
+
+          <article class="ns-card">
+            <h3>Presupuesto mensual</h3>
+            <p>
+              No es lo mismo comprar intentando gastar lo menos posible que comprar con un presupuesto definido. El control semanal permite corregir desvíos sin esperar a que termine el mes.
+            </p>
+          </article>
+        </div>
+
+        <div class="ns-formula-grid mt-6">
+          <article class="ns-formula-card">
+            <h3>Margen de contribución</h3>
+            <code class="ns-formula">Margen de contribución = precio de venta - costo variable</code>
+            <p class="ns-example">Ejemplo: $8.900 - $1.268,85 = $7.631,15.</p>
+          </article>
+
+          <article class="ns-formula-card">
+            <h3>Punto de equilibrio en unidades</h3>
+            <code class="ns-formula">Punto de equilibrio = costo fijo / margen de contribución unitario</code>
+            <p class="ns-example">Ejemplo: $1.468.800 / $7.631,15 = 193 unidades.</p>
+          </article>
+
+          <article class="ns-formula-card">
+            <h3>Punto de equilibrio en facturación</h3>
+            <code class="ns-formula">Facturación de equilibrio = punto de equilibrio en unidades x precio de venta unitario</code>
+            <p class="ns-example">Ejemplo: 193 unidades x $8.900 = $1.717.700.</p>
+          </article>
+
+          <article class="ns-formula-card">
+            <h3>Rentabilidad</h3>
+            <code class="ns-formula">Margen de contribución total = margen de contribución unitario x unidades vendidas</code>
+            <code class="ns-formula">Rentabilidad = margen de contribución total - costo fijo total</code>
+            <p class="ns-example">Ejemplo: $7.631,15 x 200 = $1.526.230. Luego: $1.526.230 - $1.468.800 = $57.430.</p>
+          </article>
+        </div>
+
+        <div class="ns-grid mt-6">
+          <article class="ns-card">
+            <h3>Flujo de caja</h3>
+            <p>
+              Es el registro de ingresos y egresos del negocio en un período determinado. Sirve para medir liquidez, proyectar pagos, controlar que los ingresos sean mayores que los egresos y analizar cuándo, cuánto y por qué entra o sale dinero.
+            </p>
+          </article>
+
+          <article class="ns-card">
+            <h3>Sueldo emprendedor</h3>
+            <p>
+              Definir un sueldo evita mezclar lo personal con lo comercial. El workbook propone cuatro referencias: sueldo básico, sueldo normal, sueldo ideal y sueldo de autonomía financiera.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ns-section">
+      <div class="ns-container">
+        <div class="ns-section-header">
+          <p class="ns-eyebrow">Módulo 4</p>
+          <h2>Análisis mensual con conciencia</h2>
+        </div>
+
+        <div class="ns-steps">
+          <article class="ns-step">
+            <div>
+              <h3>Cubrí el punto de equilibrio</h3>
+              <p>Revisá si el mix actual de ventas cubre el punto de equilibrio y si tenés capacidad productiva para alcanzar ese volumen.</p>
+            </div>
+          </article>
+
+          <article class="ns-step">
+            <div>
+              <h3>Identificá productos clave</h3>
+              <p>Detectá tus productos estrella y tus caballitos de batalla: los que tienen buen margen, buena demanda o alta rotación.</p>
+            </div>
+          </article>
+
+          <article class="ns-step">
+            <div>
+              <h3>Aplicá Pareto</h3>
+              <p>Preguntate qué productos generan la mayor parte de la facturación y enfocá recursos en lo que realmente mueve la aguja.</p>
+            </div>
+          </article>
+
+          <article class="ns-step">
+            <div>
+              <h3>Revisá dinero inmovilizado</h3>
+              <p>Analizá exceso de insumos o stock terminado y definí acciones para volver a poner ese dinero en movimiento.</p>
+            </div>
+          </article>
+
+          <article class="ns-step">
+            <div>
+              <h3>Detectá costos de impacto</h3>
+              <p>En lugar de querer bajar costos en general, identificá cuáles pesan más en cada producto y si tiene sentido optimizarlos, delegarlos o tercerizarlos.</p>
+            </div>
+          </article>
+
+          <article class="ns-step">
+            <div>
+              <h3>Medí capacidad productiva</h3>
+              <p>Ubicá cuellos de botella, etapas lentas o procesos caros para crecer sin agotarte.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ns-section">
+      <div class="ns-container">
+        <div class="ns-section-header">
+          <p class="ns-eyebrow">Rutina mensual</p>
+          <h2>Cerrar el mes y abrir un nuevo ciclo</h2>
+        </div>
+
+        <div class="ns-grid">
+          <article class="ns-card">
+            <h3>Paso a paso para cerrar</h3>
+            <ul class="ns-list">
+              <li>Verificá que todos los ingresos y egresos estén registrados.</li>
+              <li>Cargá costos fijos reales y actualizá unidades vendidas.</li>
+              <li>Revisá stock, insumos y dinero inmovilizado.</li>
+              <li>Cargá datos reales en la hoja de resultados.</li>
+              <li>Reflexioná: qué funcionó, qué se desvió y qué ajustarías.</li>
+            </ul>
+          </article>
+
+          <article class="ns-card">
+            <h3>Cómo abrir el nuevo mes</h3>
+            <ul class="ns-list">
+              <li>Duplicá la planilla para trabajar sobre el mes siguiente.</li>
+              <li>Borrá unidades vendidas y actualizá precios si corresponde.</li>
+              <li>Dejá en blanco los costos reales y ajustá el presupuesto.</li>
+              <li>Revisá costo laboral, mano de obra e insumos según reposición.</li>
+              <li>Agendá un momento semanal o quincenal para revisar números.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="ns-exercise mt-6">
+          <h3 class="text-xl font-extrabold text-[var(--ns-teal-dark)]">Reflexión de cierre</h3>
+          <div class="ns-prompts">
+            <div class="ns-prompt-line">¿Cómo fue este mes?</div>
+            <div class="ns-prompt-line">¿Dónde estuvieron los desafíos?</div>
+            <div class="ns-prompt-line">¿Qué salió mejor de lo que esperabas?</div>
+            <div class="ns-prompt-line">¿Qué podrías ajustar para el próximo mes?</div>
+            <div class="ns-prompt-line">¿Qué logro del mes querés celebrar?</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ns-footer-note">
+      <div class="ns-container">
+        <p>
+          Conocer tus números no es solo una tarea administrativa: es una forma de liderar tu negocio con más calma, foco y poder de decisión. Cada número que registrás es una pieza más para construir un negocio sostenible desde el disfrute, no desde el agotamiento.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+  <script src="js/components.js?v=2"></script>
+</body>
+</html>
