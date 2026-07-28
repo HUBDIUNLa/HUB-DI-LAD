@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -35,6 +34,10 @@
    
 
     :root {
+      --ns-black: #000000;
+      --ns-white: #ffffff;
+      --web-lad: #A6FFF0;
+      --hub-light-bg: #F5F7F7;
       --ns-teal: #0f766e;
       --ns-teal-dark: #134e4a;
       --ns-mint: #A6FFF0 ;
@@ -2283,6 +2286,353 @@
         box-shadow: .4rem .4rem 0 #000;
       }
     }
+    /* =====================================================
+       PRESENTACIÓN WEB · RECORRIDO Y SISTEMA GENERAL
+       ===================================================== */
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ns-black);
+      background: var(--hub-light-bg);
+    }
+
+    .ns-workbook {
+      padding: clamp(1rem, 3vw, 3rem) 0 5rem;
+    }
+
+    .ns-workbook .resources-intro {
+      padding: 0;
+      background: transparent;
+    }
+
+    .ns-workbook .resources-intro > .container {
+      width: min(92%, 1360px);
+      max-width: none;
+      margin-inline: auto;
+      padding: 0;
+    }
+
+    .ns-workbook .resources-intro-card {
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .ns-page {
+      color: var(--ns-black);
+      background: transparent;
+    }
+
+    .ns-hero {
+      margin: 0 0 clamp(1.25rem, 3vw, 2.5rem);
+      padding: 0;
+      border: 1px solid var(--ns-black);
+      background: var(--web-lad);
+    }
+
+    .ns-hero .ns-container {
+      width: 100%;
+      max-width: none;
+    }
+
+    .ns-hero-grid {
+      grid-template-columns: minmax(0, 1.35fr) minmax(18rem, .65fr);
+      gap: 0;
+      align-items: stretch;
+    }
+
+    .ns-hero-grid > div:first-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2rem, 6vw, 6rem);
+    }
+
+    .ns-title {
+      max-width: 12ch;
+      margin: 0;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(2.8rem, 7vw, 6.8rem);
+      font-weight: 500;
+      line-height: .92;
+      letter-spacing: -.065em;
+      text-transform: uppercase;
+    }
+
+    .ns-lead {
+      max-width: 46rem;
+      margin-top: 1.5rem;
+      font-size: clamp(1.08rem, 1.8vw, 1.45rem);
+      line-height: 1.48;
+    }
+
+    .ns-hero-index {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 0;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      border: 0;
+      border-radius: 0;
+      color: var(--ns-white);
+      background: var(--ns-black);
+      box-shadow: none;
+    }
+
+    .ns-hero-index h2 {
+      margin: 0 0 1.5rem;
+      color: var(--ns-white);
+      font-family: "Roboto Mono", monospace;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .ns-hero-index ol {
+      display: grid;
+      gap: .85rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: ns-course-index;
+    }
+
+    .ns-hero-index li {
+      padding: 0;
+      color: inherit;
+      counter-increment: ns-course-index;
+    }
+
+    .ns-hero-index li::before {
+      content: none;
+    }
+
+    .ns-hero-index a {
+      display: grid;
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: .75rem;
+      align-items: baseline;
+      color: inherit;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+
+    .ns-hero-index a::before {
+      content: counter(ns-course-index, decimal-leading-zero);
+      color: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .ns-hero-index a:hover,
+    .ns-hero-index a:focus-visible {
+      color: var(--web-lad);
+    }
+
+    .ns-hero-note {
+      margin: 2rem 0 0;
+      padding-top: 1rem;
+      border-top: 1px solid var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .78rem;
+      line-height: 1.5;
+    }
+
+    .ns-section {
+      margin: 0 0 clamp(1.25rem, 3vw, 2.5rem);
+      padding: clamp(1.5rem, 4vw, 3.5rem);
+      border: 1px solid var(--ns-black);
+      border-left-width: .55rem;
+      background: var(--ns-white);
+    }
+
+    .ns-section .ns-container {
+      width: 100%;
+      max-width: none;
+    }
+
+    .ns-section-header {
+      max-width: 62rem;
+    }
+
+    .ns-section h2 {
+      max-width: 19ch;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: .96;
+      letter-spacing: -.05em;
+    }
+
+    .ns-section .ns-card {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .ns-section .ns-card h3 {
+      font-size: clamp(1.35rem, 2.4vw, 2rem);
+    }
+
+    .ns-workbook .pt-1 {
+      padding: 0 !important;
+    }
+
+    .ns-workbook .pt-1 > .container {
+      width: 100%;
+      max-width: none;
+      padding: 0;
+    }
+
+    .ns-workbook .space-y-6 {
+      display: grid;
+      gap: clamp(1.25rem, 3vw, 2.5rem);
+      margin-top: 0 !important;
+    }
+
+    .ns-workbook .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+      margin-top: 0;
+    }
+
+    .ns-workbook .course-item {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      padding: clamp(1.25rem, 4vw, 3.5rem);
+      scroll-margin-top: 1rem;
+      border: 1px solid var(--ns-black);
+      border-left: .55rem solid var(--ns-black);
+      border-radius: 0;
+      color: var(--ns-black);
+      background: var(--ns-white);
+      box-shadow: none;
+    }
+
+    .ns-workbook .course-item:nth-child(even) {
+      background: var(--hub-light-bg);
+    }
+
+    .ns-workbook .course-item:target {
+      box-shadow: .7rem .7rem 0 var(--web-lad);
+    }
+
+    .ns-page-heading {
+      margin-bottom: clamp(1.35rem, 3vw, 2.25rem);
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--ns-black);
+    }
+
+    .ns-page-number {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.25rem;
+      padding: .45rem .75rem;
+      opacity: 1;
+      color: var(--ns-white);
+      background: var(--ns-black);
+      text-transform: uppercase;
+    }
+
+    .course-item-title {
+      letter-spacing: -.035em;
+    }
+
+    .ns-guided-kicker,
+    .ns-welcome-kicker,
+    .ns-eyebrow {
+      color: var(--ns-black);
+      font-family: "Roboto Mono", monospace;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .ns-module-anchor {
+      scroll-margin-top: 1rem;
+    }
+
+    .ns-module-anchor::after {
+      content: attr(data-module-label);
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: .45rem .75rem;
+      color: var(--ns-black);
+      background: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .ns-writing-field textarea,
+    .ns-writing-form input {
+      border-radius: 0;
+    }
+
+    @media (max-width: 900px) {
+      .ns-hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ns-hero-index {
+        min-height: 25rem;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .ns-workbook {
+        padding-top: .75rem;
+      }
+
+      .ns-workbook .resources-intro > .container {
+        width: min(94%, 1360px);
+      }
+
+      .ns-hero-grid > div:first-child,
+      .ns-hero-index,
+      .ns-section,
+      .ns-workbook .course-item {
+        padding: 1.2rem;
+      }
+
+      .ns-title {
+        font-size: clamp(2.6rem, 14vw, 4.6rem);
+      }
+
+      .ns-hero-index {
+        min-height: 0;
+      }
+
+      .ns-section,
+      .ns-workbook .course-item {
+        border-left-width: .35rem;
+      }
+
+      .ns-module-anchor::after {
+        position: static;
+        display: inline-flex;
+        margin-bottom: 1rem;
+      }
+
+      .ns-page-heading {
+        align-items: flex-start;
+      }
+    }
+
+    @media print {
+      .ns-hero-index a {
+        color: var(--ns-white);
+      }
+
+      .ns-workbook .course-item {
+        break-inside: avoid;
+      }
+    }
   </style>
 </head>
 
@@ -2294,7 +2644,7 @@
     <section class="resources-intro">
       <div class="container">
         <article class="resources-intro-card">
-           <main class="ns-page">
+           <div class="ns-page">
     <section class="ns-hero">
       <div class="ns-container ns-hero-grid">
         <div>
@@ -2305,14 +2655,17 @@
             construir un negocio sostenible económica y productivamente. 
           </p>
         </div>
-         <aside class="ns-summary" aria-label="Resumen del recurso">
-          <h2>En esta guía vas a trabajar</h2>
-          <ul>
-            <li>Mentalidad financiera, energía productiva y creencias sobre los números.</li>
-            <li>Costos variables, costos invisibles, mano de obra y costo horario.</li>
-            <li>Costos fijos, Sueldo emprendedor y margen de contribución.</li>
-            <li>Flujo de caja, hábitos financieros saludables y cierre mensual.</li>
-          </ul>
+         <aside class="ns-summary ns-hero-index" aria-label="Recorrido del minicurso">
+          <div>
+            <h2>Recorrido</h2>
+            <ol>
+              <li><a href="#modulo-1">Mentalidad y relación con los números</a></li>
+              <li><a href="#modulo-2">Costos variables y mano de obra</a></li>
+              <li><a href="#modulo-3">Costos fijos, margen y rentabilidad</a></li>
+              <li><a href="#modulo-4">Análisis, hábitos y cierre mensual</a></li>
+            </ol>
+          </div>
+          <p class="ns-hero-note">30 páginas didácticas reorganizadas en 4 módulos como una presentación web continua.</p>
         </aside>
       </div>
     </section>
@@ -2348,17 +2701,13 @@
           </article>
         </div>
       </div>
-
-        <article>
-        </article>
-      </div>
     </section>
 
     <section class="pt-1 pb-8 px-6">
       <div class="container">
         <div class="space-y-6 mt-10">
          
-          <article class="course-item ns-pdf-page ns-welcome-page">
+          <article class="course-item ns-pdf-page ns-welcome-page ns-module-anchor" id="modulo-1" data-module-label="Módulo 1">
             <div class="ns-page-heading">
               <span class="ns-page-number">Introducción</span>
               <div class="ns-welcome-title-wrap">
@@ -3119,7 +3468,7 @@
   </div>
 </article>
 
-<article class="course-item ns-pdf-page ns-guided-page">
+<article class="course-item ns-pdf-page ns-guided-page ns-module-anchor" id="modulo-2" data-module-label="Módulo 2">
   <div class="ns-page-heading">
     <span class="ns-page-number">Página 13</span>
 
@@ -3530,7 +3879,7 @@ tarea; es por eso que no se tiene en cuenta.
   </div>
 </article>
 
-<article class="course-item ns-pdf-page ns-guided-page">
+<article class="course-item ns-pdf-page ns-guided-page ns-module-anchor" id="modulo-3" data-module-label="Módulo 3">
   <div class="ns-page-heading">
     <span class="ns-page-number">Página 17</span>
 
@@ -4205,7 +4554,7 @@ tarea; es por eso que no se tiene en cuenta.
      PÁGINA 25 · ANALIZÁ TUS NÚMEROS
      ===================================================== -->
 
-<article class="course-item ns-pdf-page ns-guided-page">
+<article class="course-item ns-pdf-page ns-guided-page ns-module-anchor" id="modulo-4" data-module-label="Módulo 4">
   <div class="ns-page-heading">
     <span class="ns-page-number">Página 25</span>
 
@@ -4948,6 +5297,9 @@ tarea; es por eso que no se tiene en cuenta.
       </p>
     </aside>
 
+    <br>
+    <br>
+
     <blockquote class="ns-author-closing">
       <p>
         <strong>¡Felicitaciones!</strong> Llegaste al final de este módulo. Ahora
@@ -4970,8 +5322,13 @@ tarea; es por eso que no se tiene en cuenta.
          
 
 
-         
-          
+        </div>
+      </div>
+    </section>
+  </div>
+        </article>
+      </div>
+    </section>
   </main>
 
   <div id="footer"></div>

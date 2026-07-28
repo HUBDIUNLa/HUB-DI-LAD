@@ -1,0 +1,945 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Publicidad Digital | HUB DI LAD UNLa</title>
+  <meta name="description" content="Módulo 5 de Publicidad Digital reorganizado como una guía web de campañas, plataformas, segmentación, métricas y optimización." />
+
+ <link rel="icon" href="assets/images/logohubfavicom.ico" type="image/x-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script src="js/tailwind.config.js?v=1"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="css/style.css?v=5" />
+
+  <style>
+    :root {
+      --web-lad: #A6FFF0;
+      --black: #000000;
+      --white: #ffffff;
+      --hub-light-bg: #F5F7F7;
+      --line: #cbd2d2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--black);
+      background: var(--hub-light-bg);
+      font-family: "Karla", system-ui, sans-serif;
+    }
+
+    .pm-course {
+      padding: clamp(1rem, 3vw, 3rem) 0 5rem;
+    }
+
+    .pm-container {
+      width: min(92%, 1360px);
+      margin-inline: auto;
+    }
+
+    .pm-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(18rem, .65fr);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+    }
+
+    .pm-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 42rem;
+      padding: clamp(2rem, 6vw, 6rem);
+    }
+
+    .pm-eyebrow,
+    .pm-kicker,
+    .pm-card-label,
+    .pm-template-code {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .pm-eyebrow {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: .78rem;
+    }
+
+    .pm-hero h1 {
+      max-width: 12ch;
+      margin: 0;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(2.8rem, 7vw, 6.6rem);
+      font-weight: 500;
+      line-height: .92;
+      letter-spacing: -.065em;
+      text-transform: uppercase;
+    }
+
+    .pm-hero-copy > p {
+      max-width: 48rem;
+      margin: 1.5rem 0 0;
+      font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+      line-height: 1.48;
+    }
+
+    .pm-hero-index {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .pm-hero-index h2 {
+      margin: 0 0 1.5rem;
+      font-family: "Roboto Mono", monospace;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .pm-hero-index ol {
+      display: grid;
+      gap: .8rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: pm-index;
+    }
+
+    .pm-hero-index li {
+      counter-increment: pm-index;
+    }
+
+    .pm-hero-index a {
+      display: grid;
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: .75rem;
+      align-items: baseline;
+      color: inherit;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+
+    .pm-hero-index a::before {
+      content: counter(pm-index, decimal-leading-zero);
+      color: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .pm-hero-index a:hover,
+    .pm-hero-index a:focus-visible {
+      color: var(--web-lad);
+    }
+
+    .pm-hero-note {
+      margin: 2rem 0 0;
+      padding-top: 1rem;
+      border-top: 1px solid var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .78rem;
+      line-height: 1.5;
+    }
+
+    .pm-section {
+      margin-top: clamp(1.25rem, 3vw, 2.5rem);
+      padding: clamp(1.25rem, 4vw, 3.5rem);
+      scroll-margin-top: 1rem;
+      border: 1px solid var(--black);
+      border-left-width: .55rem;
+      background: var(--white);
+    }
+
+    .pm-section:nth-of-type(even) {
+      background: var(--hub-light-bg);
+    }
+
+    .pm-section-header {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      margin-bottom: clamp(1.75rem, 4vw, 3rem);
+    }
+
+    .pm-section-number {
+      display: grid;
+      width: 3rem;
+      height: 3rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .pm-kicker {
+      display: block;
+      margin-bottom: .4rem;
+      font-size: .72rem;
+    }
+
+    .pm-section h2 {
+      max-width: 23ch;
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: .96;
+      letter-spacing: -.05em;
+    }
+
+    .pm-section h3 {
+      margin: clamp(2.5rem, 5vw, 4rem) 0 1rem;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+
+    .pm-lead {
+      max-width: 62rem;
+      margin: 0 0 1.5rem;
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      line-height: 1.4;
+    }
+
+    .pm-copy {
+      max-width: 62rem;
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    .pm-copy p {
+      margin: 0 0 1.25rem;
+    }
+
+    .pm-grid-2,
+    .pm-grid-3,
+    .pm-grid-4,
+    .pm-glossary {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .pm-grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pm-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pm-grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .pm-glossary {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pm-card {
+      min-width: 0;
+      padding: clamp(1.1rem, 2.5vw, 1.75rem);
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+    }
+
+    .pm-card--mint {
+      background: var(--web-lad);
+    }
+
+    .pm-card--black {
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .pm-card-label {
+      display: block;
+      margin-bottom: .8rem;
+      font-size: .7rem;
+    }
+
+    .pm-card--black .pm-card-label {
+      color: var(--web-lad);
+    }
+
+    .pm-card h4 {
+      margin: 0 0 .75rem;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      line-height: 1.1;
+    }
+
+    .pm-card p,
+    .pm-card ul {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .pm-card ul {
+      padding-left: 1.1rem;
+    }
+
+    .pm-manifesto {
+      margin: 2rem 0;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      border: 1px solid var(--black);
+      color: var(--white);
+      background: var(--black);
+      box-shadow: .7rem .7rem 0 var(--web-lad);
+      font-size: clamp(1.4rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -.03em;
+    }
+
+    .pm-manifesto p {
+      max-width: 34ch;
+      margin: 0;
+    }
+
+    .pm-formula {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      align-items: center;
+      margin: 1.5rem 0;
+      padding: 1.2rem;
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+    }
+
+    .pm-formula span {
+      padding: .4rem .6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-steps {
+      display: grid;
+      gap: .75rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: pm-steps;
+    }
+
+    .pm-steps li {
+      display: grid;
+      grid-template-columns: 2.8rem minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      padding: 1rem;
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+      counter-increment: pm-steps;
+    }
+
+    .pm-steps li::before {
+      content: counter(pm-steps, decimal-leading-zero);
+      display: grid;
+      width: 2.8rem;
+      height: 2.8rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .pm-steps strong {
+      display: block;
+      margin-bottom: .25rem;
+    }
+
+    .pm-checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .6rem 1rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pm-checklist li {
+      position: relative;
+      padding: .85rem 1rem .85rem 2.6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+      line-height: 1.4;
+    }
+
+    .pm-checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 1rem;
+      font-weight: 800;
+    }
+
+    .pm-figure {
+      margin: 1.5rem 0 0;
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .pm-figure figcaption {
+      padding: .75rem 1rem;
+      border-top: 1px solid var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .76rem;
+      line-height: 1.4;
+    }
+
+    .pm-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      margin: 1.5rem 0;
+      border: 1px solid var(--black);
+    }
+
+    .pm-flow div {
+      padding: 1.2rem;
+      border-right: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-flow div:last-child {
+      border-right: 0;
+      background: var(--web-lad);
+    }
+
+    .pm-flow strong {
+      display: block;
+      margin-bottom: .35rem;
+    }
+
+    .pm-writing {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+    }
+
+    .pm-writing label {
+      display: grid;
+      gap: .5rem;
+      font-weight: 700;
+    }
+
+    .pm-writing textarea {
+      width: 100%;
+      min-height: 7rem;
+      padding: 1rem;
+      resize: vertical;
+      border: 1px solid var(--black);
+      border-radius: 0;
+      color: var(--black);
+      background: var(--white);
+      font: inherit;
+    }
+
+    .pm-footer-note {
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .pm-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-hero-copy {
+        min-height: 34rem;
+      }
+
+      .pm-grid-4,
+      .pm-glossary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .pm-grid-2,
+      .pm-grid-3,
+      .pm-grid-4,
+      .pm-glossary,
+      .pm-checklist,
+      .pm-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-section {
+        padding: 1.1rem;
+        border-left-width: .35rem;
+      }
+
+      .pm-section-header {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-hero-copy,
+      .pm-hero-index {
+        padding: 1.3rem;
+      }
+
+      .pm-hero-copy {
+        min-height: 30rem;
+      }
+
+      .pm-flow div {
+        border-right: 0;
+        border-bottom: 1px solid var(--black);
+      }
+
+      .pm-flow div:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media print {
+      .pm-section,
+      .pm-card,
+      .pm-figure {
+        break-inside: avoid;
+      }
+
+      .pm-writing textarea {
+        resize: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main class="pm-course">
+    <div class="pm-container">
+      <header class="pm-hero">
+        <div class="pm-hero-copy">
+          <span class="pm-eyebrow">Marketing 4.0 · Módulo 5</span>
+          <h1>Publicidad Digital</h1>
+          <p>Una guía práctica para elegir campañas, plataformas y audiencias, medir resultados y optimizar la inversión publicitaria sin adivinar.</p>
+        </div>
+
+        <nav class="pm-hero-index" aria-label="Recorrido de la clase">
+          <div>
+            <h2>Recorrido</h2>
+            <ol>
+              <li><a href="#fundamentos">Fundamentos y glosario</a></li>
+              <li><a href="#tipos">Tipos de publicidad</a></li>
+              <li><a href="#plataformas">Plataformas publicitarias</a></li>
+              <li><a href="#segmentacion">Segmentación avanzada</a></li>
+              <li><a href="#remarketing">Remarketing</a></li>
+              <li><a href="#metricas">KPIs, ROI y ROAS</a></li>
+              <li><a href="#optimizacion">Optimización y test A/B</a></li>
+            </ol>
+          </div>
+          <p class="pm-hero-note">137 diapositivas reorganizadas en 7 módulos web, preservando conceptos, fórmulas, ejemplos y criterios de decisión.</p>
+        </nav>
+      </header>
+
+      <section class="pm-section" id="fundamentos">
+        <header class="pm-section-header">
+          <span class="pm-section-number">01</span>
+          <div><span class="pm-kicker">Punto de partida</span><h2>La pauta potencia la estrategia</h2></div>
+        </header>
+
+        <p class="pm-lead">La publicidad digital no reemplaza una estrategia: la amplifica. Permite invertir para aumentar alcance, captar demanda y generar conversiones de manera controlable y medible.</p>
+
+        <div class="pm-manifesto"><p>La publicidad digital no funciona por “poner plata”. Funciona cuando conecta objetivo, audiencia, oferta, destino y medición.</p></div>
+
+        <div class="pm-flow" aria-label="Elementos de una campaña efectiva">
+          <div><strong>Objetivo</strong>Qué resultado concreto necesita el negocio.</div>
+          <div><strong>Audiencia</strong>A quién debe llegar el anuncio y en qué momento.</div>
+          <div><strong>Oferta y destino</strong>Qué propuesta recibe y dónde continúa la experiencia.</div>
+          <div><strong>Medición</strong>Qué señal confirma si conviene sostener, corregir o detener.</div>
+        </div>
+
+        <h3>¿Qué permite hacer?</h3>
+        <ul class="pm-checklist">
+          <li>Segmentar a quién mostrar el anuncio.</li>
+          <li>Elegir el objetivo de campaña.</li>
+          <li>Controlar presupuesto e inversión.</li>
+          <li>Medir resultados en tiempo real.</li>
+          <li>Optimizar mientras la campaña está activa.</li>
+          <li>Acelerar etapas del recorrido de compra.</li>
+        </ul>
+
+        <h3>Puede cumplir diferentes funciones</h3>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Dar a conocer</h4><p>Instalar una marca, un producto, un lanzamiento o una propuesta.</p></article>
+          <article class="pm-card"><h4>Atraer tráfico</h4><p>Llevar personas hacia una web, landing, catálogo o WhatsApp.</p></article>
+          <article class="pm-card"><h4>Captar leads</h4><p>Conseguir consultas, formularios o datos de potenciales clientes.</p></article>
+          <article class="pm-card"><h4>Vender</h4><p>Impulsar compras online, reservas o acciones comerciales concretas.</p></article>
+          <article class="pm-card"><h4>Hacer remarketing</h4><p>Volver a impactar a quienes ya mostraron interés.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Sostener presencia</h4><p>Acompañar procesos de decisión que requieren varios contactos.</p></article>
+        </div>
+
+        <h3>Mini glosario</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/publicidad-digital-modulo-5/slide-007.jpg" alt="Glosario original de publicidad digital" loading="lazy" />
+          <figcaption>Los términos básicos conectan visibilidad, costo, acción y retorno.</figcaption>
+        </figure>
+
+        <div class="pm-glossary">
+          <article class="pm-card"><h4>Campaña</h4><p>Conjunto organizado de anuncios creado para alcanzar un objetivo.</p></article>
+          <article class="pm-card"><h4>Segmentación</h4><p>Filtros para mostrar la publicidad a las personas correctas.</p></article>
+          <article class="pm-card"><h4>Impresiones</h4><p>Cantidad de veces que un anuncio fue mostrado.</p></article>
+          <article class="pm-card"><h4>CTR</h4><p>Porcentaje de personas que hicieron clic sobre quienes vieron el anuncio.</p></article>
+          <article class="pm-card"><h4>Conversión</h4><p>Acción deseada: compra, consulta, mensaje, registro o formulario.</p></article>
+          <article class="pm-card"><h4>CPC / CPM / CPA</h4><p>Costo por clic, por mil impresiones y por adquisición o acción.</p></article>
+          <article class="pm-card"><h4>ROI</h4><p>Retorno sobre toda la inversión realizada.</p></article>
+          <article class="pm-card"><h4>ROAS</h4><p>Retorno específico sobre el gasto publicitario.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Funnel</h4><p>Etapas desde el descubrimiento hasta la compra y la fidelización.</p></article>
+        </div>
+      </section>
+
+      <section class="pm-section" id="tipos">
+        <header class="pm-section-header">
+          <span class="pm-section-number">02</span>
+          <div><span class="pm-kicker">Bloque 1</span><h2>Tipos de publicidad online</h2></div>
+        </header>
+
+        <p class="pm-lead">El tipo de anuncio se elige según el momento del cliente, el objetivo del negocio y la decisión que se quiere provocar.</p>
+
+        <h3>Search Ads: capturar demanda existente</h3>
+        <div class="pm-grid-2">
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Intención alta</span><h4>La persona ya está buscando</h4><p>Los anuncios aparecen como respuesta a una necesidad explícita. Son especialmente útiles para leads, consultas, compras y negocios locales.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Cómo funciona</span><h4>Palabras clave y subasta</h4><p>La marca vincula anuncios con búsquedas. No gana solamente quien paga más: también cuentan relevancia, calidad del texto y coherencia entre búsqueda, anuncio y landing.</p></article>
+        </div>
+
+        <ul class="pm-checklist">
+          <li>Usar concordancia amplia, de frase o exacta.</li>
+          <li>Agregar palabras negativas para evitar búsquedas inútiles.</li>
+          <li>Crear anuncios específicos para cada intención.</li>
+          <li>Enviar a una página coherente con la búsqueda.</li>
+        </ul>
+
+        <figure class="pm-figure">
+          <img src="assets/images/publicidad-digital-modulo-5/slide-023.jpg" alt="Ejemplo original de Quality Score alto y bajo" loading="lazy" />
+          <figcaption>La calidad mejora cuando palabra clave, anuncio y página de destino responden exactamente a la búsqueda.</figcaption>
+        </figure>
+
+        <div class="pm-grid-2">
+          <article class="pm-card"><h4>Conviene cuando</h4><p>El producto ya tiene búsquedas, existe urgencia o una necesidad concreta y el negocio quiere captar personas listas para consultar.</p></article>
+          <article class="pm-card pm-card--black"><h4>No es la mejor opción cuando</h4><p>El mercado todavía no busca la propuesta, es necesario educar primero o el objetivo principal es inspirar y construir deseo.</p></article>
+        </div>
+
+        <h3>Display Ads: visibilidad y recordación</h3>
+        <p class="pm-copy">Son banners, imágenes o anuncios responsivos que aparecen en sitios, aplicaciones y redes de contenido. El usuario no estaba buscando necesariamente el producto: la plataforma lo selecciona por intereses, comportamiento, visitas previas o contexto.</p>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Awareness</h4><p>Generar reconocimiento e instalar la marca.</p></article>
+          <article class="pm-card"><h4>Acompañamiento</h4><p>Reforzar una oferta o un proceso comercial más largo.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Remarketing visual</h4><p>Recordar la propuesta a quienes ya visitaron el sitio.</p></article>
+        </div>
+        <figure class="pm-figure">
+          <img src="assets/images/publicidad-digital-modulo-5/slide-044.jpg" alt="Ejemplos originales de uso inteligente de Display Ads" loading="lazy" />
+          <figcaption>Display debe evaluarse por la función que cumple, no solamente por venta directa.</figcaption>
+        </figure>
+
+        <h3>Social Ads: interrumpir con relevancia</h3>
+        <p class="pm-copy">Corren dentro de Meta, TikTok, LinkedIn, Pinterest o X. Como la persona está en modo scroll y no en modo búsqueda, la creatividad debe captar atención, generar identificación y proponer una acción clara.</p>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Formatos</h4><p>Imagen, carrusel, historia, reel, video, formulario, catálogo, mensaje o documento patrocinado.</p></article>
+          <article class="pm-card"><h4>Objetivos</h4><p>Descubrimiento, tráfico, leads, mensajes, ventas, posicionamiento y remarketing.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Fortaleza</h4><p>Combina segmentación, creatividad y variedad de objetivos.</p></article>
+        </div>
+
+        <h3>Video Ads: mostrar, explicar y emocionar</h3>
+        <p class="pm-copy">El video funciona cuando hay algo que mostrar en acción, enseñar, comparar, narrar, probar o hacer sentir. Puede ser vertical breve, in-stream, bumper, reel patrocinado, demostración, tutorial o testimonio.</p>
+        <ul class="pm-checklist">
+          <li>El gancho debe aparecer en los primeros segundos.</li>
+          <li>La secuencia debe sostener claridad y ritmo.</li>
+          <li>El formato tiene que adaptarse al canal.</li>
+          <li>Un video largo o lento no se salva por tener pauta.</li>
+        </ul>
+
+        <figure class="pm-figure">
+          <img src="assets/images/publicidad-digital-modulo-5/slide-067.jpg" alt="Tabla comparativa original de tipos de publicidad" loading="lazy" />
+          <figcaption>Search captura intención; Display acompaña; Social descubre; Video demuestra y construye consideración.</figcaption>
+        </figure>
+      </section>
+
+      <section class="pm-section" id="plataformas">
+        <header class="pm-section-header">
+          <span class="pm-section-number">03</span>
+          <div><span class="pm-kicker">Bloque 2</span><h2>Plataformas publicitarias</h2></div>
+        </header>
+
+        <p class="pm-lead">La plataforma no hace magia. Ordena objetivo, audiencia, creatividad, presupuesto, evento de conversión y datos para decidir a quién mostrar el anuncio.</p>
+
+        <h3>Meta Ads</h3>
+        <p class="pm-copy">Trabaja sobre una lógica de interrupción inteligente: encuentra personas con probabilidad de interesarse o actuar. Puede distribuir anuncios en Instagram, Facebook, Messenger y Audience Network.</p>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Campaña</h4><p>Define el objetivo: reconocimiento, tráfico, interacción, leads, ventas o mensajes.</p></article>
+          <article class="pm-card"><h4>Conjunto</h4><p>Define audiencia, ubicaciones, calendario y presupuesto.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Anuncio</h4><p>Es la pieza visual y textual que recibe el usuario.</p></article>
+        </div>
+        <figure class="pm-figure">
+          <img src="assets/images/publicidad-digital-modulo-5/slide-074.jpg" alt="Estructura original de una campaña en Meta Ads" loading="lazy" />
+          <figcaption>Elegir correctamente el objetivo determina cómo aprende y optimiza la plataforma.</figcaption>
+        </figure>
+        <div class="pm-manifesto"><p>Sin Pixel de Meta se pierde capacidad de remarketing, atribución y optimización para conversiones.</p></div>
+
+        <h3>Google Ads</h3>
+        <p class="pm-copy">Trabaja especialmente sobre intención. Search responde a búsquedas; Display aporta alcance visual; Shopping presenta productos; YouTube utiliza video; Performance Max distribuye en varios canales.</p>
+        <ul class="pm-checklist">
+          <li>Priorizar palabras con intención comercial.</li>
+          <li>Revisar términos reales de búsqueda.</li>
+          <li>Usar segmentación geográfica adecuada.</li>
+          <li>Relacionar anuncio y landing.</li>
+          <li>Entender presupuesto, puja y competencia.</li>
+          <li>Distinguir clics de resultados.</li>
+        </ul>
+
+        <h3>TikTok Ads</h3>
+        <p class="pm-copy">Trabaja sobre descubrimiento algorítmico. La creatividad tiene enorme peso y debe sentirse nativa: videos que parezcan parte de TikTok, no una publicidad tradicional.</p>
+        <div class="pm-grid-4">
+          <article class="pm-card"><h4>In-Feed</h4><p>Video integrado al feed “Para ti”.</p></article>
+          <article class="pm-card"><h4>TopView</h4><p>Primer anuncio al abrir la aplicación.</p></article>
+          <article class="pm-card"><h4>Hashtag</h4><p>Desafíos patrocinados con participación.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Spark Ads</h4><p>Amplificación de contenido orgánico que ya funcionó.</p></article>
+        </div>
+
+        <h3>LinkedIn Ads</h3>
+        <p class="pm-copy">Su gran ventaja es la segmentación profesional: cargo, industria, tamaño de empresa, antigüedad, área funcional y nivel de decisión. Es relevante para B2B, servicios profesionales y ofertas de alto valor.</p>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Contenido patrocinado</h4><p>Publicaciones, documentos o casos en el feed.</p></article>
+          <article class="pm-card"><h4>Lead Gen Forms</h4><p>Formularios integrados para descargar, consultar o pedir reunión.</p></article>
+          <article class="pm-card pm-card--black"><h4>Costo y calidad</h4><p>El lead suele ser más caro que en Meta, pero puede valer más por su calidad y capacidad de decisión.</p></article>
+        </div>
+
+        <h3>Cómo elegir</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/publicidad-digital-modulo-5/slide-096.jpg" alt="Tabla comparativa original de plataformas publicitarias" loading="lazy" />
+          <figcaption>La plataforma correcta conecta el objetivo del negocio con el comportamiento de la audiencia.</figcaption>
+        </figure>
+        <div class="pm-grid-4">
+          <article class="pm-card"><h4>Meta</h4><p>Descubrimiento, B2C, mensajes, leads y remarketing.</p></article>
+          <article class="pm-card"><h4>Google</h4><p>Demanda activa, búsqueda, consultas y ventas.</p></article>
+          <article class="pm-card"><h4>TikTok</h4><p>Descubrimiento rápido, video y audiencias jóvenes.</p></article>
+          <article class="pm-card pm-card--mint"><h4>LinkedIn</h4><p>B2B, decisores y leads profesionales calificados.</p></article>
+        </div>
+      </section>
+
+      <section class="pm-section" id="segmentacion">
+        <header class="pm-section-header">
+          <span class="pm-section-number">04</span>
+          <div><span class="pm-kicker">Bloque 3</span><h2>Segmentación avanzada</h2></div>
+        </header>
+
+        <p class="pm-lead">Una campaña bien diseñada puede fracasar si se muestra a las personas equivocadas. Segmentar es definir quién debe recibir el anuncio y adaptar el mensaje a ese grupo.</p>
+        <div class="pm-manifesto"><p>Hablarle a todos es no hablarle a nadie.</p></div>
+
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Demográfica</h4><p>Edad, género, estado civil, educación u ocupación.</p></article>
+          <article class="pm-card"><h4>Geográfica</h4><p>Ciudad, radio, provincia, país o zonas específicas.</p></article>
+          <article class="pm-card"><h4>Intereses</h4><p>Temas, afinidades, consumo de contenido y categorías.</p></article>
+          <article class="pm-card"><h4>Comportamientos</h4><p>Compra online, uso de dispositivos, viajes u otras señales.</p></article>
+          <article class="pm-card"><h4>Profesional</h4><p>Cargo, industria, empresa, antigüedad, aptitudes y formación.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Keywords</h4><p>Términos que expresan una necesidad o intención concreta en buscadores.</p></article>
+        </div>
+
+        <figure class="pm-figure">
+          <img src="assets/images/publicidad-digital-modulo-5/slide-105.jpg" alt="Tipos originales de segmentación publicitaria" loading="lazy" />
+          <figcaption>Cada criterio aporta una señal diferente sobre relevancia y probabilidad de respuesta.</figcaption>
+        </figure>
+
+        <h3>Audiencias propias y similares</h3>
+        <div class="pm-grid-2">
+          <article class="pm-card pm-card--black"><span class="pm-card-label">Custom Audiences</span><h4>Personas que ya tuvieron contacto</h4><p>Listas de clientes, visitantes del sitio, compradores, personas que vieron videos o interactuaron con los perfiles. Requieren datos propios y una medición bien configurada.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Lookalike Audiences</span><h4>Personas nuevas parecidas</h4><p>La plataforma toma una audiencia valiosa como referencia y busca usuarios con características y comportamientos similares.</p></article>
+        </div>
+
+        <div class="pm-formula"><span>Custom Audience</span> + <span>Lookalike</span> = <span>Base para escalar</span></div>
+
+        <h3>¿Para qué sirve segmentar?</h3>
+        <ul class="pm-checklist">
+          <li>Evitar desperdicio de presupuesto.</li>
+          <li>Mejorar la relevancia del anuncio.</li>
+          <li>Adaptar propuesta y lenguaje.</li>
+          <li>Aumentar probabilidad de respuesta.</li>
+          <li>Diferenciar prospectos fríos y calientes.</li>
+          <li>Construir secuencias por etapa.</li>
+        </ul>
+      </section>
+
+      <section class="pm-section" id="remarketing">
+        <header class="pm-section-header">
+          <span class="pm-section-number">05</span>
+          <div><span class="pm-kicker">Oportunidades conocidas</span><h2>Remarketing</h2></div>
+        </header>
+
+        <p class="pm-lead">Remarketing es volver a impactar a personas que visitaron el sitio, vieron un video, interactuaron, dejaron un formulario, abandonaron un carrito o ya forman parte de una lista.</p>
+        <div class="pm-manifesto"><p>Es como volver a hablarle a alguien que entró al local, miró, preguntó y se fue sin comprar.</p></div>
+
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Web</h4><p>Banners o anuncios sociales para visitantes del sitio.</p></article>
+          <article class="pm-card"><h4>Video</h4><p>Mensajes diferentes según cuánto contenido vio la persona.</p></article>
+          <article class="pm-card"><h4>Social</h4><p>Impactar a quienes interactuaron con perfiles o publicaciones.</p></article>
+          <article class="pm-card"><h4>Email / listas</h4><p>Subir contactos y acompañar el proceso con anuncios.</p></article>
+          <article class="pm-card"><h4>Carrito abandonado</h4><p>Recordar el producto específico que no se compró.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Formularios y WhatsApp</h4><p>Retomar consultas incompletas o conversaciones que no cerraron.</p></article>
+        </div>
+
+        <figure class="pm-figure">
+          <img src="assets/images/publicidad-digital-modulo-5/slide-111.jpg" alt="Ejemplos originales de remarketing por tipo de negocio" loading="lazy" />
+          <figcaption>El mensaje cambia según la interacción previa y la decisión pendiente.</figcaption>
+        </figure>
+
+        <ul class="pm-checklist">
+          <li>Recuperar oportunidades.</li>
+          <li>Sostener recordación.</li>
+          <li>Acompañar decisiones largas.</li>
+          <li>Mejorar la tasa de conversión.</li>
+        </ul>
+      </section>
+
+      <section class="pm-section" id="metricas">
+        <header class="pm-section-header">
+          <span class="pm-section-number">06</span>
+          <div><span class="pm-kicker">Bloque 4</span><h2>KPIs, ROI y ROAS</h2></div>
+        </header>
+
+        <p class="pm-lead">Una métrica es un dato. Un KPI es una métrica prioritaria para decidir. El resultado de negocio es el efecto final que se necesita alcanzar.</p>
+
+        <div class="pm-grid-3">
+          <article class="pm-card"><span class="pm-card-label">Métrica</span><h4>Impresiones</h4><p>Cuántas veces se mostró la publicidad.</p></article>
+          <article class="pm-card"><span class="pm-card-label">KPI</span><h4>Costo por lead</h4><p>Cuánto costó conseguir una oportunidad.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Resultado</span><h4>Ventas cerradas</h4><p>El efecto económico final de la campaña.</p></article>
+        </div>
+
+        <figure class="pm-figure">
+          <img src="assets/images/publicidad-digital-modulo-5/slide-117.jpg" alt="Tabla original de KPIs de publicidad digital" loading="lazy" />
+          <figcaption>Los indicadores muestran visibilidad, interés, costo, conversión y fatiga.</figcaption>
+        </figure>
+
+        <h3>Fórmulas principales</h3>
+        <div class="pm-grid-2">
+          <article class="pm-card"><h4>CTR</h4><p><strong>(Clics / Impresiones) × 100</strong></p><p>Ayuda a evaluar si el anuncio logra despertar interés.</p></article>
+          <article class="pm-card"><h4>CPC</h4><p><strong>Gasto total / Clics</strong></p><p>Indica cuánto se paga por cada visita conseguida.</p></article>
+          <article class="pm-card"><h4>CPA</h4><p><strong>Gasto total / Conversiones</strong></p><p>Indica el costo de cada acción o adquisición.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Tasa de conversión</h4><p><strong>(Conversiones / Clics) × 100</strong></p><p>Mide qué proporción de las visitas completa la acción.</p></article>
+        </div>
+
+        <h3>ROI: retorno sobre la inversión total</h3>
+        <p class="pm-copy">Incluye publicidad, producción, diseño, equipo, tiempo y otros costos necesarios para generar el resultado.</p>
+        <div class="pm-formula"><span>ROI</span> = <span>(Ingresos − inversión total) / inversión total</span> × <span>100</span></div>
+        <figure class="pm-figure">
+          <img src="assets/images/publicidad-digital-modulo-5/slide-119.jpg" alt="Fórmula original del ROI" loading="lazy" />
+          <figcaption>Un ROI positivo indica que el ingreso superó la inversión total.</figcaption>
+        </figure>
+
+        <article class="pm-card pm-card--mint">
+          <span class="pm-card-label">Ejemplo · Curso online</span>
+          <h4>ROI del 60%</h4>
+          <p>Campaña: $50.000 + diseño: $10.000 = inversión total de $60.000. Doce inscripciones de $8.000 generan $96.000. ROI = (($96.000 − $60.000) / $60.000) × 100 = 60%.</p>
+        </article>
+
+        <h3>ROAS: retorno sobre el gasto publicitario</h3>
+        <p class="pm-copy">Mide solamente la relación entre ingresos atribuidos y dinero gastado directamente en anuncios.</p>
+        <div class="pm-formula"><span>ROAS</span> = <span>Ingresos generados</span> / <span>Gasto publicitario</span></div>
+        <figure class="pm-figure">
+          <img src="assets/images/publicidad-digital-modulo-5/slide-123.jpg" alt="Fórmula original del ROAS" loading="lazy" />
+          <figcaption>Un ROAS de 3x significa que cada peso de pauta generó tres pesos de ingresos.</figcaption>
+        </figure>
+
+        <article class="pm-card pm-card--mint">
+          <span class="pm-card-label">Ejemplo · Pinturería</span>
+          <h4>ROAS de 4x</h4>
+          <p>$30.000 invertidos en Google Ads generan $120.000 en ventas atribuidas. ROAS = $120.000 / $30.000 = 4x.</p>
+        </article>
+
+        <h3>Cómo interpretar el ROAS</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/publicidad-digital-modulo-5/slide-125.jpg" alt="Tabla original para interpretar el ROAS" loading="lazy" />
+          <figcaption>La referencia debe complementarse con margen, costos, atribución y realidad del negocio.</figcaption>
+        </figure>
+
+        <div class="pm-manifesto"><p>ROAS responde “¿cuánto devolvió la pauta?”. ROI responde “¿realmente convino el negocio?”.</p></div>
+      </section>
+
+      <section class="pm-section" id="optimizacion">
+        <header class="pm-section-header">
+          <span class="pm-section-number">07</span>
+          <div><span class="pm-kicker">Mejora continua</span><h2>Optimización y test A/B</h2></div>
+        </header>
+
+        <p class="pm-lead">Lanzar una campaña es el inicio. Optimizar significa observar datos, encontrar el punto débil y mejorar una variable con intención.</p>
+
+        <h3>Qué se puede optimizar</h3>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Creatividad</h4><p>Cambiar imagen, video, gancho o copy si el CTR es bajo.</p></article>
+          <article class="pm-card"><h4>Audiencia</h4><p>Probar segmentos distintos cuando el CPA es demasiado alto.</p></article>
+          <article class="pm-card"><h4>Presupuesto</h4><p>Redirigir inversión hacia anuncios o conjuntos con mejores resultados.</p></article>
+          <article class="pm-card"><h4>Puja</h4><p>Ajustar la estrategia según el objetivo y la etapa de la campaña.</p></article>
+          <article class="pm-card"><h4>Landing</h4><p>Si hay clics pero no conversiones, revisar la experiencia de destino.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Oferta</h4><p>Revisar claridad, valor, prueba, condiciones y llamado a la acción.</p></article>
+        </div>
+
+        <h3>Proceso de optimización</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/publicidad-digital-modulo-5/slide-130.jpg" alt="Proceso original de optimización de campañas" loading="lazy" />
+          <figcaption>Aprendizaje, análisis, escalado y renovación de creatividades requieren tiempos diferentes.</figcaption>
+        </figure>
+
+        <ol class="pm-steps">
+          <li><div><strong>Aprendizaje · días 1 a 7.</strong> La plataforma busca patrones. Evitar cambios bruscos.</div></li>
+          <li><div><strong>Análisis · días 7 a 14.</strong> Revisar CTR, CPA, conversiones, audiencia y destino.</div></li>
+          <li><div><strong>Escalado.</strong> Si funciona, aumentar el presupuesto gradualmente, aproximadamente 20% por vez.</div></li>
+          <li><div><strong>Fatiga.</strong> Si la frecuencia sube y el CTR cae, renovar creatividades.</div></li>
+        </ol>
+
+        <h3>Test A/B: una herramienta para no adivinar</h3>
+        <p class="pm-copy">Consiste en comparar dos versiones modificando una sola variable: imagen, titular, CTA, audiencia u oferta. Si cambian varias cosas a la vez, no se puede saber qué produjo el resultado.</p>
+        <figure class="pm-figure">
+          <img src="assets/images/publicidad-digital-modulo-5/slide-133.jpg" alt="Regla de oro original del test A/B" loading="lazy" />
+          <figcaption>Cambiar una variable por vez transforma la prueba en aprendizaje.</figcaption>
+        </figure>
+
+        <div class="pm-manifesto"><p>Medir no es mirar un tablero: es usar información para decidir qué sostener, qué corregir y qué dejar de hacer.</p></div>
+        <div class="pm-footer-note">Fin del Módulo 5 · Publicidad Digital</div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+  <script src="js/components.js?v=2"></script>
+</body>
+</html>
+
+

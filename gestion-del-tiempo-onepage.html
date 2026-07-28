@@ -1,0 +1,971 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Gestión del Tiempo | HUB DI LAD UNLa</title>
+  <meta name="description" content="Minicurso práctico de Gestión del Tiempo: visión, prioridades, objetivos SMART, planificación, energía, rutinas y seguimiento." />
+
+  
+  <link rel="icon" href="assets/images/logohubfavicom.ico" type="image/x-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script src="js/tailwind.config.js?v=1"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="css/style.css?v=5" />
+
+  <style>
+    :root {
+      --web-lad: #A6FFF0;
+      --black: #000000;
+      --white: #ffffff;
+      --hub-light-bg: #F5F7F7;
+      --line: #cbd2d2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--black);
+      background: var(--hub-light-bg);
+      font-family: "Karla", system-ui, sans-serif;
+    }
+
+    .pm-course {
+      padding: clamp(1rem, 3vw, 3rem) 0 5rem;
+    }
+
+    .pm-container {
+      width: min(92%, 1360px);
+      margin-inline: auto;
+    }
+
+    .pm-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(18rem, .65fr);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+    }
+
+    .pm-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 42rem;
+      padding: clamp(2rem, 6vw, 6rem);
+    }
+
+    .pm-eyebrow,
+    .pm-kicker,
+    .pm-card-label,
+    .pm-template-code {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .pm-eyebrow {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: .78rem;
+    }
+
+    .pm-hero h1 {
+      max-width: 12ch;
+      margin: 0;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(2.8rem, 7vw, 6.6rem);
+      font-weight: 500;
+      line-height: .92;
+      letter-spacing: -.065em;
+      text-transform: uppercase;
+    }
+
+    .pm-hero-copy > p {
+      max-width: 48rem;
+      margin: 1.5rem 0 0;
+      font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+      line-height: 1.48;
+    }
+
+    .pm-hero-index {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .pm-hero-index h2 {
+      margin: 0 0 1.5rem;
+      font-family: "Roboto Mono", monospace;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .pm-hero-index ol {
+      display: grid;
+      gap: .8rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: pm-index;
+    }
+
+    .pm-hero-index li {
+      counter-increment: pm-index;
+    }
+
+    .pm-hero-index a {
+      display: grid;
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: .75rem;
+      align-items: baseline;
+      color: inherit;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+
+    .pm-hero-index a::before {
+      content: counter(pm-index, decimal-leading-zero);
+      color: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .pm-hero-index a:hover,
+    .pm-hero-index a:focus-visible {
+      color: var(--web-lad);
+    }
+
+    .pm-hero-note {
+      margin: 2rem 0 0;
+      padding-top: 1rem;
+      border-top: 1px solid var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .78rem;
+      line-height: 1.5;
+    }
+
+    .pm-section {
+      margin-top: clamp(1.25rem, 3vw, 2.5rem);
+      padding: clamp(1.25rem, 4vw, 3.5rem);
+      scroll-margin-top: 1rem;
+      border: 1px solid var(--black);
+      border-left-width: .55rem;
+      background: var(--white);
+    }
+
+    .pm-section:nth-of-type(even) {
+      background: var(--hub-light-bg);
+    }
+
+    .pm-section-header {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      margin-bottom: clamp(1.75rem, 4vw, 3rem);
+    }
+
+    .pm-section-number {
+      display: grid;
+      width: 3rem;
+      height: 3rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .pm-kicker {
+      display: block;
+      margin-bottom: .4rem;
+      font-size: .72rem;
+    }
+
+    .pm-section h2 {
+      max-width: 23ch;
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: .96;
+      letter-spacing: -.05em;
+    }
+
+    .pm-section h3 {
+      margin: clamp(2.5rem, 5vw, 4rem) 0 1rem;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+
+    .pm-lead {
+      max-width: 62rem;
+      margin: 0 0 1.5rem;
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      line-height: 1.4;
+    }
+
+    .pm-copy {
+      max-width: 62rem;
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    .pm-copy p {
+      margin: 0 0 1.25rem;
+    }
+
+    .pm-grid-2,
+    .pm-grid-3,
+    .pm-grid-4,
+    .pm-glossary {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .pm-grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pm-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pm-grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .pm-glossary {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pm-card {
+      min-width: 0;
+      padding: clamp(1.1rem, 2.5vw, 1.75rem);
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+    }
+
+    .pm-card--mint {
+      background: var(--web-lad);
+    }
+
+    .pm-card--black {
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .pm-card-label {
+      display: block;
+      margin-bottom: .8rem;
+      font-size: .7rem;
+    }
+
+    .pm-card--black .pm-card-label {
+      color: var(--web-lad);
+    }
+
+    .pm-card h4 {
+      margin: 0 0 .75rem;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      line-height: 1.1;
+    }
+
+    .pm-card p,
+    .pm-card ul {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .pm-card ul {
+      padding-left: 1.1rem;
+    }
+
+    .pm-manifesto {
+      margin: 2rem 0;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      border: 1px solid var(--black);
+      color: var(--white);
+      background: var(--black);
+      box-shadow: .7rem .7rem 0 var(--web-lad);
+      font-size: clamp(1.4rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -.03em;
+    }
+
+    .pm-manifesto p {
+      max-width: 34ch;
+      margin: 0;
+    }
+
+    .pm-formula {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      align-items: center;
+      margin: 1.5rem 0;
+      padding: 1.2rem;
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+    }
+
+    .pm-formula span {
+      padding: .4rem .6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-steps {
+      display: grid;
+      gap: .75rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: pm-steps;
+    }
+
+    .pm-steps li {
+      display: grid;
+      grid-template-columns: 2.8rem minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      padding: 1rem;
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+      counter-increment: pm-steps;
+    }
+
+    .pm-steps li::before {
+      content: counter(pm-steps, decimal-leading-zero);
+      display: grid;
+      width: 2.8rem;
+      height: 2.8rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .pm-steps strong {
+      display: block;
+      margin-bottom: .25rem;
+    }
+
+    .pm-checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .6rem 1rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pm-checklist li {
+      position: relative;
+      padding: .85rem 1rem .85rem 2.6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+      line-height: 1.4;
+    }
+
+    .pm-checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 1rem;
+      font-weight: 800;
+    }
+
+    .pm-figure {
+      margin: 1.5rem 0 0;
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .pm-figure figcaption {
+      padding: .75rem 1rem;
+      border-top: 1px solid var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .76rem;
+      line-height: 1.4;
+    }
+
+    .pm-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      margin: 1.5rem 0;
+      border: 1px solid var(--black);
+    }
+
+    .pm-flow div {
+      padding: 1.2rem;
+      border-right: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-flow div:last-child {
+      border-right: 0;
+      background: var(--web-lad);
+    }
+
+    .pm-flow strong {
+      display: block;
+      margin-bottom: .35rem;
+    }
+
+    .pm-writing {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+    }
+
+    .pm-writing label {
+      display: grid;
+      gap: .5rem;
+      font-weight: 700;
+    }
+
+    .pm-writing textarea {
+      width: 100%;
+      min-height: 7rem;
+      padding: 1rem;
+      resize: vertical;
+      border: 1px solid var(--black);
+      border-radius: 0;
+      color: var(--black);
+      background: var(--white);
+      font: inherit;
+    }
+
+    .pm-footer-note {
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .pm-download {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: .65rem .9rem;
+      border: 1px solid var(--black);
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .pm-download:hover,
+    .pm-download:focus-visible {
+      color: var(--black);
+      background: var(--web-lad);
+    }
+
+    @media (max-width: 980px) {
+      .pm-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-hero-copy {
+        min-height: 34rem;
+      }
+
+      .pm-grid-4,
+      .pm-glossary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .pm-grid-2,
+      .pm-grid-3,
+      .pm-grid-4,
+      .pm-glossary,
+      .pm-checklist,
+      .pm-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-section {
+        padding: 1.1rem;
+        border-left-width: .35rem;
+      }
+
+      .pm-section-header {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-hero-copy,
+      .pm-hero-index {
+        padding: 1.3rem;
+      }
+
+      .pm-hero-copy {
+        min-height: 30rem;
+      }
+
+      .pm-flow div {
+        border-right: 0;
+        border-bottom: 1px solid var(--black);
+      }
+
+      .pm-flow div:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media print {
+      .pm-section,
+      .pm-card,
+      .pm-figure {
+        break-inside: avoid;
+      }
+
+      .pm-writing textarea {
+        resize: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main class="pm-course">
+    <div class="pm-container">
+      <header class="pm-hero">
+        <div class="pm-hero-copy">
+          <span class="pm-eyebrow">Minicurso práctico · Gestión del Tiempo</span>
+          <h1>Adueñate de tu Tiempo</h1>
+          <p>Un recorrido para diseñar días con intención, transformar metas en acciones y construir un sistema sostenible que cuide tus prioridades y tu energía.</p>
+        </div>
+
+        <nav class="pm-hero-index" aria-label="Recorrido del minicurso">
+          <div>
+            <h2>Recorrido</h2>
+            <ol>
+              <li><a href="#diagnostico">Diagnóstico inicial</a></li>
+              <li><a href="#vision">Visión y no negociables</a></li>
+              <li><a href="#prioridades">Prioridades y sistema</a></li>
+              <li><a href="#objetivos">Metas y objetivos SMART</a></li>
+              <li><a href="#planificacion">Semana y calendario</a></li>
+              <li><a href="#energia">Energía y cansancio</a></li>
+              <li><a href="#rutinas">Rutinas y journaling</a></li>
+              <li><a href="#seguimiento">Seguimiento y recursos</a></li>
+            </ol>
+          </div>
+          <p class="pm-hero-note">15 recursos y 41 páginas reorganizados como un minicurso web práctico, con ejercicios para completar y materiales descargables.</p>
+        </nav>
+      </header>
+
+      <section class="pm-section" id="diagnostico">
+        <header class="pm-section-header">
+          <span class="pm-section-number">01</span>
+          <div><span class="pm-kicker">Antes de organizar</span><h2>Entender cómo usás tu tiempo</h2></div>
+        </header>
+
+        <p class="pm-lead">Gestionar el tiempo no empieza con una agenda nueva. Empieza observando cuánto tiempo existe, qué estás haciendo con él y qué tareas aportan valor real.</p>
+
+        <div class="pm-manifesto"><p>El objetivo no es llenar cada hora: es ser dueña de tu agenda y no esclava de ella.</p></div>
+
+        <h3>Autoevaluación inicial</h3>
+        <form class="pm-writing">
+          <label>¿Cuánto tiempo tenés disponible durante una semana normal?<textarea placeholder="Días, franjas horarias y límites reales..."></textarea></label>
+          <label>¿Cuánto dedicás a trabajar para tu negocio: estrategia, planificación y visión?<textarea placeholder="Anotá un estimado y ejemplos..."></textarea></label>
+          <label>¿Cuánto dedicás a trabajar en el negocio: producción, atención y operación?<textarea placeholder="Registrá las tareas principales..."></textarea></label>
+          <label>¿Qué tareas ocupan tiempo pero no acercan a tus metas?<textarea placeholder="Reuniones, interrupciones, tareas repetitivas, redes..."></textarea></label>
+        </form>
+
+        <h3>Diagnóstico de valor</h3>
+        <ul class="pm-checklist">
+          <li>¿Qué tareas me acercan a mi propósito?</li><li>¿Cuáles podría eliminar?</li><li>¿Cuáles podría delegar?</li><li>¿Estoy usando mi tiempo como líder?</li><li>¿Qué decisiones nacen del miedo?</li><li>¿Dónde estoy procrastinando?</li><li>¿Qué tareas se expanden sin límite?</li><li>¿Qué necesita un plazo más concreto?</li>
+        </ul>
+
+        <h3>Ley de Parkinson</h3>
+        <div class="pm-formula"><span>Trabajo</span> se expande hasta llenar <span>el tiempo disponible</span></div>
+        <p class="pm-copy">Acortar el plazo obliga a definir alcance y foco. Si una tarea puede resolverse en dos horas, asignarle tres días suele hacer que ocupe tres días.</p>
+
+        <figure class="pm-figure">
+          <img src="assets/images/gestion-tiempo/d12-p01.jpg" alt="SOP original de Gestión del Tiempo" loading="lazy" />
+          <figcaption>El SOP reúne autoevaluación, diagnóstico, priorización, calendario y procesos.</figcaption>
+        </figure>
+      </section>
+
+      <section class="pm-section" id="vision">
+        <header class="pm-section-header">
+          <span class="pm-section-number">02</span>
+          <div><span class="pm-kicker">Dirección antes que velocidad</span><h2>Visión y no negociables</h2></div>
+        </header>
+
+        <p class="pm-lead">Antes de decidir qué entra en tu agenda, necesitás saber cómo querés vivir, qué querés proteger y qué futuro querés evitar.</p>
+
+        <h3>Actividad 1 · Un día de tu vida ideal</h3>
+        <p class="pm-copy">Imaginá un día de semana desde que te despertás hasta que termina. Permitite describirlo aunque hoy parezca poco realista: la visión ayuda a reconocer qué elementos faltan y cuáles sobran.</p>
+        <form class="pm-writing">
+          <label>¿Cómo comienza tu mañana ideal?<textarea placeholder="Hora, lugar, sensaciones, personas y primeras actividades..."></textarea></label>
+          <label>¿Cómo transcurre tu jornada?<textarea placeholder="Trabajo, descanso, vínculos, movimiento, alimentación y foco..."></textarea></label>
+          <label>¿Cómo cerrás el día?<textarea placeholder="Qué dejás resuelto, cómo descansás y con quién conectás..."></textarea></label>
+        </form>
+        <figure class="pm-figure">
+          <img src="assets/images/gestion-tiempo/d09-p01.jpg" alt="Hoja de trabajo Un día de tu vida ideal" loading="lazy" />
+          <figcaption>La visión se vuelve útil cuando describe escenas, ritmos y decisiones concretas.</figcaption>
+        </figure>
+
+        <h3>Actividad 2 · Tus no negociables</h3>
+        <p class="pm-copy">Son promesas que guían lo que aceptás de otras personas y de vos misma. Funcionan como reglas predeterminadas cuando tomar decisiones se vuelve difícil.</p>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Bienestar</h4><p>Descanso, salud, movimiento, comidas, pausas y tiempo personal.</p></article>
+          <article class="pm-card"><h4>Vínculos</h4><p>Familia, pareja, amistades y momentos que querés proteger.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Trabajo</h4><p>Horarios, límites, calidad, valores y condiciones que no querés vulnerar.</p></article>
+        </div>
+        <form class="pm-writing"><label>¿Cuáles querés que sean los no negociables de tu vida?<textarea placeholder="Escribí entre tres y siete reglas claras..."></textarea></label></form>
+        <figure class="pm-figure">
+          <img src="assets/images/gestion-tiempo/d08-p01.jpg" alt="Actividad original para definir no negociables" loading="lazy" />
+          <figcaption>Los no negociables evitan que las urgencias externas definan toda la agenda.</figcaption>
+        </figure>
+
+        <h3>Actividad 3 · Futuro poco feliz</h3>
+        <p class="pm-copy">Imaginá que pasaron seis meses y no alcanzaste lo que buscabas. Esta mirada anticipada ayuda a detectar barreras antes de que aparezcan.</p>
+        <form class="pm-writing"><label>¿Qué barreras, hábitos o decisiones explican ese resultado?<textarea placeholder="Falta de foco, exceso de compromisos, cansancio, miedo, objetivos vagos..."></textarea></label></form>
+
+        <div class="pm-manifesto"><p>Una agenda con dirección empieza por decidir qué vida querés sostener.</p></div>
+      </section>
+
+      <section class="pm-section" id="prioridades">
+        <header class="pm-section-header">
+          <span class="pm-section-number">03</span>
+          <div><span class="pm-kicker">Elegir también es renunciar</span><h2>Prioridades y sistema</h2></div>
+        </header>
+
+        <p class="pm-lead">Una prioridad no es simplemente algo importante. Es algo a lo que decidís asignarle tiempo, energía y acciones antes que a otras cosas.</p>
+
+        <h3>Actividad 4 · Elegí entre una y tres</h3>
+        <p class="pm-copy">Si todo es prioritario, nada lo es. Elegí pocas prioridades y definí qué valor agregan a tus días.</p>
+        <figure class="pm-figure">
+          <img src="assets/images/gestion-tiempo/d06-p01.jpg" alt="Matriz original para profundizar prioridades" loading="lazy" />
+          <figcaption>La razón detrás de cada prioridad ayuda a sostenerla cuando aparecen urgencias.</figcaption>
+        </figure>
+        <form class="pm-writing">
+          <label>Prioridad 1 y por qué es importante<textarea></textarea></label>
+          <label>Prioridad 2 y por qué es importante<textarea></textarea></label>
+          <label>Prioridad 3 y por qué es importante<textarea></textarea></label>
+        </form>
+
+        <h3>Matriz de Eisenhower</h3>
+        <div class="pm-grid-2">
+          <article class="pm-card pm-card--black"><span class="pm-card-label">Urgente + importante</span><h4>Hacer</h4><p>Resolver lo que no puede esperar y tiene impacto real.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Importante + no urgente</span><h4>Agendar</h4><p>Proteger tiempo para estrategia, prevención, aprendizaje y creación.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Urgente + no importante</span><h4>Delegar</h4><p>Transferir tareas que requieren respuesta pero no necesariamente tu intervención.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Ni urgente ni importante</span><h4>Eliminar</h4><p>Dejar de sostener actividades sin valor suficiente.</p></article>
+        </div>
+
+        <h3>Actividad 5 · Definí tu sistema</h3>
+        <p class="pm-copy">Cada prioridad necesita grandes pasos, acciones específicas y una métrica que indique si realmente está recibiendo lugar.</p>
+        <div class="pm-formula"><span>Prioridad</span> → <span>Pasos</span> → <span>Acciones</span> → <span>Métrica</span></div>
+        <figure class="pm-figure">
+          <img src="assets/images/gestion-tiempo/d05-p01.jpg" alt="Plantilla original Define tu sistema" loading="lazy" />
+          <figcaption>El sistema traduce una intención amplia en acciones observables y medibles.</figcaption>
+        </figure>
+        <form class="pm-writing">
+          <label>Prioridad<textarea placeholder="¿Qué querés proteger o construir?"></textarea></label>
+          <label>Grandes pasos<textarea placeholder="No más de cinco etapas..."></textarea></label>
+          <label>Acciones específicas<textarea placeholder="Acciones que comiencen con un verbo..."></textarea></label>
+          <label>Métrica<textarea placeholder="¿Qué evidencia mostrará que avanzás?"></textarea></label>
+        </form>
+      </section>
+
+      <section class="pm-section" id="objetivos">
+        <header class="pm-section-header">
+          <span class="pm-section-number">04</span>
+          <div><span class="pm-kicker">De la visión a la ejecución</span><h2>Metas y objetivos SMART</h2></div>
+        </header>
+
+        <p class="pm-lead">Una meta anual ofrece dirección. Los objetivos trimestrales y las tareas mensuales hacen que pueda entrar en el calendario.</p>
+
+        <h3>Construí una meta anual completa</h3>
+        <div class="pm-grid-4">
+          <article class="pm-card"><h4>Propósito</h4><p>Por qué querés lograrla y cómo se conecta con tu visión.</p></article>
+          <article class="pm-card"><h4>Resultado</h4><p>Qué querés ver, tener o conseguir concretamente.</p></article>
+          <article class="pm-card"><h4>Impacto</h4><p>Qué cambiará en tu negocio y en tu vida.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Fecha</h4><p>Cuándo deberá estar alcanzada.</p></article>
+        </div>
+        <form class="pm-writing"><label>Escribí tu meta anual en una oración<textarea placeholder="Para el [fecha], quiero [resultado], para [propósito e impacto]..."></textarea></label></form>
+        <figure class="pm-figure">
+          <img src="assets/images/gestion-tiempo/d11-p01.jpg" alt="Guía original para escribir una meta anual" loading="lazy" />
+          <figcaption>La meta combina claridad, emoción, impacto y un límite temporal.</figcaption>
+        </figure>
+
+        <h3>Convertí la meta en objetivos SMART</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/gestion-tiempo/d11-p03.jpg" alt="Explicación original de objetivos SMART" loading="lazy" />
+          <figcaption>Cada objetivo debe ser específico, medible, alcanzable, relevante y temporal.</figcaption>
+        </figure>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>S · Específico</h4><p>¿Qué querés lograr exactamente y en qué área?</p></article>
+          <article class="pm-card"><h4>M · Medible</h4><p>¿Qué número o evidencia confirmará el avance?</p></article>
+          <article class="pm-card"><h4>A · Alcanzable</h4><p>¿Es posible con los recursos y el tiempo disponibles?</p></article>
+          <article class="pm-card"><h4>R · Relevante</h4><p>¿Acerca a tu visión y produce un impacto real?</p></article>
+          <article class="pm-card pm-card--mint"><h4>T · Temporal</h4><p>¿Cuál es la fecha límite y cuándo revisarás el progreso?</p></article>
+          <article class="pm-card pm-card--black"><h4>Oración final</h4><p>Un resultado medible, relevante y fechado.</p></article>
+        </div>
+        <form class="pm-writing"><label>Tu primer objetivo SMART<textarea placeholder="Redactalo en una oración completa..."></textarea></label></form>
+
+        <h3>Desplegá cada objetivo</h3>
+        <ol class="pm-steps">
+          <li><div><strong>Dividir en etapas.</strong> Investigación, definición, producción, presentación y ejecución.</div></li>
+          <li><div><strong>Escribir tareas accionables.</strong> Cada tarea comienza con un verbo y expresa una sola acción.</div></li>
+          <li><div><strong>Estimar duración.</strong> Darle a cada tarea una cantidad de tiempo realista.</div></li>
+          <li><div><strong>Asignar fecha y horario.</strong> Una tarea sin lugar en el calendario sigue siendo una intención.</div></li>
+          <li><div><strong>Revisar capacidad.</strong> Ver cuánto tiempo total requiere la meta y ajustar alcance.</div></li>
+        </ol>
+
+        <div class="pm-manifesto"><p>La meta define adónde. Las tareas calendarizadas definen cómo y cuándo.</p></div>
+      </section>
+
+      <section class="pm-section" id="planificacion">
+        <header class="pm-section-header">
+          <span class="pm-section-number">05</span>
+          <div><span class="pm-kicker">La semana como unidad</span><h2>Planificación y calendario</h2></div>
+        </header>
+
+        <p class="pm-lead">La planificación semanal conecta objetivos grandes con decisiones cotidianas. Permite ver capacidad, anticipar conflictos y proteger bloques importantes.</p>
+
+        <figure class="pm-figure">
+          <img src="assets/images/gestion-tiempo/d02-p01.jpg" alt="Tarjeta original Adueñate de tu tiempo" loading="lazy" />
+          <figcaption>Planificar, organizar, mover a hecho y revisar: cuatro acciones simples para cerrar el ciclo.</figcaption>
+        </figure>
+
+        <div class="pm-grid-4">
+          <article class="pm-card"><span class="pm-card-label">Antes del lunes</span><h4>Planificá</h4><p>Revisá compromisos, objetivos, capacidad y bloques necesarios.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Antes del día</span><h4>Organizá</h4><p>Elegí tres prioridades y prepará el contexto.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Durante</span><h4>Ejecutá</h4><p>Agrupá tareas similares y protegé el foco.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Al finalizar</span><h4>Revisá</h4><p>Mové lo terminado, observá desvíos y ajustá.</p></article>
+        </div>
+
+        <h3>Time blocking + Pomodoro</h3>
+        <div class="pm-grid-2">
+          <article class="pm-card pm-card--mint"><h4>Time blocking</h4><p>Reservá en el calendario bloques para trabajo profundo, operación, administración, descanso y vínculos.</p></article>
+          <article class="pm-card"><h4>Pomodoro</h4><p>Trabajá 25 minutos con foco y descansá 5. Después de cuatro ciclos, hacé una pausa mayor.</p></article>
+        </div>
+
+        <h3>Diseñá una semana posible</h3>
+        <ul class="pm-checklist">
+          <li>Bloques para tareas clave.</li><li>Espacios para procesos repetitivos.</li><li>Margen para imprevistos.</li><li>Descanso y comidas.</li><li>Trabajo profundo sin interrupciones.</li><li>Administración agrupada.</li><li>Tiempo familiar y personal.</li><li>Revisión semanal.</li>
+        </ul>
+        <form class="pm-writing">
+          <label>Tres resultados importantes de esta semana<textarea></textarea></label>
+          <label>Bloques que necesitás proteger<textarea placeholder="Día, horario y duración..."></textarea></label>
+          <label>Qué vas a agrupar, delegar o eliminar<textarea></textarea></label>
+        </form>
+
+        <figure class="pm-figure">
+          <img src="assets/images/gestion-tiempo/d12-p02.jpg" alt="Planificación, rutinas y procesos del SOP" loading="lazy" />
+          <figcaption>Calendario, rutinas, agrupación y documentación forman un sistema sostenible.</figcaption>
+        </figure>
+
+        <h3>Documentá los procesos repetitivos</h3>
+        <ol class="pm-steps">
+          <li><div>Identificá las tareas que se repiten.</div></li>
+          <li><div>Escribí el procedimiento paso a paso.</div></li>
+          <li><div>Guardalo en una carpeta de procesos.</div></li>
+          <li><div>Usalo para simplificar y delegar.</div></li>
+          <li><div>Revisalo trimestralmente.</div></li>
+        </ol>
+      </section>
+
+      <section class="pm-section" id="energia">
+        <header class="pm-section-header">
+          <span class="pm-section-number">06</span>
+          <div><span class="pm-kicker">El recurso detrás de las horas</span><h2>Energía, descanso y cansancio</h2></div>
+        </header>
+
+        <p class="pm-lead">No todas las horas tienen la misma calidad. Gestionar el tiempo también significa reconocer qué te da energía, qué te la quita y qué tipo de descanso necesitás.</p>
+
+        <div class="pm-manifesto"><p>El descanso no es perder tiempo: es invertir en bienestar y capacidad de decidir.</p></div>
+
+        <h3>Test de siete cansancios</h3>
+        <p class="pm-copy">Si tres o más afirmaciones de una categoría resuenan con vos, prestale atención. El test es una herramienta de observación, no un diagnóstico médico.</p>
+        <figure class="pm-figure">
+          <img src="assets/images/gestion-tiempo/d13-p01.jpg" alt="Test original de tipos de cansancio" loading="lazy" />
+          <figcaption>El agotamiento puede ser físico, mental, emocional, sensorial, creativo, social o espiritual.</figcaption>
+        </figure>
+
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Físico</h4><p>Pesadez, dolor, recuperación lenta o falta de energía corporal.</p></article>
+          <article class="pm-card"><h4>Mental</h4><p>Niebla, saturación, dificultad para decidir o concentrarse.</p></article>
+          <article class="pm-card"><h4>Emocional</h4><p>Irritabilidad, apatía, tristeza o sensación de estar sobrepasada.</p></article>
+          <article class="pm-card"><h4>Sensorial</h4><p>Exceso de ruido, pantallas, desorden, luces o estímulos.</p></article>
+          <article class="pm-card"><h4>Creativo</h4><p>Bloqueo de ideas, aburrimiento o dificultad para empezar.</p></article>
+          <article class="pm-card"><h4>Social</h4><p>Interacciones que drenan y necesidad intensa de estar a solas.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Espiritual</h4><p>Desconexión del propósito, vacío o falta de dirección.</p></article>
+        </div>
+
+        <h3>Una respuesta distinta para cada necesidad</h3>
+        <ul class="pm-checklist">
+          <li>Sueño reparador y chequeo médico si persiste.</li><li>Movimiento suave e hidratación.</li><li>Pausas de pantallas y silencio.</li><li>Journaling para liberar la mente.</li><li>Límites claros y apoyo profesional.</li><li>Tiempo a solas o interacciones elegidas.</li><li>Naturaleza y estímulos creativos.</li><li>Reconexión con propósito y valores.</li>
+        </ul>
+
+        <form class="pm-writing">
+          <label>¿Qué tipo de cansancio reconocés hoy?<textarea></textarea></label>
+          <label>¿Qué acciones concretas vas a probar esta semana?<textarea></textarea></label>
+        </form>
+      </section>
+
+      <section class="pm-section" id="rutinas">
+        <header class="pm-section-header">
+          <span class="pm-section-number">07</span>
+          <div><span class="pm-kicker">Estructura flexible</span><h2>Rutinas y journaling</h2></div>
+        </header>
+
+        <p class="pm-lead">Una rutina sostenible reduce decisiones, prepara el cuerpo y la mente, y protege acciones que suelen quedar relegadas.</p>
+
+        <h3>Rutina matutina</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/gestion-tiempo/d01-p01.jpg" alt="Guía original para diseñar una rutina matutina" loading="lazy" />
+          <figcaption>La mañana puede integrar energía, cuidado, prioridades, vínculos y un inicio enfocado.</figcaption>
+        </figure>
+        <ul class="pm-checklist">
+          <li>Definir el propósito de la mañana.</li><li>Elegir una hora compatible con el descanso.</li><li>Incluir autocuidado.</li><li>Revisar tres prioridades.</li><li>Hidratarse y alimentarse.</li><li>Conectar con la familia.</li><li>Preparar el entorno.</li><li>Comenzar con un bloque de foco.</li>
+        </ul>
+
+        <h3>Rutina nocturna</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/gestion-tiempo/d01-p02.jpg" alt="Guía original para diseñar una rutina nocturna" loading="lazy" />
+          <figcaption>El cierre del día libera pendientes, prepara la mañana y mejora la calidad del descanso.</figcaption>
+        </figure>
+        <ul class="pm-checklist">
+          <li>Definir una hora de desconexión.</li><li>Cerrar o reprogramar pendientes.</li><li>Preparar el ambiente.</li><li>Reducir pantallas.</li><li>Incluir relajación mental.</li><li>Preparar ropa y materiales.</li><li>Evitar estimulantes.</li><li>Crear un ritual de cierre.</li>
+        </ul>
+
+        <form class="pm-writing">
+          <label>Tu rutina matutina mínima<textarea placeholder="Entre tres y cinco pasos que puedas sostener..."></textarea></label>
+          <label>Tu rutina nocturna mínima<textarea placeholder="Entre tres y cinco pasos que faciliten el descanso..."></textarea></label>
+        </form>
+
+        <h3>Journaling y gratitud</h3>
+        <p class="pm-copy">Escribir ayuda a ordenar pensamientos, procesar emociones, detectar patrones y sostener metas. Puede ser físico o digital, breve o extenso.</p>
+        <figure class="pm-figure">
+          <img src="assets/images/gestion-tiempo/d10-p01.jpg" alt="Guía original para comenzar un diario personal" loading="lazy" />
+          <figcaption>La práctica funciona mejor cuando tiene un propósito, un momento y una forma accesible.</figcaption>
+        </figure>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Mañana</h4><p>Intención, prioridades, gratitud y cómo querés sentirte.</p></article>
+          <article class="pm-card"><h4>Noche</h4><p>Logros, aprendizajes, emociones y qué querés soltar.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Revisión</h4><p>Patrones, progreso, obstáculos y decisiones para ajustar.</p></article>
+        </div>
+        <form class="pm-writing">
+          <label>Tres cosas por las que sentís gratitud hoy<textarea></textarea></label>
+          <label>¿Qué aprendiste y qué harías diferente mañana?<textarea></textarea></label>
+        </form>
+      </section>
+
+      <section class="pm-section" id="seguimiento">
+        <header class="pm-section-header">
+          <span class="pm-section-number">08</span>
+          <div><span class="pm-kicker">Convertir intención en hábito</span><h2>Seguimiento y biblioteca</h2></div>
+        </header>
+
+        <p class="pm-lead">El sistema se fortalece cuando registrás qué hiciste, observás por qué algo no ocurrió y ajustás sin usar el seguimiento como castigo.</p>
+
+        <h3>Trackeo semanal</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/gestion-tiempo/d04-p01.jpg" alt="Tracker original de los pasos del éxito" loading="lazy" />
+          <figcaption>Un registro simple permite observar constancia durante toda la semana.</figcaption>
+        </figure>
+
+        <div class="pm-grid-4">
+          <article class="pm-card"><h4>Planificado</h4><p>Qué acciones querías sostener.</p></article>
+          <article class="pm-card"><h4>Hecho</h4><p>Qué se completó realmente.</p></article>
+          <article class="pm-card"><h4>Desvío</h4><p>Qué quedó pendiente y por qué.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Ajuste</h4><p>Qué cambiarás en el próximo ciclo.</p></article>
+        </div>
+
+        <h3>Desafío de implementación</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/gestion-tiempo/d14-p01.jpg" alt="Desafío original de Gestión del Tiempo" loading="lazy" />
+          <figcaption>El desafío alterna aprendizaje, ejecución, reflexión y corrección.</figcaption>
+        </figure>
+        <ol class="pm-steps">
+          <li><div>Completar el diagnóstico y diseñar el calendario.</div></li>
+          <li><div>Escribir una meta, objetivos SMART y tareas.</div></li>
+          <li><div>Asignar fecha, horario y duración a las tareas.</div></li>
+          <li><div>Aplicar time blocking y Pomodoro durante una semana.</div></li>
+          <li><div>Construir una rutina matutina o nocturna mínima.</div></li>
+          <li><div>Usar el tracker durante siete días.</div></li>
+          <li><div>Iniciar un diario de gratitud.</div></li>
+          <li><div>Reconocer cansancios y probar una estrategia de cuidado.</div></li>
+          <li><div>Revisar qué acercó a tu propósito y qué no.</div></li>
+          <li><div>Iterar el sistema para la semana siguiente.</div></li>
+        </ol>
+
+        <h3>Biblioteca del minicurso</h3>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Rutinas matutina y nocturna</h4><p>Diseño, ejemplos y sostenimiento.</p><a class="pm-download" href="assets/pdf/gestion-tiempo/01-rutinas-matutina-nocturna.pdf" target="_blank">Abrir PDF</a></article>
+          <article class="pm-card"><h4>Tarjeta Adueñate de tu Tiempo</h4><p>Recordatorio de planificación y revisión.</p><a class="pm-download" href="assets/pdf/gestion-tiempo/02-tarjeta-aduenate-tiempo.pdf" target="_blank">Abrir PDF</a></article>
+          <article class="pm-card"><h4>Tracker extra</h4><p>Planilla semanal adaptable.</p><a class="pm-download" href="assets/pdf/gestion-tiempo/03-tracker-extra.pdf" target="_blank">Abrir PDF</a></article>
+          <article class="pm-card"><h4>Tracker de los pasos del éxito</h4><p>Registro semanal de hábitos.</p><a class="pm-download" href="assets/pdf/gestion-tiempo/04-tracker-pasos-exito.pdf" target="_blank">Abrir PDF</a></article>
+          <article class="pm-card"><h4>Definí tu sistema</h4><p>Prioridades, pasos, acciones y métricas.</p><a class="pm-download" href="assets/pdf/gestion-tiempo/05-define-tu-sistema.pdf" target="_blank">Abrir PDF</a></article>
+          <article class="pm-card"><h4>Tus prioridades</h4><p>Selección y significado.</p><a class="pm-download" href="assets/pdf/gestion-tiempo/06-prioridades.pdf" target="_blank">Abrir PDF</a></article>
+          <article class="pm-card"><h4>Futuro poco feliz</h4><p>Anticipación de barreras.</p><a class="pm-download" href="assets/pdf/gestion-tiempo/07-futuro-poco-feliz.pdf" target="_blank">Abrir PDF</a></article>
+          <article class="pm-card"><h4>No negociables</h4><p>Límites y reglas personales.</p><a class="pm-download" href="assets/pdf/gestion-tiempo/08-no-negociables.pdf" target="_blank">Abrir PDF</a></article>
+          <article class="pm-card"><h4>Un día de tu vida ideal</h4><p>Ejercicio de visión detallada.</p><a class="pm-download" href="assets/pdf/gestion-tiempo/09-dia-ideal.pdf" target="_blank">Abrir PDF</a></article>
+          <article class="pm-card"><h4>Guía de diario y gratitud</h4><p>Práctica, ideas y cien preguntas.</p><a class="pm-download" href="assets/pdf/gestion-tiempo/10-guia-diario-gratitud.pdf" target="_blank">Abrir PDF</a></article>
+          <article class="pm-card"><h4>Objetivos, metas y tareas</h4><p>Guía anual, SMART y desglose.</p><a class="pm-download" href="assets/pdf/gestion-tiempo/11-guia-objetivos-metas-tareas.pdf" target="_blank">Abrir PDF</a></article>
+          <article class="pm-card"><h4>SOP Gestión del Tiempo</h4><p>Método completo de organización.</p><a class="pm-download" href="assets/pdf/gestion-tiempo/12-sop-gestion-tiempo.pdf" target="_blank">Abrir PDF</a></article>
+          <article class="pm-card"><h4>Test de cansancios</h4><p>Señales y estrategias de cuidado.</p><a class="pm-download" href="assets/pdf/gestion-tiempo/13-test-cansancios.pdf" target="_blank">Abrir PDF</a></article>
+          <article class="pm-card"><h4>Desafío de tiempo</h4><p>Diez pasos de implementación.</p><a class="pm-download" href="assets/pdf/gestion-tiempo/14-desafio-tiempo.pdf" target="_blank">Abrir PDF</a></article>
+          <article class="pm-card pm-card--mint"><h4>Ejemplo de objetivos SMART</h4><p>Cinco objetivos aplicados a un negocio.</p><a class="pm-download" href="assets/pdf/gestion-tiempo/15-objetivos-smart-ejemplo.pdf" target="_blank">Abrir PDF</a></article>
+        </div>
+
+        <div class="pm-manifesto"><p>Tu sistema no tiene que ser perfecto. Tiene que ayudarte a decidir, actuar, descansar y volver a empezar.</p></div>
+        <div class="pm-footer-note">Fin del minicurso · Gestión del Tiempo</div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+  <script src="js/components.js?v=2"></script>
+</body>
+</html>
+
+
+
+
+

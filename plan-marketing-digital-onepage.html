@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Plan de Marketing Digital | HUB DI LAD UNLa</title>
+  <meta name="description" content="Clase 1 del Módulo 1 de Marketing 4.0, Marketing Digital y E-commerce, reorganizada como una guía web práctica." />
+
+  
+
+   <link rel="icon" href="assets/images/logohubfavicom.ico" type="image/x-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script src="js/tailwind.config.js?v=1"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="css/style.css?v=5" />
+
+
+
+  <style>
+    :root {
+      --web-lad: #A6FFF0;
+      --black: #000000;
+      --white: #ffffff;
+      --hub-light-bg: #F5F7F7;
+      --line: #cbd2d2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--black);
+      background: var(--hub-light-bg);
+      font-family: "Karla", system-ui, sans-serif;
+    }
+
+    .pm-course {
+      padding: clamp(1rem, 3vw, 3rem) 0 5rem;
+    }
+
+    .pm-container {
+      width: min(92%, 1360px);
+      margin-inline: auto;
+    }
+
+    .pm-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(18rem, .65fr);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+    }
+
+    .pm-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 42rem;
+      padding: clamp(2rem, 6vw, 6rem);
+    }
+
+    .pm-eyebrow,
+    .pm-kicker,
+    .pm-card-label,
+    .pm-template-code {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .pm-eyebrow {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: .78rem;
+    }
+
+    .pm-hero h1 {
+      max-width: 12ch;
+      margin: 0;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(2.8rem, 7vw, 6.6rem);
+      font-weight: 500;
+      line-height: .92;
+      letter-spacing: -.065em;
+      text-transform: uppercase;
+    }
+
+    .pm-hero-copy > p {
+      max-width: 48rem;
+      margin: 1.5rem 0 0;
+      font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+      line-height: 1.48;
+    }
+
+    .pm-hero-index {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .pm-hero-index h2 {
+      margin: 0 0 1.5rem;
+      font-family: "Roboto Mono", monospace;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .pm-hero-index ol {
+      display: grid;
+      gap: .8rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: pm-index;
+    }
+
+    .pm-hero-index li {
+      counter-increment: pm-index;
+    }
+
+    .pm-hero-index a {
+      display: grid;
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: .75rem;
+      align-items: baseline;
+      color: inherit;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+
+    .pm-hero-index a::before {
+      content: counter(pm-index, decimal-leading-zero);
+      color: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .pm-hero-index a:hover,
+    .pm-hero-index a:focus-visible {
+      color: var(--web-lad);
+    }
+
+    .pm-hero-note {
+      margin: 2rem 0 0;
+      padding-top: 1rem;
+      border-top: 1px solid var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .78rem;
+      line-height: 1.5;
+    }
+
+    .pm-section {
+      margin-top: clamp(1.25rem, 3vw, 2.5rem);
+      padding: clamp(1.25rem, 4vw, 3.5rem);
+      scroll-margin-top: 1rem;
+      border: 1px solid var(--black);
+      border-left-width: .55rem;
+      background: var(--white);
+    }
+
+    .pm-section:nth-of-type(even) {
+      background: var(--hub-light-bg);
+    }
+
+    .pm-section-header {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      margin-bottom: clamp(1.75rem, 4vw, 3rem);
+    }
+
+    .pm-section-number {
+      display: grid;
+      width: 3rem;
+      height: 3rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .pm-kicker {
+      display: block;
+      margin-bottom: .4rem;
+      font-size: .72rem;
+    }
+
+    .pm-section h2 {
+      max-width: 23ch;
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: .96;
+      letter-spacing: -.05em;
+    }
+
+    .pm-section h3 {
+      margin: clamp(2.5rem, 5vw, 4rem) 0 1rem;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+
+    .pm-lead {
+      max-width: 62rem;
+      margin: 0 0 1.5rem;
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      line-height: 1.4;
+    }
+
+    .pm-copy {
+      max-width: 62rem;
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    .pm-copy p {
+      margin: 0 0 1.25rem;
+    }
+
+    .pm-grid-2,
+    .pm-grid-3,
+    .pm-grid-4,
+    .pm-glossary {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .pm-grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pm-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pm-grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .pm-glossary {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pm-card {
+      min-width: 0;
+      padding: clamp(1.1rem, 2.5vw, 1.75rem);
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+    }
+
+    .pm-card--mint {
+      background: var(--web-lad);
+    }
+
+    .pm-card--black {
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .pm-card-label {
+      display: block;
+      margin-bottom: .8rem;
+      font-size: .7rem;
+    }
+
+    .pm-card--black .pm-card-label {
+      color: var(--web-lad);
+    }
+
+    .pm-card h4 {
+      margin: 0 0 .75rem;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      line-height: 1.1;
+    }
+
+    .pm-card p,
+    .pm-card ul {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .pm-card ul {
+      padding-left: 1.1rem;
+    }
+
+    .pm-manifesto {
+      margin: 2rem 0;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      border: 1px solid var(--black);
+      color: var(--white);
+      background: var(--black);
+      box-shadow: .7rem .7rem 0 var(--web-lad);
+      font-size: clamp(1.4rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -.03em;
+    }
+
+    .pm-manifesto p {
+      max-width: 34ch;
+      margin: 0;
+    }
+
+    .pm-formula {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      align-items: center;
+      margin: 1.5rem 0;
+      padding: 1.2rem;
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+    }
+
+    .pm-formula span {
+      padding: .4rem .6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-steps {
+      display: grid;
+      gap: .75rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: pm-steps;
+    }
+
+    .pm-steps li {
+      display: grid;
+      grid-template-columns: 2.8rem minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      padding: 1rem;
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+      counter-increment: pm-steps;
+    }
+
+    .pm-steps li::before {
+      content: counter(pm-steps, decimal-leading-zero);
+      display: grid;
+      width: 2.8rem;
+      height: 2.8rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .pm-steps strong {
+      display: block;
+      margin-bottom: .25rem;
+    }
+
+    .pm-checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .6rem 1rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pm-checklist li {
+      position: relative;
+      padding: .85rem 1rem .85rem 2.6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+      line-height: 1.4;
+    }
+
+    .pm-checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 1rem;
+      font-weight: 800;
+    }
+
+    .pm-figure {
+      margin: 1.5rem 0 0;
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .pm-figure figcaption {
+      padding: .75rem 1rem;
+      border-top: 1px solid var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .76rem;
+      line-height: 1.4;
+    }
+
+    .pm-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      margin: 1.5rem 0;
+      border: 1px solid var(--black);
+    }
+
+    .pm-flow div {
+      padding: 1.2rem;
+      border-right: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-flow div:last-child {
+      border-right: 0;
+      background: var(--web-lad);
+    }
+
+    .pm-flow strong {
+      display: block;
+      margin-bottom: .35rem;
+    }
+
+    .pm-writing {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+    }
+
+    .pm-writing label {
+      display: grid;
+      gap: .5rem;
+      font-weight: 700;
+    }
+
+    .pm-writing textarea {
+      width: 100%;
+      min-height: 7rem;
+      padding: 1rem;
+      resize: vertical;
+      border: 1px solid var(--black);
+      border-radius: 0;
+      color: var(--black);
+      background: var(--white);
+      font: inherit;
+    }
+
+    .pm-footer-note {
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .pm-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-hero-copy {
+        min-height: 34rem;
+      }
+
+      .pm-grid-4,
+      .pm-glossary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .pm-grid-2,
+      .pm-grid-3,
+      .pm-grid-4,
+      .pm-glossary,
+      .pm-checklist,
+      .pm-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-section {
+        padding: 1.1rem;
+        border-left-width: .35rem;
+      }
+
+      .pm-section-header {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-hero-copy,
+      .pm-hero-index {
+        padding: 1.3rem;
+      }
+
+      .pm-hero-copy {
+        min-height: 30rem;
+      }
+
+      .pm-flow div {
+        border-right: 0;
+        border-bottom: 1px solid var(--black);
+      }
+
+      .pm-flow div:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media print {
+      .pm-section,
+      .pm-card,
+      .pm-figure {
+        break-inside: avoid;
+      }
+
+      .pm-writing textarea {
+        resize: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main class="pm-course">
+    <div class="pm-container">
+      <header class="pm-hero">
+        <div class="pm-hero-copy">
+          <span class="pm-eyebrow">Marketing 4.0 · Marketing Digital y E-commerce</span>
+          <h1>Plan de Marketing Digital</h1>
+          <p>
+            Una guía práctica para dejar de improvisar, convertir el marketing en un sistema y tomar decisiones con objetivos, datos y una hoja de ruta posible.
+          </p>
+        </div>
+
+        <nav class="pm-hero-index" aria-label="Recorrido de la clase">
+          <div>
+            <h2>Recorrido</h2>
+            <ol>
+              <li><a href="#fundamentos">Fundamentos y glosario</a></li>
+              <li><a href="#estructura">Estructura del plan</a></li>
+              <li><a href="#diagnostico">Diagnóstico</a></li>
+              <li><a href="#objetivos">Objetivos SMART</a></li>
+              <li><a href="#publico">Público y propuesta de valor</a></li>
+              <li><a href="#ejecucion">Canales, contenido y campañas</a></li>
+              <li><a href="#medicion">KPIs, medición y mejora</a></li>
+            </ol>
+          </div>
+          <p class="pm-hero-note">108 diapositivas reorganizadas en 7 módulos web, sin repetir pausas ni divisores.</p>
+        </nav>
+      </header>
+
+      <section class="pm-section" id="fundamentos">
+        <header class="pm-section-header">
+          <span class="pm-section-number">01</span>
+          <div>
+            <span class="pm-kicker">Antes de comenzar</span>
+            <h2>Marketing digital no es publicar: es un sistema</h2>
+          </div>
+        </header>
+
+        <p class="pm-lead">
+          Usar canales online significa atraer personas, convertirlas en clientes, lograr que vuelvan y medir qué está funcionando.
+        </p>
+
+        <div class="pm-flow" aria-label="Proceso básico de marketing digital">
+          <div><strong>Atraer</strong>Hacer que las personas correctas descubran la propuesta.</div>
+          <div><strong>Convertir</strong>Transformar interés en consultas, oportunidades o ventas.</div>
+          <div><strong>Fidelizar</strong>Construir motivos para volver, recomendar y sostener el vínculo.</div>
+          <div><strong>Medir</strong>Aprender de los datos y ajustar el sistema.</div>
+        </div>
+
+        <div class="pm-manifesto">
+          <p>Vamos a hacer marketing de verdad: el que se mide.</p>
+        </div>
+
+        <h3>Antes del plan: tres preguntas incómodas</h3>
+        <div class="pm-grid-3">
+          <article class="pm-card pm-card--mint">
+            <span class="pm-card-label">Pregunta 01</span>
+            <h4>¿Cuál es tu rol principal?</h4>
+            <p>Dirección, marketing, ventas, operaciones u otro. El rol define la mirada y también los recursos disponibles.</p>
+          </article>
+          <article class="pm-card">
+            <span class="pm-card-label">Pregunta 02</span>
+            <h4>¿El plan está escrito?</h4>
+            <p>Puede estar completo, incompleto, solamente en la cabeza o todavía no existir.</p>
+          </article>
+          <article class="pm-card pm-card--black">
+            <span class="pm-card-label">Pregunta 03</span>
+            <h4>¿Qué pasa si se caen las redes?</h4>
+            <p>Si durante siete días la PyME deja de vender, hay un canal; todavía no hay un sistema.</p>
+          </article>
+        </div>
+
+        <h3>Mini glosario</h3>
+        <div class="pm-glossary">
+          <article class="pm-card"><h4>Funnel</h4><p>Etapas desde que una persona conoce la marca hasta que compra.</p></article>
+          <article class="pm-card"><h4>KPI</h4><p>Indicador clave para evaluar el avance de un objetivo.</p></article>
+          <article class="pm-card"><h4>Lead</h4><p>Persona o empresa que mostró interés en un producto o servicio.</p></article>
+          <article class="pm-card"><h4>ROI</h4><p>Retorno obtenido respecto de la inversión realizada.</p></article>
+          <article class="pm-card"><h4>Impresiones</h4><p>Cantidad de veces que un contenido se muestra.</p></article>
+          <article class="pm-card"><h4>Alcance</h4><p>Cantidad total de personas que pueden ver el contenido.</p></article>
+          <article class="pm-card"><h4>CTR</h4><p>Porcentaje de clics obtenidos sobre las impresiones.</p></article>
+          <article class="pm-card"><h4>Conversión</h4><p>Acción objetivo: compra, formulario, consulta o mensaje.</p></article>
+          <article class="pm-card"><h4>Buyer persona</h4><p>Perfil semificticio que representa al cliente ideal.</p></article>
+        </div>
+
+        <h3>La analogía del restaurante</h3>
+        <div class="pm-grid-4">
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Contenido</span><h4>El menú</h4><p>Explica qué hay, despierta interés y ayuda a elegir.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Ads</span><h4>El mozo</h4><p>Invita a entrar y acerca la propuesta a nuevas personas.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Web o WhatsApp</span><h4>La mesa</h4><p>Es el lugar donde se atiende, se responde y se convierte.</p></article>
+          <article class="pm-card pm-card--black"><span class="pm-card-label">Medición</span><h4>La caja</h4><p>Si no contás, no sabés si el negocio realmente ganó.</p></article>
+        </div>
+      </section>
+
+      <section class="pm-section" id="estructura">
+        <header class="pm-section-header">
+          <span class="pm-section-number">02</span>
+          <div>
+            <span class="pm-kicker">El mapa</span>
+            <h2>Qué es un plan de marketing digital</h2>
+          </div>
+        </header>
+
+        <p class="pm-lead">
+          Es un mapa de decisiones que define qué objetivo perseguimos, a quién le hablamos, qué acciones hacemos, dónde las hacemos y cómo medimos si funcionan.
+        </p>
+
+        <div class="pm-grid-4">
+          <article class="pm-card pm-card--mint"><h4>Enfocar</h4><p>Decidir qué sí y qué no.</p></article>
+          <article class="pm-card"><h4>Ordenar</h4><p>Organizar tareas, tiempos y prioridades.</p></article>
+          <article class="pm-card"><h4>Alinear</h4><p>Coordinar al equipo, la dirección y los proveedores.</p></article>
+          <article class="pm-card pm-card--black"><h4>Mejorar</h4><p>Tomar decisiones con datos.</p></article>
+        </div>
+
+        <h3>Las cinco preguntas del plan</h3>
+        <ol class="pm-steps">
+          <li><div><strong>¿Dónde estamos hoy?</strong>Diagnóstico de la situación digital y comercial.</div></li>
+          <li><div><strong>¿A dónde queremos llegar?</strong>Objetivos concretos y medibles.</div></li>
+          <li><div><strong>¿A quién le hablamos?</strong>Público, problema, objeción y propuesta de valor.</div></li>
+          <li><div><strong>¿Qué hacemos y dónde?</strong>Canales, contenido, campañas, responsables y frecuencia.</div></li>
+          <li><div><strong>¿Cómo sabemos si funciona?</strong>KPIs, fuentes de datos, revisión y mejora.</div></li>
+        </ol>
+
+        <figure class="pm-figure">
+          <img src="assets/images/marketing-digital/slide-022.jpg" alt="Esquema de las cinco preguntas que responde un plan de marketing digital" loading="lazy" />
+          <figcaption>El plan completo se puede leer como cinco decisiones encadenadas</figcaption>
+        </figure>
+
+        <h3>Metodología READI(Y)</h3>
+        <div class="pm-grid-3">
+          <article class="pm-card"><span class="pm-card-label">R · Revisar</span><h4>La situación actual</h4><p>Ecosistema, recursos, métricas, equipo y forma de vender.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">E · Evaluar</span><h4>Lo que funcionó</h4><p>Revisar resultados y causas sin juicios, con datos.</p></article>
+          <article class="pm-card"><span class="pm-card-label">A · Analizar</span><h4>Las oportunidades</h4><p>Detectar oportunidades reales de comunicación, marketing y negocio.</p></article>
+          <article class="pm-card"><span class="pm-card-label">D · Diseñar</span><h4>El plan</h4><p>Ordenar objetivos, pasos, herramientas, responsables y medición.</p></article>
+          <article class="pm-card pm-card--black"><span class="pm-card-label">I · Implementar</span><h4>Activar con foco</h4><p>Ejecutar, medir en tiempo real y ajustar.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Y · You & I</span><h4>Volver a empezar mejor</h4><p>El ciclo nunca termina: aprende y evoluciona.</p></article>
+        </div>
+
+        <figure class="pm-figure">
+          <img src="assets/images/marketing-digital/slide-024.jpg" alt="Metodología READI(Y) presentada en la clase" loading="lazy" />
+          <figcaption>Una metodología circular para revisar, diseñar, implementar y volver a aprender</figcaption>
+        </figure>
+      </section>
+
+      <section class="pm-section" id="diagnostico">
+        <header class="pm-section-header">
+          <span class="pm-section-number">03</span>
+          <div>
+            <span class="pm-kicker">Estás acá</span>
+            <h2>Diagnóstico: una foto realista, sin juicio y con datos</h2>
+          </div>
+        </header>
+
+        <p class="pm-lead">
+          El diagnóstico describe la situación digital y comercial actual, combina la mirada interna y externa, y permite reconocer la brecha entre lo que existe y lo que se necesita.
+        </p>
+
+        <div class="pm-grid-2">
+          <article class="pm-card pm-card--mint">
+            <span class="pm-card-label">Sí es diagnóstico</span>
+            <h4>Hechos que ayudan a decidir</h4>
+            <ul>
+              <li>Cómo llegan hoy los clientes.</li>
+              <li>Qué canales generan resultados.</li>
+              <li>En qué parte se frena el proceso.</li>
+              <li>Qué recursos reales están disponibles.</li>
+            </ul>
+          </article>
+          <article class="pm-card pm-card--black">
+            <span class="pm-card-label">No es diagnóstico</span>
+            <h4>Opiniones sin evidencia</h4>
+            <ul>
+              <li>“Me parece que…” sin datos.</li>
+              <li>Una lista interminable de problemas.</li>
+              <li>Mirar solamente seguidores o likes.</li>
+              <li>Copiar lo que hace la competencia.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="pm-manifesto">
+          <p>Publicar sin diagnóstico es como poner carteles en la calle sin saber a quién querés atraer. Podés tener likes, pero no ventas.</p>
+        </div>
+
+        <h3>Qué mirar en un diagnóstico digital</h3>
+        <div class="pm-grid-4">
+          <article class="pm-card"><span class="pm-card-label">01</span><h4>Ecosistema</h4><p>Redes, web, Google, WhatsApp y coherencia entre mensaje, propuesta y canal.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">02</span><h4>Recursos reales</h4><p>Tiempo, equipo, presupuesto, stock y capacidad de respuesta.</p></article>
+          <article class="pm-card"><span class="pm-card-label">03</span><h4>Métricas básicas</h4><p>Consultas, ventas, conversiones, ticket y canales que traen resultados.</p></article>
+          <article class="pm-card pm-card--black"><span class="pm-card-label">04</span><h4>Cliente y competencia</h4><p>Qué busca el cliente, dónde busca y contra qué alternativas compara.</p></article>
+        </div>
+
+        <figure class="pm-figure">
+          <img src="assets/images/marketing-digital/slide-039.jpg" alt="Cuatro componentes de un diagnóstico digital" loading="lazy" />
+          <figcaption>Un diagnóstico útil puede comenzar con cuatro bloques simples</figcaption>
+        </figure>
+
+        <h3>Las tres piezas del diagnóstico</h3>
+        <div class="pm-grid-3">
+          <article class="pm-card"><span class="pm-card-label">Interno</span><h4>Lo que tenés</h4><p>Recursos, capacidades, canales, procesos y resultados actuales.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Externo</span><h4>El contexto</h4><p>Cliente, competencia, tendencias, hábitos y condiciones del mercado.</p></article>
+          <article class="pm-card pm-card--black"><span class="pm-card-label">Brecha</span><h4>La prioridad</h4><p>Lo que falta o traba el avance y necesita resolverse primero.</p></article>
+        </div>
+
+        <h3>Ejemplo: de la promoción permanente al valor</h3>
+        <div class="pm-copy">
+          <p>
+            Una vinoteca publica “2 × 1” constantemente. Suben los seguidores, pero baja el margen y el público se acostumbra a esperar descuentos. El diagnóstico muestra que el diferencial real es la curaduría, los regalos y la entrega rápida. La decisión cambia: dejar de competir solo por precio y posicionar el valor de la elección asistida.
+          </p>
+        </div>
+
+        <form class="pm-writing" aria-label="Ejercicio de diagnóstico" autocomplete="off">
+          <label>
+            Completá la frase: “Hoy estamos en… y para llegar a… necesitamos priorizar…”
+            <textarea name="diagnostico" placeholder="Hoy estamos en…"></textarea>
+          </label>
+        </form>
+      </section>
+
+      <section class="pm-section" id="objetivos">
+        <header class="pm-section-header">
+          <span class="pm-section-number">04</span>
+          <div>
+            <span class="pm-kicker">El destino</span>
+            <h2>Objetivos SMART: pasar del deseo a una meta ejecutable</h2>
+          </div>
+        </header>
+
+        <p class="pm-lead">
+          Un objetivo bien escrito enfoca, prioriza, permite medir y alinea a quienes participan del plan.
+        </p>
+
+        <div class="pm-grid-4">
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">S · Specific</span><h4>Específico</h4><p>Define con claridad qué se quiere lograr.</p></article>
+          <article class="pm-card"><span class="pm-card-label">M · Measurable</span><h4>Medible</h4><p>Incluye un número o indicador que permita comprobar el avance.</p></article>
+          <article class="pm-card"><span class="pm-card-label">A · Attainable</span><h4>Alcanzable</h4><p>Representa un desafío posible con los recursos disponibles.</p></article>
+          <article class="pm-card pm-card--black"><span class="pm-card-label">R + T</span><h4>Relevante y temporal</h4><p>Impacta en el negocio y establece un plazo concreto.</p></article>
+        </div>
+
+        <figure class="pm-figure">
+          <img src="assets/images/marketing-digital/slide-049.jpg" alt="Desarrollo de los cinco componentes de un objetivo SMART" loading="lazy" />
+          <figcaption>SMART convierte una intención general en un compromiso medible</figcaption>
+        </figure>
+
+        <h3>Ejemplos de objetivos</h3>
+        <div class="pm-grid-3">
+          <article class="pm-card pm-card--mint">
+            <span class="pm-card-label">Comercio · Indumentaria</span>
+            <h4>Aumentar ventas online</h4>
+            <p>En 90 días, aumentar 20% las ventas online, alcanzar 120 compras mensuales desde Instagram y WhatsApp, sostener dos campañas por mes y actualizar el catálogo semanalmente.</p>
+          </article>
+          <article class="pm-card">
+            <span class="pm-card-label">Industria · Metalúrgica B2B</span>
+            <h4>Generar oportunidades</h4>
+            <p>En 60 días, generar 25 leads calificados mensuales por Google y LinkedIn, mediante una landing con formulario, y conseguir ocho reuniones por mes.</p>
+          </article>
+          <article class="pm-card pm-card--black">
+            <span class="pm-card-label">Servicios · Limpieza profesional</span>
+            <h4>Conseguir presupuestos</h4>
+            <p>En 90 días, alcanzar diez solicitudes semanales desde Google y WhatsApp, manteniendo una respuesta menor a diez minutos en horario laboral.</p>
+          </article>
+        </div>
+
+        <div class="pm-manifesto">
+          <p>Regla anti-frustración: un objetivo principal y dos secundarios como máximo. Si todo es objetivo, nada es prioridad.</p>
+        </div>
+      </section>
+
+      <section class="pm-section" id="publico">
+        <header class="pm-section-header">
+          <span class="pm-section-number">05</span>
+          <div>
+            <span class="pm-kicker">La persona correcta</span>
+            <h2>Público y propuesta de valor</h2>
+          </div>
+        </header>
+
+        <div class="pm-grid-2">
+          <article class="pm-card pm-card--mint">
+            <span class="pm-card-label">Público objetivo</span>
+            <h4>A quién se decide atender</h4>
+            <p>Un conjunto de compradores con necesidades o características comunes para quienes se diseña la oferta.</p>
+          </article>
+          <article class="pm-card pm-card--black">
+            <span class="pm-card-label">Propuesta de valor</span>
+            <h4>La promesa central</h4>
+            <p>El valor que se entrega a ese segmento, los beneficios relevantes y el motivo para elegir la propuesta frente a otras alternativas.</p>
+          </article>
+        </div>
+
+        <h3>Cómo definir el público, sin humo</h3>
+        <div class="pm-grid-4">
+          <article class="pm-card"><span class="pm-card-label">01</span><h4>Quién</h4><p>Persona, organización o tipo de empresa.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">02</span><h4>Problema</h4><p>Necesidad o situación que necesita resolver.</p></article>
+          <article class="pm-card"><span class="pm-card-label">03</span><h4>Objeción</h4><p>Qué duda, temor o fricción impide avanzar.</p></article>
+          <article class="pm-card pm-card--black"><span class="pm-card-label">04</span><h4>Dónde busca</h4><p>Canal, contexto o fuente que utiliza para decidir.</p></article>
+        </div>
+
+        <h3>Fórmula para la propuesta de valor</h3>
+        <div class="pm-formula" aria-label="Fórmula para redactar una propuesta de valor">
+          <strong>Ayudamos a</strong> <span>público</span> <strong>a lograr</strong> <span>resultado</span> <strong>sin</strong> <span>objeción</span> <strong>gracias a</strong> <span>diferencial</span>
+        </div>
+
+        <ul class="pm-checklist">
+          <li>¿Se entiende en cinco segundos?</li>
+          <li>¿Explica un beneficio concreto?</li>
+          <li>¿La promesa es creíble?</li>
+          <li>¿Existe un diferencial reconocible?</li>
+        </ul>
+
+        <figure class="pm-figure">
+          <img src="assets/images/marketing-digital/slide-061.jpg" alt="Fórmula y lista de control para redactar una propuesta de valor" loading="lazy" />
+          <figcaption>Si la propuesta solo dice “somos líderes”, todavía no explica el valor</figcaption>
+        </figure>
+
+        <h3>Tres ejemplos completos</h3>
+        <div class="pm-grid-3">
+          <article class="pm-card pm-card--mint">
+            <span class="pm-card-label">Comercio · Vinoteca</span>
+            <h4>Elegir un regalo sin saber de vinos</h4>
+            <p><strong>Público:</strong> personas con poco tiempo que no quieren fallar.</p>
+            <p><strong>Canales:</strong> Instagram, WhatsApp y Google Maps.</p>
+            <p><strong>Propuesta:</strong> te ayudamos a elegir vinos para regalar con combos listos y entrega rápida.</p>
+          </article>
+          <article class="pm-card">
+            <span class="pm-card-label">Servicios · Limpieza</span>
+            <h4>Confiabilidad y respuesta</h4>
+            <p><strong>Público:</strong> administradores y empresas.</p>
+            <p><strong>Objeción:</strong> incumplimientos y horarios.</p>
+            <p><strong>Propuesta:</strong> mantenemos la oficina impecable con un plan mensual y respuesta rápida.</p>
+          </article>
+          <article class="pm-card pm-card--black">
+            <span class="pm-card-label">Industria · Metalúrgica</span>
+            <h4>Reducir riesgos productivos</h4>
+            <p><strong>Público:</strong> empresas con exigencias de plazo y calidad.</p>
+            <p><strong>Objeción:</strong> atrasos y retrabajos.</p>
+            <p><strong>Propuesta:</strong> reducimos riesgos de parada con entregas a tiempo y control documentado.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="pm-section" id="ejecucion">
+        <header class="pm-section-header">
+          <span class="pm-section-number">06</span>
+          <div>
+            <span class="pm-kicker">Bajar a tierra</span>
+            <h2>Canales, contenido y campañas</h2>
+          </div>
+        </header>
+
+        <p class="pm-lead">
+          El plan operativo digital convierte la estrategia en acciones: define canales, contenidos, campañas, responsables, frecuencia y recursos.
+        </p>
+
+        <h3>01 · Canales</h3>
+        <div class="pm-copy">
+          <p>
+            Son los lugares donde la PyME aparece, conversa y convierte: redes, buscadores, WhatsApp, web, marketplaces o email. Elegir obliga a priorizar energía y recursos, y ayuda a definir qué tipo de contenido y campaña necesita cada espacio.
+          </p>
+        </div>
+
+        <div class="pm-manifesto">
+          <p>Regla de oro: máximo tres canales. Uno principal, uno de soporte y uno de conversión.</p>
+        </div>
+
+        <div class="pm-grid-3">
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Atracción</span><h4>Donde te descubren</h4><p>El canal que amplía el alcance y genera la primera atención.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Consideración</span><h4>Donde confían</h4><p>El espacio que aporta pruebas, contexto, experiencia y seguridad.</p></article>
+          <article class="pm-card pm-card--black"><span class="pm-card-label">Conversión</span><h4>Donde actúan</h4><p>El lugar donde compran, reservan, consultan o solicitan presupuesto.</p></article>
+        </div>
+
+        <h3>02 · Contenido</h3>
+        <p class="pm-lead">
+          El contenido mueve al público desde conocer hacia confiar y actuar. Sin una base de contenido no hay constancia, confianza ni campañas eficientes.
+        </p>
+
+        <div class="pm-grid-2">
+          <article class="pm-card pm-card--mint">
+            <span class="pm-card-label">Mínimo viable</span>
+            <h4>Calendario de dos semanas</h4>
+            <p>Permite verificar rápidamente si la frecuencia es realista y sostenible. El escenario ideal es trabajar un mes con anticipación.</p>
+          </article>
+          <article class="pm-card pm-card--black">
+            <span class="pm-card-label">Antes de producir</span>
+            <h4>Revisar el mes anterior</h4>
+            <p>Los temas y formatos deben aprender de los resultados anteriores, no comenzar siempre desde cero.</p>
+          </article>
+        </div>
+
+        <h3>Rutina mensual de producción</h3>
+        <div class="pm-grid-2">
+          <article class="pm-card">
+            <span class="pm-card-label">Con equipo</span>
+            <h4>Cuatro momentos</h4>
+            <ul>
+              <li>Días 1 a 5: temas y ejes.</li>
+              <li>Días 5 a 10: producción y copys.</li>
+              <li>Días 10 a 15: diseño de piezas.</li>
+              <li>Días 15 a 20: aprobación y programación.</li>
+            </ul>
+          </article>
+          <article class="pm-card pm-card--mint">
+            <span class="pm-card-label">Sin equipo</span>
+            <h4>Un sistema más compacto</h4>
+            <ul>
+              <li>Días 1 a 5: análisis del mes anterior.</li>
+              <li>Días 5 a 10: temas, contenido y copys.</li>
+              <li>Días 10 a 15: diseño y programación.</li>
+            </ul>
+          </article>
+        </div>
+
+        <figure class="pm-figure">
+          <img src="assets/images/marketing-digital/slide-076.jpg" alt="Rutina mensual de producción de contenidos para equipos" loading="lazy" />
+          <figcaption>Una rutina mensual evita que todo el contenido se produzca a último momento</figcaption>
+        </figure>
+
+        <h3>03 · Campañas y recursos</h3>
+        <p class="pm-lead">
+          Una campaña es un empuje con intención. El contenido sostiene la presencia; la campaña acelera un resultado, ordena el mensaje comercial y obliga a definir un punto de llegada.
+        </p>
+
+        <ul class="pm-checklist">
+          <li>Objetivo claro.</li>
+          <li>Inicio y final definidos.</li>
+          <li>Oferta o propuesta concreta.</li>
+          <li>Público específico.</li>
+          <li>KPI principal.</li>
+          <li>Tiempo, equipo y presupuesto posible.</li>
+        </ul>
+
+        <h3>Caso integrado: limpieza profesional</h3>
+        <div class="pm-grid-2">
+          <article class="pm-card pm-card--mint">
+            <span class="pm-card-label">Estrategia</span>
+            <h4>Plan mensual + cumplimiento + respuesta rápida</h4>
+            <p><strong>Atracción:</strong> Google y búsqueda local.</p>
+            <p><strong>Consideración:</strong> Instagram con prueba social.</p>
+            <p><strong>Conversión:</strong> WhatsApp Business con catálogo y respuestas rápidas.</p>
+          </article>
+          <article class="pm-card">
+            <span class="pm-card-label">Contenido · 2 semanas</span>
+            <h4>Seis piezas posibles</h4>
+            <ol>
+              <li>Antes y después.</li>
+              <li>Reseña real.</li>
+              <li>Qué incluye el plan.</li>
+              <li>Errores comunes al contratar.</li>
+              <li>Cómo trabajamos.</li>
+              <li>Preguntas frecuentes.</li>
+            </ol>
+          </article>
+        </div>
+
+        <div class="pm-card pm-card--black">
+          <span class="pm-card-label">Campaña · Semana de oficinas</span>
+          <h4>Una oferta y un KPI</h4>
+          <p>Evaluación o visita bonificada, o un paquete mensual según el negocio. Indicadores: cantidad de presupuestos obtenidos y tiempo de respuesta.</p>
+        </div>
+      </section>
+
+      <section class="pm-section" id="medicion">
+        <header class="pm-section-header">
+          <span class="pm-section-number">07</span>
+          <div>
+            <span class="pm-kicker">El tablero</span>
+            <h2>KPIs, medición y mejora continua</h2>
+          </div>
+        </header>
+
+        <p class="pm-lead">
+          No medimos por medir: medimos para aprender, detectar dónde se traba el sistema y decidir qué ajustar.
+        </p>
+
+        <div class="pm-grid-2">
+          <article class="pm-card pm-card--mint">
+            <span class="pm-card-label">KPIs</span>
+            <h4>Los números que muestran avance</h4>
+            <p>Seleccionar entre cuatro y seis indicadores evita perderse entre métricas que no cambian decisiones.</p>
+          </article>
+          <article class="pm-card pm-card--black">
+            <span class="pm-card-label">PDCA</span>
+            <h4>Planificar, hacer, revisar y actuar</h4>
+            <p>La mejora es un ciclo continuo: ejecutar, revisar resultados y ajustar la siguiente decisión.</p>
+          </article>
+        </div>
+
+        <div class="pm-manifesto">
+          <p>Regla simple: un objetivo principal, cuatro KPIs. Máximo seis KPIs en total.</p>
+        </div>
+
+        <h3>Medición y mejora son dos tareas distintas</h3>
+        <div class="pm-grid-2">
+          <article class="pm-card">
+            <span class="pm-card-label">Medición</span>
+            <h4>De dónde salen los datos</h4>
+            <ul>
+              <li>WhatsApp Business.</li>
+              <li>Tienda, marketplace o sistema de ventas.</li>
+              <li>Google Analytics o buscadores.</li>
+              <li>Redes sociales y plataformas publicitarias.</li>
+              <li>CRM o planilla simple.</li>
+            </ul>
+          </article>
+          <article class="pm-card pm-card--mint">
+            <span class="pm-card-label">Mejora</span>
+            <h4>El hábito de revisar y ajustar</h4>
+            <ul>
+              <li>Mirar los datos con una frecuencia definida.</li>
+              <li>Extraer un aprendizaje.</li>
+              <li>Elegir una hipótesis de mejora.</li>
+              <li>Probar un cambio y volver a medir.</li>
+            </ul>
+          </article>
+        </div>
+
+        <h3>Ejemplo: indumentaria B2C</h3>
+        <div class="pm-grid-3">
+          <article class="pm-card pm-card--mint">
+            <span class="pm-card-label">Objetivo</span>
+            <h4>Aumentar ventas online</h4>
+            <p>El objetivo principal define qué indicadores tienen sentido.</p>
+          </article>
+          <article class="pm-card">
+            <span class="pm-card-label">Cuatro KPIs</span>
+            <h4>Ventas, conversión, ticket y respuesta</h4>
+            <p>Conversión puede medirse desde consulta a venta o desde visita a compra.</p>
+          </article>
+          <article class="pm-card pm-card--black">
+            <span class="pm-card-label">Decisiones</span>
+            <h4>Modificar lo que se traba</h4>
+            <p>Si convierte poco: revisar fotos, información y guía de talles. Si se responde tarde: usar horarios, etiquetas y respuestas rápidas.</p>
+          </article>
+        </div>
+
+        <div class="pm-grid-2">
+          <figure class="pm-figure">
+            <img src="assets/images/marketing-digital/slide-097.jpg" alt="Caso real de seguimiento de ventas con indicadores orgánicos, publicitarios y comerciales" loading="lazy" />
+            <figcaption>Ejemplo de seguimiento de venta online</figcaption>
+          </figure>
+          <figure class="pm-figure">
+            <img src="assets/images/marketing-digital/slide-098.jpg" alt="Ejemplo de una herramienta de medición basada en objetivos y resultados clave" loading="lazy" />
+            <figcaption>Una herramienta de seguimiento puede ser compleja o una planilla mínima</figcaption>
+          </figure>
+        </div>
+
+        <h3>El sistema completo</h3>
+        <ol class="pm-steps">
+          <li><div><strong>Diagnóstico</strong>Evita actuar solamente por intuición.</div></li>
+          <li><div><strong>Objetivos y KPIs</strong>Ordenan prioridades y permiten medir el avance.</div></li>
+          <li><div><strong>Público y propuesta de valor</strong>Transforman información en un mensaje relevante.</div></li>
+          <li><div><strong>Canales, calendario y recursos</strong>Convierten la estrategia en ejecución sostenible.</div></li>
+          <li><div><strong>Control y optimización</strong>Mejoran el plan con datos, no con opiniones.</div></li>
+        </ol>
+
+        <div class="pm-manifesto">
+          <p>Si falta data, improvisamos. Si falta medición, no aprendemos. Si falta acción, no pasa nada.</p>
+        </div>
+
+        <h3>Material de consulta</h3>
+        <ul class="pm-checklist">
+          <li>Ejemplos de KPIs y diferencia entre indicadores y métricas.</li>
+          <li>Guías para construir objetivos medibles.</li>
+          <li>Estructuras prácticas de planes de marketing.</li>
+          <li>Material sobre rendimiento, métricas y formatos en redes.</li>
+          <li>Plantillas para canales, calendario, presupuesto y medición.</li>
+          <li>Contenido como motor del marketing digital.</li>
+        </ul>
+
+        <figure class="pm-figure">
+          <img src="assets/images/marketing-digital/slide-103.jpg" alt="Materiales de consulta recomendados en la clase" loading="lazy" />
+          <figcaption>Bibliografía y recursos sugeridos en la presentación original</figcaption>
+        </figure>
+
+        <p class="pm-footer-note">Clase de la Mag. Evelyn Abrahan · Módulo 1: Plan de Marketing Digital</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+  <script src="js/components.js?v=2"></script>
+</body>
+</html>

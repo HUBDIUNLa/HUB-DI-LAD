@@ -1,0 +1,893 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Optimización Digital | HUB DI LAD UNLa</title>
+  <meta name="description" content="Módulo 6 de Optimización de Social Media y Campañas Digitales reorganizado como una guía web de analítica, experimentación, automatización, funnel y retención." />
+
+  <link rel="icon" href="assets/images/logohubfavicom.ico" type="image/x-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script src="js/tailwind.config.js?v=1"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="css/style.css?v=5" />
+
+  <style>
+    :root {
+      --web-lad: #A6FFF0;
+      --black: #000000;
+      --white: #ffffff;
+      --hub-light-bg: #F5F7F7;
+      --line: #cbd2d2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--black);
+      background: var(--hub-light-bg);
+      font-family: "Karla", system-ui, sans-serif;
+    }
+
+    .pm-course {
+      padding: clamp(1rem, 3vw, 3rem) 0 5rem;
+    }
+
+    .pm-container {
+      width: min(92%, 1360px);
+      margin-inline: auto;
+    }
+
+    .pm-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(18rem, .65fr);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+    }
+
+    .pm-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 42rem;
+      padding: clamp(2rem, 6vw, 6rem);
+    }
+
+    .pm-eyebrow,
+    .pm-kicker,
+    .pm-card-label,
+    .pm-template-code {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .pm-eyebrow {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: .78rem;
+    }
+
+    .pm-hero h1 {
+      max-width: 12ch;
+      margin: 0;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(2.8rem, 7vw, 6.6rem);
+      font-weight: 500;
+      line-height: .92;
+      letter-spacing: -.065em;
+      text-transform: uppercase;
+    }
+
+    .pm-hero-copy > p {
+      max-width: 48rem;
+      margin: 1.5rem 0 0;
+      font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+      line-height: 1.48;
+    }
+
+    .pm-hero-index {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .pm-hero-index h2 {
+      margin: 0 0 1.5rem;
+      font-family: "Roboto Mono", monospace;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .pm-hero-index ol {
+      display: grid;
+      gap: .8rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: pm-index;
+    }
+
+    .pm-hero-index li {
+      counter-increment: pm-index;
+    }
+
+    .pm-hero-index a {
+      display: grid;
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: .75rem;
+      align-items: baseline;
+      color: inherit;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+
+    .pm-hero-index a::before {
+      content: counter(pm-index, decimal-leading-zero);
+      color: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .pm-hero-index a:hover,
+    .pm-hero-index a:focus-visible {
+      color: var(--web-lad);
+    }
+
+    .pm-hero-note {
+      margin: 2rem 0 0;
+      padding-top: 1rem;
+      border-top: 1px solid var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .78rem;
+      line-height: 1.5;
+    }
+
+    .pm-section {
+      margin-top: clamp(1.25rem, 3vw, 2.5rem);
+      padding: clamp(1.25rem, 4vw, 3.5rem);
+      scroll-margin-top: 1rem;
+      border: 1px solid var(--black);
+      border-left-width: .55rem;
+      background: var(--white);
+    }
+
+    .pm-section:nth-of-type(even) {
+      background: var(--hub-light-bg);
+    }
+
+    .pm-section-header {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      margin-bottom: clamp(1.75rem, 4vw, 3rem);
+    }
+
+    .pm-section-number {
+      display: grid;
+      width: 3rem;
+      height: 3rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .pm-kicker {
+      display: block;
+      margin-bottom: .4rem;
+      font-size: .72rem;
+    }
+
+    .pm-section h2 {
+      max-width: 23ch;
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: .96;
+      letter-spacing: -.05em;
+    }
+
+    .pm-section h3 {
+      margin: clamp(2.5rem, 5vw, 4rem) 0 1rem;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+
+    .pm-lead {
+      max-width: 62rem;
+      margin: 0 0 1.5rem;
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      line-height: 1.4;
+    }
+
+    .pm-copy {
+      max-width: 62rem;
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    .pm-copy p {
+      margin: 0 0 1.25rem;
+    }
+
+    .pm-grid-2,
+    .pm-grid-3,
+    .pm-grid-4,
+    .pm-glossary {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .pm-grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pm-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pm-grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .pm-glossary {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pm-card {
+      min-width: 0;
+      padding: clamp(1.1rem, 2.5vw, 1.75rem);
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+    }
+
+    .pm-card--mint {
+      background: var(--web-lad);
+    }
+
+    .pm-card--black {
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .pm-card-label {
+      display: block;
+      margin-bottom: .8rem;
+      font-size: .7rem;
+    }
+
+    .pm-card--black .pm-card-label {
+      color: var(--web-lad);
+    }
+
+    .pm-card h4 {
+      margin: 0 0 .75rem;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      line-height: 1.1;
+    }
+
+    .pm-card p,
+    .pm-card ul {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .pm-card ul {
+      padding-left: 1.1rem;
+    }
+
+    .pm-manifesto {
+      margin: 2rem 0;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      border: 1px solid var(--black);
+      color: var(--white);
+      background: var(--black);
+      box-shadow: .7rem .7rem 0 var(--web-lad);
+      font-size: clamp(1.4rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -.03em;
+    }
+
+    .pm-manifesto p {
+      max-width: 34ch;
+      margin: 0;
+    }
+
+    .pm-formula {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      align-items: center;
+      margin: 1.5rem 0;
+      padding: 1.2rem;
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+    }
+
+    .pm-formula span {
+      padding: .4rem .6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-steps {
+      display: grid;
+      gap: .75rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: pm-steps;
+    }
+
+    .pm-steps li {
+      display: grid;
+      grid-template-columns: 2.8rem minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      padding: 1rem;
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+      counter-increment: pm-steps;
+    }
+
+    .pm-steps li::before {
+      content: counter(pm-steps, decimal-leading-zero);
+      display: grid;
+      width: 2.8rem;
+      height: 2.8rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .pm-steps strong {
+      display: block;
+      margin-bottom: .25rem;
+    }
+
+    .pm-checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .6rem 1rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pm-checklist li {
+      position: relative;
+      padding: .85rem 1rem .85rem 2.6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+      line-height: 1.4;
+    }
+
+    .pm-checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 1rem;
+      font-weight: 800;
+    }
+
+    .pm-figure {
+      margin: 1.5rem 0 0;
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .pm-figure figcaption {
+      padding: .75rem 1rem;
+      border-top: 1px solid var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .76rem;
+      line-height: 1.4;
+    }
+
+    .pm-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      margin: 1.5rem 0;
+      border: 1px solid var(--black);
+    }
+
+    .pm-flow div {
+      padding: 1.2rem;
+      border-right: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-flow div:last-child {
+      border-right: 0;
+      background: var(--web-lad);
+    }
+
+    .pm-flow strong {
+      display: block;
+      margin-bottom: .35rem;
+    }
+
+    .pm-writing {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+    }
+
+    .pm-writing label {
+      display: grid;
+      gap: .5rem;
+      font-weight: 700;
+    }
+
+    .pm-writing textarea {
+      width: 100%;
+      min-height: 7rem;
+      padding: 1rem;
+      resize: vertical;
+      border: 1px solid var(--black);
+      border-radius: 0;
+      color: var(--black);
+      background: var(--white);
+      font: inherit;
+    }
+
+    .pm-footer-note {
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .pm-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-hero-copy {
+        min-height: 34rem;
+      }
+
+      .pm-grid-4,
+      .pm-glossary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .pm-grid-2,
+      .pm-grid-3,
+      .pm-grid-4,
+      .pm-glossary,
+      .pm-checklist,
+      .pm-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-section {
+        padding: 1.1rem;
+        border-left-width: .35rem;
+      }
+
+      .pm-section-header {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-hero-copy,
+      .pm-hero-index {
+        padding: 1.3rem;
+      }
+
+      .pm-hero-copy {
+        min-height: 30rem;
+      }
+
+      .pm-flow div {
+        border-right: 0;
+        border-bottom: 1px solid var(--black);
+      }
+
+      .pm-flow div:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media print {
+      .pm-section,
+      .pm-card,
+      .pm-figure {
+        break-inside: avoid;
+      }
+
+      .pm-writing textarea {
+        resize: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main class="pm-course">
+    <div class="pm-container">
+      <header class="pm-hero">
+        <div class="pm-hero-copy">
+          <span class="pm-eyebrow">Marketing 4.0 · Módulo 6</span>
+          <h1>Optimización Digital</h1>
+          <p>Analítica, experimentación, automatización y retención para transformar redes y campañas en un sistema de mejora continua.</p>
+        </div>
+
+        <nav class="pm-hero-index" aria-label="Recorrido de la clase">
+          <div>
+            <h2>Recorrido</h2>
+            <ol>
+              <li><a href="#analitica">Analítica aplicada</a></li>
+              <li><a href="#indicadores">KPIs y herramientas</a></li>
+              <li><a href="#testing">A/B testing</a></li>
+              <li><a href="#automatizacion">Automatización</a></li>
+              <li><a href="#reporting">Reporting</a></li>
+              <li><a href="#funnel">Funnel de conversión</a></li>
+              <li><a href="#retencion">Retención y ciclo de mejora</a></li>
+            </ol>
+          </div>
+          <p class="pm-hero-note">98 diapositivas reorganizadas en 7 módulos web, conservando métodos, ejemplos y métricas sin repetir portadas ni pausas.</p>
+        </nav>
+      </header>
+
+      <section class="pm-section" id="analitica">
+        <header class="pm-section-header">
+          <span class="pm-section-number">01</span>
+          <div><span class="pm-kicker">Bloque 1</span><h2>Analítica digital aplicada</h2></div>
+        </header>
+
+        <p class="pm-lead">La analítica digital recolecta, mide, ordena e interpreta datos para entender comportamientos, evaluar resultados y tomar decisiones.</p>
+
+        <div class="pm-manifesto"><p>En digital, hacer no alcanza. Hay que mirar, interpretar, corregir y volver a probar.</p></div>
+
+        <p class="pm-copy">Si el marketing digital es un sistema, la analítica es el tablero de control. Sin datos se decide por intuición; con datos y contexto se toman decisiones informadas.</p>
+
+        <h3>Información de todo el recorrido</h3>
+        <div class="pm-grid-4">
+          <article class="pm-card"><h4>Contenido</h4><p>Redes sociales, publicaciones, videos e interacción.</p></article>
+          <article class="pm-card"><h4>Adquisición</h4><p>Campañas publicitarias, búsquedas y fuentes de tráfico.</p></article>
+          <article class="pm-card"><h4>Conversión</h4><p>Sitio, formularios, e-commerce, WhatsApp y CRM.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Relación</h4><p>Email, recompra, fidelización y retención.</p></article>
+        </div>
+
+        <h3>Las tres preguntas de la analítica</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/optimizacion-social-media-modulo-6/slide-021.jpg" alt="Tres preguntas de la analítica aplicada" loading="lazy" />
+          <figcaption>Descripción, diagnóstico y acción convierten un dato en una decisión.</figcaption>
+        </figure>
+        <div class="pm-grid-3">
+          <article class="pm-card"><span class="pm-card-label">Descriptiva</span><h4>¿Qué pasó?</h4><p>Leer los datos tal como son: alcance, ventas, consultas o conversiones.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Diagnóstica</span><h4>¿Por qué pasó?</h4><p>Buscar causas, patrones, cambios y contexto.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Prescriptiva</span><h4>¿Qué hago ahora?</h4><p>Elegir una acción de mejora concreta y medible.</p></article>
+        </div>
+
+        <h3>Dato, métrica, KPI e insight</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/optimizacion-social-media-modulo-6/slide-022.jpg" alt="Diferencia original entre dato, métrica, KPI e insight" loading="lazy" />
+          <figcaption>El dato aislado adquiere valor cuando se convierte en interpretación y acción.</figcaption>
+        </figure>
+        <div class="pm-grid-4">
+          <article class="pm-card"><h4>Dato</h4><p>Un valor aislado. Ejemplo: 2.500 visitas.</p></article>
+          <article class="pm-card"><h4>Métrica</h4><p>Una variable medible: clics, impresiones o conversiones.</p></article>
+          <article class="pm-card"><h4>KPI</h4><p>La métrica prioritaria vinculada a un objetivo.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Insight</h4><p>Una interpretación útil para decidir qué hacer.</p></article>
+        </div>
+
+        <h3>Para qué sirve</h3>
+        <ul class="pm-checklist">
+          <li>Reducir decisiones intuitivas.</li><li>Detectar oportunidades.</li><li>Corregir errores.</li><li>Asignar mejor el presupuesto.</li><li>Entender al público.</li><li>Mejorar conversiones.</li><li>Sostener clientes.</li><li>Aprender de forma acumulativa.</li>
+        </ul>
+      </section>
+
+      <section class="pm-section" id="indicadores">
+        <header class="pm-section-header">
+          <span class="pm-section-number">02</span>
+          <div><span class="pm-kicker">Medir con propósito</span><h2>KPIs y herramientas</h2></div>
+        </header>
+
+        <p class="pm-lead">No todas las métricas valen lo mismo. Hay que mirar las que responden al objetivo del negocio.</p>
+
+        <figure class="pm-figure">
+          <img src="assets/images/optimizacion-social-media-modulo-6/slide-023.jpg" alt="Métricas originales según objetivo" loading="lazy" />
+          <figcaption>Visibilidad, interacción, tráfico, leads, ventas y retención necesitan indicadores diferentes.</figcaption>
+        </figure>
+
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Visibilidad</h4><p>Alcance, impresiones, frecuencia y visualizaciones.</p></article>
+          <article class="pm-card"><h4>Interacción</h4><p>Comentarios, compartidos, guardados y engagement.</p></article>
+          <article class="pm-card"><h4>Tráfico</h4><p>Clics, CTR, CPC, sesiones y fuente.</p></article>
+          <article class="pm-card"><h4>Leads</h4><p>Formularios, costo por lead, calidad y tasa de conversión.</p></article>
+          <article class="pm-card"><h4>Ventas</h4><p>Conversiones, CPA, ROAS y ticket promedio.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Retención</h4><p>Recompra, tasa de retención, churn, LTV y NPS.</p></article>
+        </div>
+
+        <h3>Ejemplos por negocio</h3>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Cafetería</h4><p>Mensajes, reservas, visitas y clientes que vuelven; no solamente alcance.</p></article>
+          <article class="pm-card"><h4>Asesoría B2B</h4><p>Descargas, formularios, reuniones y avance comercial.</p></article>
+          <article class="pm-card"><h4>Curso online</h4><p>Visitas a landing, registros, costo por lead, inscripción y finalización.</p></article>
+          <article class="pm-card"><h4>Autopartes</h4><p>Clics desde Google, consultas por WhatsApp y conversiones por categoría.</p></article>
+          <article class="pm-card"><h4>Pinturería</h4><p>Contenidos que generan consultas, campañas que producen mensajes y demanda estacional.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Agencia de diseño</h4><p>Visitas a portfolio, formularios, origen y calidad de cada consulta.</p></article>
+        </div>
+
+        <h3>Fuentes de datos accesibles</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/optimizacion-social-media-modulo-6/slide-028.jpg" alt="Fuentes de datos y herramientas para PyMEs" loading="lazy" />
+          <figcaption>Cada herramienta observa una parte del sistema; juntas reconstruyen el recorrido.</figcaption>
+        </figure>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Meta Business Suite</h4><p>Orgánico y pago en Instagram y Facebook.</p></article>
+          <article class="pm-card"><h4>TikTok Analytics</h4><p>Visualizaciones, retención y descubrimiento.</p></article>
+          <article class="pm-card"><h4>Google Analytics 4</h4><p>Origen, comportamiento y conversiones en la web.</p></article>
+          <article class="pm-card"><h4>Search Console</h4><p>Consultas, clics y rendimiento orgánico en Google.</p></article>
+          <article class="pm-card"><h4>Metricool</h4><p>Vista integrada de redes, web y publicidad.</p></article>
+          <article class="pm-card pm-card--mint"><h4>WhatsApp Business</h4><p>Mensajes enviados, leídos, respuestas y dinámica del canal.</p></article>
+        </div>
+
+        <div class="pm-manifesto"><p>Analizar no es acumular métricas. Analizar es convertir datos en decisiones.</p></div>
+      </section>
+
+      <section class="pm-section" id="testing">
+        <header class="pm-section-header">
+          <span class="pm-section-number">03</span>
+          <div><span class="pm-kicker">Bloque 2</span><h2>A/B testing y optimización</h2></div>
+        </header>
+
+        <p class="pm-lead">El A/B testing muestra dos versiones de un mismo elemento a grupos comparables para descubrir cuál genera mejor resultado.</p>
+
+        <div class="pm-manifesto"><p>Es el método más directo para tomar decisiones basadas en evidencia, no en suposiciones.</p></div>
+
+        <h3>Qué se puede testear</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/optimizacion-social-media-modulo-6/slide-035.jpg" alt="Variables originales para un test A/B" loading="lazy" />
+          <figcaption>Imagen, texto, CTA, formato, horario, asunto y segmentación pueden compararse.</figcaption>
+        </figure>
+
+        <ol class="pm-steps">
+          <li><div><strong>Definir una variable.</strong> Si cambian imagen y texto a la vez, no se sabrá qué produjo la diferencia.</div></li>
+          <li><div><strong>Elegir la métrica de éxito.</strong> CTR, mensajes, ventas, registros o guardados.</div></li>
+          <li><div><strong>Usar grupos comparables.</strong> Una muestra demasiado pequeña puede producir ruido.</div></li>
+          <li><div><strong>Dejar correr el test.</strong> Entre 3 y 7 días en orgánico; en pauta, al menos unas 1.000 impresiones.</div></li>
+          <li><div><strong>Aplicar el ganador.</strong> Convertir el resultado en nuevo estándar.</div></li>
+          <li><div><strong>Registrar el aprendizaje.</strong> Documentar variable, resultado, acción y próxima hipótesis.</div></li>
+        </ol>
+
+        <h3>Orgánico y pago</h3>
+        <div class="pm-grid-2">
+          <article class="pm-card"><span class="pm-card-label">Sin inversión</span><h4>Prueba secuencial</h4><p>Publicar una versión y luego la otra. Es más lenta y puede recibir influencia del día, horario y alcance orgánico.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Con inversión</span><h4>Prueba simultánea</h4><p>Dos conjuntos comparables corren al mismo tiempo. La distribución es más rápida y controlable.</p></article>
+        </div>
+
+        <h3>El ciclo que nunca termina</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/optimizacion-social-media-modulo-6/slide-039.jpg" alt="Ciclo original de optimización continua" loading="lazy" />
+          <figcaption>Observar, formular hipótesis, testear, medir, decidir y repetir.</figcaption>
+        </figure>
+        <div class="pm-flow">
+          <div><strong>Observar</strong>¿Qué no está funcionando?</div>
+          <div><strong>Hipótesis</strong>¿Por qué podría estar pasando?</div>
+          <div><strong>Testear y medir</strong>Cambiar una variable y comparar.</div>
+          <div><strong>Decidir</strong>Aplicar, registrar y elegir la próxima prueba.</div>
+        </div>
+      </section>
+
+      <section class="pm-section" id="automatizacion">
+        <header class="pm-section-header">
+          <span class="pm-section-number">04</span>
+          <div><span class="pm-kicker">Bloque 3</span><h2>Automatización de contenido</h2></div>
+        </header>
+
+        <p class="pm-lead">Automatizar es usar herramientas y procesos para programar, organizar, distribuir, responder o reutilizar de forma más eficiente.</p>
+
+        <div class="pm-manifesto"><p>Automatizar no es deshumanizar. Es liberar tiempo operativo para pensar mejor.</p></div>
+
+        <h3>Qué automatizar y qué preservar</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/optimizacion-social-media-modulo-6/slide-049.jpg" alt="Comparación original entre tareas automatizables y humanas" loading="lazy" />
+          <figcaption>La ejecución repetitiva puede automatizarse; el criterio, la creatividad y las conversaciones sensibles no.</figcaption>
+        </figure>
+
+        <div class="pm-grid-2">
+          <article class="pm-card pm-card--mint">
+            <span class="pm-card-label">Sí conviene automatizar</span>
+            <h4>Tareas repetitivas</h4>
+            <ul><li>Programación de publicaciones.</li><li>Reportes periódicos.</li><li>Bienvenidas y respuestas rápidas.</li><li>Flujos de email por acciones.</li><li>Recordatorios de carrito.</li><li>Alertas de métricas.</li></ul>
+          </article>
+          <article class="pm-card pm-card--black">
+            <span class="pm-card-label">Necesita criterio humano</span>
+            <h4>Relaciones complejas</h4>
+            <ul><li>Comentarios personales.</li><li>Quejas y reclamos.</li><li>Venta consultiva.</li><li>Contenido que requiere contexto.</li><li>Problemas complejos.</li><li>Críticas públicas.</li></ul>
+          </article>
+        </div>
+
+        <h3>Herramientas para PyMEs</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/optimizacion-social-media-modulo-6/slide-053.jpg" alt="Herramientas originales de automatización para PyMEs" loading="lazy" />
+          <figcaption>La herramienta se elige según la tarea y el volumen, no por cantidad de funciones.</figcaption>
+        </figure>
+
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Programación</h4><p>Meta Business Suite, Buffer, Later y Metricool.</p></article>
+          <article class="pm-card"><h4>Mensajes</h4><p>WhatsApp Business, ManyChat y respuestas instantáneas de Meta.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Email y CRM</h4><p>Mailchimp, Brevo o ActiveCampaign según el tamaño de la base.</p></article>
+        </div>
+
+        <h3>Ejemplo post-compra</h3>
+        <ol class="pm-steps">
+          <li><div><strong>Día 0.</strong> Confirmación de pedido y seguimiento.</div></li>
+          <li><div><strong>Día 3.</strong> Consulta sobre la experiencia y pedido de reseña.</div></li>
+          <li><div><strong>Día 14.</strong> Recomendación personalizada vinculada con la compra.</div></li>
+        </ol>
+        <p class="pm-copy"><strong>Error a evitar:</strong> automatizar sin personalización. Usar nombre, compra anterior o preferencia cuando esos datos estén disponibles.</p>
+      </section>
+
+      <section class="pm-section" id="reporting">
+        <header class="pm-section-header">
+          <span class="pm-section-number">05</span>
+          <div><span class="pm-kicker">Información para decidir</span><h2>Reporting</h2></div>
+        </header>
+
+        <p class="pm-lead">El reporting presenta resultados de forma ordenada y periódica para facilitar el análisis y la toma de decisiones.</p>
+
+        <div class="pm-formula"><span>Qué pasó</span> → <span>Por qué pasó</span> → <span>Qué aprendimos</span> → <span>Qué haremos</span></div>
+
+        <h3>Qué debe incluir</h3>
+        <ul class="pm-checklist">
+          <li>Objetivos del período.</li><li>Período analizado.</li><li>Métricas relevantes.</li><li>Comparación con períodos anteriores.</li><li>Conclusiones.</li><li>Recomendaciones.</li>
+        </ul>
+
+        <figure class="pm-figure">
+          <img src="assets/images/optimizacion-social-media-modulo-6/slide-060.jpg" alt="Estructura original de reporte para una PyME" loading="lazy" />
+          <figcaption>Un buen reporte explica qué funcionó, qué no y qué acción conviene tomar.</figcaption>
+        </figure>
+
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Metricool</h4><p>Reportes automáticos de redes y publicidad enviados por email.</p></article>
+          <article class="pm-card"><h4>Looker Studio</h4><p>Dashboard que combina Analytics, Meta Ads y Google Ads.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Planilla simple</h4><p>Un registro semanal de diez minutos es mejor que no medir nada.</p></article>
+        </div>
+
+        <div class="pm-manifesto"><p>El valor del reporte no está en llenar una planilla. Está en interpretar y actuar.</p></div>
+      </section>
+
+      <section class="pm-section" id="funnel">
+        <header class="pm-section-header">
+          <span class="pm-section-number">06</span>
+          <div><span class="pm-kicker">Bloque 4</span><h2>Funnel de conversión</h2></div>
+        </header>
+
+        <p class="pm-lead">El funnel representa el recorrido desde el descubrimiento hasta la compra y la recurrencia. Permite identificar en qué etapa se pierden las oportunidades.</p>
+
+        <figure class="pm-figure">
+          <img src="assets/images/optimizacion-social-media-modulo-6/slide-068.jpg" alt="Etapas originales del funnel de conversión" loading="lazy" />
+          <figcaption>Cada etapa tiene un objetivo, contenido y métrica propios.</figcaption>
+        </figure>
+
+        <div class="pm-grid-4">
+          <article class="pm-card"><span class="pm-card-label">01</span><h4>Awareness</h4><p>Descubrir. Reels, anuncios de alcance, videos breves y contenidos iniciales.</p></article>
+          <article class="pm-card"><span class="pm-card-label">02</span><h4>Consideración</h4><p>Evaluar. Casos, testimonios, comparativas y contenido educativo.</p></article>
+          <article class="pm-card"><span class="pm-card-label">03</span><h4>Conversión</h4><p>Actuar. Formulario, WhatsApp, landing, reserva o compra.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">04</span><h4>Fidelización</h4><p>Volver y recomendar. Posventa, promociones, soporte y contenido útil.</p></article>
+        </div>
+
+        <h3>Las 5A de Kotler</h3>
+        <div class="pm-flow">
+          <div><strong>Aware</strong>La persona descubre que la marca existe.</div>
+          <div><strong>Appeal</strong>La propuesta despierta atracción.</div>
+          <div><strong>Ask</strong>Busca reseñas, compara y consulta.</div>
+          <div><strong>Act → Advocate</strong>Compra, vive la experiencia y recomienda.</div>
+        </div>
+
+        <h3>Encontrar el cuello de botella</h3>
+        <p class="pm-copy">El diagnóstico calcula la tasa de conversión entre etapas e identifica la caída más pronunciada. La mejora debe actuar allí, no necesariamente al final.</p>
+        <figure class="pm-figure">
+          <img src="assets/images/optimizacion-social-media-modulo-6/slide-073.jpg" alt="Diagnóstico original de un funnel gastronómico" loading="lazy" />
+          <figcaption>Si pocas personas pasan del alcance al clic, el problema puede estar en el CTA, no en la web.</figcaption>
+        </figure>
+      </section>
+
+      <section class="pm-section" id="retencion">
+        <header class="pm-section-header">
+          <span class="pm-section-number">07</span>
+          <div><span class="pm-kicker">El vínculo continúa</span><h2>Retención y ciclo de mejora</h2></div>
+        </header>
+
+        <p class="pm-lead">Retener es mantener la relación con clientes existentes y lograr que vuelvan a comprar, contratar, interactuar o recomendar.</p>
+
+        <div class="pm-manifesto"><p>Conseguir un cliente no termina el proceso. En muchos negocios, ahí recién empieza la parte más rentable.</p></div>
+
+        <h3>Acciones de retención</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/optimizacion-social-media-modulo-6/slide-080.jpg" alt="Estrategias originales de retención para PyMEs" loading="lazy" />
+          <figcaption>Email post-compra, fidelidad, contenido exclusivo, reactivación, reseñas y NPS sostienen el vínculo.</figcaption>
+        </figure>
+        <ul class="pm-checklist">
+          <li>Seguimiento postventa.</li><li>Email marketing.</li><li>Contenido útil.</li><li>Soporte y atención rápida.</li><li>Beneficios para clientes.</li><li>Programas de fidelización.</li><li>Ofertas de recompra.</li><li>Personalización y recordatorios.</li>
+        </ul>
+
+        <h3>Métricas de retención</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/optimizacion-social-media-modulo-6/slide-081.jpg" alt="Métricas originales de retención" loading="lazy" />
+          <figcaption>Retención, churn, valor de vida y recomendación permiten medir la relación en el tiempo.</figcaption>
+        </figure>
+        <div class="pm-grid-4">
+          <article class="pm-card"><h4>Tasa de retención</h4><p>Clientes que vuelven / clientes del período anterior × 100.</p></article>
+          <article class="pm-card"><h4>Churn</h4><p>100% − tasa de retención. Mide abandono.</p></article>
+          <article class="pm-card"><h4>LTV</h4><p>Ticket × frecuencia × duración de la relación.</p></article>
+          <article class="pm-card pm-card--mint"><h4>NPS</h4><p>% promotores − % detractores. Estima recomendación.</p></article>
+        </div>
+
+        <h3>Ciclo completo de optimización</h3>
+        <div class="pm-formula"><span>KPIs</span> → <span>Auditoría</span> → <span>Funnel</span> → <span>Test</span> → <span>Medición</span> → <span>Aprendizaje</span> → <span>Ajuste</span></div>
+
+        <figure class="pm-figure">
+          <img src="assets/images/optimizacion-social-media-modulo-6/slide-087.jpg" alt="Primeros pasos originales del ciclo de optimización digital" loading="lazy" />
+          <figcaption>Primero se definen KPIs y se audita el rendimiento antes de intervenir.</figcaption>
+        </figure>
+        <figure class="pm-figure">
+          <img src="assets/images/optimizacion-social-media-modulo-6/slide-088.jpg" alt="Diagnóstico y test dentro del ciclo de optimización" loading="lazy" />
+          <figcaption>Luego se localiza el cuello de botella, se formula una hipótesis y se ejecuta la prueba.</figcaption>
+        </figure>
+
+        <div class="pm-grid-3">
+          <article class="pm-card"><span class="pm-card-label">Semanal</span><h4>10 minutos</h4><p>Revisión operativa rápida y alertas.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Mensual</span><h4>60 minutos</h4><p>Resultados, aprendizajes y ajuste del período.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Trimestral</span><h4>180 minutos</h4><p>Revisión estratégica del sistema completo.</p></article>
+        </div>
+
+        <div class="pm-manifesto"><p>No alcanza con atraer. Hay que convertir mejor, aprender más rápido y retener mejor.</p></div>
+        <div class="pm-footer-note">Fin del Módulo 6 · Optimización de Social Media y Campañas Digitales</div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+  <script src="js/components.js?v=2"></script>
+</body>
+</html>
+
+
+

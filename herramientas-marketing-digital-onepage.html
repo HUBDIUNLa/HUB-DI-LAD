@@ -1,0 +1,954 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Herramientas del Marketing Digital | HUB DI LAD UNLa</title>
+  <meta name="description" content="Módulo 2 de Marketing 4.0, Marketing Digital y E-commerce, reorganizado como una guía web práctica de herramientas digitales." />
+
+  <link rel="icon" href="assets/images/logohubfavicom.ico" type="image/x-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script src="js/tailwind.config.js?v=1"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="css/style.css?v=5" />
+
+
+  <style>
+    :root {
+      --web-lad: #A6FFF0;
+      --black: #000000;
+      --white: #ffffff;
+      --hub-light-bg: #F5F7F7;
+      --line: #cbd2d2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--black);
+      background: var(--hub-light-bg);
+      font-family: "Karla", system-ui, sans-serif;
+    }
+
+    .pm-course {
+      padding: clamp(1rem, 3vw, 3rem) 0 5rem;
+    }
+
+    .pm-container {
+      width: min(92%, 1360px);
+      margin-inline: auto;
+    }
+
+    .pm-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(18rem, .65fr);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+    }
+
+    .pm-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 42rem;
+      padding: clamp(2rem, 6vw, 6rem);
+    }
+
+    .pm-eyebrow,
+    .pm-kicker,
+    .pm-card-label,
+    .pm-template-code {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .pm-eyebrow {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: .78rem;
+    }
+
+    .pm-hero h1 {
+      max-width: 12ch;
+      margin: 0;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(2.8rem, 7vw, 6.6rem);
+      font-weight: 500;
+      line-height: .92;
+      letter-spacing: -.065em;
+      text-transform: uppercase;
+    }
+
+    .pm-hero-copy > p {
+      max-width: 48rem;
+      margin: 1.5rem 0 0;
+      font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+      line-height: 1.48;
+    }
+
+    .pm-hero-index {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .pm-hero-index h2 {
+      margin: 0 0 1.5rem;
+      font-family: "Roboto Mono", monospace;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .pm-hero-index ol {
+      display: grid;
+      gap: .8rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: pm-index;
+    }
+
+    .pm-hero-index li {
+      counter-increment: pm-index;
+    }
+
+    .pm-hero-index a {
+      display: grid;
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: .75rem;
+      align-items: baseline;
+      color: inherit;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+
+    .pm-hero-index a::before {
+      content: counter(pm-index, decimal-leading-zero);
+      color: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .pm-hero-index a:hover,
+    .pm-hero-index a:focus-visible {
+      color: var(--web-lad);
+    }
+
+    .pm-hero-note {
+      margin: 2rem 0 0;
+      padding-top: 1rem;
+      border-top: 1px solid var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .78rem;
+      line-height: 1.5;
+    }
+
+    .pm-section {
+      margin-top: clamp(1.25rem, 3vw, 2.5rem);
+      padding: clamp(1.25rem, 4vw, 3.5rem);
+      scroll-margin-top: 1rem;
+      border: 1px solid var(--black);
+      border-left-width: .55rem;
+      background: var(--white);
+    }
+
+    .pm-section:nth-of-type(even) {
+      background: var(--hub-light-bg);
+    }
+
+    .pm-section-header {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      margin-bottom: clamp(1.75rem, 4vw, 3rem);
+    }
+
+    .pm-section-number {
+      display: grid;
+      width: 3rem;
+      height: 3rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .pm-kicker {
+      display: block;
+      margin-bottom: .4rem;
+      font-size: .72rem;
+    }
+
+    .pm-section h2 {
+      max-width: 23ch;
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: .96;
+      letter-spacing: -.05em;
+    }
+
+    .pm-section h3 {
+      margin: clamp(2.5rem, 5vw, 4rem) 0 1rem;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+
+    .pm-lead {
+      max-width: 62rem;
+      margin: 0 0 1.5rem;
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      line-height: 1.4;
+    }
+
+    .pm-copy {
+      max-width: 62rem;
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    .pm-copy p {
+      margin: 0 0 1.25rem;
+    }
+
+    .pm-grid-2,
+    .pm-grid-3,
+    .pm-grid-4,
+    .pm-glossary {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .pm-grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pm-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pm-grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .pm-glossary {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pm-card {
+      min-width: 0;
+      padding: clamp(1.1rem, 2.5vw, 1.75rem);
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+    }
+
+    .pm-card--mint {
+      background: var(--web-lad);
+    }
+
+    .pm-card--black {
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .pm-card-label {
+      display: block;
+      margin-bottom: .8rem;
+      font-size: .7rem;
+    }
+
+    .pm-card--black .pm-card-label {
+      color: var(--web-lad);
+    }
+
+    .pm-card h4 {
+      margin: 0 0 .75rem;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      line-height: 1.1;
+    }
+
+    .pm-card p,
+    .pm-card ul {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .pm-card ul {
+      padding-left: 1.1rem;
+    }
+
+    .pm-manifesto {
+      margin: 2rem 0;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      border: 1px solid var(--black);
+      color: var(--white);
+      background: var(--black);
+      box-shadow: .7rem .7rem 0 var(--web-lad);
+      font-size: clamp(1.4rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -.03em;
+    }
+
+    .pm-manifesto p {
+      max-width: 34ch;
+      margin: 0;
+    }
+
+    .pm-formula {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      align-items: center;
+      margin: 1.5rem 0;
+      padding: 1.2rem;
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+    }
+
+    .pm-formula span {
+      padding: .4rem .6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-steps {
+      display: grid;
+      gap: .75rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: pm-steps;
+    }
+
+    .pm-steps li {
+      display: grid;
+      grid-template-columns: 2.8rem minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      padding: 1rem;
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+      counter-increment: pm-steps;
+    }
+
+    .pm-steps li::before {
+      content: counter(pm-steps, decimal-leading-zero);
+      display: grid;
+      width: 2.8rem;
+      height: 2.8rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .pm-steps strong {
+      display: block;
+      margin-bottom: .25rem;
+    }
+
+    .pm-checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .6rem 1rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pm-checklist li {
+      position: relative;
+      padding: .85rem 1rem .85rem 2.6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+      line-height: 1.4;
+    }
+
+    .pm-checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 1rem;
+      font-weight: 800;
+    }
+
+    .pm-figure {
+      margin: 1.5rem 0 0;
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .pm-figure figcaption {
+      padding: .75rem 1rem;
+      border-top: 1px solid var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .76rem;
+      line-height: 1.4;
+    }
+
+    .pm-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      margin: 1.5rem 0;
+      border: 1px solid var(--black);
+    }
+
+    .pm-flow div {
+      padding: 1.2rem;
+      border-right: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-flow div:last-child {
+      border-right: 0;
+      background: var(--web-lad);
+    }
+
+    .pm-flow strong {
+      display: block;
+      margin-bottom: .35rem;
+    }
+
+    .pm-writing {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+    }
+
+    .pm-writing label {
+      display: grid;
+      gap: .5rem;
+      font-weight: 700;
+    }
+
+    .pm-writing textarea {
+      width: 100%;
+      min-height: 7rem;
+      padding: 1rem;
+      resize: vertical;
+      border: 1px solid var(--black);
+      border-radius: 0;
+      color: var(--black);
+      background: var(--white);
+      font: inherit;
+    }
+
+    .pm-footer-note {
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .pm-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-hero-copy {
+        min-height: 34rem;
+      }
+
+      .pm-grid-4,
+      .pm-glossary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .pm-grid-2,
+      .pm-grid-3,
+      .pm-grid-4,
+      .pm-glossary,
+      .pm-checklist,
+      .pm-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-section {
+        padding: 1.1rem;
+        border-left-width: .35rem;
+      }
+
+      .pm-section-header {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-hero-copy,
+      .pm-hero-index {
+        padding: 1.3rem;
+      }
+
+      .pm-hero-copy {
+        min-height: 30rem;
+      }
+
+      .pm-flow div {
+        border-right: 0;
+        border-bottom: 1px solid var(--black);
+      }
+
+      .pm-flow div:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media print {
+      .pm-section,
+      .pm-card,
+      .pm-figure {
+        break-inside: avoid;
+      }
+
+      .pm-writing textarea {
+        resize: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main class="pm-course">
+  <div class="pm-container">
+    <header class="pm-hero">
+      <div class="pm-hero-copy">
+        <span class="pm-eyebrow">Marketing 4.0 · Marketing Digital y E-commerce</span>
+        <h1>Herramientas del marketing digital</h1>
+        <p>
+          Una guía para nombrar, comprender y elegir un stack simple: qué hace cada herramienta, para qué sirve y qué decisión ayuda a tomar.
+        </p>
+      </div>
+
+      <nav class="pm-hero-index" aria-label="Recorrido de la clase">
+        <div>
+          <h2>Recorrido</h2>
+          <ol>
+            <li><a href="#stack">Estrategia y stack mínimo</a></li>
+            <li><a href="#analitica">Analítica y medición</a></li>
+            <li><a href="#presencia">Redes y presencia local</a></li>
+            <li><a href="#seo-sem">SEO y SEM</a></li>
+            <li><a href="#gestion">CRM, automatización y WhatsApp</a></li>
+            <li><a href="#contenido">Producción y gestión de contenido</a></li>
+          </ol>
+        </div>
+        <p class="pm-hero-note">122 diapositivas reorganizadas en 6 módulos web, sin repetir pausas, videos ni divisores.</p>
+      </nav>
+    </header>
+
+    <section class="pm-section" id="stack">
+      <header class="pm-section-header">
+        <span class="pm-section-number">01</span>
+        <div>
+          <span class="pm-kicker">Antes de elegir aplicaciones</span>
+          <h2>Herramienta no es estrategia</h2>
+        </div>
+      </header>
+
+      <p class="pm-lead">
+        La herramienta es un destornillador. Si no sabés qué tornillo ajustar, da igual qué destornillador elijas.
+      </p>
+
+      <div class="pm-manifesto">
+        <p>Hoy dejamos de “hacer cosas” y armamos un stack simple para medir, decidir y ejecutar.</p>
+      </div>
+
+      <div class="pm-copy">
+        <p>
+          Una PyME necesita un sistema operativo, no una colección de aplicaciones. Herramientas sin orden generan más caos: duplican tareas, fragmentan la información y ocupan tiempo sin mejorar decisiones.
+        </p>
+        <p>
+          La pregunta principal no es “¿qué herramienta está de moda?” ni “¿cuál es gratis?”, sino qué problema resuelve, qué dato aporta y cuánto tiempo o trabajo permite ahorrar.
+        </p>
+      </div>
+
+      <h3>El ecosistema digital</h3>
+      <div class="pm-grid-4">
+        <article class="pm-card pm-card--mint"><span class="pm-card-label">Google</span><h4>Intención</h4><p>Las personas buscan algo que necesitan, quieren o tienen cerca.</p></article>
+        <article class="pm-card"><span class="pm-card-label">Instagram y TikTok</span><h4>Descubrimiento</h4><p>La audiencia encuentra intereses, ideas, aspiraciones y marcas.</p></article>
+        <article class="pm-card"><span class="pm-card-label">WhatsApp y web</span><h4>Conversión</h4><p>La consulta, la atención y la venta suceden en un espacio controlado.</p></article>
+        <article class="pm-card pm-card--black"><span class="pm-card-label">CRM</span><h4>Memoria comercial</h4><p>Ordena contactos, oportunidades, tareas e historial.</p></article>
+      </div>
+
+      <h3>Cuatro tipos de herramientas</h3>
+      <div class="pm-grid-4">
+        <article class="pm-card"><span class="pm-card-label">01 · Análisis</span><h4>¿Qué está pasando?</h4><p>GA4, Search Console, Meta Insights y métricas de presencia local.</p></article>
+        <article class="pm-card pm-card--mint"><span class="pm-card-label">02 · Atracción</span><h4>¿Cómo me encuentran?</h4><p>SEO, SEM, Google Ads y anuncios sociales.</p></article>
+        <article class="pm-card pm-card--black"><span class="pm-card-label">03 · Gestión comercial</span><h4>¿Dónde están los leads?</h4><p>CRM, automatizaciones y WhatsApp Business.</p></article>
+        <article class="pm-card"><span class="pm-card-label">04 · Contenido</span><h4>¿Cómo produzco mejor?</h4><p>Diseño, video, texto, planificación e inteligencia artificial.</p></article>
+      </div>
+
+      <figure class="pm-figure">
+        <img src="assets/images/marketing-modulo-2/slide-022.jpg" alt="Los cuatro tipos de herramientas de marketing digital" loading="lazy" />
+        <figcaption>Las herramientas se ordenan por la pregunta que responden</figcaption>
+      </figure>
+
+      <div class="pm-manifesto">
+        <p>Regla anti-caos: un objetivo, un tablero y una rutina. Sin rutina, la herramienta se vuelve otro ícono en el celular.</p>
+      </div>
+
+      <h3>Mini glosario</h3>
+      <div class="pm-glossary">
+        <article class="pm-card"><h4>Métrica</h4><p>Un número, por ejemplo la cantidad de clics.</p></article>
+        <article class="pm-card"><h4>KPI</h4><p>Una métrica importante para decidir, por ejemplo las consultas.</p></article>
+        <article class="pm-card"><h4>Lead calificado</h4><p>Un contacto interesado que coincide con el cliente ideal.</p></article>
+        <article class="pm-card"><h4>Conversión</h4><p>Acción valiosa: comprar, completar un formulario o escribir.</p></article>
+        <article class="pm-card"><h4>Tráfico</h4><p>Visitas a una web, tienda o página.</p></article>
+        <article class="pm-card"><h4>Automatización</h4><p>Tareas que se disparan solas a partir de una condición.</p></article>
+        <article class="pm-card"><h4>UTM</h4><p>Etiqueta que permite conocer de dónde provino cada clic.</p></article>
+        <article class="pm-card"><h4>Pipeline</h4><p>Etapas del seguimiento: contacto, propuesta y resultado.</p></article>
+      </div>
+    </section>
+
+    <section class="pm-section" id="analitica">
+      <header class="pm-section-header">
+        <span class="pm-section-number">02</span>
+        <div>
+          <span class="pm-kicker">Medición y diagnóstico</span>
+          <h2>Qué está pasando y de dónde vienen los resultados</h2>
+        </div>
+      </header>
+
+      <p class="pm-lead">
+        La medición útil no consiste en mirar veinte métricas. Consiste en elegir pocos números, revisarlos con frecuencia y tomar una decisión concreta.
+      </p>
+
+      <h3>Google Analytics 4</h3>
+      <div class="pm-grid-2">
+        <article class="pm-card pm-card--mint">
+          <span class="pm-card-label">Qué observa</span>
+          <h4>Lo que sucede dentro del sitio</h4>
+          <ul>
+            <li>De dónde llega la gente.</li>
+            <li>Qué páginas visita y por dónde entra o sale.</li>
+            <li>Qué acciones importantes realiza.</li>
+            <li>Qué canal trae calidad, no solamente volumen.</li>
+          </ul>
+        </article>
+        <article class="pm-card pm-card--black">
+          <span class="pm-card-label">Cómo usarlo</span>
+          <h4>Responder preguntas del negocio</h4>
+          <ul>
+            <li>¿Cuántas personas hacen clic en WhatsApp?</li>
+            <li>¿La web ayuda o funciona como un folleto?</li>
+            <li>¿Qué cambió después de modificar el mensaje?</li>
+            <li>¿Dónde se interrumpe el recorrido?</li>
+          </ul>
+        </article>
+      </div>
+
+      <figure class="pm-figure">
+        <img src="assets/images/marketing-modulo-2/slide-028.jpg" alt="Definición de Google Analytics 4" loading="lazy" />
+        <figcaption>GA4 registra eventos y recorridos dentro de una web o tienda</figcaption>
+      </figure>
+
+      <div class="pm-grid-2">
+        <article class="pm-card"><span class="pm-card-label">Ejemplo · Indumentaria</span><h4>Guía de talles</h4><p>GA4 permite observar si quienes visitan la guía luego consultan o compran.</p></article>
+        <article class="pm-card pm-card--mint"><span class="pm-card-label">Ejemplo · Metalúrgica B2B</span><h4>Servicios sin consulta</h4><p>Si la página es visitada pero nadie pide presupuesto, el problema puede estar en la propuesta o el llamado a la acción, no en el tráfico.</p></article>
+      </div>
+
+      <h3>Google Search Console</h3>
+      <p class="pm-lead">
+        No analiza lo que sucede dentro de la web. Muestra qué ocurre antes, en Google: por qué búsquedas aparece el sitio, con qué palabras y si el buscador puede leerlo correctamente.
+      </p>
+
+      <div class="pm-grid-3">
+        <article class="pm-card pm-card--mint"><h4>Consultas</h4><p>Qué escribe la gente para encontrarte y cuál es su intención real.</p></article>
+        <article class="pm-card"><h4>Páginas</h4><p>Qué contenido aparece más y en qué posición.</p></article>
+        <article class="pm-card pm-card--black"><h4>Oportunidades</h4><p>Qué página, servicio o contenido conviene crear o mejorar.</p></article>
+      </div>
+
+      <figure class="pm-figure">
+        <img src="assets/images/marketing-modulo-2/slide-037.jpg" alt="Explicación de Google Search Console" loading="lazy" />
+        <figcaption>Search Console funciona como la vidriera y el reporte de visibilidad en Google</figcaption>
+      </figure>
+
+      <div class="pm-grid-2">
+        <article class="pm-card"><span class="pm-card-label">Servicios de limpieza</span><h4>Una búsqueda específica</h4><p>Si encuentran al negocio por “limpieza final de obra La Plata”, se puede crear una página específica reforzada con fotos y reseñas.</p></article>
+        <article class="pm-card pm-card--mint"><span class="pm-card-label">Vinoteca</span><h4>Una categoría con intención</h4><p>Si buscan “vino orgánico La Plata”, conviene organizar una categoría, una selección y contenido que responda esa búsqueda.</p></article>
+      </div>
+    </section>
+
+    <section class="pm-section" id="presencia">
+      <header class="pm-section-header">
+        <span class="pm-section-number">03</span>
+        <div>
+          <span class="pm-kicker">Redes y búsqueda local</span>
+          <h2>Entender interés, confianza y acciones de valor</h2>
+        </div>
+      </header>
+
+      <h3>Meta Business Suite e Insights</h3>
+      <p class="pm-lead">
+        Business Suite es el centro de mando. Insights es el tablero que permite entender qué contenido acerca personas al negocio y qué formatos generan acciones.
+      </p>
+
+      <div class="pm-grid-3">
+        <article class="pm-card pm-card--mint"><span class="pm-card-label">Reconocimiento</span><h4>Alcance</h4><p>Cuántas personas vieron el contenido y qué temas amplían la visibilidad.</p></article>
+        <article class="pm-card"><span class="pm-card-label">Confianza</span><h4>Guardados y compartidos</h4><p>Qué contenido resulta útil y merece ser recuperado o recomendado.</p></article>
+        <article class="pm-card pm-card--black"><span class="pm-card-label">Acción</span><h4>Mensajes y clics</h4><p>Qué publicaciones acercan consultas, visitas al perfil o tráfico.</p></article>
+      </div>
+
+      <div class="pm-manifesto">
+        <p>En redes sociales, ver no es comprar. Mirá dos métricas, tomá una decisión y volvé a medir.</p>
+      </div>
+
+      <figure class="pm-figure">
+        <img src="assets/images/marketing-modulo-2/slide-055.jpg" alt="Tabla que vincula objetivos, métricas de Meta Insights y decisiones" loading="lazy" />
+        <figcaption>Una métrica sirve cuando está asociada con una decisión posible</figcaption>
+      </figure>
+
+      <div class="pm-grid-2">
+        <article class="pm-card"><span class="pm-card-label">Vinoteca</span><h4>Guardados sin mensajes</h4><p>Los reels de maridaje se guardan mucho, pero generan pocas consultas: falta un CTA como “pedí el combo por WhatsApp”.</p></article>
+        <article class="pm-card pm-card--mint"><span class="pm-card-label">Indumentaria</span><h4>Interacción que califica demanda</h4><p>Las encuestas en historias permiten preguntar qué talles busca la audiencia antes de producir o reponer.</p></article>
+      </div>
+
+      <h3>Google Business Profile</h3>
+      <p class="pm-lead">
+        Es la vidriera del negocio en Google Search y Maps. Cuando alguien busca el nombre de la empresa o una solución cercana, la ficha puede convertirse en el primer punto de confianza y acción.
+      </p>
+
+      <ul class="pm-checklist">
+        <li>Datos, categoría, horarios y zona correctos.</li>
+        <li>Servicios o productos comprensibles en pocos segundos.</li>
+        <li>Fotos que funcionen como prueba visual.</li>
+        <li>Reseñas y respuestas que construyan confianza.</li>
+        <li>Publicaciones con novedades y ofertas.</li>
+        <li>Revisión de llamadas, mensajes, clics y cómo llegar.</li>
+      </ul>
+
+      <figure class="pm-figure">
+        <img src="assets/images/marketing-modulo-2/slide-066.jpg" alt="Ejemplos de cómo se ve un perfil de empresa en Google" loading="lazy" />
+        <figcaption>La ficha combina presencia en Search, Maps y acciones directas</figcaption>
+      </figure>
+
+      <article class="pm-card pm-card--black">
+        <span class="pm-card-label">Industria B2B · Metalúrgica</span>
+        <h4>Convertir búsquedas locales en confianza</h4>
+        <p>Búsquedas como “corte láser La Plata” o “plegado de chapa La Plata” necesitan servicios bien detallados, fotos de planta y maquinaria, reseñas sobre cumplimiento y un enlace claro al portfolio o formulario.</p>
+      </article>
+    </section>
+
+    <section class="pm-section" id="seo-sem">
+      <header class="pm-section-header">
+        <span class="pm-section-number">04</span>
+        <div>
+          <span class="pm-kicker">Atracción y tráfico</span>
+          <h2>SEO y SEM: que te encuentren cuando te necesitan</h2>
+        </div>
+      </header>
+
+      <h3>SEO: construir visibilidad orgánica</h3>
+      <p class="pm-lead">
+        SEO es ayudar a los motores de búsqueda a entender el contenido y ayudar a las personas a encontrarlo y decidir si vale la pena visitarlo.
+      </p>
+
+      <div class="pm-manifesto">
+        <p>SEO no es hackear Google. Es hacer que la propuesta sea entendible para el buscador y útil para quien busca.</p>
+      </div>
+
+      <h3>Las tres capas del SEO</h3>
+      <div class="pm-grid-3">
+        <article class="pm-card pm-card--mint"><span class="pm-card-label">01 · Técnico</span><h4>Que Google pueda entrar</h4><p>Sitio rastreable, indexable, rápido en celular y con páginas claras para cada servicio importante.</p></article>
+        <article class="pm-card"><span class="pm-card-label">02 · Contenido</span><h4>Responder la intención</h4><p>Una página por servicio o producto, título claro, ubicación cuando corresponda y CTA visible.</p></article>
+        <article class="pm-card pm-card--black"><span class="pm-card-label">03 · Autoridad</span><h4>Reducir el riesgo</h4><p>Reseñas, menciones, enlaces, casos y consistencia de marca que demuestran confianza.</p></article>
+      </div>
+
+      <figure class="pm-figure">
+        <img src="assets/images/marketing-modulo-2/slide-074.jpg" alt="Las tres capas del SEO: técnico, contenido y autoridad" loading="lazy" />
+        <figcaption>Google necesita encontrar, indexar y comprender; la persona necesita confiar</figcaption>
+      </figure>
+
+      <h3>SEM: aparecer pagando cuando ya existe intención</h3>
+      <p class="pm-lead">
+        Para una PyME, SEM suele significar Google Ads: alquilar una ubicación visible cuando alguien busca una solución concreta. No interrumpe; responde una búsqueda.
+      </p>
+
+      <ol class="pm-steps">
+        <li><div><strong>Objetivo</strong>Qué resultado comercial se quiere conseguir.</div></li>
+        <li><div><strong>Keywords</strong>Qué búsquedas activan la posibilidad de aparecer.</div></li>
+        <li><div><strong>Anuncio</strong>Qué promesa comunica y por qué resulta relevante.</div></li>
+        <li><div><strong>Landing</strong>Dónde llega la persona y qué información encuentra.</div></li>
+        <li><div><strong>Conversión</strong>Qué acción se considera exitosa.</div></li>
+        <li><div><strong>Calidad y Ad Rank</strong>Cómo influyen puja, relevancia y experiencia de destino.</div></li>
+      </ol>
+
+      <figure class="pm-figure">
+        <img src="assets/images/marketing-modulo-2/slide-084.jpg" alt="Componentes generales de una campaña SEM" loading="lazy" />
+        <figcaption>SEM requiere coherencia entre búsqueda, anuncio, destino y conversión</figcaption>
+      </figure>
+
+      <div class="pm-grid-2">
+        <article class="pm-card pm-card--mint"><span class="pm-card-label">SEO</span><h4>Construcción a mediano plazo</h4><p>No tiene costo directo por clic, exige trabajo constante y genera visibilidad acumulativa.</p></article>
+        <article class="pm-card pm-card--black"><span class="pm-card-label">SEM</span><h4>Velocidad y aprendizaje</h4><p>Tiene costo por clic, ofrece visibilidad mientras se paga y permite probar mensajes rápidamente.</p></article>
+      </div>
+
+      <figure class="pm-figure">
+        <img src="assets/images/marketing-modulo-2/slide-087.jpg" alt="Comparación visual entre SEO y SEM" loading="lazy" />
+        <figcaption>SEO y SEM no compiten: pueden cubrir horizontes de tiempo diferentes</figcaption>
+      </figure>
+    </section>
+
+    <section class="pm-section" id="gestion">
+      <header class="pm-section-header">
+        <span class="pm-section-number">05</span>
+        <div>
+          <span class="pm-kicker">Marketing y ventas</span>
+          <h2>CRM, automatización y WhatsApp Business</h2>
+        </div>
+      </header>
+
+      <p class="pm-lead">
+        El objetivo es no perder leads ni depender de la memoria. Si no existe seguimiento, una consulta puede desaparecer aunque la campaña haya funcionado.
+      </p>
+
+      <h3>CRM: una forma de gestionar relaciones</h3>
+      <div class="pm-copy">
+        <p>
+          Un CRM registra, ordena y permite seguir contactos, oportunidades y clientes. Es la diferencia entre “me escribió alguien” y “tengo un pipeline con etapas, responsables y próximas acciones”.
+        </p>
+      </div>
+
+      <div class="pm-grid-4">
+        <article class="pm-card pm-card--mint"><span class="pm-card-label">01</span><h4>Contactos</h4><p>Quién es la persona o empresa y cómo se originó el vínculo.</p></article>
+        <article class="pm-card"><span class="pm-card-label">02</span><h4>Pipeline</h4><p>En qué estado comercial se encuentra cada oportunidad.</p></article>
+        <article class="pm-card"><span class="pm-card-label">03</span><h4>Actividades</h4><p>Qué tarea debe realizarse y en qué momento.</p></article>
+        <article class="pm-card pm-card--black"><span class="pm-card-label">04</span><h4>Historial</h4><p>Qué se habló, qué se prometió y cuáles son las condiciones.</p></article>
+      </div>
+
+      <div class="pm-formula" aria-label="Pipeline comercial mínimo">
+        <span>Nuevo</span> → <span>Contactado</span> → <span>Propuesta</span> → <span>Ganado o perdido</span>
+      </div>
+
+      <h3>Automatización</h3>
+      <div class="pm-grid-2">
+        <article class="pm-card pm-card--mint"><span class="pm-card-label">Workflow automation</span><h4>Tareas repetibles</h4><p>Automatiza una secuencia dentro del software utilizado: crear una tarea, registrar un dato o enviar un aviso.</p></article>
+        <article class="pm-card pm-card--black"><span class="pm-card-label">Marketing automation</span><h4>Seguimiento consistente</h4><p>Automatiza tareas de marketing y ventas como respuestas, nurturing, campañas o recordatorios.</p></article>
+      </div>
+
+      <div class="pm-grid-2">
+        <article class="pm-card"><span class="pm-card-label">Servicios</span><h4>Presupuestos por WhatsApp</h4><p>Registrar el contacto, marcar “presupuesto enviado”, crear un seguimiento a 48 horas y guardar automáticamente la consulta en una planilla o CRM.</p></article>
+        <article class="pm-card pm-card--mint"><span class="pm-card-label">Industria B2B</span><h4>Cotizaciones largas</h4><p>Usar etapas desde relevamiento hasta negociación y, cuando se envía una cotización, crear una tarea de seguimiento a 48 o 72 horas.</p></article>
+      </div>
+
+      <figure class="pm-figure">
+        <img src="assets/images/marketing-modulo-2/slide-094.jpg" alt="Embudo que conecta automatización de marketing con CRM y ventas" loading="lazy" />
+        <figcaption>Marketing atrae y califica; el CRM mantiene la continuidad comercial</figcaption>
+      </figure>
+
+      <h3>WhatsApp Business como mini-CRM</h3>
+      <p class="pm-lead">
+        Para muchas PyMEs es el lugar donde realmente se cierra la venta. Profesionaliza la atención con perfil comercial, catálogo, respuestas rápidas, etiquetas y mensajes automáticos.
+      </p>
+
+      <ul class="pm-checklist">
+        <li>Perfil de empresa, rubro, horarios y zona.</li>
+        <li>Catálogo de productos o servicios.</li>
+        <li>Respuestas rápidas para preguntas frecuentes.</li>
+        <li>Etiquetas: nuevo, seguimiento, presupuesto enviado.</li>
+        <li>Mensaje de bienvenida y ausencia.</li>
+        <li>Enlaces directos con texto precargado.</li>
+      </ul>
+
+      <figure class="pm-figure">
+        <img src="assets/images/marketing-modulo-2/slide-109.jpg" alt="Componentes clave de WhatsApp Business" loading="lazy" />
+        <figcaption>WhatsApp Business reduce fricción, acelera respuesta y mejora seguimiento</figcaption>
+      </figure>
+
+      <div class="pm-manifesto">
+        <p>WhatsApp no es solo chat: es un mini-CRM. Sin etiquetas y respuestas rápidas, se escapan oportunidades.</p>
+      </div>
+    </section>
+
+    <section class="pm-section" id="contenido">
+      <header class="pm-section-header">
+        <span class="pm-section-number">06</span>
+        <div>
+          <span class="pm-kicker">Diseño, video, planificación e IA</span>
+          <h2>Producción y gestión de contenido</h2>
+        </div>
+      </header>
+
+      <p class="pm-lead">
+        El contenido compite por consistencia y velocidad. Las herramientas correctas reducen el tiempo de producción, ordenan el calendario y permiten reutilizar piezas sin perder coherencia.
+      </p>
+
+      <div class="pm-grid-3">
+        <article class="pm-card pm-card--mint"><span class="pm-card-label">Crear diseño</span><h4>Piezas y plantillas</h4><p>Canva, Adobe Express, Figma o Visme.</p></article>
+        <article class="pm-card"><span class="pm-card-label">Crear texto</span><h4>Ideas, copys y guiones</h4><p>ChatGPT, Gemini, Claude o Jasper.</p></article>
+        <article class="pm-card pm-card--black"><span class="pm-card-label">Crear imágenes</span><h4>Producción asistida</h4><p>Herramientas generativas y bancos visuales según el proyecto.</p></article>
+        <article class="pm-card"><span class="pm-card-label">Editar video</span><h4>Reels y subtítulos</h4><p>CapCut, Premiere Rush, Adobe Premiere Pro o DaVinci Resolve.</p></article>
+        <article class="pm-card pm-card--mint"><span class="pm-card-label">Planificar</span><h4>Calendario y tareas</h4><p>Notion, Trello, Asana, ClickUp o una planilla compartida.</p></article>
+        <article class="pm-card"><span class="pm-card-label">Publicar y medir</span><h4>Programación</h4><p>Meta Business Suite, Metricool y herramientas nativas.</p></article>
+      </div>
+
+      <figure class="pm-figure">
+        <img src="assets/images/marketing-modulo-2/slide-115.jpg" alt="Tabla de herramientas para crear, editar y organizar contenido" loading="lazy" />
+        <figcaption>Las categorías importan más que las marcas o aplicaciones concretas</figcaption>
+      </figure>
+
+      <div class="pm-manifesto">
+        <p>Para empezar: una herramienta por categoría. Simple y sostenido rinde más que complejo y pendiente.</p>
+      </div>
+
+      <h3>El stack mínimo</h3>
+      <ol class="pm-steps">
+        <li><div><strong>Medir</strong>Elegir una fuente de datos y una rutina de revisión.</div></li>
+        <li><div><strong>Atraer</strong>Trabajar intención en Google y descubrimiento en redes.</div></li>
+        <li><div><strong>Gestionar</strong>Registrar contactos, etapas y próximas acciones.</div></li>
+        <li><div><strong>Crear</strong>Producir contenido con un sistema realista y reutilizable.</div></li>
+      </ol>
+
+      <div class="pm-manifesto">
+        <p>La clave no es tener todas las herramientas. Es comprender para qué existe cada una y elegir lo mínimo que dé control.</p>
+      </div>
+
+      <p class="pm-footer-note">Clase de la Mag. Evelyn Abrahan · Módulo 2: Herramientas del Marketing Digital</p>
+    </section>
+  </div>
+</main>
+
+
+  <div id="footer"></div>
+  <script src="js/components.js?v=2"></script>
+</body>
+</html>
+

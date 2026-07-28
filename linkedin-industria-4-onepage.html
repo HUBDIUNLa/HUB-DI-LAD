@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>LinkedIn para la economía de la industria 4.0 | HUB DI LAD UNLa</title>
+  <meta name="description" content="Curso práctico de LinkedIn para PyMEs, emprendimientos y profesionales, adaptado a formato one-page." />
+
+   <link rel="icon" href="assets/images/favicomhubnew.ico" type="image/x-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script src="js/tailwind.config.js?v=1"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="css/style.css?v=1" />
+
+  <style>
+    :root {
+      --web-lad: #A6FFF0;
+      --hub-light-bg: #F5F7F7;
+      --black: #000;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--black);
+      background: var(--hub-light-bg);
+      font-family: "Karla", system-ui, sans-serif;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .li-course {
+      padding: clamp(1rem, 3vw, 3rem) 0 5rem;
+    }
+
+    .li-container {
+      width: min(92%, 1360px);
+      margin-inline: auto;
+    }
+
+    .li-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(17rem, .65fr);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+    }
+
+    .li-hero-copy {
+      padding: clamp(1.5rem, 5vw, 5rem);
+    }
+
+    .li-eyebrow,
+    .li-kicker,
+    .li-card-label,
+    .li-template-code {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .li-eyebrow {
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      padding: .35rem .65rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+      font-size: .75rem;
+    }
+
+    .li-hero h1 {
+      max-width: 14ch;
+      margin: 0;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(2.5rem, 7vw, 6.6rem);
+      font-weight: 500;
+      line-height: .94;
+      letter-spacing: -.06em;
+      text-transform: uppercase;
+    }
+
+    .li-hero-copy > p {
+      max-width: 44rem;
+      margin: 1.5rem 0 0;
+      font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+      line-height: 1.45;
+    }
+
+    .li-hero-index {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .li-hero-index h2 {
+      margin: 0 0 1.5rem;
+      font-family: "Roboto Mono", monospace;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .li-hero-index ol {
+      display: grid;
+      gap: .75rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: hero-index;
+    }
+
+    .li-hero-index li {
+      counter-increment: hero-index;
+    }
+
+    .li-hero-index a {
+      display: grid;
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: .75rem;
+      align-items: baseline;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .li-hero-index a::before {
+      content: counter(hero-index, decimal-leading-zero);
+      color: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .li-hero-index a:hover,
+    .li-hero-index a:focus-visible {
+      color: var(--web-lad);
+    }
+
+    .li-hero-note {
+      margin: 2rem 0 0;
+      padding-top: 1rem;
+      border-top: 1px solid var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .78rem;
+      line-height: 1.5;
+    }
+
+    .li-section {
+      margin-top: clamp(1.25rem, 3vw, 2.5rem);
+      padding: clamp(1.25rem, 4vw, 3.5rem);
+      scroll-margin-top: 1rem;
+      border: 1px solid var(--black);
+      border-left-width: .55rem;
+      background: var(--white);
+    }
+
+    .li-section-header {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: clamp(1.75rem, 4vw, 3.5rem);
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .li-section-number {
+      display: inline-flex;
+      padding: .4rem .7rem;
+      background: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .li-section-title {
+      flex: 1;
+    }
+
+    .li-kicker {
+      display: block;
+      margin-bottom: .4rem;
+      font-size: .72rem;
+    }
+
+    .li-section h2 {
+      max-width: 23ch;
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: .96;
+      letter-spacing: -.05em;
+    }
+
+    .li-section h3 {
+      margin: clamp(2.5rem, 5vw, 4rem) 0 1rem;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+
+    .li-lead {
+      max-width: 58rem;
+      margin: 0 0 1.5rem;
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      line-height: 1.4;
+      letter-spacing: -.015em;
+    }
+
+    .li-copy {
+      max-width: 58rem;
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    .li-copy p {
+      margin: 0 0 1.25rem;
+    }
+
+    .li-grid-2,
+    .li-grid-3,
+    .li-grid-4 {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .li-grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .li-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .li-grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .li-card {
+      min-width: 0;
+      padding: clamp(1.1rem, 2.5vw, 1.75rem);
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+    }
+
+    .li-card--mint {
+      background: var(--web-lad);
+    }
+
+    .li-card--black {
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .li-card-label {
+      display: block;
+      margin-bottom: .8rem;
+      font-size: .7rem;
+    }
+
+    .li-card--black .li-card-label {
+      color: var(--web-lad);
+    }
+
+    .li-card h4 {
+      margin: 0 0 .75rem;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      line-height: 1.1;
+    }
+
+    .li-card p,
+    .li-card ul {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .li-card ul {
+      padding-left: 1.1rem;
+    }
+
+    .li-manifesto {
+      margin: 2rem 0;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      border: 1px solid var(--black);
+      color: var(--white);
+      background: var(--black);
+      box-shadow: .7rem .7rem 0 var(--web-lad);
+      font-size: clamp(1.4rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -.03em;
+    }
+
+    .li-manifesto p {
+      max-width: 31ch;
+      margin: 0;
+    }
+
+    .li-formula {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      align-items: center;
+      margin: 1.5rem 0;
+      padding: 1.2rem;
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+    }
+
+    .li-formula span {
+      padding: .4rem .6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .li-steps {
+      display: grid;
+      gap: .75rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: li-steps;
+    }
+
+    .li-steps li {
+      display: grid;
+      grid-template-columns: 2.8rem minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      padding: 1rem;
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+      counter-increment: li-steps;
+    }
+
+    .li-steps li::before {
+      content: counter(li-steps, decimal-leading-zero);
+      display: grid;
+      width: 2.8rem;
+      height: 2.8rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .li-steps strong {
+      display: block;
+      margin-bottom: .25rem;
+    }
+
+    .li-checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .6rem 1rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .li-checklist li {
+      position: relative;
+      padding: .85rem 1rem .85rem 2.6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+      line-height: 1.4;
+    }
+
+    .li-checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: .9rem;
+      top: .8rem;
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+    }
+
+    .li-figure {
+      margin: 1.5rem 0;
+      padding: .75rem;
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+      box-shadow: .55rem .55rem 0 var(--web-lad);
+    }
+
+    .li-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--black);
+    }
+
+    .li-figure figcaption {
+      margin-top: .65rem;
+      font-family: "Roboto Mono", monospace;
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .li-table-wrap {
+      margin: 1.5rem 0;
+      overflow-x: auto;
+      border: 1px solid var(--black);
+    }
+
+    .li-table {
+      width: 100%;
+      min-width: 700px;
+      border-collapse: collapse;
+      background: var(--white);
+    }
+
+    .li-table th,
+    .li-table td {
+      padding: .85rem 1rem;
+      border: 1px solid var(--black);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .li-table th {
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      text-transform: uppercase;
+    }
+
+    .li-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .li-template {
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .li-template img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .li-template-body {
+      padding: 1rem;
+    }
+
+    .li-template-code {
+      display: block;
+      margin-bottom: .4rem;
+      font-size: .68rem;
+    }
+
+    .li-template h4 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .li-closing {
+      margin-top: 2rem;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      box-shadow: .7rem .7rem 0 var(--black);
+    }
+
+    .li-closing p {
+      max-width: 38ch;
+      margin: 0;
+      font-size: clamp(1.6rem, 4vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.045em;
+    }
+
+    @media (max-width: 900px) {
+      .li-hero,
+      .li-grid-4,
+      .li-grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .li-hero-copy,
+      .li-hero-index {
+        grid-column: 1 / -1;
+      }
+
+      .li-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .li-grid-2,
+      .li-grid-3,
+      .li-grid-4,
+      .li-gallery,
+      .li-checklist {
+        grid-template-columns: 1fr;
+      }
+
+      .li-section {
+        border-left-width: .35rem;
+      }
+
+      .li-section-header {
+        align-items: flex-start;
+      }
+
+      .li-steps li {
+        grid-template-columns: 2.4rem minmax(0, 1fr);
+        gap: .75rem;
+      }
+
+      .li-steps li::before {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+
+      .li-manifesto,
+      .li-figure,
+      .li-closing {
+        box-shadow: .4rem .4rem 0 var(--web-lad);
+      }
+
+      .li-closing {
+        box-shadow: .4rem .4rem 0 var(--black);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main class="li-course">
+    <div class="li-container">
+      <header class="li-hero">
+        <div class="li-hero-copy">
+          <span class="li-eyebrow">Capacitaciones LAD · Curso práctico</span>
+          <h1>LinkedIn para la economía de la industria 4.0</h1>
+          <p>
+            Una guía para construir una presencia profesional clara, transformar
+            conocimiento en contenido y desarrollar relaciones que generen oportunidades.
+          </p>
+        </div>
+
+        <nav class="li-hero-index" aria-label="Contenidos del curso">
+          <div>
+            <h2>Recorrido</h2>
+            <ol>
+              <li><a href="#fundamentos">Fundamentos y objetivos</a></li>
+              <li><a href="#marca-personal">Marca personal y perfil</a></li>
+              <li><a href="#contenido">Estrategia de contenidos</a></li>
+              <li><a href="#networking">Networking estratégico</a></li>
+              <li><a href="#marca-empresa">Marca empresa y leads</a></li>
+              <li><a href="#metricas">LinkedIn Ads y métricas</a></li>
+              <li><a href="#plantillas">Reflexiones y plantillas</a></li>
+            </ol>
+          </div>
+          <p class="li-hero-note">123 diapositivas reorganizadas en 7 módulos web.</p>
+        </nav>
+      </header>
+
+      <section class="li-section" id="fundamentos">
+        <header class="li-section-header">
+          <span class="li-section-number">01</span>
+          <div class="li-section-title">
+            <span class="li-kicker">Antes de comenzar</span>
+            <h2>LinkedIn es un espacio de relaciones profesionales</h2>
+          </div>
+        </header>
+
+        <p class="li-lead">
+          Las empresas son personas, las marcas son personas, los equipos son personas y los clientes también.
+        </p>
+
+        <div class="li-copy">
+          <p>
+            Una marca cobra sentido en la voz, la actitud, la presencia y las relaciones que construyen quienes la integran.
+            LinkedIn vuelve visible esa dimensión humana dentro de un contexto profesional.
+          </p>
+        </div>
+
+        <div class="li-manifesto">
+          <p>No alcanza con estar en LinkedIn: hay que estar bien, con propósito y con sistema.</p>
+        </div>
+
+        <div class="li-grid-3">
+          <article class="li-card li-card--mint">
+            <span class="li-card-label">Superficie 01</span>
+            <h4>Perfil personal</h4>
+            <p>Construye confianza, cercanía, voz y autoridad profesional.</p>
+          </article>
+
+          <article class="li-card">
+            <span class="li-card-label">Superficie 02</span>
+            <h4>Página de empresa</h4>
+            <p>Ordena la identidad institucional y sostiene la credibilidad corporativa.</p>
+          </article>
+
+          <article class="li-card li-card--black">
+            <span class="li-card-label">Superficie 03</span>
+            <h4>Comunidades y grupos</h4>
+            <p>Permiten observar conversaciones, aprender y detectar oportunidades.</p>
+          </article>
+        </div>
+
+        <h3>¿Para qué le sirve LinkedIn a una PyME?</h3>
+        <ul class="li-checklist">
+          <li>Posicionarse frente a referentes y decisores.</li>
+          <li>Mostrar experiencia, casos y procesos.</li>
+          <li>Conectar autoridad con el sector.</li>
+          <li>Vincularse con otras empresas.</li>
+          <li>Generar alianzas y oportunidades comerciales.</li>
+          <li>Atraer talento y fortalecer la cultura organizacional.</li>
+        </ul>
+
+        <figure class="li-figure">
+          <img src="assets/images/linkedin-course/slide-022.jpg" alt="Ejemplo de la interfaz de LinkedIn con perfil personal, páginas de empresa y grupos" loading="lazy" />
+          <figcaption>Las tres superficies principales dentro de LinkedIn</figcaption>
+        </figure>
+      </section>
+
+      <section class="li-section" id="fundamentos">
+  <header class="li-section-header">
+    <span class="li-section-number">01</span>
+    <div class="li-section-title">
+      <span class="li-kicker">LinkedIn para la economía de la Industria 4.0</span>
+      <h2>Las marcas toman forma a través de las personas</h2>
+    </div>
+  </header>
+
+  <p class="li-lead">
+    Las empresas son personas, las marcas son personas, los empleados son personas y los clientes son personas.
+  </p>
+
+  <div class="li-copy">
+    <p>
+      Muchas veces hablamos de “la marca” como si fuera algo separado de quienes la integran. Sin embargo, una
+      marca cobra sentido en la voz, la actitud, la presencia y las relaciones que construyen sus personas.
+    </p>
+    <p>
+      Una empresa no se expresa solamente en un logo, una campaña o un mensaje institucional. También se expresa
+      en sus líderes, sus equipos, sus empleados y en la manera en que esas personas habitan los espacios
+      profesionales.
+    </p>
+    <p>
+      Ahí es donde LinkedIn adquiere un valor especial: además de ser una plataforma, funciona como un escenario
+      donde la dimensión humana y profesional se vuelve visible. Las personas no solo trabajan en una organización;
+      también la encarnan, la narran, la proyectan y la vuelven más cercana, confiable y creíble.
+    </p>
+  </div>
+
+  <div class="li-manifesto">
+    <p>La identidad de una empresa se vuelve creíble cuando sus personas pueden expresarla, sostenerla y convertirla en vínculos.</p>
+  </div>
+
+  <h3>LinkedIn: contexto y oportunidad</h3>
+  <div class="li-grid-2">
+    <article class="li-card li-card--mint">
+      <span class="li-card-label">Origen y evolución</span>
+      <h4>Una red profesional desde 2003</h4>
+      <p>
+        Nació para poner en contacto a profesionales entre sí y con empresas. Desde 2016 pertenece a Microsoft e
+        incorporó herramientas de inteligencia artificial en la búsqueda y en distintas funciones del perfil.
+      </p>
+    </article>
+
+    <article class="li-card">
+      <span class="li-card-label">Más que buscar empleo</span>
+      <h4>Ideas, experiencia y conocimiento</h4>
+      <p>
+        La plataforma también permite encontrarse, compartir conocimiento, hacer visible una especialidad y construir
+        relaciones con quienes toman decisiones dentro de una industria.
+      </p>
+    </article>
+  </div>
+
+  <figure class="li-figure">
+    <img src="assets/images/linkedin-course/slide-012.jpg" alt="Línea de tiempo y datos de contexto sobre LinkedIn presentados en el curso" loading="lazy" />
+    <figcaption>Contexto estadístico incluido en el material original del curso</figcaption>
+  </figure>
+
+  <h3>Objetivo del módulo</h3>
+  <p class="li-lead">
+    Aprender a utilizar LinkedIn de manera estratégica para construir presencia profesional, fortalecer redes de
+    contacto, posicionar una PyME o una marca personal y generar oportunidades de negocio, colaboración, talento y visibilidad.
+  </p>
+
+  <div class="li-copy">
+    <p>
+      La presentación destaca el potencial de LinkedIn para las relaciones B2B: un perfil bien construido, acompañado
+      por una estrategia de contenido consistente, puede generar consultas, alianzas, clientes y visibilidad sin depender
+      exclusivamente de publicidad paga.
+    </p>
+  </div>
+
+  <div class="li-manifesto">
+    <p>No alcanza con estar en LinkedIn: hay que estar bien, con propósito y con sistema.</p>
+  </div>
+
+  <h3>Dos perfiles, una estrategia articulada</h3>
+  <p class="li-lead">
+    El módulo trabaja en simultáneo con la persona que construye su marca profesional y con la empresa que necesita
+    posicionarse y generar oportunidades.
+  </p>
+
+  <div class="li-grid-2">
+    <article class="li-card li-card--mint">
+      <span class="li-card-label">Perfil 01</span>
+      <h4>Emprendedor o profesional independiente</h4>
+      <p>
+        Construye marca personal, expresa una mirada propia, genera cercanía y convierte experiencia en autoridad.
+      </p>
+    </article>
+
+    <article class="li-card li-card--black">
+      <span class="li-card-label">Perfil 02</span>
+      <h4>PyME o empresa</h4>
+      <p>
+        Se posiciona dentro de su sector, ordena su presencia institucional y genera oportunidades de negocio.
+      </p>
+    </article>
+  </div>
+
+  <div class="li-copy">
+    <p>
+      Las herramientas son las mismas; lo que cambia es el objetivo, la voz, el tipo de contenido y el modo en que cada
+      perfil participa en la conversación.
+    </p>
+  </div>
+
+  <figure class="li-figure">
+    <img src="assets/images/linkedin-course/slide-017.jpg" alt="Esquema de los dos perfiles que se trabajan en el módulo" loading="lazy" />
+    <figcaption>Marca personal y marca empresa funcionan en simultáneo</figcaption>
+  </figure>
+
+  <h3>Un directorio que se activa a través de las relaciones</h3>
+  <div class="li-copy">
+    <p>
+      Reid Hoffman, cofundador de LinkedIn, definió la plataforma como el mayor directorio profesional del mundo. Para
+      una PyME, el valor no está en aparecer de forma pasiva en ese directorio, sino en utilizarlo activamente para
+      construir relaciones que puedan convertirse en oportunidades concretas.
+    </p>
+  </div>
+
+  <h3>¿Para qué le sirve LinkedIn a una PyME?</h3>
+  <ul class="li-checklist">
+    <li>Posicionar a sus referentes, líderes y especialistas.</li>
+    <li>Mostrar experiencia, procesos, proyectos y casos reales.</li>
+    <li>Construir autoridad dentro de su rubro.</li>
+    <li>Vincularse con otras empresas y con quienes toman decisiones.</li>
+    <li>Fortalecer la confianza antes de una conversación comercial.</li>
+    <li>Reclutar talento y hacer visible la propuesta empleadora.</li>
+    <li>Mostrar cultura, valores y formas de trabajo.</li>
+    <li>Generar alianzas y colaboraciones.</li>
+    <li>Abrir conversaciones comerciales sin comenzar con una venta directa.</li>
+  </ul>
+
+  <figure class="li-figure">
+    <img src="assets/images/linkedin-course/slide-019.jpg" alt="Lista de usos estratégicos de LinkedIn para una PyME" loading="lazy" />
+    <figcaption>LinkedIn como herramienta de posicionamiento, confianza y desarrollo comercial</figcaption>
+  </figure>
+
+  <h3>Antes de avanzar: las tres superficies principales</h3>
+  <div class="li-grid-3">
+    <article class="li-card li-card--mint">
+      <span class="li-card-label">Superficie 01</span>
+      <h4>Perfil personal</h4>
+      <p>
+        Representa a una persona. Es el espacio con mayor capacidad para construir confianza, expresar una mirada y
+        generar conversaciones orgánicas.
+      </p>
+    </article>
+
+    <article class="li-card">
+      <span class="li-card-label">Superficie 02</span>
+      <h4>Página de empresa</h4>
+      <p>
+        Representa institucionalmente al negocio y concentra información, cultura, novedades, búsquedas y contenidos corporativos.
+      </p>
+    </article>
+
+    <article class="li-card li-card--black">
+      <span class="li-card-label">Superficie 03</span>
+      <h4>Grupos</h4>
+      <p>
+        Reúnen comunidades alrededor de sectores o intereses y permiten observar conversaciones, aprender y detectar oportunidades.
+      </p>
+    </article>
+  </div>
+
+  <figure class="li-figure">
+    <img src="assets/images/linkedin-course/slide-022.jpg" alt="Interfaz de LinkedIn con perfil personal, páginas de empresa y grupos" loading="lazy" />
+    <figcaption>Perfil, página y grupo: tres espacios con funciones diferentes</figcaption>
+  </figure>
+
+  <h3>Marca personal y marca empresa</h3>
+  <div class="li-grid-2">
+    <article class="li-card li-card--mint">
+      <span class="li-card-label">Marca personal</span>
+      <h4>La percepción profesional de una persona</h4>
+      <p>
+        Se construye mediante el perfil, el contenido, el lenguaje, la experiencia y la interacción. Aporta cercanía,
+        voz, confianza y alcance.
+      </p>
+    </article>
+
+    <article class="li-card li-card--black">
+      <span class="li-card-label">Marca empresa</span>
+      <h4>La construcción institucional del negocio</h4>
+      <p>
+        Se expresa en la página, el tono, la identidad visual, los contenidos, la cultura y el posicionamiento. Aporta
+        orden, formalidad, institucionalidad y consistencia.
+      </p>
+    </article>
+  </div>
+
+  <div class="li-manifesto">
+    <p>La marca personal suele abrir puertas y la marca empresa ayuda a sostener la credibilidad. Una PyME no tiene que elegir: necesita combinarlas.</p>
+  </div>
+</section>
+
+<section class="li-section" id="marca-personal">
+  <header class="li-section-header">
+    <span class="li-section-number">02</span>
+    <div class="li-section-title">
+      <span class="li-kicker">Marca personal</span>
+      <h2>Un perfil activo que explica quién sos y qué valor aportás</h2>
+    </div>
+  </header>
+
+  <p class="li-lead">
+    La marca personal es la percepción profesional que construís a través de tu perfil, contenido, lenguaje,
+    experiencia e interacción.
+  </p>
+
+  <h3>¿Por qué trabajar primero el perfil personal?</h3>
+  <div class="li-copy">
+    <p>
+      En LinkedIn, las personas conectan con personas antes de conectar con empresas. Aunque una PyME cuente con una
+      página institucional, el perfil del dueño, gerente o referente suele ser el punto de entrada a la conversación.
+    </p>
+    <p>
+      Ese perfil permite ponerle rostro a la experiencia, explicar decisiones, compartir aprendizajes y construir una
+      relación de confianza que luego se traslada a la empresa.
+    </p>
+    <p>
+      Además, el contenido personal suele obtener mayor circulación orgánica que una publicación puramente corporativa.
+      Por eso, la presencia de los referentes no compite con la página de la empresa: la impulsa y la humaniza.
+    </p>
+  </div>
+
+  <figure class="li-figure">
+    <img src="assets/images/linkedin-course/slide-030.jpg" alt="Explicación de por qué se prioriza el perfil personal en LinkedIn" loading="lazy" />
+    <figcaption>Las personas conectan con personas antes de conectar con empresas</figcaption>
+  </figure>
+
+  <div class="li-manifesto">
+    <p>Tener un perfil no es lo mismo que tener una estrategia: la diferencia está entre figurar en el directorio y lograr que te encuentren.</p>
+  </div>
+
+  <div class="li-copy">
+    <p>
+      El curso recupera una idea de Jan Vermeiren, autor de <em>How to REALLY Use LinkedIn</em>: gran parte de los
+      usuarios está presente, pero no activa su red. Un perfil estratégico no funciona como una ficha estática; trabaja
+      de forma consistente para ser comprendido, recordado y recomendado.
+    </p>
+  </div>
+
+  <h3>Anatomía del perfil para PyMEs y emprendedores</h3>
+  <p class="li-lead">
+    Cada elemento del encabezado debe ayudar a responder rápidamente quién sos, qué hacés, a quién ayudás y por qué
+    vale la pena seguir leyendo.
+  </p>
+
+  <div class="li-grid-4">
+    <article class="li-card">
+      <span class="li-card-label">01 · Portada</span>
+      <h4>Banner</h4>
+      <p>Presenta la propuesta de valor, el rubro o el servicio principal.</p>
+    </article>
+
+    <article class="li-card li-card--mint">
+      <span class="li-card-label">02 · Identidad</span>
+      <h4>Foto de perfil</h4>
+      <p>Hace reconocible y accesible a la persona detrás de la experiencia.</p>
+    </article>
+
+    <article class="li-card">
+      <span class="li-card-label">03 · Promesa</span>
+      <h4>Titular</h4>
+      <p>Explica qué hacés, para quién y qué resultado o diferencial ofrecés.</p>
+    </article>
+
+    <article class="li-card li-card--black">
+      <span class="li-card-label">04 · Contexto</span>
+      <h4>Datos visibles</h4>
+      <p>Ubicación, empresa, formación, información de contacto y cuentas vinculadas completan el sentido del perfil.</p>
+    </article>
+  </div>
+
+  <h3>Banner: la propuesta de valor en una sola imagen</h3>
+  <div class="li-copy">
+    <p>
+      El banner es uno de los espacios más desaprovechados de LinkedIn. Puede comunicar la propuesta de valor, el
+      rubro, el servicio principal, una frase de posicionamiento o una identidad visual coherente con la empresa.
+    </p>
+    <p>
+      El material recomienda trabajar en 1584 × 396 px. El error habitual es dejar el banner blanco o conservar la
+      portada genérica de LinkedIn: ese espacio equivale a una vidriera gratuita.
+    </p>
+  </div>
+
+  <figure class="li-figure">
+    <img src="assets/images/linkedin-course/slide-033.jpg" alt="Ejemplo de banner de LinkedIn y recomendaciones de diseño" loading="lazy" />
+    <figcaption>El banner debe estar alineado con la propuesta de valor</figcaption>
+  </figure>
+
+  <h3>Foto de perfil: profesional no significa distante</h3>
+  <div class="li-grid-2">
+    <article class="li-card li-card--mint">
+      <span class="li-card-label">Conviene</span>
+      <h4>Claridad y cercanía</h4>
+      <ul>
+        <li>Fondo neutro o relacionado con el trabajo.</li>
+        <li>Rostro visible y encuadre claro.</li>
+        <li>Expresión accesible y coherente con el rol.</li>
+        <li>Imagen nítida, de al menos 400 × 400 px.</li>
+      </ul>
+    </article>
+
+    <article class="li-card li-card--black">
+      <span class="li-card-label">Evitar</span>
+      <h4>Imágenes que no identifican</h4>
+      <ul>
+        <li>Selfies de vacaciones o fotos recortadas.</li>
+        <li>Un rostro demasiado pequeño.</li>
+        <li>Fondos que compiten con la persona.</li>
+        <li>Usar el logo de la empresa como foto personal.</li>
+      </ul>
+    </article>
+  </div>
+
+  <figure class="li-figure">
+    <img src="assets/images/linkedin-course/slide-036.jpg" alt="Ejemplos para pensar una foto de perfil adecuada para LinkedIn" loading="lazy" />
+    <figcaption>La imagen cambia según el contexto: en LinkedIn tiene que facilitar reconocimiento y confianza</figcaption>
+  </figure>
+
+  <h3>Titular: los 220 caracteres más importantes</h3>
+  <div class="li-copy">
+    <p>
+      El titular aparece debajo del nombre en todo LinkedIn: comentarios, conexiones, búsquedas y publicaciones. Suele
+      ser el primer texto que otra persona lee antes de entrar al perfil.
+    </p>
+    <p>
+      Un cargo aislado —por ejemplo, “CEO en Mi Empresa SRL”— dice dónde trabajás, pero no explica qué problema
+      resolvés ni por qué alguien debería iniciar una conversación con vos.
+    </p>
+  </div>
+
+  <div class="li-formula" aria-label="Fórmula recomendada para el titular de LinkedIn">
+    <strong>Titular recomendado:</strong>
+    <span>qué hacés</span> + <span>para quién</span> + <span>resultado o diferencial</span>
+  </div>
+
+  <div class="li-grid-2">
+    <article class="li-card li-card--mint">
+      <span class="li-card-label">Ejemplo · Industria</span>
+      <h4>Orientado al cliente</h4>
+      <p>Ayudo a PyMEs industriales a reducir tiempos de producción con soluciones de automatización | Metalúrgica Técnica</p>
+    </article>
+
+    <article class="li-card">
+      <span class="li-card-label">Ejemplo · Servicios</span>
+      <h4>Orientado al resultado</h4>
+      <p>Especialista en OKRs para quienes quieren resultados visibles y duraderos en su empresa | Fundadora de @okrsbrand</p>
+    </article>
+  </div>
+
+  <figure class="li-figure">
+    <img src="assets/images/linkedin-course/slide-039.jpg" alt="Ejemplos de titulares de LinkedIn orientados al cliente y al resultado" loading="lazy" />
+    <figcaption>El titular convierte un cargo en una propuesta de valor comprensible</figcaption>
+  </figure>
+
+  <h3>Ajustes que completan el encabezado</h3>
+  <ul class="li-checklist">
+    <li>Vincular correctamente la empresa donde trabajás.</li>
+    <li>Vincular la institución donde estudiaste.</li>
+    <li>Mantener el banner alineado con la propuesta de valor.</li>
+    <li>Revisar que la ubicación y los datos visibles sean correctos.</li>
+    <li>Agregar información de contacto útil y actualizada.</li>
+    <li>Usar temas o hashtags profesionales coherentes con el posicionamiento cuando la función esté disponible.</li>
+  </ul>
+
+  <figure class="li-figure">
+    <img src="assets/images/linkedin-course/slide-040.jpg" alt="Perfil de LinkedIn anotado con recomendaciones para completar el encabezado" loading="lazy" />
+    <figcaption>Todos los elementos visibles tienen que contar la misma historia profesional</figcaption>
+  </figure>
+
+  <!-- Desde aquí se conserva el cierre que ya existía después de la diapositiva 40. -->
+  <h3>Cómo escribir el “Acerca de”</h3>
+  <p class="li-lead">
+    El “Acerca de” no es un currículum: es el primer mensaje que una persona recibe sobre tu forma de trabajar y el valor que ofrecés.
+  </p>
+
+  <ol class="li-steps">
+    <li><div><strong>Hook</strong>Una primera frase que genere curiosidad e identifique al lector ideal.</div></li>
+    <li><div><strong>Problema</strong>Explicá la situación en el lenguaje del cliente, sin jerga innecesaria.</div></li>
+    <li><div><strong>Propuesta y diferencial</strong>Contá qué resolvés y por qué tu forma de hacerlo es distinta.</div></li>
+    <li><div><strong>Resultado</strong>Mostrá qué cambia para la persona que trabaja con vos.</div></li>
+    <li><div><strong>CTA claro</strong>Indicá qué querés que haga quien termina de leer.</div></li>
+  </ol>
+
+  <figure class="li-figure">
+    <img src="assets/images/linkedin-course/slide-041.jpg" alt="Ejemplo de sección Acerca de en un perfil de LinkedIn" loading="lazy" />
+    <figcaption>El “Acerca de” cuenta una historia que conecta</figcaption>
+  </figure>
+
+  <h3>Secciones que suelen olvidarse</h3>
+  <ul class="li-checklist">
+    <li>Experiencia con resultados, contexto y logros concretos.</li>
+    <li>Habilidades relevantes y validaciones.</li>
+    <li>Recomendaciones de clientes, colegas y colaboradores.</li>
+    <li>URL personalizada y fácil de compartir.</li>
+    <li>Servicios y datos de contacto actualizados.</li>
+    <li>Sección Destacado con pruebas de valor.</li>
+    <li>Archivos, videos, notas o soportes que muestren el trabajo.</li>
+    <li>Publicación y actividad semanal para mantenerse presente.</li>
+  </ul>
+</section>
+
+      <section class="li-section" id="marca-personal">
+        <header class="li-section-header">
+          <span class="li-section-number">02</span>
+          <div class="li-section-title">
+            <span class="li-kicker">Marca personal</span>
+            <h2>Un perfil que explica quién sos y qué valor aportás</h2>
+          </div>
+        </header>
+
+        <p class="li-lead">
+          La marca personal es la percepción profesional que construís a través de tu perfil, contenido, lenguaje, experiencia e interacción.
+        </p>
+
+        <div class="li-grid-2">
+          <article class="li-card li-card--mint">
+            <span class="li-card-label">Marca personal</span>
+            <h4>Abre puertas</h4>
+            <p>Aporta cercanía, voz, confianza, alcance y conexión humana.</p>
+          </article>
+          <article class="li-card li-card--black">
+            <span class="li-card-label">Marca empresa</span>
+            <h4>Sostiene credibilidad</h4>
+            <p>Aporta orden, formalidad, institucionalidad y consistencia.</p>
+          </article>
+        </div>
+
+        <h3>Anatomía de un perfil optimizado</h3>
+        <div class="li-grid-4">
+          <article class="li-card">
+            <span class="li-card-label">01 · Portada</span>
+            <h4>Banner</h4>
+            <p>Debe comunicar tu propuesta de valor, rubro o servicio principal. Tamaño recomendado: 1584 × 396 px.</p>
+          </article>
+          <article class="li-card li-card--mint">
+            <span class="li-card-label">02 · Identidad</span>
+            <h4>Foto de perfil</h4>
+            <p>Rostro visible, expresión accesible y fondo simple. No reemplazarla por el logo de la empresa.</p>
+          </article>
+          <article class="li-card">
+            <span class="li-card-label">03 · Promesa</span>
+            <h4>Titular</h4>
+            <p>Los 220 caracteres más importantes: explican qué hacés, para quién y con qué resultado.</p>
+          </article>
+          <article class="li-card li-card--black">
+            <span class="li-card-label">04 · Relato</span>
+            <h4>Acerca de</h4>
+            <p>Cuenta una historia que conecte: problema, propuesta, diferencia, resultado y llamado a la acción.</p>
+          </article>
+        </div>
+
+        <div class="li-formula" aria-label="Fórmula recomendada para el titular">
+          <strong>Titular recomendado:</strong>
+          <span>qué hacés</span> + <span>para quién</span> + <span>resultado o diferencial</span>
+        </div>
+
+        <div class="li-grid-2">
+          <figure class="li-figure">
+            <img src="assets/images/linkedin-course/slide-033.jpg" alt="Ejemplo de banner de LinkedIn y recomendaciones de diseño" loading="lazy" />
+            <figcaption>Banner: la portada como propuesta de valor</figcaption>
+          </figure>
+          <figure class="li-figure">
+            <img src="assets/images/linkedin-course/slide-037.jpg" alt="Ejemplo de titular profesional en LinkedIn" loading="lazy" />
+            <figcaption>Titular: claridad antes que cargo genérico</figcaption>
+          </figure>
+        </div>
+
+        <h3>Cómo escribir el “Acerca de”</h3>
+        <ol class="li-steps">
+          <li><div><strong>Hook</strong>Una primera frase que genere curiosidad e identifique al lector ideal.</div></li>
+          <li><div><strong>Problema</strong>Explicá la situación en el lenguaje del cliente, sin jerga innecesaria.</div></li>
+          <li><div><strong>Propuesta y diferencial</strong>Contá qué resolvés y por qué tu forma de hacerlo es distinta.</div></li>
+          <li><div><strong>Resultado</strong>Mostrá qué cambia para la persona que trabaja con vos.</div></li>
+          <li><div><strong>CTA claro</strong>Indicá qué querés que haga quien termina de leer.</div></li>
+        </ol>
+
+        <figure class="li-figure">
+          <img src="assets/images/linkedin-course/slide-041.jpg" alt="Ejemplo de sección Acerca de en un perfil de LinkedIn" loading="lazy" />
+          <figcaption>El “Acerca de” no es un currículum: es el primer mensaje de venta</figcaption>
+        </figure>
+
+        <h3>Secciones que suelen olvidarse</h3>
+        <ul class="li-checklist">
+          <li>Experiencia con resultados y contexto.</li>
+          <li>Habilidades relevantes y validaciones.</li>
+          <li>Recomendaciones de clientes y colegas.</li>
+          <li>URL personalizada.</li>
+          <li>Servicios y datos de contacto.</li>
+          <li>Sección Destacado con pruebas de valor.</li>
+        </ul>
+      </section>
+
+      <section class="li-section" id="contenido">
+        <header class="li-section-header">
+          <span class="li-section-number">03</span>
+          <div class="li-section-title">
+            <span class="li-kicker">Estrategia de contenido</span>
+            <h2>LinkedIn no es Instagram: la lógica del contenido es diferente</h2>
+          </div>
+        </header>
+
+        <p class="li-lead">
+          La audiencia de LinkedIn busca aprender, resolver problemas, conectar con referentes y tomar decisiones de negocio.
+        </p>
+
+        <div class="li-manifesto">
+          <p>El contenido que gana en LinkedIn aporta valor real a un profesional.</p>
+        </div>
+
+        <h3>Qué podés publicar</h3>
+        <ul class="li-checklist">
+          <li>Noticias, aprendizajes y tendencias del sector.</li>
+          <li>Reconocimientos, certificaciones y eventos.</li>
+          <li>Procesos, equipo y detrás de escena.</li>
+          <li>Casos de éxito y resultados.</li>
+          <li>Opiniones, recomendaciones y perspectiva propia.</li>
+          <li>Errores, lecciones y aprendizajes personales.</li>
+          <li>Alianzas, visitas, congresos y exposiciones.</li>
+          <li>Historias personales con aprendizaje profesional.</li>
+        </ul>
+
+        <h3>Formatos que funcionan</h3>
+        <div class="li-table-wrap">
+          <table class="li-table">
+            <thead>
+              <tr><th>Formato</th><th>Por qué funciona</th><th>Uso recomendado</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Post de texto</td><td>Genera conversación y prioriza la idea.</td><td>Aprendizajes, opinión, experiencia.</td></tr>
+              <tr><td>Carrusel PDF</td><td>Permite enseñar paso a paso.</td><td>Procesos, guías, errores comunes.</td></tr>
+              <tr><td>Video nativo</td><td>Humaniza y genera cercanía.</td><td>Demostraciones y detrás de escena.</td></tr>
+              <tr><td>Artículo</td><td>Profundiza y posiciona en buscadores.</td><td>Guías extensas y análisis.</td></tr>
+              <tr><td>Caso de cliente</td><td>Aporta prueba social concreta.</td><td>Problema, proceso y resultado.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure class="li-figure">
+          <img src="assets/images/linkedin-course/slide-052.jpg" alt="Tabla de formatos de contenido y ejemplos para LinkedIn" loading="lazy" />
+          <figcaption>Formatos de contenido y usos para PyMEs</figcaption>
+        </figure>
+
+        <h3>Pilares de contenido</h3>
+        <div class="li-grid-3">
+          <article class="li-card li-card--mint"><span class="li-card-label">Pilar 01</span><h4>Expertise</h4><p>Lo que sabés de tu sector y ayuda a resolver problemas.</p></article>
+          <article class="li-card"><span class="li-card-label">Pilar 02</span><h4>Procesos</h4><p>Cómo trabajás, cómo producís y qué sucede detrás de escena.</p></article>
+          <article class="li-card li-card--black"><span class="li-card-label">Pilar 03</span><h4>Casos y resultados</h4><p>Transformaciones reales, métricas y aprendizajes con clientes.</p></article>
+          <article class="li-card"><span class="li-card-label">Pilar 04</span><h4>Opinión</h4><p>Tu postura profesional sobre tendencias y decisiones del sector.</p></article>
+          <article class="li-card li-card--mint"><span class="li-card-label">Pilar 05</span><h4>Aprendizajes</h4><p>Errores, lecciones y evolución personal o empresarial.</p></article>
+          <article class="li-card"><span class="li-card-label">Pilar opcional</span><h4>Cultura</h4><p>Equipo, valores, comunidad y forma de trabajar.</p></article>
+        </div>
+
+        <h3>Herramientas dentro de LinkedIn</h3>
+        <div class="li-grid-3">
+          <article class="li-card"><h4>Newsletter</h4><p>Serie periódica para fidelizar una audiencia y ordenar contenidos alrededor de un tema.</p></article>
+          <article class="li-card li-card--mint"><h4>Grupos</h4><p>Espacios para observar conversaciones, intercambiar ideas y detectar oportunidades.</p></article>
+          <article class="li-card"><h4>Post Empleos</h4><p>Permite publicar búsquedas, atraer talento y reforzar la marca empleadora.</p></article>
+          <article class="li-card li-card--black"><h4>Artículos</h4><p>Contenido largo para desarrollar ideas con profundidad y mejorar posicionamiento.</p></article>
+          <article class="li-card"><h4>Programación</h4><p>Ayuda a sostener la producción, ordenar el calendario y evitar improvisaciones.</p></article>
+          <article class="li-card li-card--mint"><h4>Eventos</h4><p>Para difundir charlas, webinars, lanzamientos, clases y encuentros profesionales.</p></article>
+        </div>
+
+        <div class="li-grid-2">
+          <figure class="li-figure">
+            <img src="assets/images/linkedin-course/slide-055.jpg" alt="Ejemplos de newsletters publicadas en LinkedIn" loading="lazy" />
+            <figcaption>Newsletter: recurrencia y fidelización</figcaption>
+          </figure>
+          <figure class="li-figure">
+            <img src="assets/images/linkedin-course/slide-068.jpg" alt="Ejemplo de la sección Eventos de LinkedIn" loading="lazy" />
+            <figcaption>Eventos: difusión y registro dentro de la plataforma</figcaption>
+          </figure>
+        </div>
+
+        <h3>La fórmula del post que funciona</h3>
+        <ol class="li-steps">
+          <li><div><strong>Hook</strong>La primera línea tiene que detener el scroll y abrir una pregunta.</div></li>
+          <li><div><strong>Desarrollo</strong>Párrafos cortos, una idea central y ejemplos concretos.</div></li>
+          <li><div><strong>Cierre con CTA</strong>Una pregunta, invitación a comentar o acción específica.</div></li>
+        </ol>
+
+        <aside class="li-card li-card--black">
+          <span class="li-card-label">Clave práctica</span>
+          <h4>Comentar también es publicar</h4>
+          <p>Dedicar unos minutos diarios a comentar con valor aumenta la visibilidad. Si compartís un enlace externo, es preferible colocarlo en el primer comentario.</p>
+        </aside>
+      </section>
+
+      <section class="li-section" id="networking">
+        <header class="li-section-header">
+          <span class="li-section-number">04</span>
+          <div class="li-section-title">
+            <span class="li-kicker">Networking estratégico</span>
+            <h2>Conectar con propósito</h2>
+          </div>
+        </header>
+
+        <p class="li-lead">
+          Tener miles de conexiones no significa tener una red de valor. El networking estratégico consiste en construir relaciones profesionales con intención.
+        </p>
+
+        <div class="li-grid-2">
+          <article class="li-card"><span class="li-card-label">Conectar</span><h4>Acumular contactos</h4><p>Enviar una invitación sin contexto y no volver a conversar.</p></article>
+          <article class="li-card li-card--mint"><span class="li-card-label">Hacer networking</span><h4>Construir una relación</h4><p>Dar seguimiento, aportar valor y sostener una conversación genuina.</p></article>
+        </div>
+
+        <h3>A quién conectar</h3>
+        <figure class="li-figure">
+          <img src="assets/images/linkedin-course/slide-074.jpg" alt="Lista de perfiles prioritarios para construir una red profesional" loading="lazy" />
+          <figcaption>Construcción de red con criterio</figcaption>
+        </figure>
+
+        <ul class="li-checklist">
+          <li>Clientes actuales y potenciales.</li>
+          <li>Referentes y colegas del sector.</li>
+          <li>Periodistas y editores especializados.</li>
+          <li>Proveedores estratégicos.</li>
+          <li>Alumni y excompañeros.</li>
+          <li>Empleadores o entrevistadores.</li>
+        </ul>
+
+        <h3>Mensaje de conexión efectivo</h3>
+        <div class="li-formula">
+          <strong>Estructura:</strong>
+          <span>contexto</span> + <span>motivo específico</span> + <span>valor o pregunta</span>
+        </div>
+
+        <aside class="li-card li-card--black">
+          <span class="li-card-label">Regla de oro</span>
+          <h4>No vender en el primer mensaje</h4>
+          <p>El objetivo inicial es abrir una conversación, no cerrar una venta.</p>
+        </aside>
+
+        <h3>Seis estrategias efectivas</h3>
+        <ol class="li-steps">
+          <li><div><strong>Identificá tus objetivos</strong>Definí qué relaciones necesitás construir y para qué.</div></li>
+          <li><div><strong>Investigá tus opciones</strong>Revisá perfiles, publicaciones e intereses antes de conectar.</div></li>
+          <li><div><strong>Prepará y practicá</strong>Trabajá tu presentación profesional y tu propuesta de valor.</div></li>
+          <li><div><strong>Sé proactiva y educada</strong>Personalizá el contacto y respetá los tiempos de la otra persona.</div></li>
+          <li><div><strong>Construí relaciones</strong>Aportá valor, comentá y sostené el vínculo con constancia.</div></li>
+          <li><div><strong>Evaluá y mejorá</strong>Revisá qué acciones generan conversaciones y oportunidades reales.</div></li>
+        </ol>
+
+        <figure class="li-figure">
+          <img src="assets/images/linkedin-course/slide-080.jpg" alt="Primeras tres estrategias efectivas de networking en LinkedIn" loading="lazy" />
+          <figcaption>Networking: objetivo, investigación y preparación</figcaption>
+        </figure>
+
+        <div class="li-closing">
+          <p>Quince minutos diarios de interacción genuina valen más que una semana completa de publicaciones sin engagement.</p>
+        </div>
+      </section>
+
+      <section class="li-section" id="marca-empresa">
+        <header class="li-section-header">
+          <span class="li-section-number">05</span>
+          <div class="li-section-title">
+            <span class="li-kicker">Marca empresa</span>
+            <h2>Página de empresa, reputación y generación de leads</h2>
+          </div>
+        </header>
+
+        <p class="li-lead">
+          La página de empresa es el perfil institucional del negocio. Tiene menos alcance orgánico que el contenido personal, pero sostiene la estrategia corporativa y la credibilidad.
+        </p>
+
+        <h3>Configuración básica</h3>
+        <ul class="li-checklist">
+          <li>Logo de alta resolución y portada con propuesta de valor.</li>
+          <li>Descripción completa con palabras clave del sector.</li>
+          <li>Datos de contacto, sitio web y ubicación.</li>
+          <li>Hasta tres hashtags relevantes.</li>
+          <li>Botón de acción personalizado.</li>
+          <li>Al menos una persona vinculada como empleada.</li>
+        </ul>
+
+        <figure class="li-figure">
+          <img src="assets/images/linkedin-course/slide-087.jpg" alt="Tabla de configuración recomendada para una página de empresa en LinkedIn" loading="lazy" />
+          <figcaption>Secciones que una página de empresa debe completar</figcaption>
+        </figure>
+
+        <h3>Perfil personal y página de empresa trabajan juntos</h3>
+        <div class="li-grid-2">
+          <article class="li-card li-card--mint">
+            <span class="li-card-label">Perfil personal</span>
+            <h4>Origina la conversación</h4>
+            <p>Genera alcance orgánico, confianza y conexión emocional.</p>
+          </article>
+          <article class="li-card li-card--black">
+            <span class="li-card-label">Página de empresa</span>
+            <h4>Valida y ordena</h4>
+            <p>Sostiene la identidad institucional y funciona como hub para productos, servicios y equipo.</p>
+          </article>
+        </div>
+
+        <div class="li-formula">
+          <strong>Flujo recomendado:</strong>
+          <span>publicar en el perfil</span> → <span>esperar tracción</span> → <span>compartir desde la empresa</span>
+        </div>
+
+        <h3>Employer branding y Employee Advocacy</h3>
+        <p class="li-copy">
+          Los empleados pueden compartir contenido desde sus perfiles personales o crear publicaciones vinculadas a la empresa. Una red activa de personas suele ampliar mucho más el alcance que la página corporativa por sí sola.
+        </p>
+
+        <figure class="li-figure">
+          <img src="assets/images/linkedin-course/slide-088.jpg" alt="Ejemplo gráfico de uso, adaptación y portafolio de marca" loading="lazy" />
+          <figcaption>La marca se construye a través de múltiples expresiones y usos</figcaption>
+        </figure>
+
+        <h3>Embudo orgánico de generación de leads</h3>
+        <figure class="li-figure">
+          <img src="assets/images/linkedin-course/slide-099.jpg" alt="Embudo de generación de leads orgánicos en LinkedIn" loading="lazy" />
+          <figcaption>Visibilidad, credibilidad, conversación y conversión</figcaption>
+        </figure>
+
+        <div class="li-grid-4">
+          <article class="li-card"><span class="li-card-label">Etapa 01</span><h4>Visibilidad</h4><p>Contenido útil y consistencia.</p></article>
+          <article class="li-card li-card--mint"><span class="li-card-label">Etapa 02</span><h4>Credibilidad</h4><p>Casos, resultados y autoridad.</p></article>
+          <article class="li-card"><span class="li-card-label">Etapa 03</span><h4>Conversación</h4><p>Comentarios, mensajes y seguimiento.</p></article>
+          <article class="li-card li-card--black"><span class="li-card-label">Etapa 04</span><h4>Conversión</h4><p>Reuniones, presupuestos y oportunidades.</p></article>
+        </div>
+      </section>
+
+      <section class="li-section" id="metricas">
+        <header class="li-section-header">
+          <span class="li-section-number">06</span>
+          <div class="li-section-title">
+            <span class="li-kicker">Medición y pauta</span>
+            <h2>LinkedIn Ads y métricas para decidir</h2>
+          </div>
+        </header>
+
+        <p class="li-lead">
+          La publicidad amplifica una estrategia que ya tiene mensaje, contenido y propuesta de valor. No reemplaza la claridad.
+        </p>
+
+        <div class="li-grid-3">
+          <article class="li-card"><span class="li-card-label">Formato</span><h4>Sponsored Content</h4><p>Publicaciones patrocinadas para alcance, tráfico o generación de demanda.</p></article>
+          <article class="li-card li-card--mint"><span class="li-card-label">Formato</span><h4>Message Ads</h4><p>Mensajes dirigidos a públicos específicos, con segmentación profesional.</p></article>
+          <article class="li-card li-card--black"><span class="li-card-label">Antes de invertir</span><h4>Validá orgánicamente</h4><p>Probá el mensaje y la propuesta antes de pagar por amplificarlos.</p></article>
+        </div>
+
+        <h3>Métricas clave</h3>
+        <div class="li-table-wrap">
+          <table class="li-table">
+            <thead><tr><th>Métrica</th><th>Qué muestra</th><th>Qué decisión permite tomar</th></tr></thead>
+            <tbody>
+              <tr><td>Impresiones</td><td>Cuántas veces se mostró el contenido.</td><td>Revisar horario, formato o distribución.</td></tr>
+              <tr><td>Alcance</td><td>Personas únicas que lo vieron.</td><td>Evaluar expansión de audiencia.</td></tr>
+              <tr><td>Tasa de engagement</td><td>Interacciones en relación con el alcance.</td><td>Confirmar si el tema y enfoque conectan.</td></tr>
+              <tr><td>Clics en el perfil</td><td>Visitas generadas por la publicación.</td><td>Medir interés en la propuesta profesional.</td></tr>
+              <tr><td>Solicitudes de conexión</td><td>Personas que se acercan por iniciativa propia.</td><td>Evaluar atracción y relevancia del perfil.</td></tr>
+              <tr><td>Social Selling Index</td><td>Desempeño en marca, red, contenido y relaciones.</td><td>Detectar áreas que requieren trabajo.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure class="li-figure">
+          <img src="assets/images/linkedin-course/slide-103.jpg" alt="Panel del Social Selling Index de LinkedIn" loading="lazy" />
+          <figcaption>Social Selling Index: una referencia para revisar hábitos y posicionamiento</figcaption>
+        </figure>
+      </section>
+
+      <section class="li-section" id="plantillas">
+        <header class="li-section-header">
+          <span class="li-section-number">07</span>
+          <div class="li-section-title">
+            <span class="li-kicker">Reflexiones finales</span>
+            <h2>Una presencia coherente se construye con constancia</h2>
+          </div>
+        </header>
+
+        <p class="li-lead">
+          LinkedIn no genera resultados de la noche a la mañana. Es una plataforma de mediano y largo plazo donde la consistencia gana a la intensidad.
+        </p>
+
+        <div class="li-manifesto">
+          <p>El tiempo en LinkedIn no es gasto: es inversión en reputación, relaciones y oportunidades.</p>
+        </div>
+
+        <div class="li-grid-2">
+          <article class="li-card li-card--mint"><h4>Perfil profesional</h4><p>Datos actualizados, titular claro, experiencia bien explicada y coherencia con colegas.</p></article>
+          <article class="li-card"><h4>Publicaciones</h4><p>Textos, imágenes, videos y artículos que muestran contexto, relación con el trabajo y valor real.</p></article>
+          <article class="li-card"><h4>Interacción</h4><p>Comentar, recomendar, apoyar y compartir para construir una red viva.</p></article>
+          <article class="li-card li-card--black"><h4>Sistema</h4><p>Planificar, medir, corregir y volver a publicar con aprendizaje acumulado.</p></article>
+        </div>
+
+        <figure class="li-figure">
+          <img src="assets/images/linkedin-course/slide-111.jpg" alt="Diagrama con los elementos necesarios para una presencia profesional en LinkedIn" loading="lazy" />
+          <figcaption>Perfil, publicaciones e interacción: las tres piezas necesarias</figcaption>
+        </figure>
+
+        <h3>Plantillas de trabajo incluidas</h3>
+        <figure class="li-figure">
+          <img src="assets/images/linkedin-course/slide-115.jpg" alt="Listado de secciones de la plantilla estratégica de LinkedIn" loading="lazy" />
+          <figcaption>Auditoría, contenido, networking, plan de 30 días y métricas</figcaption>
+        </figure>
+
+        <div class="li-gallery">
+          <article class="li-template">
+            <img src="assets/images/linkedin-course/slide-116.jpg" alt="Plantilla de auditoría de perfil de LinkedIn" loading="lazy" />
+            <div class="li-template-body"><span class="li-template-code">Plantilla A</span><h4>Auditoría de perfil</h4></div>
+          </article>
+          <article class="li-template">
+            <img src="assets/images/linkedin-course/slide-120.jpg" alt="Plantilla de calendario semanal de LinkedIn" loading="lazy" />
+            <div class="li-template-body"><span class="li-template-code">Plantilla D</span><h4>Calendario semanal</h4></div>
+          </article>
+          <article class="li-template">
+            <img src="assets/images/linkedin-course/slide-121.jpg" alt="Plantilla de plan de networking estratégico" loading="lazy" />
+            <div class="li-template-body"><span class="li-template-code">Plantilla E</span><h4>Networking estratégico</h4></div>
+          </article>
+          <article class="li-template">
+            <img src="assets/images/linkedin-course/slide-122.jpg" alt="Plantilla de plan de LinkedIn de 30 días" loading="lazy" />
+            <div class="li-template-body"><span class="li-template-code">Plantilla F</span><h4>Plan de 30 días</h4></div>
+          </article>
+          <article class="li-template">
+            <img src="assets/images/linkedin-course/slide-123.jpg" alt="Plantilla de métricas mensuales de LinkedIn" loading="lazy" />
+            <div class="li-template-body"><span class="li-template-code">Plantilla G</span><h4>Métricas mensuales</h4></div>
+          </article>
+        </div>
+
+        <div class="li-closing">
+          <p>No se trata solo de tener un perfil abierto. Se trata de construir una presencia profesional coherente.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+  <script src="js/components.js?v=2"></script>
+</body>
+</html>

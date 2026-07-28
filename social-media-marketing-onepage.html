@@ -1,0 +1,934 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Social Media Marketing | HUB DI LAD UNLa</title>
+  <meta name="description" content="Módulos 3 y 4 de Social Media Marketing reorganizados como una guía web completa de estrategia, contenido, comunidad y medición." />
+
+   <link rel="icon" href="assets/images/logohubfavicom.ico" type="image/x-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script src="js/tailwind.config.js?v=1"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="css/style.css?v=5" />
+
+  <style>
+    :root {
+      --web-lad: #A6FFF0;
+      --black: #000000;
+      --white: #ffffff;
+      --hub-light-bg: #F5F7F7;
+      --line: #cbd2d2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--black);
+      background: var(--hub-light-bg);
+      font-family: "Karla", system-ui, sans-serif;
+    }
+
+    .pm-course {
+      padding: clamp(1rem, 3vw, 3rem) 0 5rem;
+    }
+
+    .pm-container {
+      width: min(92%, 1360px);
+      margin-inline: auto;
+    }
+
+    .pm-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(18rem, .65fr);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+    }
+
+    .pm-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 42rem;
+      padding: clamp(2rem, 6vw, 6rem);
+    }
+
+    .pm-eyebrow,
+    .pm-kicker,
+    .pm-card-label,
+    .pm-template-code {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .pm-eyebrow {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: .78rem;
+    }
+
+    .pm-hero h1 {
+      max-width: 12ch;
+      margin: 0;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(2.8rem, 7vw, 6.6rem);
+      font-weight: 500;
+      line-height: .92;
+      letter-spacing: -.065em;
+      text-transform: uppercase;
+    }
+
+    .pm-hero-copy > p {
+      max-width: 48rem;
+      margin: 1.5rem 0 0;
+      font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+      line-height: 1.48;
+    }
+
+    .pm-hero-index {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .pm-hero-index h2 {
+      margin: 0 0 1.5rem;
+      font-family: "Roboto Mono", monospace;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .pm-hero-index ol {
+      display: grid;
+      gap: .8rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: pm-index;
+    }
+
+    .pm-hero-index li {
+      counter-increment: pm-index;
+    }
+
+    .pm-hero-index a {
+      display: grid;
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: .75rem;
+      align-items: baseline;
+      color: inherit;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+
+    .pm-hero-index a::before {
+      content: counter(pm-index, decimal-leading-zero);
+      color: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .pm-hero-index a:hover,
+    .pm-hero-index a:focus-visible {
+      color: var(--web-lad);
+    }
+
+    .pm-hero-note {
+      margin: 2rem 0 0;
+      padding-top: 1rem;
+      border-top: 1px solid var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .78rem;
+      line-height: 1.5;
+    }
+
+    .pm-section {
+      margin-top: clamp(1.25rem, 3vw, 2.5rem);
+      padding: clamp(1.25rem, 4vw, 3.5rem);
+      scroll-margin-top: 1rem;
+      border: 1px solid var(--black);
+      border-left-width: .55rem;
+      background: var(--white);
+    }
+
+    .pm-section:nth-of-type(even) {
+      background: var(--hub-light-bg);
+    }
+
+    .pm-section-header {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      margin-bottom: clamp(1.75rem, 4vw, 3rem);
+    }
+
+    .pm-section-number {
+      display: grid;
+      width: 3rem;
+      height: 3rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .pm-kicker {
+      display: block;
+      margin-bottom: .4rem;
+      font-size: .72rem;
+    }
+
+    .pm-section h2 {
+      max-width: 23ch;
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: .96;
+      letter-spacing: -.05em;
+    }
+
+    .pm-section h3 {
+      margin: clamp(2.5rem, 5vw, 4rem) 0 1rem;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+
+    .pm-lead {
+      max-width: 62rem;
+      margin: 0 0 1.5rem;
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      line-height: 1.4;
+    }
+
+    .pm-copy {
+      max-width: 62rem;
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    .pm-copy p {
+      margin: 0 0 1.25rem;
+    }
+
+    .pm-grid-2,
+    .pm-grid-3,
+    .pm-grid-4,
+    .pm-glossary {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .pm-grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pm-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pm-grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .pm-glossary {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pm-card {
+      min-width: 0;
+      padding: clamp(1.1rem, 2.5vw, 1.75rem);
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+    }
+
+    .pm-card--mint {
+      background: var(--web-lad);
+    }
+
+    .pm-card--black {
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .pm-card-label {
+      display: block;
+      margin-bottom: .8rem;
+      font-size: .7rem;
+    }
+
+    .pm-card--black .pm-card-label {
+      color: var(--web-lad);
+    }
+
+    .pm-card h4 {
+      margin: 0 0 .75rem;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      line-height: 1.1;
+    }
+
+    .pm-card p,
+    .pm-card ul {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .pm-card ul {
+      padding-left: 1.1rem;
+    }
+
+    .pm-manifesto {
+      margin: 2rem 0;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      border: 1px solid var(--black);
+      color: var(--white);
+      background: var(--black);
+      box-shadow: .7rem .7rem 0 var(--web-lad);
+      font-size: clamp(1.4rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -.03em;
+    }
+
+    .pm-manifesto p {
+      max-width: 34ch;
+      margin: 0;
+    }
+
+    .pm-formula {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      align-items: center;
+      margin: 1.5rem 0;
+      padding: 1.2rem;
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+    }
+
+    .pm-formula span {
+      padding: .4rem .6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-steps {
+      display: grid;
+      gap: .75rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: pm-steps;
+    }
+
+    .pm-steps li {
+      display: grid;
+      grid-template-columns: 2.8rem minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      padding: 1rem;
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+      counter-increment: pm-steps;
+    }
+
+    .pm-steps li::before {
+      content: counter(pm-steps, decimal-leading-zero);
+      display: grid;
+      width: 2.8rem;
+      height: 2.8rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .pm-steps strong {
+      display: block;
+      margin-bottom: .25rem;
+    }
+
+    .pm-checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .6rem 1rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pm-checklist li {
+      position: relative;
+      padding: .85rem 1rem .85rem 2.6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+      line-height: 1.4;
+    }
+
+    .pm-checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 1rem;
+      font-weight: 800;
+    }
+
+    .pm-figure {
+      margin: 1.5rem 0 0;
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .pm-figure figcaption {
+      padding: .75rem 1rem;
+      border-top: 1px solid var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .76rem;
+      line-height: 1.4;
+    }
+
+    .pm-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      margin: 1.5rem 0;
+      border: 1px solid var(--black);
+    }
+
+    .pm-flow div {
+      padding: 1.2rem;
+      border-right: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-flow div:last-child {
+      border-right: 0;
+      background: var(--web-lad);
+    }
+
+    .pm-flow strong {
+      display: block;
+      margin-bottom: .35rem;
+    }
+
+    .pm-writing {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+    }
+
+    .pm-writing label {
+      display: grid;
+      gap: .5rem;
+      font-weight: 700;
+    }
+
+    .pm-writing textarea {
+      width: 100%;
+      min-height: 7rem;
+      padding: 1rem;
+      resize: vertical;
+      border: 1px solid var(--black);
+      border-radius: 0;
+      color: var(--black);
+      background: var(--white);
+      font: inherit;
+    }
+
+    .pm-footer-note {
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .pm-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-hero-copy {
+        min-height: 34rem;
+      }
+
+      .pm-grid-4,
+      .pm-glossary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .pm-grid-2,
+      .pm-grid-3,
+      .pm-grid-4,
+      .pm-glossary,
+      .pm-checklist,
+      .pm-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-section {
+        padding: 1.1rem;
+        border-left-width: .35rem;
+      }
+
+      .pm-section-header {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-hero-copy,
+      .pm-hero-index {
+        padding: 1.3rem;
+      }
+
+      .pm-hero-copy {
+        min-height: 30rem;
+      }
+
+      .pm-flow div {
+        border-right: 0;
+        border-bottom: 1px solid var(--black);
+      }
+
+      .pm-flow div:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media print {
+      .pm-section,
+      .pm-card,
+      .pm-figure {
+        break-inside: avoid;
+      }
+
+      .pm-writing textarea {
+        resize: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main class="pm-course">
+    <div class="pm-container">
+      <header class="pm-hero">
+        <div class="pm-hero-copy">
+          <span class="pm-eyebrow">Marketing 4.0 · Módulos 3 y 4</span>
+          <h1>Social Media Marketing</h1>
+          <p>Una guía completa para convertir las redes sociales en un sistema de estrategia, contenido, comunidad, reputación y mejora continua.</p>
+        </div>
+
+        <nav class="pm-hero-index" aria-label="Recorrido de la clase">
+          <div>
+            <h2>Recorrido</h2>
+            <ol>
+              <li><a href="#fundamentos">Estrategia social</a></li>
+              <li><a href="#diseno">Diseñar la estrategia</a></li>
+              <li><a href="#plataformas">Rol de cada plataforma</a></li>
+              <li><a href="#contenido">Contenido y storytelling</a></li>
+              <li><a href="#comunidad">Comunidad y reputación</a></li>
+              <li><a href="#metricas">Métricas que deciden</a></li>
+              <li><a href="#plan">Plan editorial y herramientas</a></li>
+            </ol>
+          </div>
+          <p class="pm-hero-note">215 diapositivas reorganizadas en 7 módulos web, preservando conceptos, ejemplos y casos sin repetir portadas ni divisores.</p>
+        </nav>
+      </header>
+
+      <section class="pm-section" id="fundamentos">
+        <header class="pm-section-header">
+          <span class="pm-section-number">01</span>
+          <div><span class="pm-kicker">Punto de partida</span><h2>Las redes son parte de un sistema</h2></div>
+        </header>
+
+        <p class="pm-lead">Social media marketing no es publicar por publicar. Es usar las redes con un propósito comercial y relacional: atraer a las personas correctas, generar confianza, facilitar la acción y aprender de los datos.</p>
+
+        <div class="pm-flow" aria-label="Funciones de las redes sociales">
+          <div><strong>Atraer</strong>Lograr que el público adecuado descubra la propuesta.</div>
+          <div><strong>Construir confianza</strong>Demostrar conocimiento, coherencia y prueba real.</div>
+          <div><strong>Convertir</strong>Transformar interés en consulta, reserva, contacto o venta.</div>
+          <div><strong>Fidelizar y aprender</strong>Sostener relaciones y mejorar con información.</div>
+        </div>
+
+        <div class="pm-manifesto"><p>Una PyME no necesita ganar por presupuesto. Puede ganar por claridad, constancia y calidad de vínculo.</p></div>
+
+        <h3>¿Qué define una estrategia?</h3>
+        <ul class="pm-checklist">
+          <li>Para qué se usarán las redes.</li>
+          <li>A quién se quiere atraer.</li>
+          <li>Qué plataformas tienen sentido.</li>
+          <li>Qué rol cumple cada canal.</li>
+          <li>Qué contenidos se publicarán.</li>
+          <li>Cómo se conversará con la comunidad.</li>
+          <li>Qué acción debe facilitar cada pieza.</li>
+          <li>Cómo se medirá y corregirá.</li>
+        </ul>
+
+        <figure class="pm-figure">
+          <img src="assets/images/social-media-modulos-3-4/slide-022.jpg" alt="Diapositiva original sobre estrategia de redes sociales" loading="lazy" />
+          <figcaption>La estrategia conecta objetivo, audiencia, plataformas, contenido, conversación y medición.</figcaption>
+        </figure>
+
+        <h3>Lo que una estrategia no es</h3>
+        <div class="pm-grid-3">
+          <article class="pm-card"><span class="pm-card-label">Error 01</span><h4>Estar en todas partes</h4><p>Abrir perfiles “por las dudas” dispersa tiempo, atención y capacidad de respuesta.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Error 02</span><h4>Copiar tendencias</h4><p>Una tendencia solo sirve si conecta con el objetivo, el público y la identidad de la marca.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Error 03</span><h4>Medir solo likes</h4><p>Los “me gusta” no explican por sí solos si hubo interés, confianza, consultas o ventas.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Error 04</span><h4>Publicar sin objetivo</h4><p>Una lista de posteos no reemplaza una estrategia ni define qué debe suceder después.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Error 05</span><h4>Replicar idéntico</h4><p>Cada plataforma tiene lenguaje, contexto de uso, formatos y expectativas propias.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Error 06</span><h4>Esperar ventas inmediatas</h4><p>La relación se construye. Abandonar antes de aprender impide encontrar qué sí funciona.</p></article>
+        </div>
+
+        <h3>Ejemplo: centro de estética</h3>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Instagram</h4><p>Muestra resultados, educa, humaniza la atención y construye confianza.</p></article>
+          <article class="pm-card"><h4>WhatsApp</h4><p>Convierte interés en turnos, responde dudas y sostiene el seguimiento.</p></article>
+          <article class="pm-card"><h4>Perfil de Empresa</h4><p>Captura búsqueda local, exhibe reseñas y facilita ubicación y contacto.</p></article>
+        </div>
+      </section>
+
+      <section class="pm-section" id="diseno">
+        <header class="pm-section-header">
+          <span class="pm-section-number">02</span>
+          <div><span class="pm-kicker">Método completo</span><h2>Diseñar la estrategia en 12 pasos</h2></div>
+        </header>
+
+        <p class="pm-lead">La estrategia se construye desde la realidad del negocio. Primero se diagnostica y se decide; recién después se arma el calendario.</p>
+
+        <ol class="pm-steps">
+          <li><div><strong>Diagnóstico.</strong> Revisar presencia actual, coherencia, recursos, resultados y problemas.</div></li>
+          <li><div><strong>Objetivos SMART.</strong> Definir resultados específicos, medibles, alcanzables, relevantes y temporales.</div></li>
+          <li><div><strong>Audiencia y segmentación.</strong> Comprender perfil, necesidad, objeciones, lenguaje y hábitos digitales.</div></li>
+          <li><div><strong>Selección de plataformas.</strong> Elegir por objetivo, público, formatos sostenibles y capacidad operativa.</div></li>
+          <li><div><strong>Rol por plataforma.</strong> Asignar una función concreta a cada canal dentro del recorrido.</div></li>
+          <li><div><strong>Pilares de contenido.</strong> Ordenar temas recurrentes conectados con la propuesta de valor.</div></li>
+          <li><div><strong>Tono y storytelling.</strong> Definir cómo habla la marca y cómo convierte información en relatos.</div></li>
+          <li><div><strong>Gestión de comunidad.</strong> Establecer tiempos, tono, protocolos y derivación comercial.</div></li>
+          <li><div><strong>KPIs.</strong> Vincular cada objetivo con indicadores que permitan decidir.</div></li>
+          <li><div><strong>Plan de contenidos.</strong> Cruzar pilares, formatos, objetivos, llamados a la acción y plataformas.</div></li>
+          <li><div><strong>Calendario editorial.</strong> Distribuir frecuencia, campañas, fechas, responsables y estados.</div></li>
+          <li><div><strong>Revisión continua.</strong> Analizar, aprender, ajustar y volver a probar.</div></li>
+        </ol>
+
+        <figure class="pm-figure">
+          <img src="assets/images/social-media-modulos-3-4/slide-031.jpg" alt="Diapositiva original con el proceso de estrategia" loading="lazy" />
+          <figcaption>El plan ordena las decisiones antes de producir contenido.</figcaption>
+        </figure>
+
+        <h3>Diagnóstico: mirar antes de actuar</h3>
+        <div class="pm-grid-2">
+          <article class="pm-card">
+            <span class="pm-card-label">Presencia y contenido</span>
+            <h4>Qué revisar</h4>
+            <ul><li>Plataformas activas y frecuencia real.</li><li>Tipos de contenido y formatos.</li><li>Coherencia visual y de mensaje.</li><li>Biografía, enlaces y propuesta de valor.</li></ul>
+          </article>
+          <article class="pm-card pm-card--mint">
+            <span class="pm-card-label">Relación y resultados</span>
+            <h4>Qué observar</h4>
+            <ul><li>Interacción y calidad de comentarios.</li><li>Tiempos de respuesta.</li><li>Métricas disponibles y conversiones.</li><li>Recursos y capacidad del equipo.</li></ul>
+          </article>
+        </div>
+
+        <figure class="pm-figure">
+          <img src="assets/images/social-media-modulos-3-4/slide-036.jpg" alt="Checklist original de diagnóstico de redes" loading="lazy" />
+          <figcaption>Una auditoría sencilla suele revelar inconsistencias, oportunidades y tareas prioritarias.</figcaption>
+        </figure>
+
+        <h3>De una intención a un objetivo SMART</h3>
+        <div class="pm-grid-2">
+          <article class="pm-card pm-card--black"><span class="pm-card-label">Demasiado amplio</span><h4>“Crecer en Instagram”</h4><p>No define cuánto, para qué, mediante qué acciones ni en qué plazo.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Objetivo útil</span><h4>Más reservas desde redes</h4><p>“En 30 días, aumentar 20% los mensajes de reserva desde Instagram y WhatsApp mediante reels, historias con CTA y prueba social”.</p></article>
+        </div>
+
+        <h3>Conocer a la audiencia</h3>
+        <ul class="pm-checklist">
+          <li>¿Quién compra o decide?</li><li>¿Qué problema necesita resolver?</li><li>¿En qué momento busca una solución?</li><li>¿Qué objeciones frenan la compra?</li><li>¿Qué palabras usa para describirlo?</li><li>¿Dónde se informa o compara?</li><li>¿Qué formatos consume?</li><li>¿Qué prueba necesita para confiar?</li>
+        </ul>
+
+        <div class="pm-manifesto"><p>Elegir una red es cruzar objetivo, público, etapa del recorrido, formatos sostenibles y capacidad real.</p></div>
+
+        <h3>Antes de avanzar: 12 preguntas</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/social-media-modulos-3-4/slide-119.jpg" alt="Diapositiva original con preguntas para revisar la estrategia" loading="lazy" />
+          <figcaption>La estrategia queda completa cuando cada decisión puede justificarse y sostenerse.</figcaption>
+        </figure>
+      </section>
+
+      <section class="pm-section" id="plataformas">
+        <header class="pm-section-header">
+          <span class="pm-section-number">03</span>
+          <div><span class="pm-kicker">Ecosistema de canales</span><h2>Cada plataforma tiene un trabajo distinto</h2></div>
+        </header>
+
+        <p class="pm-lead">No se trata de estar en todas las redes. Se trata de elegir las que mejor conectan al negocio con su público y asignarles una función clara.</p>
+        <div class="pm-manifesto"><p>Es mejor ser muy bueno en dos redes que regular en cinco.</p></div>
+
+        <div class="pm-grid-3">
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Instagram</span><h4>Descubrimiento, confianza y acción</h4><p><strong>Reels:</strong> alcance. <strong>Carruseles:</strong> educación y guardados. <strong>Historias:</strong> cercanía. <strong>Posts:</strong> prueba, producto y preguntas frecuentes.</p><p><strong>Medir:</strong> alcance, guardados, compartidos, mensajes y clics.</p></article>
+          <article class="pm-card"><span class="pm-card-label">TikTok</span><h4>Alcance con video breve</h4><p>Cómo se hace, antes y después, mitos, series y respuestas a comentarios. Necesita gancho inicial, texto en pantalla y cierre.</p><p><strong>Medir:</strong> retención, comentarios y seguidores por video.</p></article>
+          <article class="pm-card"><span class="pm-card-label">LinkedIn</span><h4>Autoridad profesional y B2B</h4><p>Casos, aprendizajes, marcos de trabajo, documentos, artículos, video nativo, encuestas y newsletter.</p><p><strong>Medir:</strong> comentarios de calidad, clics, mensajes y red relevante.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Facebook</span><h4>Comunidad y alcance local</h4><p>Publicaciones locales, promociones claras, álbumes, vivos breves y grupos. No conviene abandonarlo sin probar su valor real.</p><p><strong>Medir:</strong> mensajes, clics, consultas y comentarios locales.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Pinterest</span><h4>Descubrimiento visual y búsqueda</h4><p>Pines evergreen, guías, infografías, pasos, listas, antes y después, tableros e inspiración.</p><p><strong>Medir:</strong> guardados, clics al sitio y tráfico.</p></article>
+          <article class="pm-card pm-card--black"><span class="pm-card-label">YouTube</span><h4>Búsqueda, profundidad y autoridad</h4><p>Shorts para descubrir, videos largos para explicar y construir confianza, y vivos para comunidad.</p><p><strong>Secuencia:</strong> idea breve → desarrollo largo → CTA.</p></article>
+        </div>
+
+        <h3>Perfiles que funcionan como puerta de entrada</h3>
+        <ul class="pm-checklist">
+          <li>Instagram: bio clara y destacados útiles.</li><li>LinkedIn: sección “Acerca de” orientada al valor.</li><li>TikTok: tres videos fijados que expliquen la marca.</li><li>YouTube: portada, descripción y enlace coherentes.</li><li>Pinterest: tableros organizados por intención.</li><li>Todos: contacto y siguiente paso visibles.</li>
+        </ul>
+
+        <figure class="pm-figure">
+          <img src="assets/images/social-media-modulos-3-4/slide-083.jpg" alt="Tabla comparativa original de plataformas sociales" loading="lazy" />
+          <figcaption>La selección surge del cruce entre comportamiento del público, fortaleza del formato y objetivo del negocio.</figcaption>
+        </figure>
+
+        <h3>Caso Spotify Wrapped: una idea, varios roles</h3>
+        <p class="pm-copy">La experiencia nace en la aplicación, se vuelve una expresión de identidad y se adapta a cada espacio. Instagram favorece la exhibición visual; TikTok la remezcla cultural; X habilita conversación, comparación y memes; los canales de mensajería convierten la pieza en intercambio personal.</p>
+        <div class="pm-grid-4">
+          <article class="pm-card"><h4>Producto</h4><p>Datos personales convertidos en experiencia y relato.</p></article>
+          <article class="pm-card"><h4>Instagram</h4><p>Tarjetas visuales fáciles de compartir y comparar.</p></article>
+          <article class="pm-card"><h4>TikTok / X</h4><p>Remix, cultura, opinión, conversación y humor.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Mensajería</h4><p>Compartir directo con vínculos cercanos.</p></article>
+        </div>
+        <figure class="pm-figure">
+          <img src="assets/images/social-media-modulos-3-4/slide-126.jpg" alt="Tabla original del caso Spotify Wrapped por plataforma" loading="lazy" />
+          <figcaption>Adaptar no es duplicar: es conservar la idea y cambiar su ejecución según el canal.</figcaption>
+        </figure>
+      </section>
+
+      <section class="pm-section" id="contenido">
+        <header class="pm-section-header">
+          <span class="pm-section-number">04</span>
+          <div><span class="pm-kicker">Relevancia y narrativa</span><h2>Contenido que importa y se recuerda</h2></div>
+        </header>
+
+        <p class="pm-lead">El problema no es cuánto se publica, sino si el contenido ayuda, emociona, representa a la audiencia o facilita una decisión.</p>
+
+        <h3>Pilares: el sistema temático de la marca</h3>
+        <p class="pm-copy">Conviene trabajar entre tres y cinco pilares conectados con la propuesta de valor, las preguntas frecuentes, las objeciones, el estilo de la marca y las necesidades de la audiencia.</p>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Educación</h4><p>Consejos, conceptos, errores, procesos, guías y respuestas.</p></article>
+          <article class="pm-card"><h4>Autoridad</h4><p>Experiencia, método, detrás de escena, criterios y casos.</p></article>
+          <article class="pm-card"><h4>Prueba social</h4><p>Testimonios, resultados, reseñas y transformaciones reales.</p></article>
+          <article class="pm-card"><h4>Comunidad</h4><p>Preguntas, participación, identidad compartida y conversación.</p></article>
+          <article class="pm-card"><h4>Oferta</h4><p>Producto, servicio, beneficios, condiciones y llamado a la acción.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Marca</h4><p>Valores, tono, historia, personas y forma de trabajar.</p></article>
+        </div>
+
+        <h3>Los seis factores STEPPS de Jonah Berger</h3>
+        <div class="pm-grid-3">
+          <article class="pm-card"><span class="pm-card-label">01 · Social currency</span><h4>Moneda social</h4><p>Compartir hace que la persona se sienta interesante, informada o parte de algo.</p></article>
+          <article class="pm-card"><span class="pm-card-label">02 · Triggers</span><h4>Disparadores</h4><p>Situaciones cotidianas recuerdan la idea, el contenido o la marca.</p></article>
+          <article class="pm-card"><span class="pm-card-label">03 · Emotion</span><h4>Emoción</h4><p>Las emociones intensas aumentan la necesidad de hablar y compartir.</p></article>
+          <article class="pm-card"><span class="pm-card-label">04 · Public</span><h4>Visibilidad pública</h4><p>Lo observable se imita, se comenta y circula con mayor facilidad.</p></article>
+          <article class="pm-card"><span class="pm-card-label">05 · Practical value</span><h4>Valor práctico</h4><p>Ayudar a resolver algo transforma el contenido en recurso guardable.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">06 · Stories</span><h4>Historias</h4><p>La información viaja mejor cuando forma parte de una narrativa.</p></article>
+        </div>
+        <figure class="pm-figure">
+          <img src="assets/images/social-media-modulos-3-4/slide-130.jpg" alt="Modelo STEPPS de Jonah Berger en la presentación original" loading="lazy" />
+          <figcaption>Los seis factores ayudan a pensar por qué una pieza puede resultar relevante y compartible.</figcaption>
+        </figure>
+
+        <h3>Storytelling aplicado al negocio</h3>
+        <p class="pm-copy">Contar historias no significa escribir largo ni dramatizar. Significa ordenar hechos reales con contexto, emoción y propósito. El cliente es el protagonista; la marca ayuda a avanzar.</p>
+        <div class="pm-formula" aria-label="Fórmula narrativa">
+          <span>Situación</span> → <span>Problema</span> → <span>Búsqueda</span> → <span>Solución</span> → <span>Resultado</span> → <span>Invitación</span>
+        </div>
+
+        <div class="pm-grid-2">
+          <article class="pm-card"><span class="pm-card-label">Post</span><h4>Problema + idea + solución + CTA</h4><p>Útil para explicar, posicionar un criterio y abrir conversación.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Reel / video</span><h4>Gancho + desarrollo + prueba + cierre</h4><p>Necesita captar rápido, sostener interés y terminar con dirección.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Historias</span><h4>Escena + contexto + interacción + acción</h4><p>Construye cercanía y permite escuchar a la comunidad.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Caso</span><h4>Antes + decisión + proceso + resultado + aprendizaje</h4><p>Convierte la experiencia en prueba y conocimiento transferible.</p></article>
+        </div>
+
+        <figure class="pm-figure">
+          <img src="assets/images/social-media-modulos-3-4/slide-150.jpg" alt="Tabla original de formatos narrativos" loading="lazy" />
+          <figcaption>La estructura narrativa se adapta a la extensión y comportamiento de cada formato.</figcaption>
+        </figure>
+
+        <h3>Ejemplos de narrativa por negocio</h3>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Vinoteca</h4><p>Del miedo a elegir mal a una recomendación simple según ocasión, comida y presupuesto.</p></article>
+          <article class="pm-card"><h4>Empresa de limpieza</h4><p>Del problema invisible y repetido a un protocolo verificable con evidencia.</p></article>
+          <article class="pm-card"><h4>Industria metalúrgica B2B</h4><p>De una demora costosa a una decisión técnica que mejora plazo, calidad y previsibilidad.</p></article>
+        </div>
+
+        <div class="pm-manifesto"><p>Como regla de equilibrio: por cada pieza de venta directa, producir tres o cuatro piezas de valor.</p></div>
+      </section>
+
+      <section class="pm-section" id="comunidad">
+        <header class="pm-section-header">
+          <span class="pm-section-number">05</span>
+          <div><span class="pm-kicker">Relación cotidiana</span><h2>Comunidad y reputación</h2></div>
+        </header>
+
+        <p class="pm-lead">Gestionar comunidad es diseñar la experiencia diaria de relación con la marca. Publicar abre la conversación; responder, escuchar y resolver construye confianza.</p>
+
+        <figure class="pm-figure">
+          <img src="assets/images/social-media-modulos-3-4/slide-167.jpg" alt="Comparación original entre publicar y gestionar comunidad" loading="lazy" />
+          <figcaption>La diferencia aparece cuando la marca deja de emitir y empieza a relacionarse.</figcaption>
+        </figure>
+
+        <h3>Protocolo mínimo de comunidad</h3>
+        <div class="pm-grid-4">
+          <article class="pm-card"><h4>Tiempos</h4><p>Definir ventanas posibles para mensajes, comentarios, reseñas y reclamos.</p></article>
+          <article class="pm-card"><h4>Tono</h4><p>Responder con una voz coherente, clara, humana y profesional.</p></article>
+          <article class="pm-card"><h4>Derivación</h4><p>Saber cuándo una conversación debe pasar a ventas, soporte o privado.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Registro</h4><p>Documentar preguntas y problemas repetidos para mejorar el sistema.</p></article>
+        </div>
+
+        <h3>Tiempos de referencia</h3>
+        <ul class="pm-checklist">
+          <li>Mensajes comerciales: idealmente dentro de 1 a 4 horas.</li><li>Comentarios: en el mismo día, cuanto antes mejor.</li><li>Reseñas: responder entre 24 y 72 horas.</li><li>Reclamos: acusar recibo y actuar lo antes posible.</li><li>Spam o agresión: moderar según política.</li><li>Consultas frecuentes: convertirlas en contenido.</li>
+        </ul>
+
+        <h3>Cómo responder un comentario negativo</h3>
+        <ol class="pm-steps">
+          <li><div><strong>Leer con calma.</strong> Separar el tono del problema concreto.</div></li>
+          <li><div><strong>Clasificar.</strong> Identificar si es reclamo real, confusión, agresión o spam.</div></li>
+          <li><div><strong>Responder profesionalmente.</strong> Reconocer la situación sin admitir culpas innecesarias.</div></li>
+          <li><div><strong>Ofrecer resolución.</strong> Indicar un paso y, si corresponde, pasar a un canal privado.</div></li>
+          <li><div><strong>Aprender.</strong> Registrar casos repetidos y corregir procesos, información o expectativas.</div></li>
+        </ol>
+
+        <figure class="pm-figure">
+          <img src="assets/images/social-media-modulos-3-4/slide-173.jpg" alt="Guía original de respuesta a mensajes, comentarios y críticas" loading="lazy" />
+          <figcaption>La velocidad importa, pero también la claridad, el criterio y la capacidad de resolver.</figcaption>
+        </figure>
+
+        <h3>La confianza se construye con acciones repetidas</h3>
+        <ul class="pm-checklist">
+          <li>Responder de manera constante.</li><li>Dar información precisa y completa.</li><li>No prometer más de lo que puede cumplirse.</li><li>Mostrar evidencia y experiencias reales.</li><li>Mantener coherencia entre comunicación y servicio.</li><li>Pedir reseñas y observar menciones.</li>
+        </ul>
+      </section>
+
+      <section class="pm-section" id="metricas">
+        <header class="pm-section-header">
+          <span class="pm-section-number">06</span>
+          <div><span class="pm-kicker">Aprendizaje basado en datos</span><h2>Métricas para tomar decisiones</h2></div>
+        </header>
+
+        <p class="pm-lead">Una métrica solo es útil cuando ayuda a decidir qué sostener, qué cambiar, qué probar o qué dejar de hacer.</p>
+
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Alcance</h4><p>Cuántas personas únicas vieron el contenido. Sirve para evaluar descubrimiento.</p></article>
+          <article class="pm-card"><h4>Interacción</h4><p>Comentarios, reacciones y compartidos. Ayuda a leer interés y conversación.</p></article>
+          <article class="pm-card"><h4>Guardados</h4><p>Indican valor práctico o intención de volver a consultar la pieza.</p></article>
+          <article class="pm-card"><h4>Clics</h4><p>Muestran avance hacia web, WhatsApp, formulario, catálogo o información.</p></article>
+          <article class="pm-card"><h4>Mensajes</h4><p>Señalan intención, dudas concretas y oportunidades de conversación comercial.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Conversiones</h4><p>Reservas, ventas, registros o acciones finales vinculadas al objetivo.</p></article>
+        </div>
+
+        <div class="pm-manifesto"><p>No preguntes solamente “¿cuántos likes tuvo?”. Preguntá “¿qué decisión me permite tomar este dato?”.</p></div>
+
+        <h3>Objetivo, indicador y decisión</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/social-media-modulos-3-4/slide-189.jpg" alt="Tabla original que relaciona objetivos, métricas y decisiones" loading="lazy" />
+          <figcaption>El indicador correcto depende de lo que se quería lograr con la acción.</figcaption>
+        </figure>
+
+        <h3>Ritmo de revisión</h3>
+        <div class="pm-grid-4">
+          <article class="pm-card"><span class="pm-card-label">Diario</span><h4>Operación</h4><p>Mensajes pendientes, comentarios, reclamos y oportunidades urgentes.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Semanal</span><h4>Contenido</h4><p>Rendimiento de piezas, preguntas, formatos, CTA y temas.</p></article>
+          <article class="pm-card"><span class="pm-card-label">Mensual</span><h4>Tendencias</h4><p>Alcance, comunidad, tráfico, consultas, conversiones y cumplimiento del plan.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Trimestral</span><h4>Estrategia</h4><p>Objetivos, plataformas, reputación, recursos y decisiones estructurales.</p></article>
+        </div>
+      </section>
+
+      <section class="pm-section" id="plan">
+        <header class="pm-section-header">
+          <span class="pm-section-number">07</span>
+          <div><span class="pm-kicker">Ejecución sostenible</span><h2>Plan editorial y herramientas</h2></div>
+        </header>
+
+        <p class="pm-lead">El calendario es la expresión operativa de la estrategia. Debe ser claro, viable y lo bastante flexible como para incorporar aprendizaje.</p>
+
+        <h3>Cuatro unidades diferentes</h3>
+        <div class="pm-grid-4">
+          <article class="pm-card"><h4>Idea</h4><p>El concepto o mensaje que vale la pena comunicar.</p></article>
+          <article class="pm-card"><h4>Pieza</h4><p>La materialización: video, carrusel, imagen, texto o historia.</p></article>
+          <article class="pm-card"><h4>Publicación</h4><p>La pieza adaptada y distribuida en un canal, fecha y contexto.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Campaña</h4><p>Un conjunto coordinado de publicaciones y acciones con un objetivo común.</p></article>
+        </div>
+
+        <h3>Matriz de ideas: pilar × formato</h3>
+        <p class="pm-copy">Cruzar cada pilar con post, carrusel, reel o TikTok e historias genera un banco de ideas sin depender de la inspiración del día.</p>
+        <figure class="pm-figure">
+          <img src="assets/images/social-media-modulos-3-4/slide-199.jpg" alt="Matriz original de pilares y formatos de contenido" loading="lazy" />
+          <figcaption>La matriz multiplica posibilidades manteniendo coherencia temática.</figcaption>
+        </figure>
+
+        <h3>Qué debe contener el calendario</h3>
+        <ul class="pm-checklist">
+          <li>Fecha y plataforma.</li><li>Pilar y objetivo.</li><li>Formato y tema.</li><li>Mensaje o idea central.</li><li>Llamado a la acción.</li><li>Responsable.</li><li>Estado de producción.</li><li>Resultado y aprendizaje.</li>
+        </ul>
+
+        <div class="pm-grid-2">
+          <article class="pm-card pm-card--black"><span class="pm-card-label">Mínimo viable para una PyME</span><h4>Constancia posible</h4><p>Dos o tres publicaciones semanales, historias varias veces por semana, respuesta diaria y una red principal bien trabajada.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Criterio</span><h4>La frecuencia ideal no es universal</h4><p>Depende de los objetivos, recursos, calidad disponible, hábitos de la audiencia y capacidad para sostener la conversación.</p></article>
+        </div>
+
+        <h3>Herramientas posibles</h3>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Publicación</h4><p>Meta Business Suite, Buffer, Later, Hootsuite o Sprout Social.</p></article>
+          <article class="pm-card"><h4>Planificación</h4><p>Notion, Trello o documentos y planillas compartidas en Drive.</p></article>
+          <article class="pm-card"><h4>Análisis</h4><p>Metricool, analíticas nativas y seguimiento de clics y conversiones.</p></article>
+        </div>
+
+        <h3>Plantilla final de estrategia</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/social-media-modulos-3-4/slide-205.jpg" alt="Plantilla original de estrategia de redes sociales" loading="lazy" />
+          <figcaption>El documento final debe condensar objetivo, audiencia, canales, pilares, indicadores, frecuencia y responsables.</figcaption>
+        </figure>
+
+        <div class="pm-manifesto"><p>Una estrategia efectiva diagnostica, decide, crea, conversa, mide y mejora. El calendario la vuelve posible.</p></div>
+
+        <div class="pm-footer-note">Fin de los Módulos 3 y 4 · Social Media Marketing</div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+  <script src="js/components.js?v=2"></script>
+</body>
+</html>
+

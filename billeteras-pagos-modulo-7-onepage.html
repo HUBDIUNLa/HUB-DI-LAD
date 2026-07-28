@@ -1,0 +1,860 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Pagos Digitales | HUB DI LAD UNLa</title>
+  <meta name="description" content="Módulo 7 de Billeteras y Sistemas de Pago Digitales reorganizado como una guía web de medios de pago, pasarelas, integración, seguridad y Fintech." />
+
+  <link rel="icon" href="assets/images/logohubfavicom.ico" type="image/x-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script src="js/tailwind.config.js?v=1"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="css/style.css?v=5" />
+
+  <style>
+    :root {
+      --web-lad: #A6FFF0;
+      --black: #000000;
+      --white: #ffffff;
+      --hub-light-bg: #F5F7F7;
+      --line: #cbd2d2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--black);
+      background: var(--hub-light-bg);
+      font-family: "Karla", system-ui, sans-serif;
+    }
+
+    .pm-course {
+      padding: clamp(1rem, 3vw, 3rem) 0 5rem;
+    }
+
+    .pm-container {
+      width: min(92%, 1360px);
+      margin-inline: auto;
+    }
+
+    .pm-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(18rem, .65fr);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+    }
+
+    .pm-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 42rem;
+      padding: clamp(2rem, 6vw, 6rem);
+    }
+
+    .pm-eyebrow,
+    .pm-kicker,
+    .pm-card-label,
+    .pm-template-code {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .pm-eyebrow {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: .78rem;
+    }
+
+    .pm-hero h1 {
+      max-width: 12ch;
+      margin: 0;
+      font-family: "Roboto Mono", monospace;
+      font-size: clamp(2.8rem, 7vw, 6.6rem);
+      font-weight: 500;
+      line-height: .92;
+      letter-spacing: -.065em;
+      text-transform: uppercase;
+    }
+
+    .pm-hero-copy > p {
+      max-width: 48rem;
+      margin: 1.5rem 0 0;
+      font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+      line-height: 1.48;
+    }
+
+    .pm-hero-index {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .pm-hero-index h2 {
+      margin: 0 0 1.5rem;
+      font-family: "Roboto Mono", monospace;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .pm-hero-index ol {
+      display: grid;
+      gap: .8rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: pm-index;
+    }
+
+    .pm-hero-index li {
+      counter-increment: pm-index;
+    }
+
+    .pm-hero-index a {
+      display: grid;
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: .75rem;
+      align-items: baseline;
+      color: inherit;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+
+    .pm-hero-index a::before {
+      content: counter(pm-index, decimal-leading-zero);
+      color: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .pm-hero-index a:hover,
+    .pm-hero-index a:focus-visible {
+      color: var(--web-lad);
+    }
+
+    .pm-hero-note {
+      margin: 2rem 0 0;
+      padding-top: 1rem;
+      border-top: 1px solid var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-size: .78rem;
+      line-height: 1.5;
+    }
+
+    .pm-section {
+      margin-top: clamp(1.25rem, 3vw, 2.5rem);
+      padding: clamp(1.25rem, 4vw, 3.5rem);
+      scroll-margin-top: 1rem;
+      border: 1px solid var(--black);
+      border-left-width: .55rem;
+      background: var(--white);
+    }
+
+    .pm-section:nth-of-type(even) {
+      background: var(--hub-light-bg);
+    }
+
+    .pm-section-header {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      margin-bottom: clamp(1.75rem, 4vw, 3rem);
+    }
+
+    .pm-section-number {
+      display: grid;
+      width: 3rem;
+      height: 3rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .pm-kicker {
+      display: block;
+      margin-bottom: .4rem;
+      font-size: .72rem;
+    }
+
+    .pm-section h2 {
+      max-width: 23ch;
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: .96;
+      letter-spacing: -.05em;
+    }
+
+    .pm-section h3 {
+      margin: clamp(2.5rem, 5vw, 4rem) 0 1rem;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+
+    .pm-lead {
+      max-width: 62rem;
+      margin: 0 0 1.5rem;
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      line-height: 1.4;
+    }
+
+    .pm-copy {
+      max-width: 62rem;
+      font-size: 1.08rem;
+      line-height: 1.65;
+    }
+
+    .pm-copy p {
+      margin: 0 0 1.25rem;
+    }
+
+    .pm-grid-2,
+    .pm-grid-3,
+    .pm-grid-4,
+    .pm-glossary {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .pm-grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pm-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pm-grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .pm-glossary {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pm-card {
+      min-width: 0;
+      padding: clamp(1.1rem, 2.5vw, 1.75rem);
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+    }
+
+    .pm-card--mint {
+      background: var(--web-lad);
+    }
+
+    .pm-card--black {
+      color: var(--white);
+      background: var(--black);
+    }
+
+    .pm-card-label {
+      display: block;
+      margin-bottom: .8rem;
+      font-size: .7rem;
+    }
+
+    .pm-card--black .pm-card-label {
+      color: var(--web-lad);
+    }
+
+    .pm-card h4 {
+      margin: 0 0 .75rem;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      line-height: 1.1;
+    }
+
+    .pm-card p,
+    .pm-card ul {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .pm-card ul {
+      padding-left: 1.1rem;
+    }
+
+    .pm-manifesto {
+      margin: 2rem 0;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      border: 1px solid var(--black);
+      color: var(--white);
+      background: var(--black);
+      box-shadow: .7rem .7rem 0 var(--web-lad);
+      font-size: clamp(1.4rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -.03em;
+    }
+
+    .pm-manifesto p {
+      max-width: 34ch;
+      margin: 0;
+    }
+
+    .pm-formula {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      align-items: center;
+      margin: 1.5rem 0;
+      padding: 1.2rem;
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+    }
+
+    .pm-formula span {
+      padding: .4rem .6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-steps {
+      display: grid;
+      gap: .75rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: pm-steps;
+    }
+
+    .pm-steps li {
+      display: grid;
+      grid-template-columns: 2.8rem minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+      padding: 1rem;
+      border: 1px solid var(--black);
+      background: var(--hub-light-bg);
+      counter-increment: pm-steps;
+    }
+
+    .pm-steps li::before {
+      content: counter(pm-steps, decimal-leading-zero);
+      display: grid;
+      width: 2.8rem;
+      height: 2.8rem;
+      place-items: center;
+      color: var(--white);
+      background: var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .pm-steps strong {
+      display: block;
+      margin-bottom: .25rem;
+    }
+
+    .pm-checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .6rem 1rem;
+      margin: 1.5rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pm-checklist li {
+      position: relative;
+      padding: .85rem 1rem .85rem 2.6rem;
+      border: 1px solid var(--black);
+      background: var(--white);
+      line-height: 1.4;
+    }
+
+    .pm-checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 1rem;
+      font-weight: 800;
+    }
+
+    .pm-figure {
+      margin: 1.5rem 0 0;
+      border: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .pm-figure figcaption {
+      padding: .75rem 1rem;
+      border-top: 1px solid var(--black);
+      font-family: "Roboto Mono", monospace;
+      font-size: .76rem;
+      line-height: 1.4;
+    }
+
+    .pm-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      margin: 1.5rem 0;
+      border: 1px solid var(--black);
+    }
+
+    .pm-flow div {
+      padding: 1.2rem;
+      border-right: 1px solid var(--black);
+      background: var(--white);
+    }
+
+    .pm-flow div:last-child {
+      border-right: 0;
+      background: var(--web-lad);
+    }
+
+    .pm-flow strong {
+      display: block;
+      margin-bottom: .35rem;
+    }
+
+    .pm-writing {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+    }
+
+    .pm-writing label {
+      display: grid;
+      gap: .5rem;
+      font-weight: 700;
+    }
+
+    .pm-writing textarea {
+      width: 100%;
+      min-height: 7rem;
+      padding: 1rem;
+      resize: vertical;
+      border: 1px solid var(--black);
+      border-radius: 0;
+      color: var(--black);
+      background: var(--white);
+      font: inherit;
+    }
+
+    .pm-footer-note {
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      border: 1px solid var(--black);
+      background: var(--web-lad);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .pm-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-hero-copy {
+        min-height: 34rem;
+      }
+
+      .pm-grid-4,
+      .pm-glossary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      .pm-grid-2,
+      .pm-grid-3,
+      .pm-grid-4,
+      .pm-glossary,
+      .pm-checklist,
+      .pm-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-section {
+        padding: 1.1rem;
+        border-left-width: .35rem;
+      }
+
+      .pm-section-header {
+        grid-template-columns: 1fr;
+      }
+
+      .pm-hero-copy,
+      .pm-hero-index {
+        padding: 1.3rem;
+      }
+
+      .pm-hero-copy {
+        min-height: 30rem;
+      }
+
+      .pm-flow div {
+        border-right: 0;
+        border-bottom: 1px solid var(--black);
+      }
+
+      .pm-flow div:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media print {
+      .pm-section,
+      .pm-card,
+      .pm-figure {
+        break-inside: avoid;
+      }
+
+      .pm-writing textarea {
+        resize: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main class="pm-course">
+    <div class="pm-container">
+      <header class="pm-hero">
+        <div class="pm-hero-copy">
+          <span class="pm-eyebrow">Marketing 4.0 · Módulo 7</span>
+          <h1>Pagos Digitales</h1>
+          <p>Billeteras, pasarelas, integración, seguridad y tendencias Fintech para diseñar una experiencia de cobro simple, confiable y rentable.</p>
+        </div>
+
+        <nav class="pm-hero-index" aria-label="Recorrido de la clase">
+          <div>
+            <h2>Recorrido</h2>
+            <ol>
+              <li><a href="#ecosistema">Ecosistema de pagos</a></li>
+              <li><a href="#medios">Medios y billeteras</a></li>
+              <li><a href="#pasarelas">Pasarelas de pago</a></li>
+              <li><a href="#integracion">Integración por canal</a></li>
+              <li><a href="#seguridad">Seguridad y operación</a></li>
+              <li><a href="#fintech">Fintech y tendencias</a></li>
+              <li><a href="#decision">Decidir para una PyME</a></li>
+            </ol>
+          </div>
+          <p class="pm-hero-note">70 diapositivas reorganizadas en 7 módulos web, conservando comparaciones, criterios técnicos, costos y ejemplos.</p>
+        </nav>
+      </header>
+
+      <section class="pm-section" id="ecosistema">
+        <header class="pm-section-header">
+          <span class="pm-section-number">01</span>
+          <div><span class="pm-kicker">El momento de cobrar</span><h2>Ecosistema de pagos digitales</h2></div>
+        </header>
+
+        <p class="pm-lead">Un sistema de pago digital reúne herramientas, tecnologías y procesos para que una persona pague y un negocio cobre electrónicamente.</p>
+
+        <div class="pm-manifesto"><p>El dinero es el último paso de la venta. Si el pago falla, toda la experiencia anterior puede perderse.</p></div>
+
+        <p class="pm-copy">Transferencias, tarjetas, QR, links, billeteras, checkouts y pasarelas no resuelven exactamente lo mismo. La PyME necesita conocer el mapa para elegir la ruta adecuada según su cliente, canal y operación.</p>
+
+        <h3>Para qué sirve el ecosistema</h3>
+        <ul class="pm-checklist">
+          <li>Facilitar la compra.</li><li>Ampliar opciones de cobro.</li><li>Reducir fricción.</li><li>Mejorar la experiencia.</li><li>Profesionalizar la venta digital.</li><li>Registrar operaciones.</li><li>Acelerar acreditaciones.</li><li>Ordenar la conciliación.</li>
+        </ul>
+
+        <h3>Tres actores clave</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/billeteras-pagos-modulo-7/slide-015.jpg" alt="Tres actores del ecosistema de pagos" loading="lazy" />
+          <figcaption>Billetera, pasarela y procesador cumplen funciones distintas dentro de una misma transacción.</figcaption>
+        </figure>
+        <div class="pm-grid-3">
+          <article class="pm-card"><span class="pm-card-label">Interfaz del cliente</span><h4>Billetera digital</h4><p>Guarda saldo o medios de pago. Permite pagar, cobrar, transferir y usar QR. Ejemplos: Mercado Pago, Ualá, MODO.</p></article>
+          <article class="pm-card pm-card--mint"><span class="pm-card-label">Puente del negocio</span><h4>Pasarela de pago</h4><p>Conecta el checkout del vendedor con el banco, la billetera o el procesador. Ejemplos: Mercado Pago Checkout, Stripe, PayU.</p></article>
+          <article class="pm-card pm-card--black"><span class="pm-card-label">Infraestructura</span><h4>Procesador</h4><p>Procesa y autoriza la transacción entre bancos y redes. Ejemplos: Visa, Mastercard, Prisma.</p></article>
+        </div>
+
+        <h3>Flujo de una compra online</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/billeteras-pagos-modulo-7/slide-016.jpg" alt="Flujo original de una compra online" loading="lazy" />
+          <figcaption>La operación viaja desde el checkout hasta el banco y vuelve con una aprobación o rechazo.</figcaption>
+        </figure>
+        <ol class="pm-steps">
+          <li><div>El cliente hace clic en <strong>pagar</strong>.</div></li>
+          <li><div>La pasarela recibe y encripta los datos mediante <strong>SSL/TLS</strong>.</div></li>
+          <li><div>La solicitud llega al procesador y al banco emisor.</div></li>
+          <li><div>El banco aprueba o rechaza la operación.</div></li>
+          <li><div>La pasarela informa el resultado al cliente y al negocio.</div></li>
+          <li><div>El dinero se acredita según el plazo acordado.</div></li>
+        </ol>
+      </section>
+
+      <section class="pm-section" id="medios">
+        <header class="pm-section-header">
+          <span class="pm-section-number">02</span>
+          <div><span class="pm-kicker">Opciones para cobrar</span><h2>Medios de pago y billeteras</h2></div>
+        </header>
+
+        <p class="pm-lead">El medio de pago es el instrumento utilizado para pagar. La billetera es el entorno desde el cual el usuario administra esos instrumentos.</p>
+
+        <div class="pm-grid-4">
+          <article class="pm-card"><h4>Transferencia</h4><p>Simple e inmediata; puede requerir validación manual si no está integrada.</p></article>
+          <article class="pm-card"><h4>Tarjetas</h4><p>Favorecen conversión y cuotas, pero implican comisión, procesamiento y conciliación.</p></article>
+          <article class="pm-card"><h4>QR</h4><p>Rápido y conveniente para comercio presencial, ferias y venta híbrida.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Link de pago</h4><p>Ideal para cobrar por WhatsApp, redes o email sin desarrollar una tienda.</p></article>
+        </div>
+
+        <figure class="pm-figure">
+          <img src="assets/images/billeteras-pagos-modulo-7/slide-019.jpg" alt="Medios de pago disponibles en Argentina" loading="lazy" />
+          <figcaption>Acreditación, costo, familiaridad y tipo de venta ayudan a seleccionar cada medio.</figcaption>
+        </figure>
+
+        <h3>Los costos que no siempre se ven</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/billeteras-pagos-modulo-7/slide-021.jpg" alt="Costos ocultos de los medios de pago" loading="lazy" />
+          <figcaption>El costo real no termina en la comisión publicada.</figcaption>
+        </figure>
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Comisión</h4><p>Porcentaje aplicado al monto de cada transacción.</p></article>
+          <article class="pm-card"><h4>Acreditación anticipada</h4><p>Costo adicional por disponer del dinero antes del plazo estándar.</p></article>
+          <article class="pm-card"><h4>Costo financiero</h4><p>No es equivalente cobrar hoy que dentro de varios días.</p></article>
+          <article class="pm-card"><h4>Percepciones e impuestos</h4><p>Retenciones o percepciones que afectan el flujo disponible.</p></article>
+          <article class="pm-card"><h4>Contracargos</h4><p>Disputas que pueden devolver el dinero y sumar penalizaciones.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Integración</h4><p>Desarrollo, soporte y mantenimiento cuando no existe un plugin nativo.</p></article>
+        </div>
+
+        <h3>Qué aporta una billetera digital</h3>
+        <ul class="pm-checklist">
+          <li>Guardar saldo o tarjetas.</li><li>Enviar y recibir dinero.</li><li>Escanear o generar QR.</li><li>Crear links de cobro.</li><li>Facilitar pagos móviles.</li><li>Consultar historial.</li><li>Unificar canales.</li><li>Reducir pasos para el usuario.</li>
+        </ul>
+
+        <div class="pm-manifesto"><p>El medio de pago que tu cliente no usa no sirve, aunque sea el más barato.</p></div>
+      </section>
+
+      <section class="pm-section" id="pasarelas">
+        <header class="pm-section-header">
+          <span class="pm-section-number">03</span>
+          <div><span class="pm-kicker">Bloque 2</span><h2>Pasarelas de pago</h2></div>
+        </header>
+
+        <p class="pm-lead">La pasarela es el puente técnico entre la tienda y el sistema bancario. Recibe datos, valida, conecta, informa el resultado y registra la operación.</p>
+
+        <h3>Plataformas principales</h3>
+        <div class="pm-grid-2">
+          <article class="pm-card pm-card--mint">
+            <span class="pm-card-label">Argentina y LATAM</span><h4>Mercado Pago</h4>
+            <p>Cobro online y presencial, QR, POS, links e integraciones nativas. Su principal ventaja es la familiaridad y penetración local.</p>
+          </article>
+          <article class="pm-card">
+            <span class="pm-card-label">E-commerce global</span><h4>Stripe</h4>
+            <p>Infraestructura robusta para tarjetas, suscripciones, marketplaces y pagos recurrentes. Requiere operar desde un país habilitado.</p>
+          </article>
+          <article class="pm-card">
+            <span class="pm-card-label">Mercados regionales</span><h4>PayU / dLocal</h4>
+            <p>Métodos locales en distintos países latinoamericanos. Más apropiadas para empresas regionales con capacidad técnica.</p>
+          </article>
+          <article class="pm-card pm-card--black">
+            <span class="pm-card-label">Comercio presencial</span><h4>Ualá Bis</h4>
+            <p>POS móvil, cobro presencial y links. Es fácil de activar, aunque posee menos integraciones con e-commerce.</p>
+          </article>
+        </div>
+
+        <figure class="pm-figure">
+          <img src="assets/images/billeteras-pagos-modulo-7/slide-032.jpg" alt="Ficha original de Mercado Pago" loading="lazy" />
+          <figcaption>Mercado Pago ofrece máxima familiaridad para el público argentino.</figcaption>
+        </figure>
+        <figure class="pm-figure">
+          <img src="assets/images/billeteras-pagos-modulo-7/slide-033.jpg" alt="Ficha original de Stripe" loading="lazy" />
+          <figcaption>Stripe se orienta a infraestructura profesional, servicios digitales y operación global.</figcaption>
+        </figure>
+
+        <h3>Criterios para elegir</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/billeteras-pagos-modulo-7/slide-036.jpg" alt="Criterios originales para elegir una pasarela" loading="lazy" />
+          <figcaption>La elección debe contemplar cliente, costo total, acreditación, integración, métodos y soporte.</figcaption>
+        </figure>
+        <ul class="pm-checklist">
+          <li>¿Mis clientes ya la usan?</li><li>¿Cuál es el costo total de cobrar?</li><li>¿Cuándo tendré disponible el dinero?</li><li>¿Se integra con mi plataforma?</li><li>¿Acepta los métodos que pide el público?</li><li>¿Existe soporte cuando una operación falla?</li>
+        </ul>
+
+        <div class="pm-manifesto"><p>No existe una sola pasarela correcta. Existe una solución adecuada para cada negocio, cliente y volumen.</p></div>
+      </section>
+
+      <section class="pm-section" id="integracion">
+        <header class="pm-section-header">
+          <span class="pm-section-number">04</span>
+          <div><span class="pm-kicker">Bloque 3</span><h2>Integración por canal</h2></div>
+        </header>
+
+        <p class="pm-lead">Integrar significa conectar la plataforma de venta con la pasarela. La tienda muestra productos y checkout; la pasarela procesa y confirma el pago.</p>
+
+        <h3>Tiendas online</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/billeteras-pagos-modulo-7/slide-044.jpg" alt="Integración de pagos según plataforma de venta" loading="lazy" />
+          <figcaption>Las integraciones nativas reducen el costo y la complejidad técnica.</figcaption>
+        </figure>
+        <div class="pm-grid-3">
+          <article class="pm-card pm-card--mint"><h4>Tiendanube</h4><p>Integración muy simple desde el panel con soluciones locales y transferencia.</p></article>
+          <article class="pm-card"><h4>Shopify</h4><p>Mercado Pago mediante aplicación, Stripe según país y otras pasarelas regionales.</p></article>
+          <article class="pm-card"><h4>WooCommerce</h4><p>Mayor control y flexibilidad, con complejidad media o alta. Conviene usar plugins oficiales.</p></article>
+        </div>
+
+        <h3>Cobrar sin tienda</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/billeteras-pagos-modulo-7/slide-045.jpg" alt="Opciones originales para cobrar en redes y WhatsApp" loading="lazy" />
+          <figcaption>Una PyME puede profesionalizar el cobro sin construir un e-commerce completo.</figcaption>
+        </figure>
+        <div class="pm-grid-4">
+          <article class="pm-card"><h4>Link de pago</h4><p>Se crea desde la aplicación y se comparte por Instagram, WhatsApp o email.</p></article>
+          <article class="pm-card"><h4>Catálogo WhatsApp</h4><p>Productos y precios dentro de la conversación comercial.</p></article>
+          <article class="pm-card"><h4>QR interoperable</h4><p>Un código para cobrar desde distintas billeteras en el punto de venta.</p></article>
+          <article class="pm-card pm-card--mint"><h4>mPOS</h4><p>Lector conectado al celular para ventas presenciales o móviles.</p></article>
+        </div>
+
+        <h3>Qué mirar técnicamente</h3>
+        <ul class="pm-checklist">
+          <li>Compatibilidad y plugin oficial.</li><li>Checkout simple.</li><li>Experiencia mobile first.</li><li>Confirmación automática.</li><li>Actualización de estados.</li><li>Notificaciones para cliente y negocio.</li><li>Trazabilidad del pedido.</li><li>Soporte ante errores.</li>
+        </ul>
+
+        <article class="pm-card pm-card--mint">
+          <span class="pm-card-label">Ejemplo · Negocio sin sitio</span>
+          <h4>Instagram + WhatsApp + link + QR</h4>
+          <p>Un local que vendía turnos incorporó links por servicio, QR presencial y catálogo de WhatsApp. Redujo el efectivo un 60%, eliminó cobros pendientes y obtuvo historial de operaciones sin desarrollo.</p>
+        </article>
+      </section>
+
+      <section class="pm-section" id="seguridad">
+        <header class="pm-section-header">
+          <span class="pm-section-number">05</span>
+          <div><span class="pm-kicker">Confianza y responsabilidad</span><h2>Seguridad y operación</h2></div>
+        </header>
+
+        <p class="pm-lead">La seguridad no es opcional. Procesar pagos implica responsabilidades legales, contractuales y operativas.</p>
+
+        <figure class="pm-figure">
+          <img src="assets/images/billeteras-pagos-modulo-7/slide-046.jpg" alt="Conceptos originales de seguridad en pagos" loading="lazy" />
+          <figcaption>SSL, PCI DSS, tokenización, 3D Secure y 2FA son la base mínima.</figcaption>
+        </figure>
+
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>SSL / TLS</h4><p>Cifra la comunicación del sitio. El navegador debe mostrar una conexión segura.</p></article>
+          <article class="pm-card"><h4>PCI DSS</h4><p>Estándar para el tratamiento de datos de tarjetas. La PyME no debe almacenarlos por su cuenta.</p></article>
+          <article class="pm-card"><h4>Tokenización</h4><p>Reemplaza la información sensible por un identificador seguro.</p></article>
+          <article class="pm-card"><h4>3D Secure</h4><p>Agrega autenticación mediante código, aplicación o biometría.</p></article>
+          <article class="pm-card pm-card--mint"><h4>2FA</h4><p>Protege el acceso a la cuenta de cobros con un segundo factor.</p></article>
+          <article class="pm-card pm-card--black"><h4>Buenas prácticas</h4><p>Accesos individuales, permisos mínimos, contraseñas únicas y revisión periódica.</p></article>
+        </div>
+
+        <h3>Control operativo</h3>
+        <ul class="pm-checklist">
+          <li>Leer términos y condiciones.</li><li>Revisar cambios de comisiones.</li><li>Conciliar cobros y pedidos.</li><li>Controlar rechazos.</li><li>Registrar contracargos.</li><li>Verificar plazos de acreditación.</li><li>Separar cuentas personales y comerciales.</li><li>Consultar impactos fiscales.</li>
+        </ul>
+      </section>
+
+      <section class="pm-section" id="fintech">
+        <header class="pm-section-header">
+          <span class="pm-section-number">06</span>
+          <div><span class="pm-kicker">Bloque 4</span><h2>Fintech y nuevas tendencias</h2></div>
+        </header>
+
+        <p class="pm-lead">Las Fintech usan tecnología para ofrecer servicios financieros más rápidos, accesibles y especializados. Para una PyME, eso se traduce en nuevas opciones de cobro, crédito y automatización.</p>
+
+        <h3>Tendencias del ecosistema</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/billeteras-pagos-modulo-7/slide-053.jpg" alt="Tendencias originales en pagos digitales" loading="lazy" />
+          <figcaption>Menos fricción, integración entre canales, interoperabilidad, datos y billeteras marcan la evolución.</figcaption>
+        </figure>
+
+        <h3>BNPL: comprar ahora y pagar después</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/billeteras-pagos-modulo-7/slide-054.jpg" alt="Funcionamiento original de BNPL" loading="lazy" />
+          <figcaption>La Fintech financia al comprador y acredita el total al vendedor.</figcaption>
+        </figure>
+        <div class="pm-grid-2">
+          <article class="pm-card pm-card--mint"><h4>Para el negocio</h4><p>Cobro inmediato, acceso a clientes sin tarjeta y posibilidad de elevar el ticket, a cambio de una comisión mayor.</p></article>
+          <article class="pm-card"><h4>Para el cliente</h4><p>Cuotas sin tarjeta de crédito, sujetas a aprobación y condiciones de la Fintech.</p></article>
+        </div>
+
+        <h3>QR interoperable</h3>
+        <figure class="pm-figure">
+          <img src="assets/images/billeteras-pagos-modulo-7/slide-056.jpg" alt="Explicación original del QR interoperable" loading="lazy" />
+          <figcaption>Un mismo código puede aceptar pagos desde billeteras diferentes.</figcaption>
+        </figure>
+
+        <div class="pm-grid-3">
+          <article class="pm-card"><h4>Open Banking</h4><p>Datos financieros autorizados para mejores servicios, crédito y pagos cuenta a cuenta.</p></article>
+          <article class="pm-card"><h4>Suscripciones</h4><p>Cobros automáticos recurrentes para gimnasios, academias, software o cajas periódicas.</p></article>
+          <article class="pm-card pm-card--mint"><h4>Datos y reporting</h4><p>Aprobaciones, rechazos, operaciones y comportamiento para tomar decisiones.</p></article>
+        </div>
+
+        <figure class="pm-figure">
+          <img src="assets/images/billeteras-pagos-modulo-7/slide-059.jpg" alt="Mapa original del ecosistema Fintech argentino" loading="lazy" />
+          <figcaption>Billeteras, BNPL, cripto, crédito, facturación y Open Banking resuelven necesidades distintas.</figcaption>
+        </figure>
+      </section>
+
+      <section class="pm-section" id="decision">
+        <header class="pm-section-header">
+          <span class="pm-section-number">07</span>
+          <div><span class="pm-kicker">Síntesis práctica</span><h2>Decidir para una PyME</h2></div>
+        </header>
+
+        <p class="pm-lead">La mejor solución no es la más tecnológica ni la más barata: es la que combina uso real del cliente, baja fricción, costo total sostenible y compatibilidad con el canal.</p>
+
+        <figure class="pm-figure">
+          <img src="assets/images/billeteras-pagos-modulo-7/slide-064.jpg" alt="Resumen original del módulo de pagos digitales" loading="lazy" />
+          <figcaption>Las decisiones centrales del módulo condensadas en cinco criterios.</figcaption>
+        </figure>
+
+        <ol class="pm-steps">
+          <li><div><strong>Distinguir las capas.</strong> Medio, billetera, pasarela y procesador no son equivalentes.</div></li>
+          <li><div><strong>Conocer al cliente.</strong> Ofrecer los instrumentos que realmente usa y comprende.</div></li>
+          <li><div><strong>Calcular costo real.</strong> Comisión, IVA, impuestos, plazo, contracargos e integración.</div></li>
+          <li><div><strong>Reducir fricción.</strong> Checkout breve, móvil, confiable y con alternativas.</div></li>
+          <li><div><strong>Elegir integraciones sostenibles.</strong> Priorizar plugins oficiales, links y QR cuando resuelven el caso.</div></li>
+          <li><div><strong>Proteger la operación.</strong> Seguridad, accesos, conciliación y soporte.</div></li>
+          <li><div><strong>Revisar tendencias.</strong> Incorporar BNPL, suscripciones u Open Banking cuando aporten valor concreto.</div></li>
+        </ol>
+
+        <div class="pm-formula"><span>Familiaridad</span> + <span>Baja fricción</span> + <span>Costo sostenible</span> + <span>Seguridad</span> = <span>Mejor conversión</span></div>
+
+        <div class="pm-manifesto"><p>Cobrar bien también es vender mejor.</p></div>
+        <div class="pm-footer-note">Fin del Módulo 7 · Billeteras y Sistemas de Pago Digitales</div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+  <script src="js/components.js?v=2"></script>
+</body>
+</html>
+
+
+
+
